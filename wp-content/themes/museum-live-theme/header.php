@@ -24,8 +24,8 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Signup <i class="fas fa-user-plus"></i></a></li>
-        <li><a href="#">Login <i class="fas fa-user"></i></a></li>
+        <li><a href="<?php echo esc_url(site_url("/wp-signup.php")); ?> ">Signup <i class="fas fa-user-plus"></i></a></li>
+        <li><a href="<?php echo esc_url(site_url("/wp-login.php")); ?>">Login <i class="fas fa-user"></i></a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
