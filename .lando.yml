@@ -1,0 +1,6 @@
+name: museum-live
+recipe: pantheon
+config:
+  framework: wordpress
+  site: museum-live
+  id: e224d199-7983-4bea-9cd2-c9224c3fe563
