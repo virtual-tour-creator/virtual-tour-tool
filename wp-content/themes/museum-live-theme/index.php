@@ -15,7 +15,7 @@
 </div> 
 <div style="color: black">
 	<!-- Button trigger modal -->
-	<button class="btn btn-default btn-lg" data-toggle="modal" data-target="#exampleModalLong">
+	<button class="btn btn-default btn-lg" data-toggle="modal" data-target="#entry-info-panel">
 	  Create
 	</button>
 	<div class="entry-display">
@@ -39,7 +39,7 @@
 
 
 <!-- Modal Popup-->
-<div class="modal popup" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+<div class="modal popup" id="entry-info-panel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -69,7 +69,7 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-danger">
+        <button type="button" class="btn btn-danger delete-entry">
         	<!-- trash icon -->
         	<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 			  <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
@@ -77,7 +77,7 @@
 			</svg>
 			Delete
         </button>
-        <button type="submit" class="btn btn-primary">Save</button>
+        <button type="submit" class="btn btn-primary create-entry">Save</button>
       </div>
     </div>
   </div>

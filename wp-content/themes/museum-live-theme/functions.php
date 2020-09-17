@@ -11,9 +11,15 @@ function museum_files() {
     wp_enqueue_style("museum_main_styles", get_stylesheet_uri());
     
 	// public
-	wp_enqueue_script("vendors-js", get_theme_file_uri("/bundled-assets/vendors.568eec265db918acb0f8.js"), NULL, "1.0", true);
-	wp_enqueue_script("museum-js", get_theme_file_uri("/bundled-assets/scripts.568eec265db918acb0f8.js"), NULL, "1.0", true);
-	wp_enqueue_style("museum-theme", get_theme_file_uri("/bundled-assets/styles.css"));
+	/// FIXME: Not creating vendors
+	wp_enqueue_script("vendors-js", get_theme_file_uri("/bundled-assets/vendors~scripts.920bf068e75aa8ef387f.js"), NULL, "1.0", true);
+	wp_enqueue_script("museum-js", get_theme_file_uri("/bundled-assets/scripts.ef4ef82f03a0bd9df2c7.js"), NULL, "1.0", true);
+	wp_enqueue_style("museum-theme", get_theme_file_uri("/bundled-assets/styles.ef4ef82f03a0bd9df2c7.css"));
+
+	wp_localize_script("museum-js", "museumData", array(
+		"root_url" => get_site_url(),
+		"nonce" => wp_create_nonce("wp_rest")
+	));
 }
 
 add_action("wp_enqueue_scripts", "museum_files");
