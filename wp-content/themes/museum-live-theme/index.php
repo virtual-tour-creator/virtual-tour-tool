@@ -13,5 +13,23 @@
 		</div>
 	</div>
 </div> 
+<div style="color: black">
+	<button class="btn btn-default btn-lg">Create</button>
+	<?php
+		$entries = new WP_Query(array(
+			"paged" => get_query_var("paged", 1),
+			"posts_per_page" => 2,
+			"post_type" => "entry"
+		)); 
+		while ($entries->have_posts()) {
+			$entries->the_post(); ?>
+			<li><?php the_title()?></li>
+			<img src="<?php echo the_field("thumbnail")?>" width="400">
+		<?php }
+		echo paginate_links(array(
+			"total" => $entries->max_num_pages
+		));
+	?>
+</div>
 
 <?php get_footer(); ?>
