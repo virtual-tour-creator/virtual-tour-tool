@@ -20,6 +20,18 @@ html{
 	width: 95%;
 }
 
+.popup{
+	color:black;
+}
+
+.required {
+  color: red;
+}
+
+.entry-display {
+	display: flex;
+}
+
 #content{
 	text-align:center;
 	padding-top:3%;
