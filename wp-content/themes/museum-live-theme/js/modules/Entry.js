@@ -41,7 +41,7 @@ class Entry {
 			"content": $("#entry-desc").val(),
 			"status": "publish",
 			"media": [],
-			"featured_media": 18,
+			"featured_media": 57,
 		}
 
 		$.ajax({

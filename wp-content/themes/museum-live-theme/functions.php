@@ -20,8 +20,8 @@ function museum_files() {
 	// public
 	/// FIXME: Not creating vendors
 	wp_enqueue_script("vendors-js", get_theme_file_uri("/bundled-assets/vendors~scripts.920bf068e75aa8ef387f.js"), NULL, "1.0", true);
-	wp_enqueue_script("museum-js", get_theme_file_uri("/bundled-assets/scripts.4e632ef7dd666d375b39.js"), NULL, "1.0", true);
-	wp_enqueue_style("museum-theme", get_theme_file_uri("/bundled-assets/styles.4e632ef7dd666d375b39.css"));
+	wp_enqueue_script("museum-js", get_theme_file_uri("/bundled-assets/scripts.4781706047a1af0ba4da.js"), NULL, "1.0", true);
+	wp_enqueue_style("museum-theme", get_theme_file_uri("/bundled-assets/styles.4781706047a1af0ba4da.css"));
 
 	wp_localize_script("museum-js", "museumData", array(
 		"root_url" => get_site_url(),
