@@ -16,7 +16,7 @@
 </div> 
 <div style="color: black">
 	<!-- Button trigger modal -->
-	<button class="btn btn-default btn-lg" data-toggle="modal" data-target="#entry-info-panel">
+	<button class="btn btn-default btn-lg" data-toggle="modal" data-target="#entry-creation-panel">
 	  Create
 	</button>
 	<div class="entry-display">
@@ -28,8 +28,10 @@
 			)); 
 			while ($entries->have_posts()) {
 				$entries->the_post(); ?>
-				<li><?php the_title()?></li>
-				<img src="<?php the_post_thumbnail_url("entry-thumbnail")?>" width="400">
+				<div class="entry-group" data-id="<?php the_ID()?>">
+					<li><?php the_title()?></li>
+					<input type="Image" id="index-thumbnail" src="<?php the_post_thumbnail_url("entry-thumbnail")?>" width="400" data-toggle="modal" data-target="#entry-info-panel">
+				</div>
 			<?php }
 			echo paginate_links(array(
 				"total" => $entries->max_num_pages
@@ -38,9 +40,8 @@
 	</div>	
 </div>
 
-
 <!-- Modal Popup-->
-<div class="modal popup" id="entry-info-panel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+<div class="modal popup" id="entry-creation-panel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -70,7 +71,44 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-danger delete-entry">
+        <button type="submit" class="btn btn-primary create-entry" data-dismiss="modal">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal popup" id="entry-info-panel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">View Entry</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="entry-view-title" class="col-form-label">Title</label>
+            <input type="text" class="form-control" id="entry-view-title" required readonly>
+          </div>
+          <div class="form-group">
+		    <label for="entry-file-upload">Media</label>
+		    <input type="file" class="form-control-file" id="entry-file-upload" readonly>
+		  </div>
+          <div class="form-group">
+            <label for="entry-view-desc" class="col-form-label">Description</label>
+            <textarea class="form-control" id="entry-view-desc" required readonly></textarea>
+          </div>
+          <div class="form-group">
+            <label for="entry-tags" class="col-form-label">Related Topic Tags</label>
+            <input type="text" class="form-control" id="entry-tags" readonly>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger delete-entry" data-dismiss="modal">
         	<!-- trash icon -->
         	<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 			  <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
@@ -78,7 +116,8 @@
 			</svg>
 			Delete
         </button>
-        <button type="submit" class="btn btn-primary create-entry">Save</button>
+        <button type="button" class="btn btn-primary edit-entry">Edit</button>
+        <button type="submit" class="btn btn-primary update-entry">Save</button>
       </div>
     </div>
   </div>

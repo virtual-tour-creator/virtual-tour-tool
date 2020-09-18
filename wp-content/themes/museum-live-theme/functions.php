@@ -15,12 +15,13 @@ function museum_files() {
 	wp_enqueue_script('bootstrap-js', "//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js", '', true);
 	wp_enqueue_script( 'jquery-for-slider','//code.jquery.com/jquery-1.11.1.min.js', array( 'jquery' ),'',true );
 
+	// wp_enqueue_script("museum-js", 'http://localhost:3000/bundled.js', NULL, "1.0", true);
     
 	// public
 	/// FIXME: Not creating vendors
 	wp_enqueue_script("vendors-js", get_theme_file_uri("/bundled-assets/vendors~scripts.920bf068e75aa8ef387f.js"), NULL, "1.0", true);
-	wp_enqueue_script("museum-js", get_theme_file_uri("/bundled-assets/scripts.ef4ef82f03a0bd9df2c7.js"), NULL, "1.0", true);
-	wp_enqueue_style("museum-theme", get_theme_file_uri("/bundled-assets/styles.ef4ef82f03a0bd9df2c7.css"));
+	wp_enqueue_script("museum-js", get_theme_file_uri("/bundled-assets/scripts.4781706047a1af0ba4da.js"), NULL, "1.0", true);
+	wp_enqueue_style("museum-theme", get_theme_file_uri("/bundled-assets/styles.4781706047a1af0ba4da.css"));
 
 	wp_localize_script("museum-js", "museumData", array(
 		"root_url" => get_site_url(),
@@ -99,3 +100,27 @@ function museum_custom_rest() {
 }
 
 add_action("rest_api_init", "museum_custom_rest");
+
+function create_ACF_meta_in_REST() {
+    $postypes_to_exclude = ['acf-field-group','acf-field'];
+    $extra_postypes_to_include = ["page"];
+    $post_types = array_diff(get_post_types(["_builtin" => false], 'names'),$postypes_to_exclude);
+
+    array_push($post_types, $extra_postypes_to_include);
+
+    foreach ($post_types as $post_type) {
+        register_rest_field( $post_type, 'ACF', [
+            'get_callback'    => 'expose_ACF_fields',
+            'schema'          => null,
+       ]
+     );
+    }
+
+}
+
+function expose_ACF_fields( $object ) {
+    $ID = $object['id'];
+    return get_fields($ID);
+}
+
+add_action( 'rest_api_init', 'create_ACF_meta_in_REST' );
