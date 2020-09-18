@@ -64,6 +64,7 @@ h1{
 .navbar {
 	background: black;
 	margin-bottom: 0;
+	border-radius: 0;
 }
 
 .jumbotron {

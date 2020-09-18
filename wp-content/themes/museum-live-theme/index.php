@@ -102,7 +102,7 @@
                     
                 <div class="item active">
                 	<div class="row">
-                	  <div class="col-md-2"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
+                	  <div class="col-md-2"><a href="#" class="thumbnail"><img src="https://dev-museum-live.pantheonsite.io/wp-content/uploads/2020/09/6696_okami_hd_5-500x500.jpg" alt="Image" style="max-width:100%;"></a></div>
                 	  <div class="col-md-2"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
                 	  <div class="col-md-2"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
 					  <div class="col-md-2"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
