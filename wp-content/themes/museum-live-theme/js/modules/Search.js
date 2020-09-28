@@ -8,6 +8,9 @@ class Search {
 	}
 
 	// Methods
+	// Hi This is a testing comments
+
+	//Hiiii
 }
 
 export default Search;

@@ -1,0 +1,15 @@
+.jumbotron {
+    height: 280px;
+    color: white;
+    background: rgba(0,0,0,0.6);
+	background-image: url(https://www.ox.ac.uk/sites/files/oxford/styles/ow_large_feature/s3/field/field_image_main/b_AllSoulsquad.jpg?itok=tTcH-5ix);
+	background-blend-mode: darken;
+	background-size: cover;
+	padding-bottom: 20px;
+}
+
+.display-4 {
+    text-align: center;
+    font-size: 62px;
+    line-height: 88px;
+}
