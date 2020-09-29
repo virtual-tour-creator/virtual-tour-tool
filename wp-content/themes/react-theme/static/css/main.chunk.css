@@ -1,0 +1,91 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+body {
+  font-family: 'Roboto Slab', serif;
+}
+.navbar {
+    background: #000;
+    height: 64px;
+}
+.jumbotron {
+    height: 280px;
+    color: white;
+    background: rgba(0,0,0,0.6);
+	background-image: url(https://www.ox.ac.uk/sites/files/oxford/styles/ow_large_feature/s3/field/field_image_main/b_AllSoulsquad.jpg?itok=tTcH-5ix);
+	background-blend-mode: darken;
+	background-size: cover;
+	padding-bottom: 20px;
+}
+
+.display-4 {
+    text-align: center;
+    font-size: 62px;
+    line-height: 88px;
+}
+.entry > img {
+    border-radius: 10px;
+    width: 258.78px;
+    height: 206.73px;
+    left: 20px;
+    top: 481px;
+}
+
+.entry > p {
+    font-size: 18px;
+    line-height: 28px;
+    font-style: normal;
+}
+
+.entries {
+    display: flex;
+    flex-direction: row;
+    width: 97vw;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 16px;
+}
+
+.entry {
+    text-align: center;
+}
+
+.entry:hover {
+    transform: scale(1.1);
+  }
+.public-playlist {
+    margin: 20px;
+}
+
+.public-playlist > h1 {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 53px;
+}
+.entry-page {
+    background-color: #000;
+    color:white;
+    height: 100vh;
+}
+
+.entry-container {
+    padding: 100px;
+}
+
+.close-icon {
+    float: right;
+}
+
+/*# sourceMappingURL=main.chunk.css.map*/

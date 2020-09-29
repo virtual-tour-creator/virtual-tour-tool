@@ -124,3 +124,19 @@ function expose_ACF_fields( $object ) {
 }
 
 add_action( 'rest_api_init', 'create_ACF_meta_in_REST' );
+
+
+
+//Enqueue Theme JS with React Dependency
+add_action( 'wp_enqueue_scripts', 'my_enqueue_theme_js' );
+function my_enqueue_theme_js() {
+  wp_enqueue_script(
+    'my-theme-frontend',
+    get_stylesheet_directory_uri() . '/build/index.js',
+    ['wp-element'],
+    null,
+    true
+  );
+}
+
+

@@ -1,0 +1,13 @@
+.entry-page {
+    background-color: #000;
+    color:white;
+    height: 100vh;
+}
+
+.entry-container {
+    padding: 100px;
+}
+
+.close-icon {
+    float: right;
+}
