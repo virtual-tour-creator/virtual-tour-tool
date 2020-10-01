@@ -2,18 +2,22 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './EntryPage.styles.css';
 
-//data field
-import PlaylistsData from '../data/data.json';
+import ReactBnbGallery from 'react-bnb-gallery';
+
+import 'react-bnb-gallery/dist/style.css'
+
+// //data field
+// import PlaylistsData from '../data/data.json';
 
 
-// for temporary use. Replace with entry link when inserting data
-const allEntries = []
+// // for temporary use. Replace with entry link when inserting data
+// const allEntries = []
 
-for(let i=0; i<PlaylistsData.length; i++) {
-    for(let j=0; j<PlaylistsData[i]['entries'].length; j++){
-        allEntries.push(PlaylistsData[i]['entries'][j]);
-    }
-}
+// for(let i=0; i<PlaylistsData.length; i++) {
+//     for(let j=0; j<PlaylistsData[i]['entries'].length; j++){
+//         allEntries.push(PlaylistsData[i]['entries'][j]);
+//     }
+// }
 
 const getContent = entry => {
     if (entry.content) 
@@ -40,14 +44,27 @@ const EntryPage = props => {
         loadEntry();
     }, [])
 
+
     // load media
     let media = "None";
+    let Photos = 'None';
     if (entry.acf_media)
     {
         media = entry.acf_media.map((media) =>
             <img src={media} alt={media}/>
-        );
+        )
+
+        Photos = entry.ACF.media.map((media) => {
+            let photo = {};
+            photo['photo'] = media.guid;
+            photo['caption'] = media.title;
+            return photo;
+        }
+        )
+        
     }
+
+    console.log(Photos);
 
     // load tags
     let tag_lists = "None"
@@ -57,6 +74,9 @@ const EntryPage = props => {
             <li>#{name}</li>
         );
     }
+    
+    const [isOpen, setIsOpen] = useState(false);
+
 
     return(
         <div className='entry-page'>
@@ -72,6 +92,14 @@ const EntryPage = props => {
 
                 <h2>Related Topics</h2>
                 {tag_lists}
+            </div>
+
+            <div className='gallery-test'>
+                <button onClick={() => setIsOpen(true)}>Open gallery</button>
+                <ReactBnbGallery
+                    show={isOpen}
+                    photos={Photos}
+                    onClose={() => setIsOpen(false)} />
             </div>
         </div>);
 }
