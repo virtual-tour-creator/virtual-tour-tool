@@ -90,7 +90,7 @@ const EntryPage = props => {
                 <h2>Description</h2>
                 {getContent(entry)}
 
-                <h2>Related Topics</h2>
+                <h2>Related Topics is 1234 test</h2>
                 {tag_lists}
             </div>
 
