@@ -1,20 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 import Entries from './Entries/Entries';
 import './Playlist.styles.css';
 
 
-const Playlist = props => (
-    <div className='public-playlists'>
+const Playlist = props => {
+
+    // <Entries entries={playlist.entries}
+	return (
+		<div className='public-playlists'>
         {props.playlists.map(playlist => (
-            <div key={playlist.listId} className='public-playlist'>
-                <h1>#{playlist.listName}</h1>
-                <Entries entries={playlist.entries} />
+            <div key={playlist.id} className='public-playlist'>
+                <h1>#{playlist.name}</h1>
+                <Entries listId={playlist.id} entries={playlist.entries}/>
             </div>
         ))
         }
-    </div>
-   
-);
+    	</div>
+	);
+};
 
 export default withRouter(Playlist);

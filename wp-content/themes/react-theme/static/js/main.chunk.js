@@ -116,16 +116,7 @@ const getContent = entry => {
 };
 
 const EntryPage = props => {
-  let loadingId = props.match.params.entryId;
-  let loadingEntry = {};
-
-  for (let i = 0; i < allEntries.length; i++) {
-    if (allEntries[i]['entryId'] == loadingId) {
-      loadingEntry = allEntries[i];
-    }
-  }
-
-  let id = 59;
+  let id = props.match.params.entryId;
   const [entry, setEntry] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
     async function loadEntry() {
@@ -152,7 +143,7 @@ const EntryPage = props => {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 55,
+        lineNumber: 48,
         columnNumber: 13
       }
     }));
@@ -166,7 +157,7 @@ const EntryPage = props => {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 64,
+        lineNumber: 57,
         columnNumber: 13
       }
     }, "#", name));
@@ -177,7 +168,7 @@ const EntryPage = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69,
+      lineNumber: 62,
       columnNumber: 9
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -185,7 +176,7 @@ const EntryPage = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70,
+      lineNumber: 63,
       columnNumber: 13
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -193,44 +184,44 @@ const EntryPage = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71,
+      lineNumber: 64,
       columnNumber: 17
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72,
+      lineNumber: 65,
       columnNumber: 21
     }
-  }, entry.title ? entry.title.rendered : loadingEntry.entryName), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+  }, entry.title ? entry.title.rendered : "loading"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     className: "close-icon",
     to: "/",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73,
+      lineNumber: 66,
       columnNumber: 21
     }
   }, "Close")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75,
+      lineNumber: 68,
       columnNumber: 17
     }
   }), media, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77,
+      lineNumber: 70,
       columnNumber: 17
     }
   }, "Description"), getContent(entry), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80,
+      lineNumber: 73,
       columnNumber: 17
     }
   }, "Related Topics"), tag_lists));
@@ -399,7 +390,7 @@ const Entries = props => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default
     columnNumber: 5
   }
 }, props.entries.map(entry => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-  key: entry.entryId,
+  key: entry.id,
   className: "entry",
   __self: undefined,
   __source: {
@@ -408,8 +399,8 @@ const Entries = props => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default
     columnNumber: 13
   }
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-  src: entry.thumbnailUrl,
-  onClick: () => props.history.push(`/entry/${entry.entryId}`),
+  src: entry.thumbnail_url,
+  onClick: () => props.history.push(`/entry/${entry.id}`),
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
@@ -461,39 +452,43 @@ var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-t
 
 
 
-const Playlist = props => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-  className: "public-playlists",
-  __self: undefined,
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 8,
-    columnNumber: 5
-  }
-}, props.playlists.map(playlist => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-  key: playlist.listId,
-  className: "public-playlist",
-  __self: undefined,
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 10,
-    columnNumber: 13
-  }
-}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-  __self: undefined,
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 11,
-    columnNumber: 17
-  }
-}, "#", playlist.listName), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Entries_Entries__WEBPACK_IMPORTED_MODULE_2__["default"], {
-  entries: playlist.entries,
-  __self: undefined,
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 12,
-    columnNumber: 17
-  }
-}))));
+const Playlist = props => {
+  // <Entries entries={playlist.entries}
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "public-playlists",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11,
+      columnNumber: 3
+    }
+  }, props.playlists.map(playlist => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    key: playlist.id,
+    className: "public-playlist",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13,
+      columnNumber: 13
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14,
+      columnNumber: 17
+    }
+  }, "#", playlist.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Entries_Entries__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    listId: playlist.id,
+    entries: playlist.entries,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15,
+      columnNumber: 17
+    }
+  }))));
+};
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(Playlist));
 
@@ -534,8 +529,62 @@ class PublicLibrary extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compone
   constructor() {
     super();
     this.state = {
-      playlists: __webpack_require__(/*! ../components/data/data.json */ "./src/components/data/data.json")
+      playlists: []
     };
+  }
+
+  componentDidMount() {
+    fetch('/wp-json/wp/v2/categories/').then(res => res.json()).then(data => {
+      console.log(data);
+      let playlistInfo = data.map(playlist => {
+        const {
+          id,
+          count,
+          name
+        } = playlist;
+        return {
+          id,
+          count,
+          name,
+          entries: []
+        };
+      }); // console.log(playlistInfo);
+
+      return playlistInfo;
+    }).then(playlistInfo => {
+      // get entry per playlist
+      const allRequests = playlistInfo.map(playlist => {
+        const {
+          id,
+          name
+        } = playlist;
+        return fetch('/wp-json/wp/v2/entry?categories=' + id).then(res => res.json()).then(data => {
+          const entries = data.map(entry => {
+            // console.log(entry);
+            const {
+              id,
+              thumbnail_url
+            } = entry;
+            return {
+              id,
+              thumbnail_url
+            };
+          });
+          return {
+            id,
+            name,
+            entries
+          };
+        });
+      }); // wait for all requests to finish
+
+      return Promise.all(allRequests);
+    }).then(finalInfo => {
+      console.log(finalInfo);
+      this.setState({
+        playlists: finalInfo
+      });
+    }).catch(console.log);
   }
 
   render() {
@@ -544,21 +593,21 @@ class PublicLibrary extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compone
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 16,
+        lineNumber: 57,
         columnNumber: 13
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navbar_Navbar__WEBPACK_IMPORTED_MODULE_1__["default"], {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 17,
+        lineNumber: 58,
         columnNumber: 17
       }
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Jumbotron_Jumbotron__WEBPACK_IMPORTED_MODULE_2__["default"], {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 18,
+        lineNumber: 59,
         columnNumber: 17
       }
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Playlist_Playlist__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -566,7 +615,7 @@ class PublicLibrary extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compone
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 19,
+        lineNumber: 60,
         columnNumber: 17
       }
     }));
@@ -653,5 +702,5 @@ module.exports = __webpack_require__(/*! /Users/nouyang/Desktop/museum-live/wp-c
 
 /***/ })
 
-},[[0,"runtime-main",1]]]);
+},[[0,"runtime-main",0]]]);
 //# sourceMappingURL=main.chunk.js.map

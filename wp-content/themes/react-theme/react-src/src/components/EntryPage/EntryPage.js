@@ -23,14 +23,7 @@ const getContent = entry => {
 }
 
 const EntryPage = props => {
-    let loadingId = props.match.params.entryId;
-    let loadingEntry = {};
-    for(let i=0; i<allEntries.length; i++){
-        if (allEntries[i]['entryId'] == loadingId) {
-            loadingEntry = allEntries[i];
-        }
-    }
-    let id = 59;
+    let id = props.match.params.entryId;
     const [entry, setEntry] = useState([]);
     useEffect(() => {
         async function loadEntry() {
@@ -69,7 +62,7 @@ const EntryPage = props => {
         <div className='entry-page'>
             <div className='entry-container'>
                 <div className='entry-header'>
-                    <h1>{entry.title? entry.title.rendered : loadingEntry.entryName}</h1>
+                    <h1>{entry.title? entry.title.rendered : "loading"}</h1>
                     <Link className='close-icon' to="/">Close</Link>
                 </div>
                 <hr></hr>

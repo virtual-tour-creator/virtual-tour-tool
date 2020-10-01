@@ -5,8 +5,8 @@ import './Entries.styles.css';
 const Entries = props => (
     <div key={props.listId} className='entries'>
         {props.entries.map(entry =>
-            <div key={entry.entryId} className='entry'>
-                <img src={entry.thumbnailUrl} onClick={() => props.history.push(`/entry/${entry.entryId}`) }/>
+            <div key={entry.id} className='entry'>
+                <img src={entry.thumbnail_url} onClick={() => props.history.push(`/entry/${entry.id}`) }/>
                 <p> {entry.entryName} </p>
             </div>)}
     </div>

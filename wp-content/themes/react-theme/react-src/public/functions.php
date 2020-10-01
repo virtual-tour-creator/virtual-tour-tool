@@ -34,6 +34,7 @@ function museum_post_types() {
 		"menu_icon" => "dashicons-calendar"
 	));
 	register_taxonomy_for_object_type("post_tag", "entry");
+	register_taxonomy_for_object_type('category', 'entry');
 }
 
 add_action("init", "museum_post_types");
@@ -41,6 +42,9 @@ add_action("init", "museum_post_types");
 function museum_custom_rest() {
 	register_rest_field("entry", "tag_names", array(
 		"get_callback" => function() {return [];}
+	));
+	register_rest_field("entry", "thumbnail_url", array(
+		"get_callback" => function() {return "";}
 	));
 }
 
@@ -103,6 +107,7 @@ function ag_filter_post_json($response, $post, $context) {
     foreach ($tags as $tag) {
         $response->data['tag_names'][] = $tag->name;
     }
+    $response->data['thumbnail_url'] = get_the_post_thumbnail_url($post->ID, 'thumbnail');
 
     return $response;
 }
