@@ -27,7 +27,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_App_css__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _components_PublicLibrary__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/PublicLibrary */ "./src/components/PublicLibrary.js");
 /* harmony import */ var _components_EntryPage_EntryPage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/EntryPage/EntryPage */ "./src/components/EntryPage/EntryPage.js");
-var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/App.js";
+var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/App.js";
 
 
 
@@ -84,22 +84,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _EntryPage_styles_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./EntryPage.styles.css */ "./src/components/EntryPage/EntryPage.styles.css");
 /* harmony import */ var _EntryPage_styles_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_EntryPage_styles_css__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _data_data_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../data/data.json */ "./src/components/data/data.json");
-var _data_data_json__WEBPACK_IMPORTED_MODULE_3___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../data/data.json */ "./src/components/data/data.json", 1);
-var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/components/EntryPage/EntryPage.js";
+/* harmony import */ var react_bnb_gallery__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-bnb-gallery */ "./node_modules/react-bnb-gallery/dist/index.es.js");
+/* harmony import */ var react_bnb_gallery_dist_style_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-bnb-gallery/dist/style.css */ "./node_modules/react-bnb-gallery/dist/style.css");
+/* harmony import */ var react_bnb_gallery_dist_style_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_bnb_gallery_dist_style_css__WEBPACK_IMPORTED_MODULE_4__);
+var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/EntryPage/EntryPage.js";
 
 
- //data field
 
- // for temporary use. Replace with entry link when inserting data
 
-const allEntries = [];
-
-for (let i = 0; i < _data_data_json__WEBPACK_IMPORTED_MODULE_3__.length; i++) {
-  for (let j = 0; j < _data_data_json__WEBPACK_IMPORTED_MODULE_3__[i]['entries'].length; j++) {
-    allEntries.push(_data_data_json__WEBPACK_IMPORTED_MODULE_3__[i]['entries'][j]);
-  }
-}
+ // //data field
+// import PlaylistsData from '../data/data.json';
+// // for temporary use. Replace with entry link when inserting data
+// const allEntries = []
+// for(let i=0; i<PlaylistsData.length; i++) {
+//     for(let j=0; j<PlaylistsData[i]['entries'].length; j++){
+//         allEntries.push(PlaylistsData[i]['entries'][j]);
+//     }
+// }
 
 const getContent = entry => {
   if (entry.content) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -109,7 +110,7 @@ const getContent = entry => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21,
+      lineNumber: 25,
       columnNumber: 13
     }
   });
@@ -135,6 +136,7 @@ const EntryPage = props => {
   }, []); // load media
 
   let media = "None";
+  let Photos = 'None';
 
   if (entry.acf_media) {
     media = entry.acf_media.map(media => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -143,12 +145,19 @@ const EntryPage = props => {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 48,
+        lineNumber: 54,
         columnNumber: 13
       }
     }));
-  } // load tags
+    Photos = entry.ACF.media.map(media => {
+      let photo = {};
+      photo['photo'] = media.guid;
+      photo['caption'] = media.post_title;
+      return photo;
+    });
+  }
 
+  console.log(Photos); // load tags
 
   let tag_lists = "None";
 
@@ -157,18 +166,19 @@ const EntryPage = props => {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 57,
+        lineNumber: 75,
         columnNumber: 13
       }
     }, "#", name));
   }
 
+  const [isOpen, setIsOpen] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "entry-page",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62,
+      lineNumber: 83,
       columnNumber: 9
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -176,7 +186,7 @@ const EntryPage = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63,
+      lineNumber: 84,
       columnNumber: 13
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -184,14 +194,14 @@ const EntryPage = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64,
+      lineNumber: 85,
       columnNumber: 17
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65,
+      lineNumber: 86,
       columnNumber: 21
     }
   }, entry.title ? entry.title.rendered : "loading"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
@@ -200,31 +210,57 @@ const EntryPage = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66,
+      lineNumber: 87,
       columnNumber: 21
     }
   }, "Close")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68,
+      lineNumber: 89,
       columnNumber: 17
     }
   }), media, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70,
+      lineNumber: 91,
       columnNumber: 17
     }
   }, "Description"), getContent(entry), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73,
+      lineNumber: 94,
       columnNumber: 17
     }
-  }, "Related Topics"), tag_lists));
+  }, "Related Topics is 1234 test"), tag_lists), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "gallery-test",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 98,
+      columnNumber: 13
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    onClick: () => setIsOpen(true),
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 99,
+      columnNumber: 17
+    }
+  }, "Open gallery"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bnb_gallery__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    show: isOpen,
+    photos: Photos,
+    onClose: () => setIsOpen(false),
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 100,
+      columnNumber: 17
+    }
+  })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (EntryPage);
@@ -255,7 +291,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Jumbotron_styles_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Jumbotron.styles.css */ "./src/components/Jumbotron/Jumbotron.styles.css");
 /* harmony import */ var _Jumbotron_styles_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Jumbotron_styles_css__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/components/Jumbotron/Jumbotron.js";
+var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/Jumbotron/Jumbotron.js";
 
 
 
@@ -318,7 +354,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Navbar_styles_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Navbar.styles.css */ "./src/components/Navbar/Navbar.styles.css");
 /* harmony import */ var _Navbar_styles_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Navbar_styles_css__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/components/Navbar/Navbar.js";
+var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/Navbar/Navbar.js";
 
 
 
@@ -341,7 +377,15 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         lineNumber: 8,
         columnNumber: 13
       }
-    }, "PATRIMONIO NACIONAL"));
+    }, "PATRIMONIO NACIONAL"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      href: "/wp-admin",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 9,
+        columnNumber: 13
+      }
+    }, "Go to Dashboard"));
   }
 
 }
@@ -375,7 +419,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _Entries_styles_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Entries.styles.css */ "./src/components/Playlist/Entries/Entries.styles.css");
 /* harmony import */ var _Entries_styles_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Entries_styles_css__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/components/Playlist/Entries/Entries.js";
+var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/Playlist/Entries/Entries.js";
 
 
 
@@ -386,7 +430,7 @@ const Entries = props => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 6,
+    lineNumber: 7,
     columnNumber: 5
   }
 }, props.entries.map(entry => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -395,7 +439,7 @@ const Entries = props => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 8,
+    lineNumber: 9,
     columnNumber: 13
   }
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -404,14 +448,14 @@ const Entries = props => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 9,
+    lineNumber: 10,
     columnNumber: 17
   }
 }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 10,
+    lineNumber: 11,
     columnNumber: 17
   }
 }, " ", entry.name, " "))));
@@ -446,7 +490,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Entries_Entries__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Entries/Entries */ "./src/components/Playlist/Entries/Entries.js");
 /* harmony import */ var _Playlist_styles_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Playlist.styles.css */ "./src/components/Playlist/Playlist.styles.css");
 /* harmony import */ var _Playlist_styles_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_Playlist_styles_css__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/components/Playlist/Playlist.js";
+var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/Playlist/Playlist.js";
 
 
 
@@ -519,7 +563,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Navbar_Navbar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Navbar/Navbar */ "./src/components/Navbar/Navbar.js");
 /* harmony import */ var _Jumbotron_Jumbotron__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Jumbotron/Jumbotron */ "./src/components/Jumbotron/Jumbotron.js");
 /* harmony import */ var _Playlist_Playlist__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Playlist/Playlist */ "./src/components/Playlist/Playlist.js");
-var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/components/PublicLibrary.js";
+var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/PublicLibrary.js";
 
 
 
@@ -630,17 +674,6 @@ class PublicLibrary extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compone
 
 /***/ }),
 
-/***/ "./src/components/data/data.json":
-/*!***************************************!*\
-  !*** ./src/components/data/data.json ***!
-  \***************************************/
-/*! exports provided: 0, 1, default */
-/***/ (function(module) {
-
-module.exports = JSON.parse("[{\"listId\":1,\"listName\":\"Royal Collections\",\"entries\":[{\"entryId\":1,\"entryName\":\"Joseph's tunic\",\"thumbnailUrl\":\"https://via.placeholder.com/250\",\"description\":\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut justo nulla. Vestibulum porttitor est nulla, tristique ultricies felis efficitur.\",\"tags\":[],\"media\":[]},{\"entryId\":2,\"entryName\":\"Christ carrying the cross\",\"thumbnailUrl\":\"https://via.placeholder.com/250\",\"description\":\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut justo nulla. Vestibulum porttitor est nulla, tristique ultricies felis efficitur.\",\"tags\":[],\"media\":[]},{\"entryId\":3,\"entryName\":\"The dance of July 14\",\"thumbnailUrl\":\"https://via.placeholder.com/250\",\"description\":\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut justo nulla. Vestibulum porttitor est nulla, tristique ultricies felis efficitur.\",\"tags\":[],\"media\":[]},{\"entryId\":4,\"entryName\":\"Fall on the road to Calvary\",\"thumbnailUrl\":\"https://via.placeholder.com/250\",\"description\":\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut justo nulla. Vestibulum porttitor est nulla, tristique ultricies felis efficitur.\",\"tags\":[],\"media\":[]},{\"entryId\":5,\"entryName\":\"Madras lines\",\"thumbnailUrl\":\"https://via.placeholder.com/250\",\"description\":\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut justo nulla. Vestibulum porttitor est nulla, tristique ultricies felis efficitur.\",\"tags\":[],\"media\":[]},{\"entryId\":6,\"entryName\":\"Hercules leaning on his club\",\"thumbnailUrl\":\"https://via.placeholder.com/250\",\"description\":\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut justo nulla. Vestibulum porttitor est nulla, tristique ultricies felis efficitur.\",\"tags\":[],\"media\":[]},{\"entryId\":7,\"entryName\":\"Tavern scene\",\"thumbnailUrl\":\"https://via.placeholder.com/250\",\"description\":\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut justo nulla. Vestibulum porttitor est nulla, tristique ultricies felis efficitur.\",\"tags\":[],\"media\":[]},{\"entryId\":8,\"entryName\":\"Mater Dolorosa\",\"thumbnailUrl\":\"https://via.placeholder.com/250\",\"description\":\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut justo nulla. Vestibulum porttitor est nulla, tristique ultricies felis efficitur.\",\"tags\":[],\"media\":[]},{\"entryId\":9,\"entryName\":\"Royal Armoury of Madrid\",\"thumbnailUrl\":\"https://via.placeholder.com/250\",\"description\":\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut justo nulla. Vestibulum porttitor est nulla, tristique ultricies felis efficitur.\",\"tags\":[],\"media\":[]},{\"entryId\":10,\"entryName\":\"The Fortune\",\"thumbnailUrl\":\"https://via.placeholder.com/250\",\"description\":\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut justo nulla. Vestibulum porttitor est nulla, tristique ultricies felis efficitur.\",\"tags\":[],\"media\":[]}]},{\"listId\":2,\"listName\":\"Spaces\",\"entries\":[{\"entryId\":11,\"entryName\":\"Gasparini room\",\"thumbnailUrl\":\"https://via.placeholder.com/250\",\"description\":\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut justo nulla. Vestibulum porttitor est nulla, tristique ultricies felis efficitur.\",\"tags\":[],\"media\":[]},{\"entryId\":12,\"entryName\":\"Royal kitchen\",\"thumbnailUrl\":\"https://via.placeholder.com/250\",\"description\":\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut justo nulla. Vestibulum porttitor est nulla, tristique ultricies felis efficitur.\",\"tags\":[],\"media\":[]},{\"entryId\":13,\"entryName\":\"Royal Pharmacy\",\"thumbnailUrl\":\"https://via.placeholder.com/250\",\"description\":\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut justo nulla. Vestibulum porttitor est nulla, tristique ultricies felis efficitur.\",\"tags\":[],\"media\":[]},{\"entryId\":14,\"entryName\":\"Throne room\",\"thumbnailUrl\":\"https://via.placeholder.com/250\",\"description\":\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut justo nulla. Vestibulum porttitor est nulla, tristique ultricies felis efficitur.\",\"tags\":[],\"media\":[]},{\"entryId\":15,\"entryName\":\"Main staircase\",\"thumbnailUrl\":\"https://via.placeholder.com/250\",\"description\":\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut justo nulla. Vestibulum porttitor est nulla, tristique ultricies felis efficitur.\",\"tags\":[],\"media\":[]}]}]");
-
-/***/ }),
-
 /***/ "./src/index.css":
 /*!***********************!*\
   !*** ./src/index.css ***!
@@ -669,7 +702,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./index.css */ "./src/index.css");
 /* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_index_css__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./App */ "./src/App.js");
-var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/index.js";
+var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/index.js";
 
 
 
@@ -700,7 +733,7 @@ react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/index.js */"./src/index.js");
+module.exports = __webpack_require__(/*! /Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/index.js */"./src/index.js");
 
 
 /***/ })

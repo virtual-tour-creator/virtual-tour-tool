@@ -54,10 +54,11 @@ const EntryPage = props => {
             <img src={media} alt={media}/>
         )
 
+
         Photos = entry.ACF.media.map((media) => {
             let photo = {};
             photo['photo'] = media.guid;
-            photo['caption'] = media.title;
+            photo['caption'] = media.post_title;
             return photo;
         }
         )
@@ -100,6 +101,7 @@ const EntryPage = props => {
                     show={isOpen}
                     photos={Photos}
                     onClose={() => setIsOpen(false)} />
+                
             </div>
         </div>);
 }

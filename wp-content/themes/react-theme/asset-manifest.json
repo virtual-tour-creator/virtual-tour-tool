@@ -1,6 +1,8 @@
 {
   "files": {
+    "static/css/1.chunk.css": "/wp-content/themes/react-theme/static/css/1.chunk.css",
     "static/js/1.chunk.js": "/wp-content/themes/react-theme/static/js/1.chunk.js",
+    "static/css/1.chunk.css.map": "/wp-content/themes/react-theme/static/css/1.chunk.css.map",
     "static/js/1.chunk.js.map": "/wp-content/themes/react-theme/static/js/1.chunk.js.map",
     "main.css": "/wp-content/themes/react-theme/static/css/main.chunk.css",
     "main.js": "/wp-content/themes/react-theme/static/js/main.chunk.js",
@@ -12,6 +14,7 @@
   },
   "entrypoints": [
     "static/js/bundle.js",
+    "static/css/1.chunk.css",
     "static/js/1.chunk.js",
     "static/css/main.chunk.css",
     "static/js/main.chunk.js"

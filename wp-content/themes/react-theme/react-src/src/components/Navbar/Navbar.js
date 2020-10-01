@@ -6,6 +6,7 @@ class Navbar extends React.Component {
         return (
             <nav className="navbar navbar-dark">
             <a className="navbar-brand" href="/">PATRIMONIO NACIONAL</a>
+            <a href='/wp-admin'>Go to Dashboard</a>
             </nav>
         )
     }

@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import './Entries.styles.css';
 
+
 const Entries = props => (
     <div key={props.listId} className='entries'>
         {props.entries.map(entry =>
