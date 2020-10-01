@@ -414,7 +414,7 @@ const Entries = props => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default
     lineNumber: 10,
     columnNumber: 17
   }
-}, " ", entry.entryName, " "))));
+}, " ", entry.name, " "))));
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(Entries));
 
@@ -563,12 +563,15 @@ class PublicLibrary extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compone
             // console.log(entry);
             const {
               id,
-              thumbnail_url
+              thumbnail_url,
+              title
             } = entry;
-            return {
+            const e = {
               id,
-              thumbnail_url
+              thumbnail_url,
+              name: title.rendered
             };
+            return e;
           });
           return {
             id,
@@ -593,21 +596,21 @@ class PublicLibrary extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compone
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 57,
+        lineNumber: 62,
         columnNumber: 13
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navbar_Navbar__WEBPACK_IMPORTED_MODULE_1__["default"], {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 58,
+        lineNumber: 63,
         columnNumber: 17
       }
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Jumbotron_Jumbotron__WEBPACK_IMPORTED_MODULE_2__["default"], {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 59,
+        lineNumber: 64,
         columnNumber: 17
       }
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Playlist_Playlist__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -615,7 +618,7 @@ class PublicLibrary extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compone
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 60,
+        lineNumber: 65,
         columnNumber: 17
       }
     }));

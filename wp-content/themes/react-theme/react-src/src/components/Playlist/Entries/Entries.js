@@ -7,7 +7,7 @@ const Entries = props => (
         {props.entries.map(entry =>
             <div key={entry.id} className='entry'>
                 <img src={entry.thumbnail_url} onClick={() => props.history.push(`/entry/${entry.id}`) }/>
-                <p> {entry.entryName} </p>
+                <p> {entry.name} </p>
             </div>)}
     </div>
 )

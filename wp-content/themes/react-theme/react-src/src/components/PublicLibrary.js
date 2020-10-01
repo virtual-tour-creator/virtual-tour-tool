@@ -33,8 +33,13 @@ class PublicLibrary extends React.Component {
                             .then(data => { 
                                 const entries = data.map( (entry) => {
                                     // console.log(entry);
-                                    const { id, thumbnail_url } = entry;
-                                    return { id, thumbnail_url };
+                                    const { id, thumbnail_url, title } = entry;
+                                    const e = {
+                                        id,
+                                        thumbnail_url,
+                                        name: title.rendered,
+                                    };
+                                    return e;
                                 });
                                 return { id, name, entries};
                             });
