@@ -65,7 +65,7 @@ function create_ACF_meta_in_REST() {
 				if ($fields == "") return [];
 				$area = [];
     			foreach ($fields as $field) {
-        			$area[] = $field->guid;
+        			$area[] = wp_get_attachment_url($field->ID);
     			}
     			return $area;
 			}
