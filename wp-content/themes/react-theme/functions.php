@@ -78,7 +78,8 @@ function create_ACF_meta_in_REST() {
     				$thumbnail = $metadata['sizes']['thumbnail']['file'];
     				$dir = dirname($metadata['file']) . "/";
 					$md = new MediaData();
-					$md->title = $metadata['image_meta']['title'];
+					//$md->title = $metadata['image_meta']['title'];
+					$md->title = $field->post_title;
 					$md->caption = $metadata['image_meta']['caption'];
 					$md->full_url = get_site_url() . "/wp-content/uploads/" . $metadata['file'];
 					$md->thumbnail_url = get_site_url() . "/wp-content/uploads/" . $dir . $thumbnail;
