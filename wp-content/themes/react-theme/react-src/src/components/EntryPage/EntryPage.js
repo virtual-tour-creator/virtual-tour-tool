@@ -51,21 +51,21 @@ const EntryPage = props => {
     if (entry.acf_media)
     {
         media = entry.acf_media.map((media) =>
-            <img src={media} alt={media}/>
+            <img src={media.thumbnail_url} />
         )
 
 
-        Photos = entry.ACF.media.map((media) => {
+        Photos = entry.acf_media.map((media) => {
             let photo = {};
-            photo['photo'] = media.guid;
-            photo['caption'] = media.post_title;
+            photo['photo'] = media.full_url;
+            photo['caption'] = media.title;
             return photo;
         }
         )
         
     }
 
-    console.log(Photos);
+    // console.log(Photos);
 
     // load tags
     let tag_lists = "None"
@@ -88,21 +88,22 @@ const EntryPage = props => {
                 </div>
                 <hr></hr>
                 {media}
+                <div className='gallery-test'>
+                    <button onClick={() => setIsOpen(true)}>View Details</button>
+                    <ReactBnbGallery
+                        show={isOpen}
+                        photos={Photos}
+                        onClose={() => setIsOpen(false)} />
+                    
+                </div>
                 <h2>Description</h2>
                 {getContent(entry)}
 
-                <h2>Related Topics is 1234 test</h2>
+                <h2>Related Topics</h2>
                 {tag_lists}
             </div>
 
-            <div className='gallery-test'>
-                <button onClick={() => setIsOpen(true)}>Open gallery</button>
-                <ReactBnbGallery
-                    show={isOpen}
-                    photos={Photos}
-                    onClose={() => setIsOpen(false)} />
-                
-            </div>
+            
         </div>);
 }
 

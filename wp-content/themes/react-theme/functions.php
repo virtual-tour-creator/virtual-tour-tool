@@ -50,6 +50,15 @@ function museum_custom_rest() {
 
 add_action("rest_api_init", "museum_custom_rest");
 
+class MediaData
+{
+    public $thumbnail_url;
+    public $full_url;
+    public $title;
+    public $caption;
+    public $alt_text;
+}
+
 function create_ACF_meta_in_REST() {
     $postypes_to_exclude = ['acf-field-group','acf-field'];
     $extra_postypes_to_include = ["page"];
@@ -65,7 +74,15 @@ function create_ACF_meta_in_REST() {
 				if ($fields == "") return [];
 				$area = [];
     			foreach ($fields as $field) {
-        			$area[] = wp_get_attachment_image_src($field->ID)[0];
+    				$metadata = wp_get_attachment_metadata($field->ID);
+    				$thumbnail = $metadata['sizes']['thumbnail']['file'];
+    				$dir = dirname($metadata['file']) . "/";
+					$md = new MediaData();
+					$md->title = $metadata['image_meta']['title'];
+					$md->caption = $metadata['image_meta']['caption'];
+					$md->full_url = get_site_url() . "/wp-content/uploads/" . $metadata['file'];
+					$md->thumbnail_url = get_site_url() . "/wp-content/uploads/" . $dir . $thumbnail;
+        			$area[] = $md;
     			}
     			return $area;
 			}
