@@ -12,7 +12,8 @@ class PublicLibrary extends React.Component {
     }
 
     componentDidMount() {
-        fetch('/wp-json/wp/v2/categories/')
+        let time =  new Date().getTime();
+        fetch('/wp-json/wp/v2/categories?timestamp=' + time)
         .then(res => res.json())
         .then((data) => {
             console.log(data);
@@ -28,7 +29,7 @@ class PublicLibrary extends React.Component {
             const allRequests = playlistInfo.map(playlist => 
                 {
                     const { id, name } = playlist;     
-                    return fetch('/wp-json/wp/v2/entry?categories=' + id)
+                    return fetch('/wp-json/wp/v2/entry?categories=' + id +'&timestamp=' + time)
                             .then(res => res.json())
                             .then(data => { 
                                 const entries = data.map( (entry) => {

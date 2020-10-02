@@ -28,10 +28,11 @@ const getContent = entry => {
 
 const EntryPage = props => {
     let id = props.match.params.entryId;
+    let time =  new Date().getTime();
     const [entry, setEntry] = useState([]);
     useEffect(() => {
         async function loadEntry() {
-            const response = await fetch('/wp-json/wp/v2/entry/' + id);
+            const response = await fetch('/wp-json/wp/v2/entry/' + id + '?timestamp=' + time);
             if(!response.ok) {
                 console.log(response);
                 return;
