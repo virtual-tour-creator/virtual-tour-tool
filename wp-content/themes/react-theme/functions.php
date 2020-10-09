@@ -18,32 +18,48 @@ function museum_features() {
 add_action("after_setup_theme", "museum_features");
 
 function museum_post_types() {
-	register_post_type("entry", array(
+	register_post_type("stop", array(
 		"show_in_rest" => true,
 		"supports" => array("title", "editor", "excerpt", "thumbnail"),
-		"rewrite" => array("slug", "entries"),
+		"rewrite" => array("slug", "stops"),
 		"has_archive" => true,
 		"public" => true,
 		"labels" => array(
-			"name" => "Entries",
-			"add_new_item" => "Add New Entry",
-			"edit_item" => "Edit Entry",
-			"all_items" => "All Entries",
-			"singular_name" => "Entry"
+			"name" => "Stops",
+			"add_new_item" => "Add New Stop",
+			"edit_item" => "Edit Stop",
+			"all_items" => "All Stops",
+			"singular_name" => "Stop"
 		),
 		"menu_icon" => "dashicons-calendar"
 	));
-	register_taxonomy_for_object_type("post_tag", "entry");
-	register_taxonomy_for_object_type('category', 'entry');
+	register_taxonomy_for_object_type("post_tag", "stop");
+	register_taxonomy_for_object_type('category', 'stop');
+	
+	register_post_type("tour", array(
+		"show_in_rest" => true,
+		"supports" => array("title", "editor", "excerpt", "thumbnail"),
+		"rewrite" => array("slug", "tours"),
+		"has_archive" => true,
+		"public" => true,
+		"labels" => array(
+			"name" => "Tours",
+			"add_new_item" => "Add New Tour",
+			"edit_item" => "Edit Tour",
+			"all_items" => "All Tours",
+			"singular_name" => "Tour"
+		),
+		"menu_icon" => "dashicons-calendar"
+	));
 }
 
 add_action("init", "museum_post_types");
 
 function museum_custom_rest() {
-	register_rest_field("entry", "tag_names", array(
+	register_rest_field("stop", "tag_names", array(
 		"get_callback" => function() {return [];}
 	));
-	register_rest_field("entry", "thumbnail_url", array(
+	register_rest_field("stop", "thumbnail_url", array(
 		"get_callback" => function() {return "";}
 	));
 }
@@ -67,7 +83,7 @@ function create_ACF_meta_in_REST() {
     array_push($post_types, $extra_postypes_to_include);
 
     foreach ($post_types as $post_type) {
-    	register_rest_field("entry", "acf_media", array(
+    	register_rest_field("stop", "acf_media", array(
 			"get_callback" => function($object) {
 				$ID = $object['id'];
 				$fields = get_fields($ID)['media'];
@@ -130,4 +146,4 @@ function ag_filter_post_json($response, $post, $context) {
     return $response;
 }
 
-add_filter( 'rest_prepare_entry', 'ag_filter_post_json', 10, 3 );
+add_filter( 'rest_prepare_stop', 'ag_filter_post_json', 10, 3 );

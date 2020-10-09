@@ -32,7 +32,7 @@ const EntryPage = props => {
     const [entry, setEntry] = useState([]);
     useEffect(() => {
         async function loadEntry() {
-            const response = await fetch('/wp-json/wp/v2/entry/' + id + '?timestamp=' + time);
+            const response = await fetch('/wp-json/wp/v2/stop/' + id + '?timestamp=' + time);
             if(!response.ok) {
                 console.log(response);
                 return;
