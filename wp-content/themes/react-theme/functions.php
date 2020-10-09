@@ -31,7 +31,7 @@ function museum_post_types() {
 			"all_items" => "All Stops",
 			"singular_name" => "Stop"
 		),
-		"menu_icon" => "dashicons-calendar"
+		"menu_icon" => "dashicons-location"
 	));
 	register_taxonomy_for_object_type("post_tag", "stop");
 	register_taxonomy_for_object_type('category', 'stop');
