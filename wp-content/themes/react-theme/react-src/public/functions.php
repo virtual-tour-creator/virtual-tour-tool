@@ -1,13 +1,14 @@
 <?php
 
-function museum_files() {
-	wp_localize_script("museum-js", "museumData", array(
-		"root_url" => get_site_url(),
-		"nonce" => wp_create_nonce("wp_rest")
-	));
-}
+// function museum_files() {
+// 	wp_localize_script("museum-js", "museumData", array(
+// 		"root_url" => get_site_url(),
+// 		"nonce" => wp_create_nonce("wp_rest")
+// 	));
+// }
 
-add_action("wp_enqueue_scripts", "museum_files");
+// add_action("wp_enqueue_scripts", "museum_files");
+
 
 function museum_features() {
 	add_theme_support("title-tag");
@@ -106,7 +107,7 @@ function expose_ACF_fields( $object ) {
 add_action( 'rest_api_init', 'create_ACF_meta_in_REST' );
 
 
-//Enqueue Theme JS with React Dependency
+// Enqueue Theme JS with React Dependency
 add_action( 'wp_enqueue_scripts', 'my_enqueue_theme_js' );
 function my_enqueue_theme_js() {
   wp_enqueue_script(
@@ -131,3 +132,31 @@ function ag_filter_post_json($response, $post, $context) {
 }
 
 add_filter( 'rest_prepare_entry', 'ag_filter_post_json', 10, 3 );
+
+
+// pass wordpress user info to react
+
+wp_register_script('my_react_app', '/../build/static/js/bundle.js');
+
+$userinfo = array(
+	'loginUrl' => wp_login_url(),
+	'logoutUrl' => wp_logout_url(),
+	'isLoggedIn' => is_user_logged_in(),
+	'signupUrl' => wp_registration_url()
+);
+
+wp_localize_script('my-react-app', 'userinfo', $userinfo);
+
+
+//login redirect (redirect if user is not logged in)
+function login_redirect() {
+
+    // Current Page
+    global $pagenow;
+    // Check to see if user in not logged in and not on the login page
+    if(!is_user_logged_in() && $pagenow != 'wp-login.php')
+          // If user is, Redirect to Login form.
+          auth_redirect();
+}
+// add the block of code above to the WordPress template
+add_action( 'wp', 'login_redirect' );

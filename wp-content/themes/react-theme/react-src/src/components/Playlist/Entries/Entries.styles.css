@@ -1,9 +1,13 @@
+* {
+    box-sizing: border-box;
+  }
+
 .entry > img {
     border-radius: 10px;
-    width: 258.78px;
-    height: 206.73px;
     left: 20px;
     top: 481px;
+    width: 258.78px;
+    height: 206.73px;
 }
 
 .entry > p {
@@ -17,7 +21,6 @@
     flex-direction: row;
     width: 97vw;
     margin: 0 auto;
-    display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-gap: 16px;
 }

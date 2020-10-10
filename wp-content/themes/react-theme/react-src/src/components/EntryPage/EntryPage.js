@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom';
 import './EntryPage.styles.css';
 
 import ReactBnbGallery from 'react-bnb-gallery';
+import ImageGallery from 'react-image-gallery';
 
 import 'react-bnb-gallery/dist/style.css'
+import Collapsible from 'react-collapsible';
 
 // //data field
 // import PlaylistsData from '../data/data.json';
@@ -43,23 +45,24 @@ const EntryPage = props => {
         }
         
         loadEntry();
-    }, [])
+    })
 
 
     // load media
     let media = "None";
-    let Photos = 'None';
+    let Photos = [];
     if (entry.acf_media)
     {
         media = entry.acf_media.map((media) =>
-            <img src={media.thumbnail_url} />
+            <img alt='media' src={media.thumbnail_url} />
         )
 
 
         Photos = entry.acf_media.map((media) => {
             let photo = {};
-            photo['photo'] = media.full_url;
-            photo['caption'] = media.title;
+            photo['original'] = media.full_url;
+            photo['thumbnail'] = media.thumbnail_url;
+            photo['description'] = media.title;
             return photo;
         }
         )
@@ -77,31 +80,40 @@ const EntryPage = props => {
         );
     }
     
-    const [isOpen, setIsOpen] = useState(false);
+    // const [isOpen, setIsOpen] = useState(false);
 
 
     return(
         <div className='entry-page'>
+            <a className='close-icon' href="/"><i className="fas fa-times"></i></a>
             <div className='entry-container'>
                 <div className='entry-header'>
                     <h1>{entry.title? entry.title.rendered : "loading"}</h1>
-                    <Link className='close-icon' to="/">Close</Link>
                 </div>
                 <hr></hr>
-                {media}
-                <div className='gallery-test'>
+                {/* <div className='gallery-test'>
                     <button onClick={() => setIsOpen(true)}>View Details</button>
                     <ReactBnbGallery
                         show={isOpen}
                         photos={Photos}
                         onClose={() => setIsOpen(false)} />
                     
+                </div> */}
+                <div id="image-gallery">
+                    <ImageGallery items={Photos} />
                 </div>
-                <h2>Description</h2>
-                {getContent(entry)}
+                
+                
+                <Collapsible trigger="Description" open="true">
+                    {getContent(entry)}
+                </Collapsible>
+               
+                <Collapsible trigger="Related Topics" open="true">
+                    {tag_lists}
+                </Collapsible>
 
-                <h2>Related Topics</h2>
-                {tag_lists}
+                
+
             </div>
 
             
@@ -109,3 +121,4 @@ const EntryPage = props => {
 }
 
 export default EntryPage;
+

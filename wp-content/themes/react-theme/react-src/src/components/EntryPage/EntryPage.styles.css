@@ -1,13 +1,50 @@
+@import "~react-image-gallery/styles/css/image-gallery.css";
+
 .entry-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding-bottom: 100px;
+    overflow: auto;
     background-color: #000;
     color:white;
-    height: 100vh;
 }
 
 .entry-container {
-    padding: 100px;
+    padding-top: 5%;
+    padding-left: 15%;
+    padding-right: 15%;
+
 }
 
 .close-icon {
     float: right;
+    padding-right: 10%;
+    color: white;
+    font-size: 30px;
+    padding-top: 3%
+}
+
+.Collapsible {
+    font-family: Roboto;
+    font-size: 1.2em;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-top: 20px;
+}
+
+.Collapsible__trigger {
+    font-size: 2em;
+}
+
+.Collapsible__trigger:hover {
+    opacity: .8;
+}
+
+#image-gallery {
+    margin: auto;
+    width: 80%;
+    padding: 10px;
 }
