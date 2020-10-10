@@ -41,7 +41,7 @@
         Learn how to configure a non-root public URL by running `npm run wpbuild`.
     -->
     <title>Museum.Live with React</title>
-<link href="/wp-content/themes/react-theme/static/css/1.chunk.css?113953af0b863db66837" rel="stylesheet"><link href="/wp-content/themes/react-theme/static/css/main.chunk.css?113953af0b863db66837" rel="stylesheet"></head>
+<link href="/wp-content/themes/react-theme/static/css/1.chunk.css?f93fff28bbd9c1bc9db3" rel="stylesheet"><link href="/wp-content/themes/react-theme/static/css/main.chunk.css?f93fff28bbd9c1bc9db3" rel="stylesheet"></head>
     <body>
     <noscript>
         You need to enable JavaScript to run this app.
@@ -80,5 +80,13 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <script src="/wp-content/themes/react-theme/static/js/bundle.js?113953af0b863db66837"></script><script src="/wp-content/themes/react-theme/static/js/1.chunk.js?113953af0b863db66837"></script><script src="/wp-content/themes/react-theme/static/js/main.chunk.js?113953af0b863db66837"></script></body>
+    <script>
+       window.reactInit = {
+         userData: "<?php echo wp_login_url(); ?>",
+         logoutUrl: "<?php echo wp_logout_url(); ?>",
+         username: "<?php echo $current_user->display_name; ?>"
+       };
+    </script>
+    <script src="https://kit.fontawesome.com/91b7b285ec.js" crossorigin="anonymous"></script>
+    <script src="/wp-content/themes/react-theme/static/js/bundle.js?f93fff28bbd9c1bc9db3"></script><script src="/wp-content/themes/react-theme/static/js/1.chunk.js?f93fff28bbd9c1bc9db3"></script><script src="/wp-content/themes/react-theme/static/js/main.chunk.js?f93fff28bbd9c1bc9db3"></script></body>
 </html>
