@@ -29,7 +29,7 @@ class PublicLibrary extends React.Component {
             const allRequests = playlistInfo.map(playlist => 
                 {
                     const { id, name } = playlist;     
-                    return fetch('/wp-json/wp/v2/entry?categories=' + id +'&timestamp=' + time)
+                    return fetch('/wp-json/wp/v2/stop?categories=' + id +'&timestamp=' + time)
                             .then(res => res.json())
                             .then(data => { 
                                 const entries = data.map( (entry) => {

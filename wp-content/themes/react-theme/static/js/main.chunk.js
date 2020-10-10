@@ -128,7 +128,7 @@ const EntryPage = props => {
   const [entry, setEntry] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
     async function loadEntry() {
-      const response = await fetch('/wp-json/wp/v2/entry/' + id + '?timestamp=' + time);
+      const response = await fetch('/wp-json/wp/v2/stop/' + id + '?timestamp=' + time);
 
       if (!response.ok) {
         console.log(response);
@@ -676,7 +676,7 @@ class PublicLibrary extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compone
           id,
           name
         } = playlist;
-        return fetch('/wp-json/wp/v2/entry?categories=' + id + '&timestamp=' + time).then(res => res.json()).then(data => {
+        return fetch('/wp-json/wp/v2/stop?categories=' + id + '&timestamp=' + time).then(res => res.json()).then(data => {
           const entries = data.map(entry => {
             // console.log(entry);
             const {
