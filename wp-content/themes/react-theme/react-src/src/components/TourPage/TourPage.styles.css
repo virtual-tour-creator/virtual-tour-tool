@@ -1,0 +1,11 @@
+#tour-info-form {
+    width: 30%;
+    margin-left: 20px;
+}
+
+.stop {
+    float: left;
+    width: 200px;
+    height: 200px;
+    margin: .5em;
+}

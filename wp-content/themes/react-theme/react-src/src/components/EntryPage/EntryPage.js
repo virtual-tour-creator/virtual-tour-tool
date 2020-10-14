@@ -39,6 +39,9 @@ const EntryPage = props => {
     let Photos = [];
     if (entry.acf_media)
     {
+        media = entry.acf_media.map((media) =>
+            <img alt='media' src={media.thumbnail_url} />
+        )
 
 
         Photos = entry.acf_media.map((media) => {

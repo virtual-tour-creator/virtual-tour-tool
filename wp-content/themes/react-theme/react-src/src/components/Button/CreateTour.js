@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// or less ideally
 import { Button, Modal, Form } from 'react-bootstrap';
 import './CreateTour.styles.css'
 
