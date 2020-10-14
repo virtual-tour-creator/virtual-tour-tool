@@ -63,6 +63,9 @@ function museum_custom_rest() {
 	register_rest_field("stop", "thumbnail_url", array(
 		"get_callback" => function() {return "";}
 	));
+	register_rest_field("tour", "stops", array(
+		"get_callback" => function() {return [];}
+	));
 }
 
 add_action("rest_api_init", "museum_custom_rest");

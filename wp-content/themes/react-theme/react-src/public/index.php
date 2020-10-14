@@ -77,7 +77,8 @@
        window.reactInit = {
          userData: "<?php echo wp_login_url(); ?>",
          logoutUrl: "<?php echo wp_logout_url(); ?>",
-         username: "<?php echo $current_user->display_name; ?>"
+         username: "<?php echo $current_user->display_name; ?>",
+         nonce: "<?php echo wp_create_nonce("wp_rest"); ?>"
        };
     </script>
     <script src="https://kit.fontawesome.com/91b7b285ec.js" crossorigin="anonymous"></script>
