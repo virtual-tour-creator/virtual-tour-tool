@@ -2,11 +2,53 @@ import React, { useState } from 'react';
 import { Button, Modal, Form } from 'react-bootstrap';
 import './CreateTour.styles.css'
 
+async function createTour(title, setNewTourId) {
+    const data = {
+      "title": title,
+      "status": "publish"
+    };
+
+    const response = await fetch('/wp-json/wp/v2/tour/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-WP-Nonce': reactInit.nonce
+        },
+        body: JSON.stringify(data)
+    });
+
+    if(!response.ok) {
+        console.log(response);
+        return;
+    }
+
+    const tour = await response.json();
+    setNewTourId(tour.id);
+    console.log(tour);
+}
+
 function CreateTour() {
     const [show, setShow] = useState(false);
+    const [tourTitle, setTourTitle] = useState("");
+    const [isPrivate, setPrivate] = useState(true);
+    const [tourDate, setTourDate] = useState("");
+
+    // TODO: save the new id somewhere else in library/my tour component
+    const [newTourId, setNewTourId] = useState(-1);
   
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const handleCreate = (title, event) => {
+      // TODO: validate
+      if (!title || title.length === 0)
+      {
+        console.log("Empty tour name is not allowed");
+        return;
+      }
+      // create new 
+      createTour(title, setNewTourId);
+      setShow(false);
+    };
   
     return (
       <>
@@ -24,7 +66,7 @@ function CreateTour() {
 
             <Form.Group>
                 <Form.Label>Tour Name</Form.Label>
-                <Form.Control type="text" />
+                <Form.Control type="text" onChange={event => setTourTitle(event.target.value)} />
                 {/* <Form.Text className="text-muted">
                 We'll never share your email with anyone else.
                 </Form.Text> */}
@@ -32,7 +74,7 @@ function CreateTour() {
 
             <Form.Group>
                 <Form.Label>Tour Date</Form.Label>
-                <Form.Control type="date" />
+                <Form.Control type="date" onChange={event => setTourDate(event.target.value)}/>
             </Form.Group>
 
             <Form.Group>
@@ -50,7 +92,7 @@ function CreateTour() {
           </Modal.Body>
 
           <Modal.Footer>
-            <Button variant="primary" onClick={handleClose}>
+            <Button variant="primary" onClick={handleCreate.bind(this, tourTitle)}>
               Save Changes
             </Button>
           </Modal.Footer>
