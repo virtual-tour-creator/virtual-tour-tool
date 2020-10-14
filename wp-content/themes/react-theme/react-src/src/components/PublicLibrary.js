@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from './Navbar/Navbar';
 import Jumbotron from './Jumbotron/Jumbotron';
 import Playlist from './Playlist/Playlist';
+import CreateTour from './Button/CreateTour';
 
 class PublicLibrary extends React.Component {
     constructor() {
@@ -63,6 +64,7 @@ class PublicLibrary extends React.Component {
             <div className="public-library">
                 <Navbar />
                 <Jumbotron />
+                <CreateTour />
                 <Playlist playlists={this.state.playlists} />
             </div>
         )

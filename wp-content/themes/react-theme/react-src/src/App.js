@@ -4,6 +4,8 @@ import "./App.css";
 import PublicLibrary from './components/PublicLibrary';
 import EntryPage from './components/EntryPage/EntryPage';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
     return (

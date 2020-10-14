@@ -1,25 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import './EntryPage.styles.css';
 
-import ReactBnbGallery from 'react-bnb-gallery';
 import ImageGallery from 'react-image-gallery';
 
 import 'react-bnb-gallery/dist/style.css'
 import Collapsible from 'react-collapsible';
 
-// //data field
-// import PlaylistsData from '../data/data.json';
-
-
-// // for temporary use. Replace with entry link when inserting data
-// const allEntries = []
-
-// for(let i=0; i<PlaylistsData.length; i++) {
-//     for(let j=0; j<PlaylistsData[i]['entries'].length; j++){
-//         allEntries.push(PlaylistsData[i]['entries'][j]);
-//     }
-// }
 
 const getContent = entry => {
     if (entry.content) 
@@ -53,9 +39,6 @@ const EntryPage = props => {
     let Photos = [];
     if (entry.acf_media)
     {
-        media = entry.acf_media.map((media) =>
-            <img alt='media' src={media.thumbnail_url} />
-        )
 
 
         Photos = entry.acf_media.map((media) => {

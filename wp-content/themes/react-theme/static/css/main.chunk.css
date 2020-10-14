@@ -78,6 +78,17 @@ body {
     font-size: 40px;
     line-height: 53px;
 }
+#create-button {
+    background: #000;
+    color: #fff;
+    float: right;
+    margin-right: 2%;
+}
+
+.btn-primary {
+    background: #000;
+    color: #fff;
+}
 .entry-page {
     position: fixed;
     top: 0;
