@@ -13,7 +13,7 @@ function App() {
         <div className='App'>
             <Route exact path='/' component={PublicLibrary} />
             <Route exact path='/entry/:entryId' component={EntryPage} />
-            <Route exact path='/tour' component={TourPage} />
+            <Route exact path='/tour/:tourId' component={TourPage} />
             
             
         </div>

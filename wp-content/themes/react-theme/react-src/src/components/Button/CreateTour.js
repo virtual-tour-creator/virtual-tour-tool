@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Modal, Form } from 'react-bootstrap';
+import { withRouter } from 'react-router-dom';
 import './CreateTour.styles.css'
 
 async function createTour(title, setNewTourId) {
@@ -25,9 +26,10 @@ async function createTour(title, setNewTourId) {
     const tour = await response.json();
     setNewTourId(tour.id);
     console.log(tour);
+
 }
 
-function CreateTour() {
+function CreateTour(props) {
     const [show, setShow] = useState(false);
     const [tourTitle, setTourTitle] = useState("");
     const [isPrivate, setPrivate] = useState(true);
@@ -48,6 +50,8 @@ function CreateTour() {
       // create new 
       createTour(title, setNewTourId);
       setShow(false);
+      //redirect to tour page
+      props.history.push(`/tour/${newTourId}`)
     };
   
     return (
@@ -101,5 +105,5 @@ function CreateTour() {
     );
   }
 
-  export default CreateTour;
+  export default withRouter(CreateTour);
 

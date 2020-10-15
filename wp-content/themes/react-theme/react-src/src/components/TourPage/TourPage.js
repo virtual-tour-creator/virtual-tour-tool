@@ -10,27 +10,16 @@ import './TourPage.styles.css'
 class TourPage extends React.Component {
     constructor() {
         super();
+        //to be populated!
         this.state = {
             'id': 1,
             'name': 'Matisse in the Cone Wing',
             'visibility': 'public',
             'date': '',
-            'stops': [
-                {
-                    'id': 1,
-                    'thumbnailUrl':'https://via.placeholder.com/150',
-                    'name': 'Cone Wing'
-                },
-                {
-                    'id': 2,
-                    'thumbnailUrl':'https://via.placeholder.com/150',
-                    'name': 'About the Sisters'
-                }
-                ]
+            'stops': []
         };
     }
     
-
 
     handleAddedStops = (selectedStops) => {
         let joined = this.state.stops.concat(selectedStops);
@@ -48,7 +37,7 @@ class TourPage extends React.Component {
     
                     <Form.Group>
                         <Form.Label>Tour Name</Form.Label>
-                        <Form.Control type="text" />
+                        <Form.Control type="text" value={this.state.name} />
                         {/* <Form.Text className="text-muted">
                         We'll never share your email with anyone else.
                         </Form.Text> */}
@@ -56,7 +45,7 @@ class TourPage extends React.Component {
     
                     <Form.Group>
                         <Form.Label>Tour Date</Form.Label>
-                        <Form.Control type="date" />
+                        <Form.Control type="date" value={this.state.date} />
                     </Form.Group>
     
                     <Form.Group>
