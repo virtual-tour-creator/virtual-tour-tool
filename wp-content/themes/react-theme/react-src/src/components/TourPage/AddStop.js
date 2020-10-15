@@ -112,11 +112,32 @@ class AddStop extends React.Component {
     constructor(props) {
         super();
         this.state = {
-            show: false
+            show: false,
+            backendStops: []
         }
     }
     
+
     // const [show, setShow] = useState(false);
+
+    componentDidMount() {
+      let time =  new Date().getTime();
+      fetch('/wp-json/wp/v2/stop?timestamp=' + time)
+      .then(res => res.json())
+      .then((data) => {
+          // console.log(data);
+          let allStopsInfo = data.map((stop) => {
+              const {id, thumbnail_url, title} = stop;
+              let stopInfo = {
+                'id': id,
+                'thumbnailUrl': thumbnail_url,
+                'name': title.rendered
+              };
+              return stopInfo
+          });
+          this.setState({ backendStops: allStopsInfo });
+      });
+    }
 
     handleShow = () => this.setState({show: true})
 
@@ -134,6 +155,7 @@ class AddStop extends React.Component {
     //     </div>)
     
     render() {
+        const { backendStops } = this.state;
         return (
             <>
               <Button variant="primary" onClick={this.handleShow} id='add-stop-button'>

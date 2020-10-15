@@ -3,7 +3,7 @@ import { Button, Modal, Form } from 'react-bootstrap';
 import { withRouter } from 'react-router-dom';
 import './CreateTour.styles.css'
 
-async function createTour(title, setNewTourId) {
+async function createTour(title) {
     const data = {
       "title": title,
       "status": "publish"
@@ -20,13 +20,11 @@ async function createTour(title, setNewTourId) {
 
     if(!response.ok) {
         console.log(response);
-        return;
+        return -1;
     }
 
     const tour = await response.json();
-    setNewTourId(tour.id);
-    console.log(tour);
-
+    return tour.id;
 }
 
 function CreateTour(props) {
@@ -48,10 +46,16 @@ function CreateTour(props) {
         return;
       }
       // create new 
-      createTour(title, setNewTourId);
-      setShow(false);
-      //redirect to tour page
-      props.history.push(`/tour/${newTourId}`)
+      createTour(title).then((id) => {
+        setShow(false);
+        // TODO: check created id 
+        if (id == -1)
+        {
+          return;
+        }
+        // redirect
+        props.history.push(`/tour/${id}`);
+      });      
     };
   
     return (
