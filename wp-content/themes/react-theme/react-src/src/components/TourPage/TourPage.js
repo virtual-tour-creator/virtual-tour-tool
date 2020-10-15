@@ -31,6 +31,9 @@ class TourPage extends React.Component {
             return parseInt(idStr);
         }) : [];
         info.stopIds = stops;
+        res = content.match(/<h2>.+<\/h2>/gm);
+        let date = res ? res[0].slice(4, -5).split(":")[1] : "";
+        info.tourDate = date;
         return info;
     }
 
@@ -45,6 +48,7 @@ class TourPage extends React.Component {
             console.log(parsedContent);
             this.setState({
                 'name': title.rendered,
+                'date': parsedContent.tourDate
             });
             // Get all stop details
             const allRequests = parsedContent.stopIds.map(tourId => 
@@ -95,7 +99,7 @@ class TourPage extends React.Component {
     getContentString() {
         let str = "<ol>"
 
-        const { stops } = this.state;
+        const { stops, date } = this.state;
         stops.map(stop => {
             const { id } = stop;
             str += "<li>";
@@ -103,6 +107,9 @@ class TourPage extends React.Component {
             str += "</li>"
         });
         str += "</ol>"
+        str += "<h2>TourDate:";
+        str += date;
+        str += "</h2>";
         return str;
     }
 

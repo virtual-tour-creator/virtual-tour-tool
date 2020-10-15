@@ -3,10 +3,11 @@ import { Button, Modal, Form } from 'react-bootstrap';
 import { withRouter } from 'react-router-dom';
 import './CreateTour.styles.css'
 
-async function createTour(title) {
+async function createTour(title, date) {
     const data = {
       "title": title,
-      "status": "publish"
+      "status": "publish",
+      "content": "<h2>TourDate:" + date + "</h2>"
     };
 
     const response = await fetch('/wp-json/wp/v2/tour/', {
@@ -38,7 +39,7 @@ function CreateTour(props) {
   
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    const handleCreate = (title, event) => {
+    const handleCreate = (title, date, event) => {
       // TODO: validate
       if (!title || title.length === 0)
       {
@@ -46,7 +47,7 @@ function CreateTour(props) {
         return;
       }
       // create new 
-      createTour(title).then((id) => {
+      createTour(title, date).then((id) => {
         setShow(false);
         // TODO: check created id 
         if (id == -1)
@@ -100,7 +101,7 @@ function CreateTour(props) {
           </Modal.Body>
 
           <Modal.Footer>
-            <Button variant="primary" onClick={handleCreate.bind(this, tourTitle)}>
+            <Button variant="primary" onClick={handleCreate.bind(this, tourTitle, tourDate)}>
               Save Changes
             </Button>
           </Modal.Footer>
