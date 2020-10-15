@@ -46,8 +46,30 @@ class TourPage extends React.Component {
             this.setState({
                 'name': title.rendered,
             });
+            // Get all stop details
+            const allRequests = parsedContent.stopIds.map(tourId => 
+                {   
+                    return fetch('/wp-json/wp/v2/stop/' + tourId +'?timestamp=' + time)
+                            .then(res => res.json())
+                            .then(data => { 
+                                const { id, thumbnail_url, title } = data;
+                                const stop = {
+                                    "id": id,
+                                    "thumbnailUrl": thumbnail_url,
+                                    "name": title.rendered,
+                                };
+                                return stop;
+                            });
+                }            
+            );
+            // wait for all requests to finish
+            return Promise.all(allRequests);
         })
-        // TODO: Get all stop details
+        .then(allStops => {
+            this.setState({
+                'stops': allStops
+            });
+        });
     }
 
     handleAddedStops = (selectedStops) => {
