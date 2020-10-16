@@ -4,20 +4,22 @@ import { Form, Button } from 'react-bootstrap';
 import Navbar from '../Navbar/Navbar';
 import Jumbotron from '../Jumbotron/Jumbotron';
 import AddStop from './AddStop'
+import CurrentStops from './CurrentStops'
 
 import './TourPage.styles.css'
 
 class TourPage extends React.Component {
     constructor(props) {
         super(props);
-        //to be populated!
+        //initial state
         this.state = {
             'id': props.match.params.tourId,
-            'name': 'Matisse in the Cone Wing',
+            'name': '',
             'visibility': 'public',
             'date': '',
             'stops': []
         };
+        this.handleRemoveStop = this.handleRemoveStop.bind(this);
     }
     
     parseContent(content) {
@@ -74,11 +76,6 @@ class TourPage extends React.Component {
                 'stops': allStops
             });
         });
-    }
-
-    handleAddedStops = (selectedStops) => {
-        let joined = this.state.stops.concat(selectedStops);
-        this.setState({'stops':joined});
     }
        
     async deleteTour() {
@@ -150,6 +147,20 @@ class TourPage extends React.Component {
         });
     }
 
+
+    handleAddedStops = (selectedStops) => {
+        let joined = this.state.stops.concat(selectedStops);
+        this.setState({'stops':joined});
+    }
+
+    handleRemoveStop = (index) => {
+        let stops = this.state.stops;
+        let removed = stops.splice(index, 1);
+        this.setState({
+            'stops': removed
+        })
+    }
+
     render() {
         return (
             <div>
@@ -190,12 +201,10 @@ class TourPage extends React.Component {
                 </Button>
                 <AddStop onSelectStops={this.handleAddedStops} />
                 <br></br>
+
+                {/* draggable stop boxes */}
                 <h1>Current Stops:</h1>
-                {this.state.stops.map(singleStop =>
-                    <div className='stop'>
-                        <img alt='stop' src={singleStop.thumbnailUrl} />
-                        <p> {singleStop.name} </p>
-                    </div>)}
+                <CurrentStops stops={this.state.stops} onRemoveStop={this.handleRemoveStop} />
                 
             </div>
         )

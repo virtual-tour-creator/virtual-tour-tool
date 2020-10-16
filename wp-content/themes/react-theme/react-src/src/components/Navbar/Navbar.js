@@ -6,8 +6,8 @@ class Navbar extends React.Component {
         return (
             <nav className="navbar navbar-dark navbar-expand-md">
             <a className="navbar-brand" href="/">PATRIMONIO NACIONAL</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span className="navbar-toggler-icon"></span>
             </button>
             <div className="navbar-dark collapse navbar-collapse" id="navbarNav">
                 <ul className="ml-auto navbar-nav">

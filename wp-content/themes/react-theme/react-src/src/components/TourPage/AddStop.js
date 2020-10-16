@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Button, Modal, Col } from 'react-bootstrap';
+import React from 'react';
+import { Button, Modal } from 'react-bootstrap';
 
 import StopCard from './StopCard'
 import './TourPage.styles.css'
