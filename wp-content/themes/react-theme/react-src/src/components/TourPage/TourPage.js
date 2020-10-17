@@ -19,7 +19,8 @@ class TourPage extends React.Component {
             'name': '',
             'visibility': 'public',
             'date': '',
-            'stops': []
+            'stops': [],
+            'mode': 'view',
         };
         this.handleRemoveStop = this.handleRemoveStop.bind(this);
     }
@@ -134,12 +135,93 @@ class TourPage extends React.Component {
         console.log(tour);
     }
 
-    handleDoneEditing() {
-        const content = this.getContentString();
-        this.updateTour(content).then(() => {
-            // show notice after update is done?
-        });
+    //////////Edit vs. View mode///////////
+
+    //toggling editing mode
+    handleEditing() {
+        if(this.state.mode === 'edit') {
+            const content = this.getContentString();
+            this.updateTour(content).then(() => {
+                // show notice after update is done?
+                //toggle editing mode
+            });
+            this.setState({'mode': 'view'});
+            document.getElementById('update-stop-button').innerHTML = 'Edit this tour';
+        } if(this.state.mode === 'view') {
+            this.setState({'mode': 'edit'});
+            document.getElementById('update-stop-button').innerHTML = 'Done Editing';
+        }
+        
     }
+
+    renderTourInfo() {
+        if(this.state.mode === 'edit') {
+            return(
+                <Form>
+                <Form.Group>
+                    <Form.Label>Tour Name</Form.Label>
+                    <Form.Control type="text" value={this.state.name} onChange={e => this.setState({name: e.target.value})}/>
+                    {/* <Form.Text className="text-muted">
+                    We'll never share your email with anyone else.
+                    </Form.Text> */}
+                </Form.Group>
+
+                <Form.Group>
+                    <Form.Label>Tour Date</Form.Label>
+                    <Form.Control type="date" value={this.state.date} onChange={e => this.setState({date: e.target.value})}/>
+                </Form.Group>
+
+                <Form.Group>
+
+                    <Form.Label>Tour Visibility</Form.Label>
+                    <Form.Check type='radio' id='default-radio' label='Public' name='tourTypeRadio' />
+                    <Form.Check type='radio' label='Private' id='disabled-default-radio' name='tourTypeRadio' />
+
+                </Form.Group>
+    
+                </Form>
+            )
+            
+        } if (this.state.mode === 'view') {
+            return(
+                <div>
+                    <h1>{this.state.name}</h1> <p>{this.state.date}</p>
+                </div>
+            )
+        }
+    }
+
+    renderTourStops() {
+        if(this.state.mode === 'edit') {
+            return(
+                <div id='tour-stops'>
+                    {/* draggable stop boxes */}
+                    <StopBoxList 
+                        stops={this.state.stops} 
+                        onRemoveStop={this.handleRemoveStop}
+                        onSortEnd={this.onSortEnd}
+                        axis='xy'/>
+                    <AddStop onSelectStops={this.handleAddedStops} />
+                </div>
+                
+            )
+        } if(this.state.mode === 'view') {
+            return(
+                <div id='view-stop-box-list'>
+                    {this.state.stops.map(singleStop => (
+                        <div className="view-stop-box">
+                            <img alt='stop' src={singleStop.thumbnailUrl} />
+                            <p> {singleStop.name} </p>
+                        </div>
+                    ))}
+                </div>
+            )
+        }
+    }
+
+
+
+
 
     handleDelete() {
         // confirmation overlay?
@@ -165,8 +247,6 @@ class TourPage extends React.Component {
     }
 
     onSortEnd = ({oldIndex, newIndex}) => {
-        console.log(this.state.stops);
-        console.log(arrayMove);
         const newArray = arrayMove(this.state.stops, oldIndex, newIndex);
         this.setState({
             'stops': newArray
@@ -180,47 +260,17 @@ class TourPage extends React.Component {
                 <Jumbotron />
     
                 <div id='tour-info-form'>
-                    <Form>
-    
-                    <Form.Group>
-                        <Form.Label>Tour Name</Form.Label>
-                        <Form.Control type="text" value={this.state.name} onChange={e => this.setState({name: e.target.value})}/>
-                        {/* <Form.Text className="text-muted">
-                        We'll never share your email with anyone else.
-                        </Form.Text> */}
-                    </Form.Group>
-    
-                    <Form.Group>
-                        <Form.Label>Tour Date</Form.Label>
-                        <Form.Control type="date" value={this.state.date} onChange={e => this.setState({date: e.target.value})}/>
-                    </Form.Group>
-    
-                    <Form.Group>
-    
-                        <Form.Label>Tour Visibility</Form.Label>
-                        <Form.Check type='radio' id='default-radio' label='Public' name='tourTypeRadio' />
-                        <Form.Check type='radio' label='Private' id='disabled-default-radio' name='tourTypeRadio' />
-    
-                    </Form.Group>
-    
-                    </Form>
+                    {this.renderTourInfo()}
                 </div>
                 <Button variant="primary" onClick={this.handleDelete.bind(this)} id='delete-stop-button'>
                   Delete Tour
                 </Button>
-                <Button variant="primary" onClick={this.handleDoneEditing.bind(this)} id='update-stop-button'>
-                  Done
+                <Button variant="primary" onClick={this.handleEditing.bind(this)} id='update-stop-button'>
+                  Edit this tour
                 </Button>
-                <AddStop onSelectStops={this.handleAddedStops} />
                 <br></br>
 
-                {/* draggable stop boxes */}
-                <h1>Current Stops:</h1>
-                <StopBoxList 
-                    stops={this.state.stops} 
-                    onRemoveStop={this.handleRemoveStop}
-                    onSortEnd={this.onSortEnd}
-                    axis='xy'/>
+                {this.renderTourStops()}
                 
             </div>
         )

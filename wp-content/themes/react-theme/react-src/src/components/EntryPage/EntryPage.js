@@ -107,4 +107,3 @@ const EntryPage = props => {
 }
 
 export default EntryPage;
-

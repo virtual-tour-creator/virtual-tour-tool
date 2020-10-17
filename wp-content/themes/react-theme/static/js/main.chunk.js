@@ -1298,11 +1298,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_sortable_hoc__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-sortable-hoc */ "./node_modules/react-sortable-hoc/dist/react-sortable-hoc.esm.js");
 var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/TourPage/CurrentStops.js";
 
- // const tempStyles = {
-//     root: {
-//         width: "20%";
-//     }
-// }
 
 const StopBox = Object(react_sortable_hoc__WEBPACK_IMPORTED_MODULE_1__["SortableElement"])(({
   singleStop,
@@ -1313,7 +1308,7 @@ const StopBox = Object(react_sortable_hoc__WEBPACK_IMPORTED_MODULE_1__["Sortable
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14,
+      lineNumber: 7,
       columnNumber: 9
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -1322,14 +1317,14 @@ const StopBox = Object(react_sortable_hoc__WEBPACK_IMPORTED_MODULE_1__["Sortable
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15,
+      lineNumber: 8,
       columnNumber: 13
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16,
+      lineNumber: 9,
       columnNumber: 13
     }
   }, " ", singleStop.name, " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -1337,7 +1332,7 @@ const StopBox = Object(react_sortable_hoc__WEBPACK_IMPORTED_MODULE_1__["Sortable
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17,
+      lineNumber: 10,
       columnNumber: 13
     }
   }, "Remove"));
@@ -1350,7 +1345,7 @@ const StopBoxList = Object(react_sortable_hoc__WEBPACK_IMPORTED_MODULE_1__["Sort
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26,
+      lineNumber: 19,
       columnNumber: 13
     }
   }, stops.map((singleStop, index) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1359,7 +1354,7 @@ const StopBoxList = Object(react_sortable_hoc__WEBPACK_IMPORTED_MODULE_1__["Sort
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28,
+      lineNumber: 21,
       columnNumber: 17
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(StopBox, {
@@ -1370,30 +1365,11 @@ const StopBoxList = Object(react_sortable_hoc__WEBPACK_IMPORTED_MODULE_1__["Sort
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29,
+      lineNumber: 22,
       columnNumber: 21
     }
   }))));
-}); // class CurrentStops extends React.Component {
-//     constructor(props) {
-//         super(props);
-//     }
-//     handleRemove = (index) => {
-//         this.props.onRemoveStop(index);
-//     }
-//     render() {
-//         return(
-//             <div>
-//                 <StopBoxList 
-//                     stops={this.props.stops} 
-//                     handleRemove={this.handleRemove}
-//                     axis='xy'
-//                     onSortEnd={() => this.props.onSortEnd}/>
-//             </div>
-//         )
-//     }
-// }
-
+});
 /* harmony default export */ __webpack_exports__["default"] = (StopBoxList);
 
 /***/ }),
@@ -1587,8 +1563,6 @@ class TourPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       oldIndex,
       newIndex
     }) => {
-      console.log(this.state.stops);
-      console.log(array_move__WEBPACK_IMPORTED_MODULE_6___default.a);
       const newArray = array_move__WEBPACK_IMPORTED_MODULE_6___default()(this.state.stops, oldIndex, newIndex);
       this.setState({
         'stops': newArray
@@ -1600,7 +1574,8 @@ class TourPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       'name': '',
       'visibility': 'public',
       'date': '',
-      'stops': []
+      'stops': [],
+      'mode': 'view'
     };
     this.handleRemoveStop = this.handleRemoveStop.bind(this);
   }
@@ -1724,12 +1699,223 @@ class TourPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
 
     const tour = await response.json();
     console.log(tour);
+  } //////////Edit vs. View mode///////////
+  //toggling editing mode
+
+
+  handleEditing() {
+    if (this.state.mode === 'edit') {
+      const content = this.getContentString();
+      this.updateTour(content).then(() => {// show notice after update is done?
+        //toggle editing mode
+      });
+      this.setState({
+        'mode': 'view'
+      });
+      document.getElementById('update-stop-button').innerHTML = 'Edit this tour';
+    }
+
+    if (this.state.mode === 'view') {
+      this.setState({
+        'mode': 'edit'
+      });
+      document.getElementById('update-stop-button').innerHTML = 'Done Editing';
+    }
   }
 
-  handleDoneEditing() {
-    const content = this.getContentString();
-    this.updateTour(content).then(() => {// show notice after update is done?
-    });
+  renderTourInfo() {
+    if (this.state.mode === 'edit') {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"], {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 160,
+          columnNumber: 17
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Group, {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 161,
+          columnNumber: 17
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Label, {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 162,
+          columnNumber: 21
+        }
+      }, "Tour Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Control, {
+        type: "text",
+        value: this.state.name,
+        onChange: e => this.setState({
+          name: e.target.value
+        }),
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 163,
+          columnNumber: 21
+        }
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Group, {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 169,
+          columnNumber: 17
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Label, {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 170,
+          columnNumber: 21
+        }
+      }, "Tour Date"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Control, {
+        type: "date",
+        value: this.state.date,
+        onChange: e => this.setState({
+          date: e.target.value
+        }),
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 171,
+          columnNumber: 21
+        }
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Group, {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 174,
+          columnNumber: 17
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Label, {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 176,
+          columnNumber: 21
+        }
+      }, "Tour Visibility"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Check, {
+        type: "radio",
+        id: "default-radio",
+        label: "Public",
+        name: "tourTypeRadio",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 177,
+          columnNumber: 21
+        }
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Check, {
+        type: "radio",
+        label: "Private",
+        id: "disabled-default-radio",
+        name: "tourTypeRadio",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 178,
+          columnNumber: 21
+        }
+      })));
+    }
+
+    if (this.state.mode === 'view') {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 187,
+          columnNumber: 17
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 188,
+          columnNumber: 21
+        }
+      }, this.state.name), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 188,
+          columnNumber: 48
+        }
+      }, this.state.date));
+    }
+  }
+
+  renderTourStops() {
+    if (this.state.mode === 'edit') {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "tour-stops",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 197,
+          columnNumber: 17
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_CurrentStops__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        stops: this.state.stops,
+        onRemoveStop: this.handleRemoveStop,
+        onSortEnd: this.onSortEnd,
+        axis: "xy",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 199,
+          columnNumber: 21
+        }
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AddStop__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        onSelectStops: this.handleAddedStops,
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 204,
+          columnNumber: 21
+        }
+      }));
+    }
+
+    if (this.state.mode === 'view') {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "view-stop-box-list",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 210,
+          columnNumber: 17
+        }
+      }, this.state.stops.map(singleStop => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "view-stop-box",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 212,
+          columnNumber: 25
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        alt: "stop",
+        src: singleStop.thumbnailUrl,
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 213,
+          columnNumber: 29
+        }
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 214,
+          columnNumber: 29
+        }
+      }, " ", singleStop.name, " "))));
+    }
   }
 
   handleDelete() {
@@ -1745,21 +1931,21 @@ class TourPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 178,
+        lineNumber: 258,
         columnNumber: 13
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navbar_Navbar__WEBPACK_IMPORTED_MODULE_2__["default"], {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 179,
+        lineNumber: 259,
         columnNumber: 17
       }
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Jumbotron_Jumbotron__WEBPACK_IMPORTED_MODULE_3__["default"], {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 180,
+        lineNumber: 260,
         columnNumber: 17
       }
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1767,158 +1953,37 @@ class TourPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 182,
+        lineNumber: 262,
         columnNumber: 17
       }
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"], {
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 183,
-        columnNumber: 21
-      }
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Group, {
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 185,
-        columnNumber: 21
-      }
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Label, {
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 186,
-        columnNumber: 25
-      }
-    }, "Tour Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Control, {
-      type: "text",
-      value: this.state.name,
-      onChange: e => this.setState({
-        name: e.target.value
-      }),
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 187,
-        columnNumber: 25
-      }
-    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Group, {
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 193,
-        columnNumber: 21
-      }
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Label, {
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 194,
-        columnNumber: 25
-      }
-    }, "Tour Date"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Control, {
-      type: "date",
-      value: this.state.date,
-      onChange: e => this.setState({
-        date: e.target.value
-      }),
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 195,
-        columnNumber: 25
-      }
-    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Group, {
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 198,
-        columnNumber: 21
-      }
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Label, {
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 200,
-        columnNumber: 25
-      }
-    }, "Tour Visibility"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Check, {
-      type: "radio",
-      id: "default-radio",
-      label: "Public",
-      name: "tourTypeRadio",
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 201,
-        columnNumber: 25
-      }
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Check, {
-      type: "radio",
-      label: "Private",
-      id: "disabled-default-radio",
-      name: "tourTypeRadio",
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 202,
-        columnNumber: 25
-      }
-    })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+    }, this.renderTourInfo()), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
       variant: "primary",
       onClick: this.handleDelete.bind(this),
       id: "delete-stop-button",
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 208,
+        lineNumber: 265,
         columnNumber: 17
       }
     }, "Delete Tour"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
       variant: "primary",
-      onClick: this.handleDoneEditing.bind(this),
+      onClick: this.handleEditing.bind(this),
       id: "update-stop-button",
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 211,
+        lineNumber: 268,
         columnNumber: 17
       }
-    }, "Done"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AddStop__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      onSelectStops: this.handleAddedStops,
+    }, "Edit this tour"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 214,
+        lineNumber: 271,
         columnNumber: 17
       }
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 215,
-        columnNumber: 17
-      }
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 218,
-        columnNumber: 17
-      }
-    }, "Current Stops:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_CurrentStops__WEBPACK_IMPORTED_MODULE_5__["default"], {
-      stops: this.state.stops,
-      onRemoveStop: this.handleRemoveStop,
-      onSortEnd: this.onSortEnd,
-      axis: "xy",
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 219,
-        columnNumber: 17
-      }
-    }));
+    }), this.renderTourStops());
   }
 
 }
@@ -2002,5 +2067,5 @@ module.exports = __webpack_require__(/*! /Users/chenjiewen/Localdev/museum-live/
 
 /***/ })
 
-},[[0,"runtime-main",0]]]);
+},[[0,"runtime-main",1]]]);
 //# sourceMappingURL=main.chunk.js.map

@@ -223,5 +223,12 @@ button.card {
     margin: .5em;
 }
 
+#view-stop-box-list {
+    display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    margin: 20px;
+}
+
 
 /*# sourceMappingURL=main.chunk.css.map*/
