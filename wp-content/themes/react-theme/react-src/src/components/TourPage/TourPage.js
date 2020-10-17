@@ -4,7 +4,9 @@ import { Form, Button } from 'react-bootstrap';
 import Navbar from '../Navbar/Navbar';
 import Jumbotron from '../Jumbotron/Jumbotron';
 import AddStop from './AddStop'
-import CurrentStops from './CurrentStops'
+import StopBoxList from './CurrentStops'
+
+import arrayMove from 'array-move';
 
 import './TourPage.styles.css'
 
@@ -162,6 +164,15 @@ class TourPage extends React.Component {
         })
     }
 
+    onSortEnd = ({oldIndex, newIndex}) => {
+        console.log(this.state.stops);
+        console.log(arrayMove);
+        const newArray = arrayMove(this.state.stops, oldIndex, newIndex);
+        this.setState({
+            'stops': newArray
+        })
+      }
+
     render() {
         return (
             <div>
@@ -205,7 +216,11 @@ class TourPage extends React.Component {
 
                 {/* draggable stop boxes */}
                 <h1>Current Stops:</h1>
-                <CurrentStops stops={this.state.stops} onRemoveStop={this.handleRemoveStop} />
+                <StopBoxList 
+                    stops={this.state.stops} 
+                    onRemoveStop={this.handleRemoveStop}
+                    onSortEnd={this.onSortEnd}
+                    axis='xy'/>
                 
             </div>
         )
