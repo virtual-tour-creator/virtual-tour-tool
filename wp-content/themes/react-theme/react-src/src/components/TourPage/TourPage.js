@@ -5,10 +5,12 @@ import Navbar from '../Navbar/Navbar';
 import Jumbotron from '../Jumbotron/Jumbotron';
 import AddStop from './AddStop'
 import StopBoxList from './CurrentStops'
+import MediaCard from './MediaCard'
 
 import arrayMove from 'array-move';
 
 import './TourPage.styles.css'
+
 
 class TourPage extends React.Component {
     constructor(props) {
@@ -146,10 +148,10 @@ class TourPage extends React.Component {
                 //toggle editing mode
             });
             this.setState({'mode': 'view'});
-            document.getElementById('update-stop-button').innerHTML = 'Edit this tour';
+            document.getElementById('update-stop-button').innerHTML = "<i class='fas fa-unlock-alt'></i>" + '    EDIT THIS TOUR';
         } if(this.state.mode === 'view') {
             this.setState({'mode': 'edit'});
-            document.getElementById('update-stop-button').innerHTML = 'Done Editing';
+            document.getElementById('update-stop-button').innerHTML = "<i class='fas fa-check'></i>" + '  DONE EDITING';
         }
         
     }
@@ -159,16 +161,16 @@ class TourPage extends React.Component {
             return(
                 <Form>
                 <Form.Group>
-                    <Form.Label>Tour Name</Form.Label>
-                    <Form.Control type="text" value={this.state.name} onChange={e => this.setState({name: e.target.value})}/>
+                    <Form.Label className="form-label">Tour Name</Form.Label>
+                    <Form.Control className="info-form" type="text" value={this.state.name} onChange={e => this.setState({name: e.target.value})}/>
                     {/* <Form.Text className="text-muted">
                     We'll never share your email with anyone else.
                     </Form.Text> */}
                 </Form.Group>
 
                 <Form.Group>
-                    <Form.Label>Tour Date</Form.Label>
-                    <Form.Control type="date" value={this.state.date} onChange={e => this.setState({date: e.target.value})}/>
+                    <Form.Label className="form-label">Tour Date</Form.Label>
+                    <Form.Control className="info-form" type="date" value={this.state.date} onChange={e => this.setState({date: e.target.value})}/>
                 </Form.Group>
 
                 <Form.Group>
@@ -185,7 +187,7 @@ class TourPage extends React.Component {
         } if (this.state.mode === 'view') {
             return(
                 <div>
-                    <h1>{this.state.name}</h1> <p>{this.state.date}</p>
+                    <div><span id='tour-name'>{this.state.name}</span> <span id='tour-date'>{this.state.date}</span> </div> 
                 </div>
             )
         }
@@ -194,25 +196,26 @@ class TourPage extends React.Component {
     renderTourStops() {
         if(this.state.mode === 'edit') {
             return(
-                <div id='tour-stops'>
+                <div>
+                    <AddStop onSelectStops={this.handleAddedStops} />
+                    <div id='tour-stops'>
                     {/* draggable stop boxes */}
                     <StopBoxList 
                         stops={this.state.stops} 
                         onRemoveStop={this.handleRemoveStop}
                         onSortEnd={this.onSortEnd}
                         axis='xy'/>
-                    <AddStop onSelectStops={this.handleAddedStops} />
+                    </div>
                 </div>
+                
                 
             )
         } if(this.state.mode === 'view') {
             return(
-                <div id='view-stop-box-list'>
+
+                <div className='cards'>
                     {this.state.stops.map(singleStop => (
-                        <div className="view-stop-box">
-                            <img alt='stop' src={singleStop.thumbnailUrl} />
-                            <p> {singleStop.name} </p>
-                        </div>
+                        <MediaCard stop={singleStop} />
                     ))}
                 </div>
             )
@@ -258,19 +261,25 @@ class TourPage extends React.Component {
             <div>
                 <Navbar />
                 <Jumbotron />
-    
-                <div id='tour-info-form'>
-                    {this.renderTourInfo()}
-                </div>
-                <Button variant="primary" onClick={this.handleDelete.bind(this)} id='delete-stop-button'>
-                  Delete Tour
-                </Button>
-                <Button variant="primary" onClick={this.handleEditing.bind(this)} id='update-stop-button'>
-                  Edit this tour
-                </Button>
-                <br></br>
 
-                {this.renderTourStops()}
+                <div id='tour-page'>
+                    <Button variant="primary" onClick={this.handleEditing.bind(this)} id='update-stop-button' className='tour-page-button'>
+                    <i class='fas fa-unlock-alt'></i>   EDIT THIS TOUR
+                    </Button>
+                    <Button variant="primary" onClick={this.handleDelete.bind(this)} id='delete-stop-button'  className='tour-page-button'>
+                    <i class="fas fa-trash-alt"></i> DELETE TOUR
+                    </Button>
+
+                    <div id='tour-info-form'>
+                        {this.renderTourInfo()}
+                    </div>
+                    
+                
+                    <br></br>
+
+                    {this.renderTourStops()}
+                </div>
+                
                 
             </div>
         )

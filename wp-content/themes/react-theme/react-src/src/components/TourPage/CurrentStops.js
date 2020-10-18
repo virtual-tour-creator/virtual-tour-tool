@@ -1,12 +1,14 @@
 import React from 'react';
 import { SortableElement, SortableContainer } from 'react-sortable-hoc';
+import MediaCard from './MediaCard';
+import './TourPage.styles.css';
 
 
 const StopBox = SortableElement(({singleStop, index, handleRemove}) => {
     return (
-        <div>
-            <img alt='stop' src={singleStop.thumbnailUrl} />
-            <p> {singleStop.name} </p>
+        <div className='edit-stop'>
+            <MediaCard stop={singleStop} />
+            <span className='delete-icon'><i className="fas fa-times-circle"></i></span>
             <button onClick={() => handleRemove(index)}>Remove</button>
         </div>
     )
@@ -16,7 +18,7 @@ const StopBox = SortableElement(({singleStop, index, handleRemove}) => {
 
 const StopBoxList = SortableContainer(({ stops, onRemoveStop }) => {
         return(
-            <div>
+            <div className='edit-stops'>
                 {stops.map((singleStop, index) =>
                 <div key={index} className='stop'>
                     <StopBox 
