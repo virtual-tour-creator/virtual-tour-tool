@@ -1026,21 +1026,7 @@ var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/rea
 
 
 
- //stops from "stops" tab
 
-var backendStops = [{
-  'id': 3,
-  'thumbnailUrl': 'https://via.placeholder.com/150',
-  'name': 'Relationship with Matisse'
-}, {
-  'id': 4,
-  'thumbnailUrl': 'https://via.placeholder.com/150',
-  'name': 'Matisse\'s large Seated Nude'
-}, {
-  'id': 5,
-  'thumbnailUrl': 'https://via.placeholder.com/150',
-  'name': 'Large Reclining Nude (with process)'
-}];
 
 class StopCardList extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
   constructor(props) {
@@ -1091,7 +1077,7 @@ class StopCardList extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Componen
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 68,
+          lineNumber: 48,
           columnNumber: 11
         }
       });
@@ -1101,7 +1087,7 @@ class StopCardList extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Componen
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 74,
+        lineNumber: 54,
         columnNumber: 15
       }
     }, stop);
@@ -1131,7 +1117,7 @@ class StopCardListSelection extends react__WEBPACK_IMPORTED_MODULE_0___default.a
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 99,
+        lineNumber: 79,
         columnNumber: 9
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(StopCardList, {
@@ -1140,7 +1126,7 @@ class StopCardListSelection extends react__WEBPACK_IMPORTED_MODULE_0___default.a
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 100,
+        lineNumber: 80,
         columnNumber: 13
       }
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -1149,7 +1135,7 @@ class StopCardListSelection extends react__WEBPACK_IMPORTED_MODULE_0___default.a
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 103,
+        lineNumber: 83,
         columnNumber: 13
       }
     }, "Add"));
@@ -1221,7 +1207,7 @@ class AddStop extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 161,
+        lineNumber: 141,
         columnNumber: 15
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
@@ -1229,7 +1215,7 @@ class AddStop extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 162,
+        lineNumber: 142,
         columnNumber: 17
       }
     }), "  Add Stop(s)"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Modal"], {
@@ -1241,7 +1227,7 @@ class AddStop extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 165,
+        lineNumber: 145,
         columnNumber: 15
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Modal"].Header, {
@@ -1249,14 +1235,14 @@ class AddStop extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 166,
+        lineNumber: 146,
         columnNumber: 17
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Modal"].Title, {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 167,
+        lineNumber: 147,
         columnNumber: 19
       }
     }, "Add Stop(s)")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Modal"].Body, {
@@ -1264,7 +1250,7 @@ class AddStop extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 170,
+        lineNumber: 150,
         columnNumber: 17
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1272,7 +1258,7 @@ class AddStop extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 171,
+        lineNumber: 151,
         columnNumber: 17
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(StopCardListSelection, {
@@ -1281,7 +1267,7 @@ class AddStop extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 172,
+        lineNumber: 152,
         columnNumber: 19
       }
     })))));
@@ -1308,7 +1294,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _MediaCard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./MediaCard */ "./src/components/TourPage/MediaCard.js");
 /* harmony import */ var _TourPage_styles_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./TourPage.styles.css */ "./src/components/TourPage/TourPage.styles.css");
 /* harmony import */ var _TourPage_styles_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_TourPage_styles_css__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _material_ui_icons_Cancel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/icons/Cancel */ "./node_modules/@material-ui/icons/Cancel.js");
+/* harmony import */ var _material_ui_icons_Cancel__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Cancel__WEBPACK_IMPORTED_MODULE_4__);
 var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/TourPage/CurrentStops.js";
+
 
 
 
@@ -1323,34 +1312,11 @@ const StopBox = Object(react_sortable_hoc__WEBPACK_IMPORTED_MODULE_1__["Sortable
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9,
+      lineNumber: 10,
       columnNumber: 9
     }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_MediaCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    stop: singleStop,
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 10,
-      columnNumber: 13
-    }
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "delete-icon",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 11,
-      columnNumber: 13
-    }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    className: "fas fa-times-circle",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 11,
-      columnNumber: 43
-    }
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "remove tour-page-button",
     onClick: () => handleRemove(index),
     __self: undefined,
     __source: {
@@ -1358,7 +1324,15 @@ const StopBox = Object(react_sortable_hoc__WEBPACK_IMPORTED_MODULE_1__["Sortable
       lineNumber: 12,
       columnNumber: 13
     }
-  }, "Remove"));
+  }, " X "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_MediaCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    stop: singleStop,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13,
+      columnNumber: 13
+    }
+  }));
 });
 const StopBoxList = Object(react_sortable_hoc__WEBPACK_IMPORTED_MODULE_1__["SortableContainer"])(({
   stops,
@@ -1369,7 +1343,7 @@ const StopBoxList = Object(react_sortable_hoc__WEBPACK_IMPORTED_MODULE_1__["Sort
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21,
+      lineNumber: 22,
       columnNumber: 13
     }
   }, stops.map((singleStop, index) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1378,7 +1352,7 @@ const StopBoxList = Object(react_sortable_hoc__WEBPACK_IMPORTED_MODULE_1__["Sort
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23,
+      lineNumber: 24,
       columnNumber: 17
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(StopBox, {
@@ -1389,7 +1363,7 @@ const StopBoxList = Object(react_sortable_hoc__WEBPACK_IMPORTED_MODULE_1__["Sort
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24,
+      lineNumber: 25,
       columnNumber: 21
     }
   }))));
@@ -1430,6 +1404,7 @@ function MediaCard({
       columnNumber: 5
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    alt: stop.name,
     src: stop.thumbnailUrl,
     className: "card-img-top",
     __self: this,
@@ -2184,5 +2159,5 @@ module.exports = __webpack_require__(/*! /Users/chenjiewen/Localdev/museum-live/
 
 /***/ })
 
-},[[0,"runtime-main",1]]]);
+},[[0,"runtime-main",0]]]);
 //# sourceMappingURL=main.chunk.js.map

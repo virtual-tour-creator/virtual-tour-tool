@@ -2,14 +2,15 @@ import React from 'react';
 import { SortableElement, SortableContainer } from 'react-sortable-hoc';
 import MediaCard from './MediaCard';
 import './TourPage.styles.css';
+import CancelIcon from '@material-ui/icons/Cancel';
 
 
 const StopBox = SortableElement(({singleStop, index, handleRemove}) => {
     return (
         <div className='edit-stop'>
+            {/* <CancelIcon className='remove' onClick={() => handleRemove(index)}/> */}
+            <button className='remove tour-page-button' onClick={() => handleRemove(index)}> X </button>
             <MediaCard stop={singleStop} />
-            <span className='delete-icon'><i className="fas fa-times-circle"></i></span>
-            <button onClick={() => handleRemove(index)}>Remove</button>
         </div>
     )
 })

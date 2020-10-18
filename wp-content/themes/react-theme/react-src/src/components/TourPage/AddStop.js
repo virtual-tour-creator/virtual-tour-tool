@@ -6,26 +6,6 @@ import './TourPage.styles.css'
 import './SelectableCard.scss';
 
 
-//stops from "stops" tab
-var backendStops = [
-    {
-        'id': 3,
-        'thumbnailUrl':'https://via.placeholder.com/150',
-        'name': 'Relationship with Matisse'
-    },
-    {
-        'id': 4,
-        'thumbnailUrl':'https://via.placeholder.com/150',
-        'name': 'Matisse\'s large Seated Nude'
-    },
-    {
-        'id': 5,
-        'thumbnailUrl':'https://via.placeholder.com/150',
-        'name': 'Large Reclining Nude (with process)'
-    }
-]
-
-
 class StopCardList extends React.Component {
 
     constructor(props) {

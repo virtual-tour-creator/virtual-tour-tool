@@ -145,3 +145,31 @@
 #tour-info-form {
     margin-top: 15px;
 }
+
+
+.edit-stop {
+    position: relative;
+}
+
+.edit-stop .remove {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    z-index: 100;
+    font-family: Roboto;
+    border-radius: 50%;
+    border: none;
+    background-color: black;
+    color: white;
+    width: 30px;
+    height: 30px;
+}
+
+.remove:hover{
+    background-color: #ba5759;
+    transform: scale(1.1);
+}
+
+.remove:focus{
+    outline:none;
+}
