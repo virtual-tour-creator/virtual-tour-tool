@@ -11,7 +11,7 @@ const Playlist = props => {
 		<div className='public-playlists'>
         {props.playlists.map(playlist => (
             <div key={playlist.id} className='public-playlist'>
-                <h1>#{playlist.name}</h1>
+                <h1 onClick={() => props.history.push(`/tour/${playlist.id}`)}>{playlist.name}</h1>
                 <Entries listId={playlist.id} entries={playlist.entries}/>
             </div>
         ))

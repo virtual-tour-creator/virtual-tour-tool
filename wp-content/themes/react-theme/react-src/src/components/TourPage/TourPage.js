@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button, Modal } from 'react-bootstrap';
 
 import Navbar from '../Navbar/Navbar';
 import Jumbotron from '../Jumbotron/Jumbotron';
@@ -23,6 +23,7 @@ class TourPage extends React.Component {
             'date': '',
             'stops': [],
             'mode': 'view',
+            'showDeleteConfirmation': false
         };
         this.handleRemoveStop = this.handleRemoveStop.bind(this);
     }
@@ -96,10 +97,11 @@ class TourPage extends React.Component {
             console.log(response);
         }
         const tour = await response.json();
+        this.props.history.push(`/`);
     }
 
     getContentString() {
-        let str = "<ol>"
+        let str = "<ol>";
 
         const { stops, date } = this.state;
         stops.map(stop => {
@@ -215,23 +217,37 @@ class TourPage extends React.Component {
 
                 <div className='cards'>
                     {this.state.stops.map(singleStop => (
-                        <MediaCard stop={singleStop} />
+                        <MediaCard stop={singleStop} onClick={() => this.props.history.push(`/entry/${singleStop.id}`)}/>
                     ))}
                 </div>
             )
         }
     }
 
+    renderDeleteConfirmation() {
 
-
-
+        return (
+            <Modal show={this.state.showDeleteConfirmation} onHide={() => this.setState({showDeleteConfirmation:false})} aria-labelledby="example-custom-modal-styling-title">
+                <Modal.Header closeButton>
+                  <Modal.Title>Confirm Delete</Modal.Title>
+                </Modal.Header>
+                <Modal.Body className="show-grid">
+                <div className='container'>
+                    <p>Are you sure about deleting this tour?</p>
+                </div>
+                </Modal.Body>
+                <Modal.Footer>
+                <Button variant="primary" onClick={this.deleteTour.bind(this)} id='delete-stop-button'  className='tour-page-button'>
+                    <i className="fas fa-trash-alt"></i> DELETE
+                    </Button>
+                </Modal.Footer>
+            </Modal>
+        );
+    }
 
     handleDelete() {
-        // confirmation overlay?
-        this.deleteTour().then(() => {
-            // TODO: back to library/my tours
-            console.log("this tour is deleted");
-        });
+        // confirmation overlay
+        this.setState({showDeleteConfirmation: true});
     }
 
 
@@ -264,10 +280,10 @@ class TourPage extends React.Component {
 
                 <div id='tour-page'>
                     <Button variant="primary" onClick={this.handleEditing.bind(this)} id='update-stop-button' className='tour-page-button'>
-                    <i class='fas fa-unlock-alt'></i>   EDIT THIS TOUR
+                    <i className='fas fa-unlock-alt'></i>   EDIT THIS TOUR
                     </Button>
                     <Button variant="primary" onClick={this.handleDelete.bind(this)} id='delete-stop-button'  className='tour-page-button'>
-                    <i class="fas fa-trash-alt"></i> DELETE TOUR
+                    <i className="fas fa-trash-alt"></i> DELETE TOUR
                     </Button>
 
                     <div id='tour-info-form'>
@@ -278,6 +294,7 @@ class TourPage extends React.Component {
                     <br></br>
 
                     {this.renderTourStops()}
+                    {this.renderDeleteConfirmation()}
                 </div>
                 
                 

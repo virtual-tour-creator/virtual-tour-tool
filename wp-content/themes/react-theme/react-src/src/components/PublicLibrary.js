@@ -12,43 +12,81 @@ class PublicLibrary extends React.Component {
           };
     }
 
+    parseContentStopId(content) {
+        let res = content.match(/<li>\d+<\/li>/gm);
+        let stops = res ? res.map(item => {
+            let idStr = item.slice(4, -5)
+            return parseInt(idStr);
+        }) : [];
+        return stops;
+    }
+
+    getStopInfo = (id) => {
+        let time =  new Date().getTime();
+        return fetch('/wp-json/wp/v2/stop/' + id +'?timestamp=' + time)
+            .then(res => res.json())
+            .then(data => { 
+                // console.log(entry);
+                const { id, thumbnail_url, title } = data;
+                const e = {
+                    id,
+                    thumbnail_url,
+                    name: title.rendered,
+                };
+                return e;
+            });
+    };
+
     componentDidMount() {
         let time =  new Date().getTime();
-        fetch('/wp-json/wp/v2/categories?timestamp=' + time)
+        fetch('/wp-json/wp/v2/tour?timestamp=' + time)
         .then(res => res.json())
         .then((data) => {
             console.log(data);
-            let playlistInfo = data.map((playlist) => {
-                const {id, count, name} = playlist;
-                return {id, count, name, entries: []};
+            let tourInfo = data.map((tour) => {
+                const {id, title, content} = tour;
+
+                return {id, name: title.rendered, entries: this.parseContentStopId(content.rendered)};
             });
             // console.log(playlistInfo);
-            return playlistInfo;
+            return tourInfo;
         })
-        .then((playlistInfo) => {
-            // get entry per playlist
-            const allRequests = playlistInfo.map(playlist => 
-                {
-                    const { id, name } = playlist;     
-                    return fetch('/wp-json/wp/v2/stop?categories=' + id +'&timestamp=' + time)
-                            .then(res => res.json())
-                            .then(data => { 
-                                const entries = data.map( (entry) => {
-                                    // console.log(entry);
-                                    const { id, thumbnail_url, title } = entry;
-                                    const e = {
-                                        id,
-                                        thumbnail_url,
-                                        name: title.rendered,
-                                    };
-                                    return e;
-                                });
-                                return { id, name, entries};
-                            });
-                }            
-            );
+        .then((tourInfo) => {
+            // get stop per tour
+
+            let stopDic = {};
+            tourInfo.map(tour => 
+            {
+                const { id, name, entries } = tour;
+                entries.map(stop => {
+                    if (!stopDic[stop])
+                    {
+                        stopDic[stop] = {};
+                    }
+                });    
+            });           
+            const allRequests = [];
+            for (var stopId in stopDic)
+            {
+
+                allRequests.push(this.getStopInfo(stopId));
+            }
+
             // wait for all requests to finish
-            return Promise.all(allRequests);
+            return Promise.all(allRequests).then((stopData) => {
+                    stopData.map(stop => {
+                        const { id }  = stop;
+                        stopDic[id] = stop;
+                    });
+                    return tourInfo.map(tour => 
+                    {
+                        const { id, name, entries } = tour;
+                        let newStopInfo = entries.map(stopId => {
+                            return stopDic[stopId];
+                        });
+                        return {id, name, entries: newStopInfo};    
+                    }); 
+                });
         })
         .then((finalInfo) => {
             console.log(finalInfo);

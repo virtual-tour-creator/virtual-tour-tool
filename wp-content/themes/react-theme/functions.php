@@ -35,7 +35,6 @@ function museum_post_types() {
 		"menu_icon" => "dashicons-location"
 	));
 	register_taxonomy_for_object_type("post_tag", "stop");
-	register_taxonomy_for_object_type('category', 'stop');
 	
 	register_post_type("tour", array(
 		"show_in_rest" => true,
