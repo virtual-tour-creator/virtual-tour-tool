@@ -5,7 +5,7 @@ class Navbar extends React.Component {
     render() {
         return (
             <nav className="navbar navbar-dark navbar-expand-md">
-            <a className="navbar-brand" href="/">BLATIMORE MUSEUM OF ART</a>
+            <a className="navbar-brand" href="/">BALTIMORE MUSEUM OF ART</a>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
                 <span className="navbar-toggler-icon"></span>
             </button>

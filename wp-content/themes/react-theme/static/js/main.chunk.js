@@ -634,7 +634,7 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         lineNumber: 8,
         columnNumber: 13
       }
-    }, "BLATIMORE MUSEUM OF ART"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    }, "BALTIMORE MUSEUM OF ART"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
       className: "navbar-toggler",
       type: "button",
       "data-toggle": "collapse",
@@ -2285,5 +2285,5 @@ module.exports = __webpack_require__(/*! /Users/nouyang/Desktop/museum-live/wp-c
 
 /***/ })
 
-},[[0,"runtime-main",0]]]);
+},[[0,"runtime-main",1]]]);
 //# sourceMappingURL=main.chunk.js.map
