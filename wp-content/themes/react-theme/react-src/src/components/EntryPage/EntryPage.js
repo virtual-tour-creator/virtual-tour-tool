@@ -35,7 +35,6 @@ const EntryPage = props => {
 
 
     // load media
-    let media = "None";
     let Photos = [];
     if (entry.acf_media)
     {

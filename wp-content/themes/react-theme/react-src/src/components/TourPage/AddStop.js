@@ -40,8 +40,8 @@ class StopCardList extends React.Component {
       var stop = stops.map((cardContent, i) => {
         var {
           thumbnailUrl,
-          name,
-          selected
+          name
+          // selected
         } = cardContent;
         var selected = this.state.selected.indexOf(i) > -1;
         return (

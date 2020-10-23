@@ -272,24 +272,31 @@ button.card {
 /* button styles */
 #delete-stop-button {
     float: right;
-    background: #8a2d2f;
 }
 
 #delete-stop-button:hover {
-    background: #ba5759;
+    background: none;
+    color: #ba5759;
+}
+
+#update-stop-button {
+    float:right;
 }
 
 #update-stop-button:hover {
-    background: #404040;
+    background: none;
+    color: #404040;
 }
 
 #update-stop-button:focus {
     border: none;
     box-shadow: none;
+    background: none;
+    color: #404040;
 }
 
 .btn-primary.focus, .btn-primary:focus {
-    background: black;
+    background: none;
 }
 
 .tour-page-button {
@@ -298,11 +305,14 @@ button.card {
     font-size: 1em;
     font-family: 'Roboto', sans-serif;
     height:35px;
+    background: none;
+    color: #c7c7c7;
 }
 
 
 #add-stop-button:hover{
-    background: #404040;
+    background: none;
+    color: black;
 }
 
 #add-stop-button:focus {

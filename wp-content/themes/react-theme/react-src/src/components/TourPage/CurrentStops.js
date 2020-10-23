@@ -2,7 +2,6 @@ import React from 'react';
 import { SortableElement, SortableContainer } from 'react-sortable-hoc';
 import MediaCard from './MediaCard';
 import './TourPage.styles.css';
-import CancelIcon from '@material-ui/icons/Cancel';
 
 
 const StopBox = SortableElement(({singleStop, index, handleRemove}) => {

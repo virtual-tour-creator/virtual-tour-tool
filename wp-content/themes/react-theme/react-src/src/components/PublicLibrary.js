@@ -57,7 +57,7 @@ class PublicLibrary extends React.Component {
             let stopDic = {};
             tourInfo.map(tour => 
             {
-                const { id, name, entries } = tour;
+                const { entries } = tour;
                 entries.map(stop => {
                     if (!stopDic[stop])
                     {
