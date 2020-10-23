@@ -38,19 +38,13 @@ const EntryPage = props => {
     let Photos = [];
     if (entry.acf_media)
     {
-        media = entry.acf_media.map((media) =>
-            <img alt='media' src={media.thumbnail_url} />
-        )
-
-
         Photos = entry.acf_media.map((media) => {
             let photo = {};
             photo['original'] = media.full_url;
             photo['thumbnail'] = media.thumbnail_url;
             photo['description'] = media.title;
             return photo;
-        }
-        )
+        });
         
     }
 
@@ -89,11 +83,11 @@ const EntryPage = props => {
                 </div>
                 
                 
-                <Collapsible trigger="Description" open="true">
+                <Collapsible trigger="Description" open>
                     {getContent(entry)}
                 </Collapsible>
                
-                <Collapsible trigger="Related Topics" open="true">
+                <Collapsible trigger="Related Topics" open>
                     {tag_lists}
                 </Collapsible>
 
