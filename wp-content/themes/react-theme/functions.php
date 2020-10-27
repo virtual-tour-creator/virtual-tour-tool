@@ -147,3 +147,15 @@ function ag_filter_post_json($response, $post, $context) {
 }
 
 add_filter( 'rest_prepare_stop', 'ag_filter_post_json', 10, 3 );
+
+
+function login_redirect() {
+
+    // Current Page
+	global $pagenow;
+	
+    if(!is_user_logged_in() && $pagenow != 'wp-login.php')
+          auth_redirect();
+}
+
+add_action( 'wp', 'login_redirect' );
