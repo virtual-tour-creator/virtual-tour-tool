@@ -41,7 +41,7 @@
         Learn how to configure a non-root public URL by running `npm run wpbuild`.
     -->
     <title>Museum.Live</title>
-<link href="/wp-content/themes/react-theme/static/css/0.chunk.css?d667d742900bab0adce6" rel="stylesheet"><link href="/wp-content/themes/react-theme/static/css/main.chunk.css?d667d742900bab0adce6" rel="stylesheet"></head>
+<link href="/wp-content/themes/react-theme/static/css/0.chunk.css?6778bf15410fff396f1d" rel="stylesheet"><link href="/wp-content/themes/react-theme/static/css/main.chunk.css?6778bf15410fff396f1d" rel="stylesheet"></head>
     <body>
     <noscript>
         You need to enable JavaScript to run this app.
@@ -56,11 +56,10 @@
       <div class="navbar-dark">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a href="<?php echo wp_logout_url(); ?> ">Logout</a>
-              <?php global $current_user; get_currentuserinfo(); ?>
+              <a href=" ">Logout</a>
             </li>
             <li class="nav-item">
-              <a href='/wp-admin'>Go to <span><?php echo $current_user->display_name; ?></span>'s' Dashboard</a>
+              <a href='/wp-admin'>Go to <span><</span>'s' Dashboard</a>
             </li>
         </ul>     
       </div>
@@ -89,5 +88,5 @@
        };
     </script>
     <script src="https://kit.fontawesome.com/91b7b285ec.js" crossorigin="anonymous"></script>
-    <script src="/wp-content/themes/react-theme/static/js/bundle.js?d667d742900bab0adce6"></script><script src="/wp-content/themes/react-theme/static/js/0.chunk.js?d667d742900bab0adce6"></script><script src="/wp-content/themes/react-theme/static/js/main.chunk.js?d667d742900bab0adce6"></script></body>
+    <script src="/wp-content/themes/react-theme/static/js/bundle.js?6778bf15410fff396f1d"></script><script src="/wp-content/themes/react-theme/static/js/0.chunk.js?6778bf15410fff396f1d"></script><script src="/wp-content/themes/react-theme/static/js/main.chunk.js?6778bf15410fff396f1d"></script></body>
 </html>

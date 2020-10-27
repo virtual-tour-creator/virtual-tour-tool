@@ -49,11 +49,10 @@
       <div class="navbar-dark">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a href="<?php echo wp_logout_url(); ?> ">Logout</a>
-              <?php global $current_user; get_currentuserinfo(); ?>
+              <a href=" ">Logout</a>
             </li>
             <li class="nav-item">
-              <a href='/wp-admin'>Go to <span><?php echo $current_user->display_name; ?></span>'s' Dashboard</a>
+              <a href='/wp-admin'>Go to <span><</span>'s' Dashboard</a>
             </li>
         </ul>     
       </div>

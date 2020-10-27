@@ -11,6 +11,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
     return (
         <div className='App'>
+            <h1>UserName: {reactInit.username}</h1>
             <Route exact path='/' component={PublicLibrary} />
             <Route exact path='/entry/:entryId' component={EntryPage} />
             <Route exact path='/tour/:tourId' component={TourPage} />
