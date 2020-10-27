@@ -15,7 +15,6 @@
       name="description"
       content="Web site created using create-react-wptheme"
     />
-    <link rel="apple-touch-icon" href="<?php echo $TEMPLATE_PATH; ?>/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -34,7 +33,7 @@
         work correctly both with client-side routing and a non-root public URL.
         Learn how to configure a non-root public URL by running `npm run wpbuild`.
     -->
-    <title>Museum.Live with React</title>
+    <title>Museum.Live Online Storytelling Tool</title>
 </head>
     <body>
     <noscript>

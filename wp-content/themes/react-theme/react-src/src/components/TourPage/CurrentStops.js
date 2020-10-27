@@ -3,7 +3,6 @@ import { SortableElement, SortableContainer } from 'react-sortable-hoc';
 import MediaCard from './MediaCard';
 import './TourPage.styles.css';
 
-
 const StopBox = SortableElement(({singleStop, index, handleRemove, handleSwapLeft, handleSwapRight}) => {
     return (
         <div className='edit-stop'>
@@ -15,7 +14,6 @@ const StopBox = SortableElement(({singleStop, index, handleRemove, handleSwapLef
         </div>
     )
 })
-
 
 
 const StopBoxList = SortableContainer(({ stops, onRemoveStop, onSwapLeft, onSwapRight }) => {

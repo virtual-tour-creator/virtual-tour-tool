@@ -22,7 +22,6 @@
       name="description"
       content="Web site created using create-react-wptheme"
     />
-    <link rel="apple-touch-icon" href="<?php echo $TEMPLATE_PATH; ?>/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -41,8 +40,8 @@
         work correctly both with client-side routing and a non-root public URL.
         Learn how to configure a non-root public URL by running `npm run wpbuild`.
     -->
-    <title>Museum.Live with React</title>
-<link href="/wp-content/themes/react-theme/static/css/0.chunk.css?fb233d4e5ce66a9146ae" rel="stylesheet"><link href="/wp-content/themes/react-theme/static/css/main.chunk.css?fb233d4e5ce66a9146ae" rel="stylesheet"></head>
+    <title>Museum.Live Online Storytelling Tool</title>
+<link href="/wp-content/themes/react-theme/static/css/0.chunk.css?ccacf748c50e862aa01d" rel="stylesheet"><link href="/wp-content/themes/react-theme/static/css/main.chunk.css?ccacf748c50e862aa01d" rel="stylesheet"></head>
     <body>
     <noscript>
         You need to enable JavaScript to run this app.
@@ -90,5 +89,5 @@
        };
     </script>
     <script src="https://kit.fontawesome.com/91b7b285ec.js" crossorigin="anonymous"></script>
-    <script src="/wp-content/themes/react-theme/static/js/bundle.js?fb233d4e5ce66a9146ae"></script><script src="/wp-content/themes/react-theme/static/js/0.chunk.js?fb233d4e5ce66a9146ae"></script><script src="/wp-content/themes/react-theme/static/js/main.chunk.js?fb233d4e5ce66a9146ae"></script></body>
+    <script src="/wp-content/themes/react-theme/static/js/bundle.js?ccacf748c50e862aa01d"></script><script src="/wp-content/themes/react-theme/static/js/0.chunk.js?ccacf748c50e862aa01d"></script><script src="/wp-content/themes/react-theme/static/js/main.chunk.js?ccacf748c50e862aa01d"></script></body>
 </html>

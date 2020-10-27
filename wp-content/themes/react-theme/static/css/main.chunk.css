@@ -340,14 +340,24 @@ button.card {
     color:black;
 }
 
-.tour-stops {
-    width: 25%;
+.sortable-wrapper {
+    display: table;
+}
+
+.edit-stops {
     margin: 0 auto;
-    display: inline-block;
-    position: relative;
     cursor: pointer;
     margin-bottom: 3px;
+    display:block;
+    white-space: nowrap;
 
+}
+
+.edit-stop {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    float: left;
 }
 
 /* editmode form style */
@@ -382,11 +392,9 @@ button.card {
 }
 
 
-.edit-stop {
-    position: relative;
-}
 
-.edit-stop .remove {
+
+.remove {
     position: absolute;
     top: 20px;
     right: 10px;
@@ -422,6 +430,16 @@ button.card {
     left: 20px;
     z-index: 100;;
 }
+
+
+
+
+
+.stop-card {
+    margin: 0;
+    border: 1px solid black;
+}
+
 
 
 /*# sourceMappingURL=main.chunk.css.map*/
