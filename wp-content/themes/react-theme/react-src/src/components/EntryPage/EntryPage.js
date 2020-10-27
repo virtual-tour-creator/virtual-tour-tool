@@ -5,6 +5,7 @@ import ImageGallery from 'react-image-gallery';
 
 import 'react-bnb-gallery/dist/style.css'
 import Collapsible from 'react-collapsible';
+import CloseIcon from '@material-ui/icons/Close';
 
 
 const getContent = entry => {
@@ -32,7 +33,6 @@ const EntryPage = props => {
         
         loadEntry();
     })
-
 
     // load media
     let Photos = [];
@@ -64,7 +64,7 @@ const EntryPage = props => {
 
     return(
         <div className='entry-page'>
-            <a className='close-icon' href="/"><i className="fas fa-times"></i></a>
+            <CloseIcon className='close-icon' onClick={props.history.goBack} />
             <div className='entry-container'>
                 <div className='entry-header'>
                     <h1>{entry.title? entry.title.rendered : "loading"}</h1>
@@ -79,10 +79,8 @@ const EntryPage = props => {
                     
                 </div> */}
                 <div id="image-gallery">
-                    <ImageGallery items={Photos} />
+                    <ImageGallery items={Photos} showPlayButton={false}/>
                 </div>
-                
-                
                 <Collapsible trigger="Description" open>
                     {getContent(entry)}
                 </Collapsible>

@@ -110,10 +110,22 @@ body {
 
 .close-icon {
     float: right;
-    padding-right: 10%;
+    margin-right: 10%;
     color: white;
-    font-size: 30px;
-    padding-top: 3%
+    margin-top: 3%;
+}
+
+.MuiSvgIcon-root {
+    font-size:  2.5em !important
+}
+
+.close-icon:hover {
+    color: #c7c7c7;
+    cursor: pointer;
+}
+
+.close-icon:focus {
+    outline: none;
 }
 
 .Collapsible {
@@ -395,6 +407,20 @@ button.card {
 
 .remove:focus{
     outline:none;
+}
+
+#swap-right {
+    position: absolute;
+    bottom: 80px;
+    left: 50px;
+    z-index: 100;;
+}
+
+#swap-left {
+    position: absolute;
+    bottom: 80px;
+    left: 20px;
+    z-index: 100;;
 }
 
 

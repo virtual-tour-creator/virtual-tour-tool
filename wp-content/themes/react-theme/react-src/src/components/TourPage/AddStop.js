@@ -139,7 +139,7 @@ class AddStop extends React.Component {
         return (
             <>
               <Button className='tour-page-button' variant="primary" onClick={this.handleShow} id='add-stop-button'>
-                <i class="fas fa-plus"></i>  Add Stop(s)
+                <i className="fas fa-plus"></i>  Add Stop(s)
               </Button>
         
               <Modal show={this.state.show} onHide={() => this.setState({show:false})} aria-labelledby="example-custom-modal-styling-title">

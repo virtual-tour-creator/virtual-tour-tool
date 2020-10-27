@@ -206,6 +206,8 @@ class TourPage extends React.Component {
                         stops={this.state.stops} 
                         onRemoveStop={this.handleRemoveStop}
                         onSortEnd={this.onSortEnd}
+                        onSwapLeft = {this.onSwapLeft}
+                        onSwapRight = {this.onSwapRight}
                         axis='xy'/>
                     </div>
                 </div>
@@ -271,6 +273,25 @@ class TourPage extends React.Component {
             'stops': newArray
         })
       }
+
+    //on-click swapping
+    onSwapLeft = (index) => {
+        if(index > 0){
+            const newArray = arrayMove(this.state.stops, index, index-1);
+            this.setState({
+                'stops': newArray
+            })
+        }
+    }
+
+    onSwapRight = (index) => {
+        if(index < this.state.stops.length){
+            const newArray = arrayMove(this.state.stops, index, index+1);
+            this.setState({
+                'stops': newArray
+            })
+        }
+    }
 
     render() {
         return (

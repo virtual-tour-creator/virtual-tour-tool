@@ -183,3 +183,17 @@
 .remove:focus{
     outline:none;
 }
+
+#swap-right {
+    position: absolute;
+    bottom: 80px;
+    left: 50px;
+    z-index: 100;;
+}
+
+#swap-left {
+    position: absolute;
+    bottom: 80px;
+    left: 20px;
+    z-index: 100;;
+}

@@ -4,11 +4,13 @@ import MediaCard from './MediaCard';
 import './TourPage.styles.css';
 
 
-const StopBox = SortableElement(({singleStop, index, handleRemove}) => {
+const StopBox = SortableElement(({singleStop, index, handleRemove, handleSwapLeft, handleSwapRight}) => {
     return (
         <div className='edit-stop'>
-            {/* <CancelIcon className='remove' onClick={() => handleRemove(index)}/> */}
+            <button className='swap-button' id="swap-left"  onClick={() => handleSwapLeft(index)}> &#60; </button>
+            <button className='swap-button' id="swap-right" onClick={() => handleSwapRight(index)}> &#62; </button>
             <button className='remove tour-page-button' onClick={() => handleRemove(index)}> X </button>
+            
             <MediaCard stop={singleStop} />
         </div>
     )
@@ -16,7 +18,7 @@ const StopBox = SortableElement(({singleStop, index, handleRemove}) => {
 
 
 
-const StopBoxList = SortableContainer(({ stops, onRemoveStop }) => {
+const StopBoxList = SortableContainer(({ stops, onRemoveStop, onSwapLeft, onSwapRight }) => {
         return(
             <div className='edit-stops'>
                 {stops.map((singleStop, index) =>
@@ -25,7 +27,9 @@ const StopBoxList = SortableContainer(({ stops, onRemoveStop }) => {
                         index={index}
                         singleStop={singleStop} 
                         key={index} 
-                        handleRemove={() => onRemoveStop(index)}/>
+                        handleRemove={() => onRemoveStop(index)}
+                        handleSwapLeft={() => onSwapLeft(index)}
+                        handleSwapRight={() => onSwapRight(index)}/>
                 </div>)}
             </div>
         )

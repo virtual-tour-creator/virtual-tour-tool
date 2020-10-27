@@ -21,10 +21,22 @@
 
 .close-icon {
     float: right;
-    padding-right: 10%;
+    margin-right: 10%;
     color: white;
-    font-size: 30px;
-    padding-top: 3%
+    margin-top: 3%;
+}
+
+.MuiSvgIcon-root {
+    font-size:  2.5em !important
+}
+
+.close-icon:hover {
+    color: #c7c7c7;
+    cursor: pointer;
+}
+
+.close-icon:focus {
+    outline: none;
 }
 
 .Collapsible {
