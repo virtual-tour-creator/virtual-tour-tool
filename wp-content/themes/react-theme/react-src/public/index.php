@@ -2,6 +2,7 @@
   $TEMPLATE_PATH = parse_url(get_template_directory_uri(), PHP_URL_PATH);
 ?>
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="utf-8" />
@@ -74,15 +75,12 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script>
        window.reactInit = {
-         userData: "<?php echo wp_login_url(); ?>",
+         loginUrl: "<?php echo wp_login_url(); ?>",
          logoutUrl: "<?php echo wp_logout_url(); ?>",
          username: "<?php echo $current_user->display_name; ?>",
          nonce: "<?php echo wp_create_nonce("wp_rest"); ?>",
+         isLoggedIn: <?php echo is_user_logged_in() ?>
        };
-       <?php if( !is_user_logged_in() ){
-          auth_redirect();
-          exit;
-        } ?>
 
     </script>
     <script src="https://kit.fontawesome.com/91b7b285ec.js" crossorigin="anonymous"></script>

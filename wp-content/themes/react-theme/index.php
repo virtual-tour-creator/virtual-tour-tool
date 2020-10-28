@@ -2,6 +2,7 @@
   $TEMPLATE_PATH = parse_url(get_template_directory_uri(), PHP_URL_PATH);
 ?>
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <?php $BRC_TEMPLATE_PATH = parse_url(get_template_directory_uri(), PHP_URL_PATH); ?>
@@ -41,7 +42,7 @@
         Learn how to configure a non-root public URL by running `npm run wpbuild`.
     -->
     <title>Museum.Live</title>
-<link href="/wp-content/themes/react-theme/static/css/0.chunk.css?cf703ce391f84e57256e" rel="stylesheet"><link href="/wp-content/themes/react-theme/static/css/main.chunk.css?cf703ce391f84e57256e" rel="stylesheet"></head>
+<link href="/wp-content/themes/react-theme/static/css/1.chunk.css?e7a2e0664ac8bf1fe580" rel="stylesheet"><link href="/wp-content/themes/react-theme/static/css/main.chunk.css?e7a2e0664ac8bf1fe580" rel="stylesheet"></head>
     <body>
     <noscript>
         You need to enable JavaScript to run this app.
@@ -81,17 +82,14 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script>
        window.reactInit = {
-         userData: "<?php echo wp_login_url(); ?>",
+         loginUrl: "<?php echo wp_login_url(); ?>",
          logoutUrl: "<?php echo wp_logout_url(); ?>",
          username: "<?php echo $current_user->display_name; ?>",
          nonce: "<?php echo wp_create_nonce("wp_rest"); ?>",
+         isLoggedIn: <?php echo is_user_logged_in() ?>
        };
-       <?php if(!is_user_logged_in()){
-          auth_redirect();
-          exit;
-        } ?>
 
     </script>
     <script src="https://kit.fontawesome.com/91b7b285ec.js" crossorigin="anonymous"></script>
-    <script src="/wp-content/themes/react-theme/static/js/bundle.js?cf703ce391f84e57256e"></script><script src="/wp-content/themes/react-theme/static/js/0.chunk.js?cf703ce391f84e57256e"></script><script src="/wp-content/themes/react-theme/static/js/main.chunk.js?cf703ce391f84e57256e"></script></body>
+    <script src="/wp-content/themes/react-theme/static/js/bundle.js?e7a2e0664ac8bf1fe580"></script><script src="/wp-content/themes/react-theme/static/js/1.chunk.js?e7a2e0664ac8bf1fe580"></script><script src="/wp-content/themes/react-theme/static/js/main.chunk.js?e7a2e0664ac8bf1fe580"></script></body>
 </html>
