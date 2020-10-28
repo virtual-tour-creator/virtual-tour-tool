@@ -79,7 +79,6 @@
          logoutUrl: "<?php echo wp_logout_url(); ?>",
          username: "<?php echo $current_user->display_name; ?>",
          nonce: "<?php echo wp_create_nonce("wp_rest"); ?>",
-         isLoggedIn: <?php echo is_user_logged_in() ?>
        };
 
     </script>

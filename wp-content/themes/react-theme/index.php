@@ -3,6 +3,8 @@
 ?>
 <!DOCTYPE html>
 
+<?php if(!is_user_logged_in()){auth_redirect();}  ?>
+
 <html lang="en">
 <head>
 <?php $BRC_TEMPLATE_PATH = parse_url(get_template_directory_uri(), PHP_URL_PATH); ?>
@@ -42,7 +44,7 @@
         Learn how to configure a non-root public URL by running `npm run wpbuild`.
     -->
     <title>Museum.Live</title>
-<link href="/wp-content/themes/react-theme/static/css/1.chunk.css?e7a2e0664ac8bf1fe580" rel="stylesheet"><link href="/wp-content/themes/react-theme/static/css/main.chunk.css?e7a2e0664ac8bf1fe580" rel="stylesheet"></head>
+<link href="/wp-content/themes/react-theme/static/css/0.chunk.css?62a243d606fc14f5d45a" rel="stylesheet"><link href="/wp-content/themes/react-theme/static/css/main.chunk.css?62a243d606fc14f5d45a" rel="stylesheet"></head>
     <body>
     <noscript>
         You need to enable JavaScript to run this app.
@@ -86,10 +88,9 @@
          logoutUrl: "<?php echo wp_logout_url(); ?>",
          username: "<?php echo $current_user->display_name; ?>",
          nonce: "<?php echo wp_create_nonce("wp_rest"); ?>",
-         isLoggedIn: <?php echo is_user_logged_in() ?>
        };
 
     </script>
     <script src="https://kit.fontawesome.com/91b7b285ec.js" crossorigin="anonymous"></script>
-    <script src="/wp-content/themes/react-theme/static/js/bundle.js?e7a2e0664ac8bf1fe580"></script><script src="/wp-content/themes/react-theme/static/js/1.chunk.js?e7a2e0664ac8bf1fe580"></script><script src="/wp-content/themes/react-theme/static/js/main.chunk.js?e7a2e0664ac8bf1fe580"></script></body>
+    <script src="/wp-content/themes/react-theme/static/js/bundle.js?62a243d606fc14f5d45a"></script><script src="/wp-content/themes/react-theme/static/js/0.chunk.js?62a243d606fc14f5d45a"></script><script src="/wp-content/themes/react-theme/static/js/main.chunk.js?62a243d606fc14f5d45a"></script></body>
 </html>
