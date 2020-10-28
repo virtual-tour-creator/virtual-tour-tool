@@ -21,7 +21,7 @@ add_action("after_setup_theme", "museum_features");
 function museum_post_types() {
 	register_post_type("stop", array(
 		"show_in_rest" => true,
-		"supports" => array("title", "editor", "excerpt", "thumbnail"),
+		"supports" => array("title", "editor", "thumbnail"),
 		"rewrite" => array("slug", "stops"),
 		"has_archive" => true,
 		"public" => true,
@@ -38,9 +38,9 @@ function museum_post_types() {
 	
 	register_post_type("tour", array(
 		"show_in_rest" => true,
-		"supports" => array("title", "editor", "excerpt", "thumbnail"),
+		"supports" => array("title", "editor", "thumbnail"),
 		"rewrite" => array("slug", "tours"),
-		"has_archive" => true,
+		"has_archive" => false,
 		"public" => true,
 		"labels" => array(
 			"name" => "Tours",
@@ -156,3 +156,45 @@ function login_redirect() {
 }
 
 add_action( 'wp', 'login_redirect' );
+
+function wpb_change_title_text( $title ){
+    $screen = get_current_screen();
+  
+    if  ( 'stop' == $screen->post_type ) {
+        $title = 'Add Stop Title';
+    }
+  
+  	if  ( 'tour' == $screen->post_type ) {
+        $title = 'Add Tour Title';
+    }
+    return $title;
+}
+  
+add_filter( 'enter_title_here', 'wpb_change_title_text' );
+
+
+function wpb_change_content_text( $placeholder ){
+    $screen = get_current_screen();
+  
+    if  ( 'stop' == $screen->post_type ) {
+        $placeholder = 'Add Description. This is visible when you view a Stop in presentation mode.';
+    }
+  
+  	if  ( 'tour' == $screen->post_type ) {
+        $placeholder = 'Do NOT edit';
+    }
+    return $placeholder;
+}
+  
+add_filter( 'write_your_story', 'wpb_change_content_text' );
+
+
+function remove_toolbar()
+{
+    global $wp_admin_bar;
+    $wp_admin_bar->remove_menu('new-content');
+    $wp_admin_bar->remove_menu('comments');
+    $wp_admin_bar->remove_menu('archive');
+}
+
+add_action( 'wp_before_admin_bar_render', 'remove_toolbar' );
