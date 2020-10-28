@@ -79,6 +79,10 @@
          username: "<?php echo $current_user->display_name; ?>",
          nonce: "<?php echo wp_create_nonce("wp_rest"); ?>",
        };
+       <?php if( !is_user_logged_in() ){
+          auth_redirect();
+        } ?>
+
     </script>
     <script src="https://kit.fontawesome.com/91b7b285ec.js" crossorigin="anonymous"></script>
     </body>

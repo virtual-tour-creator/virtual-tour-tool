@@ -41,7 +41,7 @@
         Learn how to configure a non-root public URL by running `npm run wpbuild`.
     -->
     <title>Museum.Live</title>
-<link href="/wp-content/themes/react-theme/static/css/0.chunk.css?12df4fdce4cfc71ca7fe" rel="stylesheet"><link href="/wp-content/themes/react-theme/static/css/main.chunk.css?12df4fdce4cfc71ca7fe" rel="stylesheet"></head>
+<link href="/wp-content/themes/react-theme/static/css/0.chunk.css?cf703ce391f84e57256e" rel="stylesheet"><link href="/wp-content/themes/react-theme/static/css/main.chunk.css?cf703ce391f84e57256e" rel="stylesheet"></head>
     <body>
     <noscript>
         You need to enable JavaScript to run this app.
@@ -86,7 +86,12 @@
          username: "<?php echo $current_user->display_name; ?>",
          nonce: "<?php echo wp_create_nonce("wp_rest"); ?>",
        };
+       <?php if(!is_user_logged_in()){
+          auth_redirect();
+          exit;
+        } ?>
+
     </script>
     <script src="https://kit.fontawesome.com/91b7b285ec.js" crossorigin="anonymous"></script>
-    <script src="/wp-content/themes/react-theme/static/js/bundle.js?12df4fdce4cfc71ca7fe"></script><script src="/wp-content/themes/react-theme/static/js/0.chunk.js?12df4fdce4cfc71ca7fe"></script><script src="/wp-content/themes/react-theme/static/js/main.chunk.js?12df4fdce4cfc71ca7fe"></script></body>
+    <script src="/wp-content/themes/react-theme/static/js/bundle.js?cf703ce391f84e57256e"></script><script src="/wp-content/themes/react-theme/static/js/0.chunk.js?cf703ce391f84e57256e"></script><script src="/wp-content/themes/react-theme/static/js/main.chunk.js?cf703ce391f84e57256e"></script></body>
 </html>
