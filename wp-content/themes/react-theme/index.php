@@ -3,8 +3,6 @@
 ?>
 <!DOCTYPE html>
 
-<?php if(!is_user_logged_in()){auth_redirect();}  ?>
-
 <html lang="en">
 <head>
 <?php $BRC_TEMPLATE_PATH = parse_url(get_template_directory_uri(), PHP_URL_PATH); ?>
@@ -44,7 +42,7 @@
         Learn how to configure a non-root public URL by running `npm run wpbuild`.
     -->
     <title>Museum.Live</title>
-<link href="/wp-content/themes/react-theme/static/css/0.chunk.css?62a243d606fc14f5d45a" rel="stylesheet"><link href="/wp-content/themes/react-theme/static/css/main.chunk.css?62a243d606fc14f5d45a" rel="stylesheet"></head>
+<link href="/wp-content/themes/react-theme/static/css/0.chunk.css?4b3e512e2b37dfdae5bb" rel="stylesheet"><link href="/wp-content/themes/react-theme/static/css/main.chunk.css?4b3e512e2b37dfdae5bb" rel="stylesheet"></head>
     <body>
     <noscript>
         You need to enable JavaScript to run this app.
@@ -92,5 +90,5 @@
 
     </script>
     <script src="https://kit.fontawesome.com/91b7b285ec.js" crossorigin="anonymous"></script>
-    <script src="/wp-content/themes/react-theme/static/js/bundle.js?62a243d606fc14f5d45a"></script><script src="/wp-content/themes/react-theme/static/js/0.chunk.js?62a243d606fc14f5d45a"></script><script src="/wp-content/themes/react-theme/static/js/main.chunk.js?62a243d606fc14f5d45a"></script></body>
+    <script src="/wp-content/themes/react-theme/static/js/bundle.js?4b3e512e2b37dfdae5bb"></script><script src="/wp-content/themes/react-theme/static/js/0.chunk.js?4b3e512e2b37dfdae5bb"></script><script src="/wp-content/themes/react-theme/static/js/main.chunk.js?4b3e512e2b37dfdae5bb"></script></body>
 </html>
