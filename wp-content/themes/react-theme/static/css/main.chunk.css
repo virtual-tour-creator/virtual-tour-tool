@@ -20,6 +20,10 @@ body {
     height: 64px;
 }
 
+.nav-link {
+    float: right;
+}
+
 .jumbotron {
     height: 280px;
     color: white;
@@ -449,7 +453,7 @@ ul, li {
 }
 
 
-ul {
+ul > .sortable-row {
     width: 90%;
     float: center;
 }

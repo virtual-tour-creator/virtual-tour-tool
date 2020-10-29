@@ -211,7 +211,7 @@ ul, li {
 }
 
 
-ul {
+ul > .sortable-row {
     width: 90%;
     float: center;
 }
