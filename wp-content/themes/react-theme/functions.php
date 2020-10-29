@@ -152,7 +152,7 @@ function ag_filter_post_json($response, $post, $context) {
     foreach ($tags as $tag) {
         $response->data['tag_names'][] = $tag->name;
     }
-    $response->data['thumbnail_url'] = get_the_post_thumbnail_url($post->ID, 'thumbnail');
+    $response->data['thumbnail_url'] = get_the_post_thumbnail_url($post->ID, 'entry-thumbnail');
 
     return $response;
 }

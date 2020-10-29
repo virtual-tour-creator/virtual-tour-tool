@@ -200,16 +200,15 @@ class TourPage extends React.Component {
             return(
                 <div>
                     <AddStop onSelectStops={this.handleAddedStops} />
-                    <div className='sortable-wrapper' id='tour-stops'>
-                    {/* draggable stop boxes */}
+                    <div className='grid-list-container'>
                         <StopBoxList 
                             stops={this.state.stops} 
                             onRemoveStop={this.handleRemoveStop}
                             onSortEnd={this.onSortEnd}
                             onSwapLeft = {this.onSwapLeft}
                             onSwapRight = {this.onSwapRight}
-                            axis={'xy'}
-                            useWindowAsScrollContainer/>
+                            axis='xy'
+                            useWindowAsScrollContainer={true}/>
                     </div>
                 </div>
                 

@@ -10,7 +10,7 @@ body {
     width: 200px;
     height: 100px;
     margin-bottom: 10px;
-    background-size: cover;
+    background-size: 200px 100px;
     display: inline-block;
     background-image: url("https://1000logos.net/wp-content/uploads/2018/01/Natural-History-Museum-Logo.png");
 }
