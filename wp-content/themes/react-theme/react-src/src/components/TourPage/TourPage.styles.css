@@ -210,11 +210,19 @@ ul, li {
     flex: 1 0 auto;
 }
 
+
+ul {
+    width: 90%;
+    float: center;
+}
+
 .sortable-row {
     display:flex;
     flex-wrap:wrap;
     float: left;
     position: absolute;
+    margin: 0 auto !important;
+    padding: 0 auto;
 }
 
 
