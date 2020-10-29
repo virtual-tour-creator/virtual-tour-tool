@@ -73,6 +73,8 @@ class MediaData
     public $title;
     public $caption;
     public $alt_text;
+    public $type;
+    public $format;
 }
 
 function create_ACF_meta_in_REST() {
@@ -97,8 +99,17 @@ function create_ACF_meta_in_REST() {
 					//$md->title = $metadata['image_meta']['title'];
 					$md->title = $field->post_title;
 					$md->caption = $metadata['image_meta']['caption'];
-					$md->full_url = get_site_url() . "/wp-content/uploads/" . $metadata['file'];
+
+					$pieces = explode("/", $field->guid);
+					$filename = end($pieces);
+					$part2 = prev($pieces);
+					$part1 = prev($pieces);
+					$md->full_url = get_site_url() . "/wp-content/uploads/" . $part1 . '/' . $part2 . '/' . basename($field->guid);
 					$md->thumbnail_url = get_site_url() . "/wp-content/uploads/" . $dir . $thumbnail;
+        			
+        			$pieces = explode("/", $field->post_mime_type);
+        			$md->type = $pieces[0];
+        			$md->format = $pieces[1];
         			$area[] = $md;
     			}
     			return $area;
@@ -150,8 +161,12 @@ add_filter( 'rest_prepare_stop', 'ag_filter_post_json', 10, 3 );
 
 
 function login_redirect() {
-    if(!is_user_logged_in()){
-		auth_redirect();
+    if(!is_user_logged_in()) {
+		global $wp;
+		$current_url = add_query_arg( $wp->query_string, '', home_url( $wp->request ) );
+		if( !is_user_logged_in() ) { 
+			wp_redirect( home_url() . '/wp-login.php?redirect_to='. $current_url );
+		}
 	}
 }
 
@@ -198,3 +213,5 @@ function remove_toolbar()
 }
 
 add_action( 'wp_before_admin_bar_render', 'remove_toolbar' );
+
+
