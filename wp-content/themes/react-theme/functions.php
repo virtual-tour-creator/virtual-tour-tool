@@ -214,4 +214,17 @@ function remove_toolbar()
 
 add_action( 'wp_before_admin_bar_render', 'remove_toolbar' );
 
+function cc_gutenberg_register_files() {
+    // script file
+    wp_register_script(
+        'cc-block-script',
+        get_stylesheet_directory_uri() .'/block-display.js',
+        array( 'wp-blocks', 'wp-edit-post' )
+    );
+    // register block editor script
+    register_block_type( 'cc/ma-block-files', array(
+        'editor_script' => 'cc-block-script'
+    ) );
 
+}
+add_action( 'init', 'cc_gutenberg_register_files' );
