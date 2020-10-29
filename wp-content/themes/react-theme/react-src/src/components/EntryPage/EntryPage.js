@@ -15,6 +15,19 @@ const getContent = entry => {
         );
 }
 
+const _renderVideo = item => {
+    return (
+        <div className='video-wrapper'>
+            <iframe
+              src={item.embedUrl}
+              frameBorder='0'
+              allowFullScreen
+            >
+            </iframe>
+        </div>     
+    );
+}
+
 const EntryPage = props => {
     let id = props.match.params.entryId;
     let time =  new Date().getTime();
@@ -39,13 +52,23 @@ const EntryPage = props => {
     if (entry.acf_media)
     {
         Photos = entry.acf_media.map((media) => {
+            const { type, thumbnail_url, full_url } = media;
+            if (type === "video") {
+                let video = {
+                    embedUrl: full_url,
+                    description: '',
+                    renderItem: _renderVideo,
+                    thumbnail: 'https://picsum.photos/150/150',
+                    original: ''
+                };
+                return video;
+            }
             let photo = {};
             photo['original'] = media.full_url;
             photo['thumbnail'] = media.thumbnail_url;
             photo['description'] = media.title;
             return photo;
         });
-        
     }
 
     // console.log(Photos);
