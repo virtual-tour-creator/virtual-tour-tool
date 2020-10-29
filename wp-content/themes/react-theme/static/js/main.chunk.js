@@ -1675,6 +1675,9 @@ class StopCard extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
       alt: "stop-thumbnail",
       src: thumbnailUrl,
+      style: {
+        width: "10rem"
+      },
       __self: this,
       __source: {
         fileName: _jsxFileName,
