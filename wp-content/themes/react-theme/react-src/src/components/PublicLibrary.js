@@ -4,6 +4,7 @@ import Jumbotron from './Jumbotron/Jumbotron';
 import Playlist from './Playlist/Playlist';
 import CreateTour from './Button/CreateTour';
 
+
 class PublicLibrary extends React.Component {
     constructor() {
         super();
@@ -97,12 +98,13 @@ class PublicLibrary extends React.Component {
         
     }
 
-    render() {    
+
+    render() { 
         return (
             <div className="public-library">
                 <Navbar />
                 <Jumbotron />
-                <CreateTour />
+                <div><CreateTour /></div>
                 <Playlist playlists={this.state.playlists} />
             </div>
         )

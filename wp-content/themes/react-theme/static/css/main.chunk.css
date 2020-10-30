@@ -13,25 +13,79 @@ code {
 }
 
 body {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Work Sans', sans-serif;
 }
 .navbar {
-    background: #000;
+    background-color:none;
     height: 64px;
+    margin: 15px 60px;
+    padding: 0;
+}
+
+.nav-item {
+    font-family: 'Cantarell', sans-serif;
+    font-size: 24px;
+    letter-spacing: 0.055em;
+    color: black !important;
+    margin-left: 20px;
 }
 
 .nav-link {
     float: right;
+    color: black;
+    padding: 0;
+    border-bottom: 3px solid transparent;
 }
 
-.jumbotron {
+.nav-link:hover {
+    border-bottom: 3px solid black;
+}
+
+.navbar-nav > li > a {
+    padding: 0;
+    margin:0;
+    vertical-align: bottom;
+}
+
+.navbar-expand-md .navbar-nav .nav-link {
+    padding: 0;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: black;
+}
+
+
+.navbar-expand-md .navbar-collapse {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.nav-left {
+    position:absolute;
+    bottom: 0;
+}
+/* .jumbotron {
     height: 280px;
     color: white;
     background: rgba(0,0,0,0.6);
 	background-image: url(https://www.ox.ac.uk/sites/files/oxford/styles/ow_large_feature/s3/field/field_image_main/b_AllSoulsquad.jpg?itok=tTcH-5ix);
 	background-blend-mode: darken;
 	background-size: cover;
-	padding-bottom: 20px;
+    padding-bottom: 20px;
+    margin: 0 60px;
+} */
+
+.jumbotron {
+    height: 450px;
+    color: white;
+    background-image: url(https://mediad.publicbroadcasting.net/p/wesa/files/styles/x_large/public/201804/clayton_1-300_cmyk.jpg);
+    background-size: 100%;
+    background-position-y: center;
+    padding-bottom: 20px;
+    margin:0 60px;
+    margin-bottom: 50px;
 }
 
 .display-4 {
@@ -44,11 +98,9 @@ body {
   }
 
 .entry > img {
-    border-radius: 10px;
     left: 20px;
     top: 481px;
-    width: 258.78px;
-    height: 206.73px;
+    width: 300px;
 }
 
 .entry > p {
@@ -61,32 +113,78 @@ body {
     display: flex;
     flex-direction: row;
     width: 97vw;
-    margin: 0 auto;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-gap: 16px;
 }
 
 .entry {
-    text-align: center;
+    position: relative;
+    border-top: 10px solid transparent;
+    top: 0;
 }
 
 .entry:hover {
-    transform: scale(1.1);
+    border-top: 10px solid black;
   }
+
+.carousel-arrow {
+    color: #c4c4c4;
+}
+
+.carousel-arrow:hover {
+    color: black;
+    cursor: pointer;
+}
+
+.BrainhubCarousel {
+    margin-top:20px;
+
+}
+
+.BrainhubCarouselItem {
+    align-items: flex-start !important;
+}
 .public-playlist {
-    margin: 20px;
+    margin: 60px;
 }
 
 .public-playlist > h1 {
-    font-weight: 700;
+    font-weight: 400;
     font-size: 40px;
-    line-height: 53px;
+    line-height: 47px;
+    vertical-align: bottom;
+    border-bottom: 1px solid black;
+}
+
+#view-all-button {
+    float: right;
+    font-size: 18px;
+    font-weight: 400;
+    
 }
 #create-button {
-    background: #000;
-    color: #fff;
-    float: right;
-    margin-right: 2%;
+    background: none;
+    color: #000;
+    display: block;
+    margin-right: 60px;
+    padding: 2px 20px;
+    position: absolute;
+    right: 0;
+    top: 560px;
+    border-radius: 0;
+    border: 1px solid black;
+}
+
+#create-button:hover {
+    background: #68989A;
+    color: white;
+    transition: .1s;
+}
+
+
+.create-new-tour-container{
+    width: 100%;
+    background: transparent;
 }
 
 .btn-primary {

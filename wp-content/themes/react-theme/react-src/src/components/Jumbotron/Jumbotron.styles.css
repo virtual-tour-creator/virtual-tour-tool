@@ -1,11 +1,23 @@
-.jumbotron {
+/* .jumbotron {
     height: 280px;
     color: white;
     background: rgba(0,0,0,0.6);
 	background-image: url(https://www.ox.ac.uk/sites/files/oxford/styles/ow_large_feature/s3/field/field_image_main/b_AllSoulsquad.jpg?itok=tTcH-5ix);
 	background-blend-mode: darken;
 	background-size: cover;
-	padding-bottom: 20px;
+    padding-bottom: 20px;
+    margin: 0 60px;
+} */
+
+.jumbotron {
+    height: 450px;
+    color: white;
+    background-image: url(https://mediad.publicbroadcasting.net/p/wesa/files/styles/x_large/public/201804/clayton_1-300_cmyk.jpg);
+    background-size: 100%;
+    background-position-y: center;
+    padding-bottom: 20px;
+    margin:0 60px;
+    margin-bottom: 50px;
 }
 
 .display-4 {

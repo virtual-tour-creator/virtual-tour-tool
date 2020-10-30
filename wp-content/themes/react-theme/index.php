@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cantarell:wght@400;700&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
@@ -42,7 +44,7 @@
         Learn how to configure a non-root public URL by running `npm run wpbuild`.
     -->
     <title>Museum.Live</title>
-<link href="/wp-content/themes/react-theme/static/css/1.chunk.css?4cf091c704d7fbed59eb" rel="stylesheet"><link href="/wp-content/themes/react-theme/static/css/main.chunk.css?4cf091c704d7fbed59eb" rel="stylesheet"></head>
+<link href="/wp-content/themes/react-theme/static/css/1.chunk.css?1d6c05ec97c5e9b59f96" rel="stylesheet"><link href="/wp-content/themes/react-theme/static/css/main.chunk.css?1d6c05ec97c5e9b59f96" rel="stylesheet"></head>
     <body>
     <noscript>
         You need to enable JavaScript to run this app.
@@ -90,5 +92,5 @@
 
     </script>
     <script src="https://kit.fontawesome.com/91b7b285ec.js" crossorigin="anonymous"></script>
-    <script src="/wp-content/themes/react-theme/static/js/bundle.js?4cf091c704d7fbed59eb"></script><script src="/wp-content/themes/react-theme/static/js/1.chunk.js?4cf091c704d7fbed59eb"></script><script src="/wp-content/themes/react-theme/static/js/main.chunk.js?4cf091c704d7fbed59eb"></script></body>
+    <script src="/wp-content/themes/react-theme/static/js/bundle.js?1d6c05ec97c5e9b59f96"></script><script src="/wp-content/themes/react-theme/static/js/1.chunk.js?1d6c05ec97c5e9b59f96"></script><script src="/wp-content/themes/react-theme/static/js/main.chunk.js?1d6c05ec97c5e9b59f96"></script></body>
 </html>

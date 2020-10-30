@@ -317,8 +317,7 @@ class TourPage extends React.Component {
                     {this.renderTourStops()}
                     {this.renderDeleteConfirmation()}
                 </div>
-                
-                
+                            
             </div>
         )
     }

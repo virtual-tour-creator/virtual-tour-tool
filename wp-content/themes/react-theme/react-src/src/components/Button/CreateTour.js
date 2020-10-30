@@ -61,9 +61,9 @@ function CreateTour(props) {
   
     return (
       <>
-        <Button variant="primary" onClick={handleShow} id='create-button'>
-          Create a New Tour
-        </Button>
+          <Button variant="primary" onClick={handleShow} id='create-button'>
+            CREATE A NEW TOUR
+          </Button>
   
         <Modal show={show} onHide={handleClose} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
           <Modal.Header closeButton>

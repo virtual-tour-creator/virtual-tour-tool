@@ -1,9 +1,18 @@
 .public-playlist {
-    margin: 20px;
+    margin: 60px;
 }
 
 .public-playlist > h1 {
-    font-weight: 700;
+    font-weight: 400;
     font-size: 40px;
-    line-height: 53px;
+    line-height: 47px;
+    vertical-align: bottom;
+    border-bottom: 1px solid black;
+}
+
+#view-all-button {
+    float: right;
+    font-size: 18px;
+    font-weight: 400;
+    
 }
