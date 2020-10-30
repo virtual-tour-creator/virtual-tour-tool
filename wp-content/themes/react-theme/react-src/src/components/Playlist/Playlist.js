@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import Entries from './Entries/Entries';
 import './Playlist.styles.css';
 
@@ -11,7 +11,7 @@ const Playlist = props => {
 		<div className='public-playlists'>
         {props.playlists.map(playlist => (
             <div key={playlist.id} className='public-playlist'>
-                <h1 onClick={() => props.history.push(`/tour/${playlist.id}`)}>{playlist.name.toUpperCase()}<span id="view-all-button">VIEW ALL</span></h1>
+                <h1>{playlist.name.toUpperCase()}<span><Link id="view-all-button" to={`/tour/${playlist.id}`}>VIEW ALL</Link></span></h1>
                 <Entries listId={playlist.id} entries={playlist.entries}/>
             </div>
         ))
