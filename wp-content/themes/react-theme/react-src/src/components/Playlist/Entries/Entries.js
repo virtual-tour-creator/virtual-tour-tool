@@ -22,7 +22,7 @@ const Entries = props => (
 
         {props.entries.map(entry =>
             <div key={entry.id} className='entry'>
-                <img style={{width:"18rem"}} alt='entry' src={entry.thumbnail_url} onClick={() => props.history.push(`/entry/${entry.id}`) }/> 
+                <img style={{width:"18rem"}} alt='entry' src={entry.medium_url} onClick={() => props.history.push(`/entry/${entry.id}`) }/> 
                 <p> {entry.name} </p>
             </div> )}  
         </Carousel>

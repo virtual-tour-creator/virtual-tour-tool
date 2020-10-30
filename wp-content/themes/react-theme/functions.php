@@ -62,6 +62,9 @@ function museum_custom_rest() {
 	register_rest_field("stop", "thumbnail_url", array(
 		"get_callback" => function() {return "";}
 	));
+	register_rest_field("stop", "medium_url", array(
+		"get_callback" => function() {return "";}
+	));
 }
 
 add_action("rest_api_init", "museum_custom_rest");
@@ -153,7 +156,7 @@ function ag_filter_post_json($response, $post, $context) {
         $response->data['tag_names'][] = $tag->name;
     }
     $response->data['thumbnail_url'] = get_the_post_thumbnail_url($post->ID, 'medium');
-
+	$response->data['medium_url'] = get_the_post_thumbnail_url($post->ID, 'medium');
     return $response;
 }
 

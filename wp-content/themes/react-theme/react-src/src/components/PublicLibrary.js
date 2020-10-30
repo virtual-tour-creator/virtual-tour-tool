@@ -28,10 +28,11 @@ class PublicLibrary extends React.Component {
             .then(res => res.json())
             .then(data => { 
                 // console.log(entry);
-                const { id, thumbnail_url, title } = data;
+                const { id, thumbnail_url, title, medium_url } = data;
                 const e = {
                     id,
                     thumbnail_url,
+                    medium_url,
                     name: title.rendered,
                 };
                 return e;
