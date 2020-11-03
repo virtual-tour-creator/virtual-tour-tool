@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Form, Button, Modal } from 'react-bootstrap';
 
 import Navbar from '../Navbar/Navbar';
 import Jumbotron from '../Jumbotron/Jumbotron';
 import AddStop from './AddStop'
 import StopBoxList from './CurrentStops'
-import MediaCard from './MediaCard'
+import MediaCard from './MediaCard';
 
 import arrayMove from 'array-move';
 
@@ -64,11 +64,12 @@ class TourPage extends React.Component {
                     return fetch('/wp-json/wp/v2/stop/' + tourId +'?timestamp=' + time)
                             .then(res => res.json())
                             .then(data => { 
-                                const { id, thumbnail_url, title } = data;
+                                const { id, thumbnail_url, title, medium_url } = data;
                                 const stop = {
                                     "id": id,
                                     "thumbnailUrl": thumbnail_url,
                                     "name": title.rendered,
+                                    "medium_url": medium_url
                                 };
                                 return stop;
                             });
@@ -188,9 +189,10 @@ class TourPage extends React.Component {
             
         } if (this.state.mode === 'view') {
             return(
-                <div>
-                    <div><span id='tour-name'>{this.state.name}</span> <span id='tour-date'>{this.state.date}</span> </div> 
-                </div>
+                <div className='tour-info-display'>
+                    <span id='tour-name'>{this.state.name.toUpperCase()}</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div> 
             )
         }
     }
@@ -217,7 +219,7 @@ class TourPage extends React.Component {
         } if(this.state.mode === 'view') {
             return(
 
-                <div className='cards'>
+                <div className='stops-container-view'>
                     {this.state.stops.map(singleStop => (
                         <MediaCard stop={singleStop} onClick={() => this.props.history.push(`/entry/${singleStop.id}`)}/>
                     ))}
@@ -300,6 +302,7 @@ class TourPage extends React.Component {
                 <Jumbotron />
 
                 <div id='tour-page'>
+
                     <Button variant="primary" onClick={this.handleEditing.bind(this)} id='update-stop-button' className='tour-page-button'>
                     <i className='fas fa-unlock-alt'></i>   EDIT THIS TOUR
                     </Button>
@@ -307,7 +310,7 @@ class TourPage extends React.Component {
                     <i className="fas fa-trash-alt"></i> DELETE TOUR
                     </Button>
 
-                    <div id='tour-info-form'>
+                    <div className='tour-info'>
                         {this.renderTourInfo()}
                     </div>
                     

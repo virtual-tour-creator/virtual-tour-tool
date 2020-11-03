@@ -357,7 +357,11 @@ button.card {
 
 #tour-name {
     display: inline;
-    font-size: 2em;
+    font-family: 'Amiko', sans-serif;
+    font-weight: 700;
+    line-height: 53px;
+    letter-spacing: 0.03em;
+    font-size: 40px;
     margin-right: 15px;
 }
 
@@ -365,6 +369,10 @@ button.card {
     display: inline;
 }
 
+.tour-info-display {
+    margin-top: 80px;
+    border-bottom: 1px solid #666E77;
+}
 
 .cards {
     display: flex;
@@ -395,7 +403,7 @@ button.card {
 
 
 #tour-page {
-    margin: 20px 50px;
+    margin: 20px 60px;
 }
 
 /* button styles */
@@ -530,7 +538,14 @@ button.card {
 }
 
 
-
+.stops-container-view {
+    display: grid;
+    grid-gap: 30px;
+    grid-row-gap: 64px;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    grid-auto-rows: auto;
+    margin-top: 80px;
+}
 
 
 .stop-card {

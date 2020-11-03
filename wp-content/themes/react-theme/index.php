@@ -19,6 +19,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cantarell:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiko:wght@400;600;700&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
@@ -44,7 +45,7 @@
         Learn how to configure a non-root public URL by running `npm run wpbuild`.
     -->
     <title>Museum.Live</title>
-<link href="/wp-content/themes/react-theme/static/css/1.chunk.css?a8dd2ca1490e9d08c02b" rel="stylesheet"><link href="/wp-content/themes/react-theme/static/css/main.chunk.css?a8dd2ca1490e9d08c02b" rel="stylesheet"></head>
+<link href="/wp-content/themes/react-theme/static/css/1.chunk.css?0f860fbca8980592798c" rel="stylesheet"><link href="/wp-content/themes/react-theme/static/css/main.chunk.css?0f860fbca8980592798c" rel="stylesheet"></head>
     <body>
     <noscript>
         You need to enable JavaScript to run this app.
@@ -92,5 +93,5 @@
 
     </script>
     <script src="https://kit.fontawesome.com/91b7b285ec.js" crossorigin="anonymous"></script>
-    <script src="/wp-content/themes/react-theme/static/js/bundle.js?a8dd2ca1490e9d08c02b"></script><script src="/wp-content/themes/react-theme/static/js/1.chunk.js?a8dd2ca1490e9d08c02b"></script><script src="/wp-content/themes/react-theme/static/js/main.chunk.js?a8dd2ca1490e9d08c02b"></script></body>
+    <script src="/wp-content/themes/react-theme/static/js/bundle.js?0f860fbca8980592798c"></script><script src="/wp-content/themes/react-theme/static/js/1.chunk.js?0f860fbca8980592798c"></script><script src="/wp-content/themes/react-theme/static/js/main.chunk.js?0f860fbca8980592798c"></script></body>
 </html>
