@@ -6,7 +6,7 @@ import ImageGallery from 'react-image-gallery';
 import 'react-bnb-gallery/dist/style.css'
 import Collapsible from 'react-collapsible';
 import CloseIcon from '@material-ui/icons/Close';
-
+import { Button, Modal, Form, Col, Row } from 'react-bootstrap';
 
 const getContent = entry => {
     if (entry.content) 
@@ -31,6 +31,7 @@ const _renderVideo = item => {
 const EntryPage = props => {
     let id = props.match.params.entryId;
     let time =  new Date().getTime();
+    const [searchStr, setSearchStr] = useState("");
     const [entry, setEntry] = useState([]);
     useEffect(() => {
         async function loadEntry() {
@@ -46,6 +47,11 @@ const EntryPage = props => {
         
         loadEntry();
     })
+
+    const getMediaSearchLink = () => {
+        if (searchStr === '') return "";
+        return reactInit.searchMediaUrl + encodeURI(searchStr);
+    };
 
     // load media
     let Photos = [];
@@ -87,8 +93,8 @@ const EntryPage = props => {
     let tag_lists = "None"
     if (entry.tag_names)
     {
-        tag_lists = entry.tag_names.map((name) =>
-            <li>#{name}</li>
+        tag_lists = entry.tag_names.map((tag) =>
+            <li><a href={reactInit.searchStopTagUrl + tag[1]}>#{tag[0]}</a></li>
         );
     }
     
@@ -114,6 +120,9 @@ const EntryPage = props => {
                 <div id="image-gallery">
                     <ImageGallery items={Photos} showPlayButton={false}/>
                 </div>
+                <Collapsible trigger="Media Caption" open>
+                    
+                </Collapsible>
                 <Collapsible trigger="Description" open>
                     {getContent(entry)}
                 </Collapsible>
@@ -122,7 +131,25 @@ const EntryPage = props => {
                     {tag_lists}
                 </Collapsible>
 
-                
+                <div className="media-search-bar">
+                    <Form>
+                    <Form.Row>
+                        <Col>
+                          <Form.Control placeholder="Search Media" onChange={event => setSearchStr(event.target.value)}/>
+                        </Col>
+                        <Col>
+                          <Button variant="primary" href={getMediaSearchLink()}>
+                             Search
+                          </Button>
+                        </Col>
+                        <Col>
+                          <Button variant="primary" href={reactInit.adminUrl + 'post.php?post=' + id + '&action=edit'}>
+                             Edit this Stop
+                          </Button>
+                        </Col>
+                    </Form.Row>
+                    </Form>
+                </div>
 
             </div>
 
