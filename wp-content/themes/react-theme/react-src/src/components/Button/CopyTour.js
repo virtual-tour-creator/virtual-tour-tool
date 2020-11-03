@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Modal, Form } from 'react-bootstrap';
 import { withRouter } from 'react-router-dom';
-// import './CopyTour.styles.css';
+import './CopyTour.styles.css';
 
 
 async function copyTour(title, date, stops) {

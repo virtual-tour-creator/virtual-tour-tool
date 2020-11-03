@@ -1,17 +1,15 @@
-#create-button {
+#copy-button {
     background: none;
     color: #000;
     display: block;
     margin-right: 60px;
     padding: 2px 20px;
-    position: absolute;
     right: 0;
-    top: 560px;
     border-radius: 0;
     border: 1px solid black;
 }
 
-#create-button:hover {
+#copy-button:hover {
     background: #68989A;
     color: white;
     transition: .1s;
@@ -26,3 +24,4 @@
 .btn-primary {
     background: #000;
     color: #fff;
+}
