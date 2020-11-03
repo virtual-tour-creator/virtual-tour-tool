@@ -12,7 +12,7 @@ function App() {
     return (
         <div className='App'>
             <Route exact path='/' component={PublicLibrary} />
-            <Route exact path='/entry/:entryId' component={EntryPage} />
+            <Route exact path='/stop/:entryId' component={EntryPage} />
             <Route exact path='/tour/:tourId' component={TourPage} />
             
             

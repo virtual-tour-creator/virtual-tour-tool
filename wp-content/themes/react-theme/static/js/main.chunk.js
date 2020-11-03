@@ -60,7 +60,7 @@ function App() {
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
-    path: "/entry/:entryId",
+    path: "/stop/:entryId",
     component: _components_EntryPage_EntryPage__WEBPACK_IMPORTED_MODULE_4__["default"],
     __self: this,
     __source: {
@@ -602,7 +602,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_collapsible__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_collapsible__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/icons/Close */ "./node_modules/@material-ui/icons/Close.js");
 /* harmony import */ var _material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_5__);
-var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/EntryPage/EntryPage.js";
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/index.js");
+var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/components/EntryPage/EntryPage.js";
+
 
 
 
@@ -649,6 +651,7 @@ const _renderVideo = item => {
 const EntryPage = props => {
   let id = props.match.params.entryId;
   let time = new Date().getTime();
+  const [searchStr, setSearchStr] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])("");
   const [entry, setEntry] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
     async function loadEntry() {
@@ -664,7 +667,13 @@ const EntryPage = props => {
     }
 
     loadEntry();
-  }); // load media
+  });
+
+  const getMediaSearchLink = () => {
+    if (searchStr === '') return "";
+    return reactInit.searchMediaUrl + encodeURI(searchStr);
+  }; // load media
+
 
   let Photos = [];
 
@@ -711,14 +720,22 @@ const EntryPage = props => {
   let tag_lists = "None";
 
   if (entry.tag_names) {
-    tag_lists = entry.tag_names.map(name => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    tag_lists = entry.tag_names.map(tag => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 91,
+        lineNumber: 97,
         columnNumber: 13
       }
-    }, "#", name));
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      href: reactInit.searchStopTagUrl + tag[1],
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 97,
+        columnNumber: 17
+      }
+    }, "#", tag[0])));
   } // const [isOpen, setIsOpen] = useState(false);
 
 
@@ -727,7 +744,7 @@ const EntryPage = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99,
+      lineNumber: 105,
       columnNumber: 9
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -736,7 +753,7 @@ const EntryPage = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100,
+      lineNumber: 106,
       columnNumber: 13
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -744,7 +761,7 @@ const EntryPage = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101,
+      lineNumber: 107,
       columnNumber: 13
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -752,21 +769,21 @@ const EntryPage = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102,
+      lineNumber: 108,
       columnNumber: 17
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 103,
+      lineNumber: 109,
       columnNumber: 21
     }
   }, entry.title ? entry.title.rendered : "loading")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 105,
+      lineNumber: 111,
       columnNumber: 17
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -774,7 +791,7 @@ const EntryPage = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 114,
+      lineNumber: 120,
       columnNumber: 17
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_image_gallery__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -783,16 +800,25 @@ const EntryPage = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 115,
+      lineNumber: 121,
       columnNumber: 21
     }
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_collapsible__WEBPACK_IMPORTED_MODULE_4___default.a, {
+    trigger: "Media Caption",
+    open: true,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 123,
+      columnNumber: 17
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_collapsible__WEBPACK_IMPORTED_MODULE_4___default.a, {
     trigger: "Description",
     open: true,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 117,
+      lineNumber: 126,
       columnNumber: 17
     }
   }, getContent(entry)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_collapsible__WEBPACK_IMPORTED_MODULE_4___default.a, {
@@ -801,10 +827,80 @@ const EntryPage = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 121,
+      lineNumber: 130,
       columnNumber: 17
     }
-  }, tag_lists)));
+  }, tag_lists), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "media-search-bar",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 134,
+      columnNumber: 17
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["Form"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 135,
+      columnNumber: 21
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["Form"].Row, {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 136,
+      columnNumber: 21
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["Col"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 137,
+      columnNumber: 25
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["Form"].Control, {
+    placeholder: "Search Media",
+    onChange: event => setSearchStr(event.target.value),
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 138,
+      columnNumber: 27
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["Col"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 140,
+      columnNumber: 25
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["Button"], {
+    variant: "primary",
+    href: getMediaSearchLink(),
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 141,
+      columnNumber: 27
+    }
+  }, "Search")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["Col"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 145,
+      columnNumber: 25
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["Button"], {
+    variant: "primary",
+    href: reactInit.adminUrl + 'post.php?post=' + id + '&action=edit',
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 146,
+      columnNumber: 27
+    }
+  }, "Edit this Stop")))))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (EntryPage);
@@ -1151,7 +1247,7 @@ const Entries = props => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default
   },
   alt: "entry",
   src: entry.medium_url,
-  onClick: () => props.history.push(`/entry/${entry.id}`),
+  onClick: () => props.history.push(`/stop/${entry.id}`),
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
@@ -2615,7 +2711,7 @@ class TourPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         }
       }, this.state.stops.map(singleStop => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_MediaCard__WEBPACK_IMPORTED_MODULE_6__["default"], {
         stop: singleStop,
-        onClick: () => this.props.history.push(`/entry/${singleStop.id}`),
+        onClick: () => this.props.history.push(`/stop/${singleStop.id}`),
         __self: this,
         __source: {
           fileName: _jsxFileName,

@@ -283,7 +283,7 @@ class TourPage extends React.Component {
 
                 <div className='stops-container-view'>
                     {this.state.stops.map(singleStop => (
-                        <MediaCard stop={singleStop} onClick={() => this.props.history.push(`/entry/${singleStop.id}`)}/>
+                        <MediaCard stop={singleStop} onClick={() => this.props.history.push(`/stop/${singleStop.id}`)}/>
                     ))}
                 </div>
             )

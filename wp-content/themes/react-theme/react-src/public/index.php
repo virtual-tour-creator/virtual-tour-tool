@@ -83,6 +83,9 @@
          logoutUrl: "<?php echo wp_logout_url(); ?>",
          username: "<?php echo $current_user->display_name; ?>",
          nonce: "<?php echo wp_create_nonce("wp_rest"); ?>",
+         searchStopTagUrl: "<?php echo admin_url('edit.php?post_type=stop&tag='); ?>",
+         searchMediaUrl: "<?php echo admin_url('upload.php?search='); ?>",
+         adminUrl: "<?php echo admin_url(); ?>"
        };
 
     </script>
