@@ -161,3 +161,14 @@ function login_redirect() {
 
 add_action( 'wp', 'login_redirect' );
 
+// Replace Howdy Greeting
+function replace_howdy_greeting( $wp_admin_bar ) {
+  $my_account=$wp_admin_bar->get_node('my-account');
+  $newtitle = str_replace( 'Howdy', 'Welcome', $my_account->title );
+  $wp_admin_bar->add_node( array(
+    'id' => 'my-account',
+    'title' => $newtitle,
+  ) );
+}
+add_filter( 'admin_bar_menu', 'replace_howdy_greeting', 12 );
+
