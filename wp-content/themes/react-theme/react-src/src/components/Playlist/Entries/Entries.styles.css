@@ -24,13 +24,25 @@
 
 .entry {
     position: relative;
-    border-top: 10px solid transparent;
     top: 0;
 }
 
-.entry:hover {
+.entry:hover::after {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
     border-top: 10px solid black;
-  }
+    content: '';
+    display: block;
+}
+
+.inner-border {
+    padding: 0 10px;
+}
+
+
 
 .carousel-arrow {
     color: #c4c4c4;
