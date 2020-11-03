@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import Entries from './Entries/Entries';
+import CopyTour from '../Button/CopyTour';
 import './Playlist.styles.css';
 
 
@@ -12,6 +13,7 @@ const Playlist = props => {
         {props.playlists.map(playlist => (
             <div key={playlist.id} className='public-playlist'>
                 <h1>{playlist.name.toUpperCase()}<span><Link id="view-all-button" to={`/tour/${playlist.id}`}>VIEW ALL</Link></span></h1>
+                <div> <CopyTour props={playlist}/> </div>
                 <Entries listId={playlist.id} entries={playlist.entries}/>
             </div>
         ))

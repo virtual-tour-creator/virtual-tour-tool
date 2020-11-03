@@ -63,6 +63,16 @@ const EntryPage = props => {
                 };
                 return video;
             }
+            if (type === "audio") {
+                let audio = {
+                    embedUrl: full_url,
+                    description: '',
+                    renderItem: _renderVideo,
+                    thumbnail: 'https://picsum.photos/150/150',
+                    original: ''
+                };
+                return audio;
+            }
             let photo = {};
             photo['original'] = media.full_url;
             photo['thumbnail'] = media.thumbnail_url;

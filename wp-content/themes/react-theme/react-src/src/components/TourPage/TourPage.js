@@ -39,7 +39,7 @@ class TourPage extends React.Component {
             return parseInt(idStr);
         }) : [];
         info.stopIds = stops;
-        res = content.match(/<h2>.+<\/h2>/gm);
+        res = content.match(/<h2>TourDate:.+<\/h2>/gm);
         let date = res ? res[0].slice(4, -5).split(":")[1] : "";
         info.tourDate = date;
         return info;
