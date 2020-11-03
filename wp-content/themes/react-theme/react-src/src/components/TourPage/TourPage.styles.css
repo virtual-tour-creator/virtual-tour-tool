@@ -6,22 +6,19 @@
 
 #tour-name {
     display: inline;
-    font-size: 2em;
-    margin-right: 15px;
+    font-family: 'Amiko', sans-serif;
+    font-weight: 700;
+    line-height: 53px;
+    letter-spacing: 0.03em;
+    font-size: 40px;
 }
 
 #tour-date {
     display: inline;
 }
 
-
-.cards {
-    display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        align-content: flex-start;
-        flex-flow: row wrap;
-    margin: auto;
+.tour-info-display {
+    margin-top: 64px;
 }
 
 .card-image-top {
@@ -44,7 +41,7 @@
 
 
 #tour-page {
-    margin: 20px 50px;
+    margin: 20px 60px;
 }
 
 /* button styles */
@@ -179,7 +176,14 @@
 }
 
 
-
+.stops-container-view {
+    display: grid;
+    grid-gap: 32px;
+    grid-row-gap: 64px;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    grid-auto-rows: auto;
+    margin: 30px 0;
+}
 
 
 .stop-card {
@@ -225,22 +229,24 @@ ul > .sortable-row {
     padding: 0 auto;
 }
 
-
-/* .edit-stops {
-    margin: 0 auto;
-    cursor: pointer;
-    margin-bottom: 3px;
-    display:block;
-    white-space: nowrap;
-
-}
-
-.edit-stop {
-    position: relative;
-    display: flex;
-    justify-content: center;
-} */
-
 * {
     box-sizing: border-box;
+}
+
+
+.fa-chevron-down {
+    color: #c7c7c7;
+}
+
+.stop-thumbnail:hover {
+    opacity: .3;
+    cursor: pointer;
+}
+
+.stop-name {
+    font-family: 'Spectral SC', serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    margin-top: 15px;
 }

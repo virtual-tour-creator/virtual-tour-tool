@@ -5,7 +5,13 @@ import Navbar from '../Navbar/Navbar';
 import Jumbotron from '../Jumbotron/Jumbotron';
 import AddStop from './AddStop'
 import StopBoxList from './CurrentStops'
-import MediaCard from './MediaCard'
+import MediaCard from './MediaCard';
+
+import { withStyles } from '@material-ui/core/styles';
+import MuiAccordion from '@material-ui/core/Accordion';
+import MuiAccordionSummary from '@material-ui/core/AccordionSummary';
+import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
+
 
 import arrayMove from 'array-move';
 
@@ -64,11 +70,12 @@ class TourPage extends React.Component {
                     return fetch('/wp-json/wp/v2/stop/' + tourId +'?timestamp=' + time)
                             .then(res => res.json())
                             .then(data => { 
-                                const { id, thumbnail_url, title } = data;
+                                const { id, thumbnail_url, title, medium_url } = data;
                                 const stop = {
                                     "id": id,
                                     "thumbnailUrl": thumbnail_url,
                                     "name": title.rendered,
+                                    "medium_url": medium_url
                                 };
                                 return stop;
                             });
@@ -150,15 +157,54 @@ class TourPage extends React.Component {
                 //toggle editing mode
             });
             this.setState({'mode': 'view'});
-            document.getElementById('update-stop-button').innerHTML = "<i class='fas fa-unlock-alt'></i>" + '    EDIT THIS TOUR';
         } if(this.state.mode === 'view') {
             this.setState({'mode': 'edit'});
-            document.getElementById('update-stop-button').innerHTML = "<i class='fas fa-check'></i>" + '  DONE EDITING';
         }
         
     }
 
+
     renderTourInfo() {
+        const Accordion = withStyles({
+            root: {
+              border: 'none',
+              boxShadow: 'none',
+              '&:not(:last-child)': {
+                borderBottom: 0,
+              },
+              '&:before': {
+                display: 'none',
+              },
+              '&$expanded': {
+                margin: 'auto',
+              },
+            },
+            expanded: {},
+          })(MuiAccordion);
+          
+          const AccordionSummary = withStyles({
+            root: {
+              backgroundColor: 'transparent',
+              borderBottom: "1px solid #666E77",
+              minHeight: 56,
+              cursor: "auto !important",
+              padding: "0",
+              '&$expanded': {
+                minHeight: 56,
+              },
+            },
+            content: {
+              '&$expanded': {
+                margin: '12px 0',
+              },
+            },
+            expanded: {},
+          })(MuiAccordionSummary);
+          
+          const AccordionDetails = withStyles((theme) => ({
+            root: {
+            },
+          }))(MuiAccordionDetails);
         if(this.state.mode === 'edit') {
             return(
                 <Form>
@@ -188,9 +234,24 @@ class TourPage extends React.Component {
             
         } if (this.state.mode === 'view') {
             return(
-                <div>
-                    <div><span id='tour-name'>{this.state.name}</span> <span id='tour-date'>{this.state.date}</span> </div> 
-                </div>
+                <div className='tour-info-display'>
+                    <Accordion>
+                        <AccordionSummary
+                        expandIcon={<i className="fas fa-chevron-down"></i>}
+                        >
+                        <span id='tour-name'>{this.state.name.toUpperCase()}</span>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <Button variant="primary" onClick={this.handleEditing.bind(this)} id='update-stop-button' className='tour-page-button'>
+                            <i className='fas fa-unlock-alt'></i>   EDIT THIS TOUR
+                            </Button>
+                            <Button variant="primary" onClick={this.handleDelete.bind(this)} id='delete-stop-button'  className='tour-page-button'>
+                            <i className="fas fa-trash-alt"></i> DELETE TOUR
+                            </Button>
+                        </AccordionDetails>
+                    </Accordion>
+
+                </div> 
             )
         }
     }
@@ -200,6 +261,9 @@ class TourPage extends React.Component {
             return(
                 <div>
                     <AddStop onSelectStops={this.handleAddedStops} />
+                    <Button variant="primary" onClick={this.handleEditing.bind(this)} id='update-stop-button' className='tour-page-button'>
+                        <i class='fas fa-check'></i> DONE EDITING
+                    </Button>
                     <div className='grid-list-container'>
                         <StopBoxList 
                             stops={this.state.stops} 
@@ -217,7 +281,7 @@ class TourPage extends React.Component {
         } if(this.state.mode === 'view') {
             return(
 
-                <div className='cards'>
+                <div className='stops-container-view'>
                     {this.state.stops.map(singleStop => (
                         <MediaCard stop={singleStop} onClick={() => this.props.history.push(`/stop/${singleStop.id}`)}/>
                     ))}
@@ -300,14 +364,10 @@ class TourPage extends React.Component {
                 <Jumbotron />
 
                 <div id='tour-page'>
-                    <Button variant="primary" onClick={this.handleEditing.bind(this)} id='update-stop-button' className='tour-page-button'>
-                    <i className='fas fa-unlock-alt'></i>   EDIT THIS TOUR
-                    </Button>
-                    <Button variant="primary" onClick={this.handleDelete.bind(this)} id='delete-stop-button'  className='tour-page-button'>
-                    <i className="fas fa-trash-alt"></i> DELETE TOUR
-                    </Button>
 
-                    <div id='tour-info-form'>
+                    
+
+                    <div className='tour-info'>
                         {this.renderTourInfo()}
                     </div>
                     

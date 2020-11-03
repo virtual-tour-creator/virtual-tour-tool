@@ -19,6 +19,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cantarell:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiko:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Spectral+SC:wght@400;700&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
@@ -44,7 +46,7 @@
         Learn how to configure a non-root public URL by running `npm run wpbuild`.
     -->
     <title>Museum.Live</title>
-<link href="/wp-content/themes/react-theme/static/css/1.chunk.css?47af043aaf6128ff15ab" rel="stylesheet"><link href="/wp-content/themes/react-theme/static/css/main.chunk.css?47af043aaf6128ff15ab" rel="stylesheet"></head>
+<link href="/wp-content/themes/react-theme/static/css/0.chunk.css?263c8d4a442b961c1d2e" rel="stylesheet"><link href="/wp-content/themes/react-theme/static/css/main.chunk.css?263c8d4a442b961c1d2e" rel="stylesheet"></head>
     <body>
     <noscript>
         You need to enable JavaScript to run this app.
@@ -95,5 +97,5 @@
 
     </script>
     <script src="https://kit.fontawesome.com/91b7b285ec.js" crossorigin="anonymous"></script>
-    <script src="/wp-content/themes/react-theme/static/js/bundle.js?47af043aaf6128ff15ab"></script><script src="/wp-content/themes/react-theme/static/js/1.chunk.js?47af043aaf6128ff15ab"></script><script src="/wp-content/themes/react-theme/static/js/main.chunk.js?47af043aaf6128ff15ab"></script></body>
+    <script src="/wp-content/themes/react-theme/static/js/bundle.js?263c8d4a442b961c1d2e"></script><script src="/wp-content/themes/react-theme/static/js/0.chunk.js?263c8d4a442b961c1d2e"></script><script src="/wp-content/themes/react-theme/static/js/main.chunk.js?263c8d4a442b961c1d2e"></script></body>
 </html>
