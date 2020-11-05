@@ -58,6 +58,7 @@ function CreateTour(props) {
           return;
         }
         // redirect
+        props.props.setEditMode(true);
         props.history.push(`/tour/${id}`);
       });      
     };

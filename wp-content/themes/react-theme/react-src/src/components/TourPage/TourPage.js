@@ -22,16 +22,18 @@ class TourPage extends React.Component {
     constructor(props) {
         super(props);
         //initial state
+        const { editMode, setEditMode } = props;
         this.state = {
             'id': props.match.params.tourId,
             'name': '',
             'visibility': 'public',
             'date': '',
             'stops': [],
-            'mode': 'view',
+            'mode': editMode ? 'edit' : 'view',
             'showDeleteConfirmation': false
         };
         this.handleRemoveStop = this.handleRemoveStop.bind(this);
+        setEditMode(false);
     }
     
     parseContent(content) {

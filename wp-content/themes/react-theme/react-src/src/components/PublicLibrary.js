@@ -6,8 +6,8 @@ import CreateTour from './Button/CreateTour';
 
 
 class PublicLibrary extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             playlists: []
           };
@@ -111,7 +111,7 @@ class PublicLibrary extends React.Component {
             <div className="public-library">
                 <Navbar />
                 <Jumbotron />
-                <div><CreateTour /></div>
+                <div><CreateTour props={this.props}/></div>
                 <Playlist playlists={this.state.playlists} />
             </div>
         )
