@@ -3,6 +3,9 @@ import { Button, Modal, Form } from 'react-bootstrap';
 import { withRouter } from 'react-router-dom';
 import './CreateTour.styles.css'
 
+import CloseIcon from '@material-ui/icons/Close';
+import AddIcon from '@material-ui/icons/Add';
+
 async function createTour(title, date) {
     const data = {
       "title": title,
@@ -61,13 +64,14 @@ function CreateTour(props) {
   
     return (
       <>
-          <Button variant="primary" onClick={handleShow} id='create-button'>
-            CREATE A NEW TOUR
-          </Button>
+          <div id="create-button-area"><Button variant="primary" onClick={handleShow} id='create-button'>
+            <AddIcon id="add-icon"/> CREATE A NEW TOUR
+          </Button></div>
   
-        <Modal show={show} onHide={handleClose} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
-          <Modal.Header closeButton>
+        <Modal show={show} onHide={handleClose} size="md" aria-labelledby="contained-modal-title-vcenter" centered>
+          <Modal.Header closeButton={false}>
             <Modal.Title>Create a New Tour</Modal.Title>
+            <CloseIcon onClick={handleClose} className="overlay-close-icon" />
           </Modal.Header>
 
           <Modal.Body>
@@ -75,34 +79,20 @@ function CreateTour(props) {
 
             <Form.Group>
                 <Form.Label>Tour Name</Form.Label>
-                <Form.Control type="text" onChange={event => setTourTitle(event.target.value)} />
-                {/* <Form.Text className="text-muted">
-                We'll never share your email with anyone else.
-                </Form.Text> */}
+                <Form.Control className="create-tour-input" type="text" onChange={event => setTourTitle(event.target.value)} />
             </Form.Group>
 
             <Form.Group>
                 <Form.Label>Tour Date</Form.Label>
-                <Form.Control type="date" onChange={event => setTourDate(event.target.value)}/>
+                <Form.Control className="create-tour-input" type="date" onChange={event => setTourDate(event.target.value)}/>
             </Form.Group>
-
-            <Form.Group>
-
-                <Form.Label>Tour Visibility</Form.Label>
-                <Form.Check type='radio' id='default-radio' label='Public' name='tourTypeRadio' />
-                <Form.Check type='radio' label='Private' id='disabled-default-radio' name='tourTypeRadio' />
-
-            </Form.Group>
-            {/* <Button variant="primary" type="submit">
-                Submit
-            </Button> */}
 
             </Form>
           </Modal.Body>
 
           <Modal.Footer>
             <Button variant="primary" onClick={handleCreate.bind(this, tourTitle, tourDate)}>
-              Save Changes
+              Create
             </Button>
           </Modal.Footer>
         </Modal>

@@ -5,7 +5,6 @@
 .entry > img {
     left: 20px;
     top: 481px;
-    width: 300px;
 }
 
 .entry > p {
@@ -27,6 +26,14 @@
     top: 0;
 }
 
+.entry-name {
+    font-family: 'Spectral SC', serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 133.4%;
+    margin-top: 15px;
+}
+
 .entry:hover::after {
     position: absolute;
     top: 0px;
@@ -45,7 +52,8 @@
 
 
 .carousel-arrow {
-    color: #c4c4c4;
+    color: #666E77;
+    font-size: 2rem !important;
 }
 
 .carousel-arrow:hover {
@@ -54,10 +62,10 @@
 }
 
 .BrainhubCarousel {
-    margin-top:20px;
-
+    padding-top: 25px;
 }
 
 .BrainhubCarouselItem {
     align-items: flex-start !important;
+    box-sizing: border-box;
 }

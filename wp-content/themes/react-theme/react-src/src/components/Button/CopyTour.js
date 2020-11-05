@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import { Button, Modal, Form } from 'react-bootstrap';
 import { withRouter } from 'react-router-dom';
-import './CopyTour.styles.css';
+import Typography from '@material-ui/core/Typography';
+
+import CloseIcon from '@material-ui/icons/Close';
+
+import './CreateTour.styles.css';
 
 
 async function copyTour(title, date, stops) {
@@ -54,7 +58,8 @@ function CopyTour(props) {
   
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    const handleCreate = (title, date, stops, event) => {
+
+    const handleCopy = (title, date, stops, event) => {
         console.log(stops);
         if (!title || title.length === 0)
         {
@@ -70,19 +75,20 @@ function CopyTour(props) {
             return;
           }
           // redirect
-          props.history.push(`/tour/${id}`);
+          window.location.reload();
         });   
     };
 
     return (
       <>
-          <Button variant="primary" onClick={handleShow} id='copy-button'>
+          <Typography onClick={handleShow}>
             COPY THIS TOUR
-          </Button>
+          </Typography>
 
-          <Modal show={show} onHide={handleClose} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
-          <Modal.Header closeButton>
-            <Modal.Title>Copy and Create a New Tour</Modal.Title>
+          <Modal show={show} onHide={handleClose} size="md" aria-labelledby="contained-modal-title-vcenter" centered>
+          <Modal.Header closeButton={false}>
+            <Modal.Title>Copy This Tour</Modal.Title>
+            <CloseIcon onClick={handleClose} className="overlay-close-icon" />
           </Modal.Header>
 
           <Modal.Body>
@@ -90,19 +96,22 @@ function CopyTour(props) {
 
             <Form.Group>
                 <Form.Label>Tour Name</Form.Label>
-                <Form.Control type="text" value={tourTitle} onChange={event => setTourTitle(event.target.value)} />
+                <Form.Control className="create-tour-input" type="text" value={tourTitle} onChange={event => setTourTitle(event.target.value)} />
             </Form.Group>
 
             <Form.Group>
                 <Form.Label>Tour Date</Form.Label>
-                <Form.Control type="date" value={tourDate} onChange={event => setTourDate(event.target.value)}/>
+                <Form.Control className="create-tour-input" type="date" value={tourDate} onChange={event => setTourDate(event.target.value)}/>
             </Form.Group>
 
             <Form.Group>
 
-                <Form.Label>Tour Visibility</Form.Label>
-                <Form.Check type='radio' id='default-radio' label='In Progress' name='tourTypeRadio' />
-                <Form.Check type='radio' label='Ready to Present' id='disabled-default-radio' name='tourTypeRadio' />
+                <Form.Label>Tour Edit Is</Form.Label>
+                <div className="radio-button-container">
+                  <Form.Check type='radio' id='default-radio' label='COMPLETE' name='tourTypeRadio' variant="dark" />
+                  <Form.Check type='radio' label='INCOMPLETE' id='default-radio' name='tourTypeRadio' />
+                </div>
+                
 
             </Form.Group>
             {/* <Button variant="primary" type="submit">
@@ -113,7 +122,7 @@ function CopyTour(props) {
           </Modal.Body>
 
           <Modal.Footer>
-            <Button variant="primary" onClick={handleCreate.bind(this, tourTitle, tourDate, entries)}>
+            <Button variant="primary" onClick={handleCopy.bind(this, tourTitle, tourDate, entries)}>
               Save Changes
             </Button>
           </Modal.Footer>

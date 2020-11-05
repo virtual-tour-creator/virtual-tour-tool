@@ -156,7 +156,7 @@ function ag_filter_post_json($response, $post, $context) {
         $response->data['tag_names'][] = array($tag->name, $tag->slug);
     }
     $response->data['thumbnail_url'] = get_the_post_thumbnail_url($post->ID, 'entry-thumbnail');
-	$response->data['medium_url'] = get_the_post_thumbnail_url($post->ID, 'medium');
+	$response->data['medium_url'] = get_the_post_thumbnail_url($post->ID, 'medium_large');
     return $response;
 }
 

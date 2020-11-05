@@ -14,7 +14,7 @@ class Navbar extends React.Component {
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
                 <span className="navbar-toggler-icon"></span>
             </button>
-            <div className="navbar-light">
+            {/* <div className="navbar-light">
                 <ul className="navbar-nav nav-left">
                     <li className="nav-item">
                         <a className="nav-link">LIBRARY</a>
@@ -24,9 +24,12 @@ class Navbar extends React.Component {
                     </li>
                     
                 </ul>     
-            </div>
+            </div> */}
             <div className="navbar-light collapse navbar-collapse" id="navbarNav">
                 <ul className="ml-auto navbar-nav">
+                 <li className="nav-item">
+                        <a className="nav-link" href='/'>LIBRARY</a>
+                    </li>
                     <li className="nav-item">
                         <a className="nav-link" href='/wp-admin'>DASHBOARD</a>
                     </li>
