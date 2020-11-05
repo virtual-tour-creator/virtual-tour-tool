@@ -105,18 +105,10 @@ function CopyTour(props) {
             </Form.Group>
 
             <Form.Group>
-
-                <Form.Label>Tour Edit Is</Form.Label>
-                <div className="radio-button-container">
-                  <Form.Check type='radio' id='default-radio' label='COMPLETE' name='tourTypeRadio' variant="dark" />
-                  <Form.Check type='radio' label='INCOMPLETE' id='default-radio' name='tourTypeRadio' />
-                </div>
-                
-
+                    <Form.Label>Tour Visibility</Form.Label>
+                    <Form.Check type='radio' id='default-radio' label='COMPLETE' name='tourTypeRadio' />
+                    <Form.Check type='radio' label='INCOMPLETE' id='disabled-default-radio' name='tourTypeRadio' />
             </Form.Group>
-            {/* <Button variant="primary" type="submit">
-                Submit
-            </Button> */}
 
             </Form>
           </Modal.Body>

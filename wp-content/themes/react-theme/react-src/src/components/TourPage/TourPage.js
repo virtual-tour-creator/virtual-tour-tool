@@ -222,11 +222,9 @@ class TourPage extends React.Component {
                 </Form.Group>
 
                 <Form.Group>
-
                     <Form.Label>Tour Visibility</Form.Label>
-                    <Form.Check type='radio' id='default-radio' label='Public' name='tourTypeRadio' />
-                    <Form.Check type='radio' label='Private' id='disabled-default-radio' name='tourTypeRadio' />
-
+                    <Form.Check type='radio' id='default-radio' label='COMPLETE' name='tourTypeRadio' />
+                    <Form.Check type='radio' label='INCOMPLETE' id='disabled-default-radio' name='tourTypeRadio' />
                 </Form.Group>
     
                 </Form>
