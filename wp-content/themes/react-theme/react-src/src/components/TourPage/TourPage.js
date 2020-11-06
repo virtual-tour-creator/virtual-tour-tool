@@ -33,6 +33,7 @@ class TourPage extends React.Component {
             'date': '',
             'stops': [],
             'authorId': 0,
+            'authorName': "",
             'mode': editMode ? 'edit' : 'view',
             'showDeleteConfirmation': false
         };
@@ -72,6 +73,7 @@ class TourPage extends React.Component {
             this.setState({
                 'name': title.rendered,
                 'authorId': author[0],
+                'authorName': author[1],
                 'date': parsedContent.tourDate,
                 'visibility': parsedContent.visibility
             });
@@ -221,8 +223,9 @@ class TourPage extends React.Component {
             root: {
             },
           }))(MuiAccordionDetails);
-        const { visibility, authorId } = this.state;
+        const { visibility, authorId, authorName, date } = this.state;
         const canEditVisibility = authorId === reactInit.userId;
+        const canEdit = visibility === 'public' || authorId === reactInit.userId;
         if(this.state.mode === 'edit') {
             return(
                 <Form>
@@ -259,15 +262,18 @@ class TourPage extends React.Component {
                         <span id='tour-name'>{this.state.name.toUpperCase()}</span>
                         </AccordionSummary>
                         <AccordionDetails>
-                            <TourStatus />
-                            <div className="button-container">
-                                <Button variant="primary" onClick={this.handleEditing.bind(this)} id='update-stop-button' className='tour-page-button'>
-                                <i className='fas fa-unlock-alt'></i>   EDIT THIS TOUR
-                                </Button>
-                                <Button variant="primary" onClick={this.handleDelete.bind(this)} id='delete-stop-button'  className='tour-page-button'>
-                                <i className="fas fa-trash-alt"></i> DELETE TOUR
-                                </Button>
-                            </div>
+                            <TourStatus visibility={visibility} date={date} username={authorName}/>
+                            {
+                                canEdit ? 
+                                <div className="button-container">
+                                    <Button variant="primary" onClick={this.handleEditing.bind(this)} id='update-stop-button' className='tour-page-button'>
+                                    <i className='fas fa-unlock-alt'></i>   EDIT THIS TOUR
+                                    </Button>
+                                    <Button variant="primary" onClick={this.handleDelete.bind(this)} id='delete-stop-button'  className='tour-page-button'>
+                                    <i className="fas fa-trash-alt"></i> DELETE TOUR
+                                    </Button>
+                                </div> : ""
+                            }     
                             
                         </AccordionDetails>
                     </Accordion>
