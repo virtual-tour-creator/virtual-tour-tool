@@ -7,6 +7,7 @@ import 'react-bnb-gallery/dist/style.css'
 import Collapsible from 'react-collapsible';
 import CloseIcon from '@material-ui/icons/Close';
 import { Button, Modal, Form, Col, Row } from 'react-bootstrap';
+import { RestAPIGetStopById } from '../../helpers/RestAPIHelper.js';
 
 const getContent = entry => {
     if (entry.content) 
@@ -34,18 +35,7 @@ const EntryPage = props => {
     const [searchStr, setSearchStr] = useState("");
     const [entry, setEntry] = useState([]);
     useEffect(() => {
-        async function loadEntry() {
-            const response = await fetch('/wp-json/wp/v2/stop/' + id + '?timestamp=' + time);
-            if(!response.ok) {
-                console.log(response);
-                return;
-            }
-    
-            const entry = await response.json();
-            setEntry(entry);
-        }
-        
-        loadEntry();
+        RestAPIGetStopById(id, time, setEntry);
     })
 
     const getMediaSearchLink = () => {

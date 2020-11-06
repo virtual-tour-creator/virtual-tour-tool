@@ -174,9 +174,9 @@ const Playlist = props => {
                                 </Form.Group>
 
                                 <Form.Group>
-                                        <Form.Label>Tour Visibility</Form.Label> <br></br>
-                                        <Form.Check type='radio' id='default-radio' value='private' label='COMPLETE' name='tourTypeRadio' checked={tourVilisibity === 'private'} onChange={event => setTourVilisibity(event.target.value)}/>
-                                        <Form.Check type='radio' label='INCOMPLETE' value='public' id='disabled-default-radio' name='tourTypeRadio' checked={tourVilisibity === 'public'} onChange={event => setTourVilisibity(event.target.value)}/>
+                                    <Form.Label>Tour Visibility</Form.Label> <br></br>
+                                    <Form.Check type='radio' id='default-radio' value='private' label='COMPLETE' name='tourTypeRadio' checked={tourVilisibity === 'private'} onChange={event => setTourVilisibity(event.target.value)}/>
+                                    <Form.Check type='radio' label='INCOMPLETE' value='public' id='disabled-default-radio' name='tourTypeRadio' checked={tourVilisibity === 'public'} onChange={event => setTourVilisibity(event.target.value)}/>
                                 </Form.Group>
 
                                 </Form>
