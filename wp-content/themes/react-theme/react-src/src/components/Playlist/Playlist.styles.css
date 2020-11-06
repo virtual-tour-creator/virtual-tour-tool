@@ -24,6 +24,8 @@
     color: #666E77;
 }
 
+
+/* dropdown menu */
 #view-all-button {
     float: right;
     font-size: 18px;
@@ -44,7 +46,41 @@
 
 
 #dropdown-menu-align-right {
-    float: right;
+    border: 1px solid transparent;
+    color: #666E77;
+    font-size: 30px;
+}
+
+#dropdown-menu-align-right:hover {
+    border: 1px solid #000000;
+    color: black;
+    background: none;
+}
+
+#dropdown-menu-align-right:focus {
+    border: 1px solid #000000;
+    color: black;
+    background: none;
+    box-shadow: none;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+    border: 1px solid #000000;
+    color: black;
+    background: none !important;
+    box-shadow: none;
+}
+
+.dropdown-menu.show {
+    border-radius: 0;
+    border: 1px solid #666E77;
+    padding: 0;
+}
+
+.dropdown-item {
+    padding: .55rem 1.5rem;
+    border-bottom: 1px solid #666E77;
+    text-align: center;
 }
 
 
@@ -74,3 +110,4 @@
 .tour-status {
     font-size: 16px;
 }
+

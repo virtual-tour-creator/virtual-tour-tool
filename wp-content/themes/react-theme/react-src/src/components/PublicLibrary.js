@@ -121,7 +121,7 @@ class PublicLibrary extends React.Component {
                 <Navbar />
                 <Jumbotron />
                 <div><CreateTour props={this.props}/></div>
-                <Playlist playlists={this.state.playlists} />
+                <Playlist props={this.props} playlists={this.state.playlists} />
             </div>
         )
     }

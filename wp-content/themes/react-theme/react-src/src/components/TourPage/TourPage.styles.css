@@ -4,14 +4,7 @@
     width: 30%;
 }
 
-#tour-name {
-    display: inline;
-    font-family: 'Amiko', sans-serif;
-    font-weight: 700;
-    line-height: 53px;
-    letter-spacing: 0.03em;
-    font-size: 40px;
-}
+
 
 #tour-date {
     display: inline;
@@ -269,4 +262,28 @@ ul > .sortable-row {
     font-weight: 500;
     line-height: 133.4%;
     margin-top: 15px;
+}
+
+
+/* the collasible title */
+.MuiAccordionSummary-content {
+    margin: 0 !important;
+}
+
+.MuiAccordionDetails-root {
+    padding: 0 !important;
+}
+
+#tour-name {
+    display: inline;
+    font-family: 'Amiko', sans-serif;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: 0.03em;
+    font-size: 40px;
+}
+
+.button-container {
+    position: absolute;
+    right: 0;
 }
