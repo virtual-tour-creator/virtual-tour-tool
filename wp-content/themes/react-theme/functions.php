@@ -65,6 +65,9 @@ function museum_custom_rest() {
 	register_rest_field("stop", "medium_url", array(
 		"get_callback" => function() {return "";}
 	));
+    register_rest_field("tour", "author", array(
+        "get_callback" => function() {return [];}
+    ));
 }
 
 add_action("rest_api_init", "museum_custom_rest");
@@ -161,6 +164,15 @@ function ag_filter_post_json($response, $post, $context) {
 }
 
 add_filter( 'rest_prepare_stop', 'ag_filter_post_json', 10, 3 );
+
+function ag_filter_tour_json($response, $post, $context) {
+    $author_id = $post->post_author;
+    $author_name = get_the_author_meta( 'display_name', $author_id );
+    $response->data['author'] = array($author_id, $author_name);
+    return $response;
+}
+
+add_filter( 'rest_prepare_tour', 'ag_filter_tour_json', 10, 3 );
 
 
 function login_redirect() {
