@@ -197,12 +197,12 @@ const Playlist = props => {
 
                         {
                             (visibility === 'public' || author[0] === reactInit.userId) ?
-                                <Dropdown.Item onClick={() => props.history.push(`/tour/${playlist.id}`)}>EDIT</Dropdown.Item> : ""
+                                <Dropdown.Item onClick={gotoEdit}><img src={EditIcon} style={{'width':'18px'}}></img> EDIT</Dropdown.Item> : ""
                         }
 
                         {
                             (visibility === 'public' || author[0] === reactInit.userId) ?
-                                <Dropdown.Item onClick={handleShowDelete}>DELETE</Dropdown.Item> : ""
+                                <Dropdown.Item onClick={handleShowDelete}> <img src={DeleteIcon} style={{'width':'18px'}}></img> DELETE</Dropdown.Item> : ""
                         }
 
                         {/* delete tour popup */}

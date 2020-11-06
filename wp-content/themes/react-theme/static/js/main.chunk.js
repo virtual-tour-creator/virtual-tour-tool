@@ -1425,14 +1425,25 @@ const Playlist = props => {
         columnNumber: 33
       }
     }, "Save Changes"))), visibility === 'public' || author[0] === reactInit.userId ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Dropdown__WEBPACK_IMPORTED_MODULE_10__["default"].Item, {
-      onClick: () => props.history.push(`/tour/${playlist.id}`),
+      onClick: gotoEdit,
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 200,
         columnNumber: 33
       }
-    }, "EDIT") : "", visibility === 'public' || author[0] === reactInit.userId ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Dropdown__WEBPACK_IMPORTED_MODULE_10__["default"].Item, {
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      src: _images_edit_png__WEBPACK_IMPORTED_MODULE_6___default.a,
+      style: {
+        'width': '18px'
+      },
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 200,
+        columnNumber: 67
+      }
+    }), " EDIT") : "", visibility === 'public' || author[0] === reactInit.userId ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Dropdown__WEBPACK_IMPORTED_MODULE_10__["default"].Item, {
       onClick: handleShowDelete,
       __self: undefined,
       __source: {
@@ -1440,7 +1451,18 @@ const Playlist = props => {
         lineNumber: 205,
         columnNumber: 33
       }
-    }, "DELETE") : "", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Modal"], {
+    }, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      src: _images_delete_png__WEBPACK_IMPORTED_MODULE_7___default.a,
+      style: {
+        'width': '18px'
+      },
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 205,
+        columnNumber: 76
+      }
+    }), " DELETE") : "", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Modal"], {
       show: showDelete,
       onHide: handleCloseDelete,
       "aria-labelledby": "contained-modal-title-vcenter",
