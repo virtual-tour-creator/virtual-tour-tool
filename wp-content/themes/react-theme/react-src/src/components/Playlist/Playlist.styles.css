@@ -81,6 +81,68 @@
     padding: .55rem 1.5rem;
     border-bottom: 1px solid #666E77;
     text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.dropdown-item:hover {
+    background: black;
+    color: white;
+}
+
+.delete-tour:hover {
+    background: #C90000 !important;
+    color: white;
+}
+
+/* icon */
+.copy-tour-icon-img {
+    display: inline-block;
+    background-size: cover;
+    background-image: url("../../images/copy.png");
+    margin-right: 5px;
+}
+
+.edit-tour-icon-img {
+    display: inline-block;
+    background-size: cover;
+    background-image: url("../../images/edit.png");
+    margin-right: 5px;
+}
+
+.delete-tour-icon-img {
+    display: inline-block;
+    background-size: cover;
+    background-image: url("../../images/delete.png");
+    margin-right: 5px;
+}
+
+.dropdown-item:hover .copy-tour-icon-img {
+    display: inline-block;
+    background-size: cover;
+    background-image: url("../../images/copy-hover.png");
+    margin-right: 5px;
+}
+
+.dropdown-item:hover .edit-tour-icon-img {
+    display: inline-block;
+    background-size: cover;
+    background-image: url("../../images/edit-hover.png");
+    margin-right: 5px;
+}
+
+.dropdown-item:hover .delete-tour-icon-img {
+    display: inline-block;
+    background-size: cover;
+    background-image: url("../../images/delete-hover.png");
+    margin-right: 5px;
+}
+
+.delete-tour:hover .delete-tour-icon-img {
+    display: inline-block;
+    background-size: cover;
+    background-image: url("../../images/delete-hover.png");
+    margin-right: 5px;
 }
 
 
@@ -102,7 +164,7 @@
     color: white;
     height: 32px;
     display: inline-block;
-    background: red;
+    background: #C90000;
     text-align: center;
     line-height: 32px;
 }

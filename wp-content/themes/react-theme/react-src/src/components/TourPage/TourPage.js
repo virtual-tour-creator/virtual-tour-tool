@@ -7,6 +7,10 @@ import AddStop from './AddStop'
 import StopBoxList from './CurrentStops'
 import MediaCard from './MediaCard';
 import TourStatus from '../Playlist/TourStatus';
+import CloseIcon from '@material-ui/icons/Close';
+
+import CopyTour from '../Button/CopyTour';
+import '../Button/CreateTour.styles.css'
 
 import { withStyles } from '@material-ui/core/styles';
 import MuiAccordion from '@material-ui/core/Accordion';
@@ -229,7 +233,7 @@ class TourPage extends React.Component {
         const canDelete = authorId === reactInit.userId;
         if(this.state.mode === 'edit') {
             return(
-                <Form>
+                <Form id="tour-info-form">
                 <Form.Group>
                     <Form.Label className="form-label">Tour Name</Form.Label>
                     <Form.Control className="info-form" type="text" value={this.state.name} onChange={e => this.setState({name: e.target.value})}/>
@@ -244,7 +248,7 @@ class TourPage extends React.Component {
                 </Form.Group>
 
                 <Form.Group>
-                    <Form.Label>Tour Visibility</Form.Label>
+                    <Form.Label>Tour Edit is</Form.Label>
                     <Form.Check type='radio' disabled={!canEditVisibility} id='default-radio' value='private' checked={this.state.visibility === 'private'} label='COMPLETE' name='tourTypeRadio' onChange={e => this.setState({visibility: e.target.value})}/>
                     <Form.Check type='radio' disabled={!canEditVisibility} label='INCOMPLETE' value='public' checked={this.state.visibility === 'public'} id='disabled-default-radio' name='tourTypeRadio' onChange={e => this.setState({visibility: e.target.value})}/>
                 </Form.Group>
@@ -265,16 +269,25 @@ class TourPage extends React.Component {
                         <AccordionDetails>
                             <TourStatus visibility={visibility} date={date} username={authorName}/>
                             <div className="button-container">
+                                    <Button variant="primary" id='copy-tour-button' className='tour-page-button'>
+                                    <div className="copy-tour-icon-img" style={{'width':'18px', 'height':'20px', 'marginRight': '0'}}></div>  
+                                    <CopyTour
+                                        className='copy-tour-button' 
+                                        id={this.state.id}
+                                        name={this.state.name}
+                                        date={this.state.date}
+                                        entries={this.state.stops}  />
+                                    </Button>
                             {
                                 canEdit ? 
-                                    <Button variant="primary" onClick={this.handleEditing.bind(this)} id='update-stop-button' className='tour-page-button'>
-                                    <i className='fas fa-unlock-alt'></i>   EDIT THIS TOUR
+                                    <Button variant="primary" onClick={this.handleEditing.bind(this)} className='tour-page-button'>
+                                    <div className="edit-tour-icon-img" style={{'width':'18px', 'height':'20px', 'marginRight': '0'}}></div>   EDIT THIS TOUR
                                     </Button> : ""
                             }    
                             {
                                 canDelete ?
                                     <Button variant="primary" onClick={this.handleDelete.bind(this)} id='delete-stop-button'  className='tour-page-button'>
-                                    <i className="fas fa-trash-alt"></i> DELETE TOUR
+                                    <div className="delete-tour-icon-img" style={{'width':'18px', 'height':'20px','marginRight': '0'}}></div> DELETE TOUR
                                     </Button> : ""
                             } 
                             </div>
@@ -291,10 +304,13 @@ class TourPage extends React.Component {
         if(this.state.mode === 'edit') {
             return(
                 <div>
-                    <AddStop onSelectStops={this.handleAddedStops} />
-                    <Button variant="primary" onClick={this.handleEditing.bind(this)} id='update-stop-button' className='tour-page-button'>
-                        <i className='fas fa-check'></i> DONE EDITING
-                    </Button>
+                    <div className="top-button-container">
+                        <AddStop onSelectStops={this.handleAddedStops} />
+                        <Button variant="primary" onClick={this.handleEditing.bind(this)} id='update-stop-button' className='tour-page-button'>
+                            <i className='fas fa-check'></i> DONE EDITING
+                        </Button>
+                    </div>
+               
                     <div className='grid-list-container'>
                         <StopBoxList 
                             stops={this.state.stops} 
@@ -324,19 +340,23 @@ class TourPage extends React.Component {
     renderDeleteConfirmation() {
 
         return (
-            <Modal show={this.state.showDeleteConfirmation} onHide={() => this.setState({showDeleteConfirmation:false})} aria-labelledby="example-custom-modal-styling-title">
-                <Modal.Header closeButton>
-                  <Modal.Title>Confirm Delete</Modal.Title>
+            <Modal show={this.state.showDeleteConfirmation} onHide={() => this.setState({showDeleteConfirmation:false})} size="md" aria-labelledby="contained-modal-title-vcenter" centered>
+                <Modal.Header closeButton={false}>
+                  <Modal.Title>Are you sure?</Modal.Title>
+                  <CloseIcon onClick={() => this.setState({showDeleteConfirmation:false})} className="overlay-close-icon" />
                 </Modal.Header>
                 <Modal.Body className="show-grid">
                 <div className='container'>
-                    <p>Are you sure about deleting this tour?</p>
+                    <p>Your're about to delete <span>{this.state.name.toUpperCase()}</span> and you won't be able to revert this. Are you sure?</p>
                 </div>
                 </Modal.Body>
                 <Modal.Footer>
-                <Button variant="primary" onClick={this.deleteTour.bind(this)} id='delete-stop-button'  className='tour-page-button'>
-                    <i className="fas fa-trash-alt"></i> DELETE
-                    </Button>
+                    <Button className="delete-tour" onClick={this.deleteTour.bind(this)}>
+                            <div className="delete-tour-icon-img" style={{'width':'18px', 'height':'20px'}}></div> YES, DELETE
+                        </Button>
+                        <Button variant="primary" onClick={() => this.setState({showDeleteConfirmation:false})}>
+                        NO, GO BACK
+                        </Button>
                 </Modal.Footer>
             </Modal>
         );

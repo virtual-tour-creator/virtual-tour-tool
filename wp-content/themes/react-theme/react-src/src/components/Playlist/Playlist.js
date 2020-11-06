@@ -5,11 +5,6 @@ import './Playlist.styles.css';
 
 import { Button, Modal, Form } from 'react-bootstrap';
 import CloseIcon from '@material-ui/icons/Close';
-import EditIcon from '../../images/edit.png'
-import DeleteIcon from '../../images/delete.png'
-import CopyIcon from '../../images/copy.png'
-
-
 
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
@@ -156,7 +151,7 @@ const Playlist = props => {
                         menuAlign="right"
                         >
                         <Dropdown.Item onClick={gotoView}>VIEW ALL</Dropdown.Item>
-                        <Dropdown.Item onClick={handleShow}><img src={CopyIcon} style={{'width':'18px'}}></img> COPY THIS TOUR</Dropdown.Item>
+                        <Dropdown.Item onClick={handleShow}><div className="copy-tour-icon-img" style={{'width':'18px', 'height':'20px'}}></div> COPY THIS TOUR</Dropdown.Item>
 
                         {/* copy tour popup */}
                         <Modal show={show} onHide={handleClose} size="md" aria-labelledby="contained-modal-title-vcenter" centered>
@@ -197,12 +192,12 @@ const Playlist = props => {
 
                         {
                             (visibility === 'public' || author[0] === reactInit.userId) ?
-                                <Dropdown.Item onClick={gotoEdit}><img src={EditIcon} style={{'width':'18px'}}></img> EDIT</Dropdown.Item> : ""
+                                <Dropdown.Item onClick={gotoEdit}><div className="edit-tour-icon-img" style={{'width':'18px', 'height':'20px'}}></div> EDIT THIS TOUR</Dropdown.Item> : ""
                         }
 
                         {
                             author[0] === reactInit.userId ?
-                                <Dropdown.Item onClick={handleShowDelete}> <img src={DeleteIcon} style={{'width':'18px'}}></img> DELETE</Dropdown.Item> : ""
+                                <Dropdown.Item className="delete-tour" onClick={handleShowDelete}> <div className="delete-tour-icon-img" style={{'width':'18px', 'height':'20px'}}></div> DELETE THIS TOUR</Dropdown.Item> : ""
                         }
 
                         {/* delete tour popup */}
@@ -217,8 +212,8 @@ const Playlist = props => {
                             </div>
                             </Modal.Body>
                             <Modal.Footer>
-                                <Button variant="primary" onClick={handleDelete}>
-                                <i className="fas fa-trash-alt"></i> YES, DELETE
+                                <Button className="delete-tour" onClick={handleDelete}>
+                                    <div className="delete-tour-icon-img" style={{'width':'18px', 'height':'20px'}}></div> YES, DELETE
                                 </Button>
                                 <Button variant="primary" onClick={handleCloseDelete}>
                                 NO, GO BACK

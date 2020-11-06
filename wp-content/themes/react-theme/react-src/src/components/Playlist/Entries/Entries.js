@@ -5,8 +5,9 @@ import './Entries.styles.css';
 import Carousel, { slidesToShowPlugin } from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
 
-import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+
+import LeftIcon from '../../../images/left-arrow.png';
+import RightIcon from '../../../images/right-arrow.png';
 
 
 const Entries = props => (
@@ -15,8 +16,8 @@ const Entries = props => (
             arrows
             slidesPerPage={5}
             slidesPerScroll={5}
-            arrowLeft={<NavigateBeforeIcon className="carousel-arrow"/>}
-            arrowRight={<ChevronRightIcon className="carousel-arrow" />}
+            arrowLeft={<img className="carousel-arrow" src={LeftIcon}/>}
+            arrowRight={<img className="carousel-arrow" src={RightIcon} />}
             addArrowClickHandler
             offset={0}
             >

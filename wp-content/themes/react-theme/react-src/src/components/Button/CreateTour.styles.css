@@ -84,14 +84,14 @@
     padding: 2rem 2.6rem;
 }
 
-.create-tour-input {
+.form-control {
     border-radius: 0;
     border: 1.5px solid #1E2832;
     box-sizing: border-box;
     text-transform: uppercase;
 }
 
-.create-tour-input:focus {
+.form-control:focus {
     border: 2px solid #1E2832;
     box-shadow: none;
     
@@ -140,6 +140,10 @@
 .form-check {
     display: inline-block;
     margin: 10px 10px;
+}
+
+.form-label {
+    display: block;
 }
 
 input[type="radio"] {

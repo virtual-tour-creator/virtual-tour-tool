@@ -47,7 +47,7 @@ async function copyTour(title, date, stops) {
 
 function CopyTour(props) {
   
-    const { id, name, date, entries } = props.props;
+    const { id, name, date, entries } = props;
     const [show, setShow] = useState(false);
     const [tourTitle, setTourTitle] = useState(name + " Copy");
     const [isPrivate, setPrivate] = useState(true);
