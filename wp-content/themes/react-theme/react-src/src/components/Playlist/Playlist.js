@@ -5,6 +5,11 @@ import './Playlist.styles.css';
 
 import { Button, Modal, Form } from 'react-bootstrap';
 import CloseIcon from '@material-ui/icons/Close';
+import EditIcon from '../../images/edit.png'
+import DeleteIcon from '../../images/delete.png'
+import CopyIcon from '../../images/copy.png'
+
+
 
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
@@ -51,13 +56,16 @@ async function copyTour(title, date, stops) {
 }
 
 
-
-
-
-
-
 const Playlist = props => {
 
+    const changeToEditMode = () => {
+        props.props.setEditMode(true);
+    }
+
+    const changeToViewMode = () => {
+        props.props.setEditMode(false);
+    }
+   
 
     // <Entries entries={playlist.entries}
 	return (
@@ -100,6 +108,16 @@ const Playlist = props => {
                 });   
             };
 
+            const gotoEdit = () => {
+                changeToEditMode();
+                props.history.push(`/tour/${id}`);
+            }
+        
+            const gotoView = () => {
+                changeToViewMode();
+                props.history.push(`/tour/${id}`);
+            }
+
 
             //for delete tour
             async function deleteTour() {
@@ -123,18 +141,19 @@ const Playlist = props => {
                 deleteTour();
             }
 
+
             return(
                 <div key={playlist.id} className="public-playlist">
                 <div className="title-container">
-                    <span className="tour-title" onClick={() => props.history.push(`/tour/${playlist.id}`)}>{playlist.name}</span>
+                    <span className="tour-title" onClick={gotoView}>{playlist.name}</span>
                    
                     <DropdownButton
-                        title="MENU"
+                        title=""
                         id="dropdown-menu-align-right"
                         menuAlign="right"
                         >
-                        <Dropdown.Item onClick={() => props.history.push(`/tour/${playlist.id}`)}>VIEW ALL</Dropdown.Item>
-                        <Dropdown.Item onClick={handleShow}>COPY THIS TOUR</Dropdown.Item>
+                        <Dropdown.Item onClick={gotoView}>VIEW ALL</Dropdown.Item>
+                        <Dropdown.Item onClick={handleShow}><img src={CopyIcon} style={{'width':'18px'}}></img> COPY THIS TOUR</Dropdown.Item>
 
                         {/* copy tour popup */}
                         <Modal show={show} onHide={handleClose} size="md" aria-labelledby="contained-modal-title-vcenter" centered>
@@ -171,9 +190,9 @@ const Playlist = props => {
                             </Modal.Footer>
                         </Modal>
 
-                        <Dropdown.Item onClick={() => props.history.push(`/tour/${playlist.id}`)}>EDIT</Dropdown.Item>
+                        <Dropdown.Item onClick={gotoEdit}><img src={EditIcon} style={{'width':'18px'}}></img> EDIT</Dropdown.Item>
 
-                        <Dropdown.Item onClick={handleShowDelete}>DETELE</Dropdown.Item>
+                        <Dropdown.Item onClick={handleShowDelete}><img src={DeleteIcon} style={{'width':'18px'}}></img> DETELE</Dropdown.Item>
 
                         {/* delete tour popup */}
                         <Modal show={showDelete} onHide={handleCloseDelete} aria-labelledby="contained-modal-title-vcenter" centered>

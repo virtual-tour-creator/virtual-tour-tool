@@ -1,7 +1,7 @@
 #create-button {
     background: none;
     color: #666E77;
-    border: 2px solid transparent;
+    border: 1px solid transparent;
     /* display: flex; */
     /* margin-right: 60px; */
     margin-right: 60px;
@@ -12,7 +12,7 @@
 }
 
 #create-button:hover {
-    border: 2px solid #000000;
+    border: 1px solid #000000;
     color: black;
     transition: .1s;
 }
