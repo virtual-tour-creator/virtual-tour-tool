@@ -277,7 +277,8 @@ class TourPage extends React.Component {
                                         className='copy-tour-button' 
                                         id={this.state.id}
                                         name={this.state.name}
-                                        date={this.state.date}
+                                        date={date}
+                                        visibility={visibility}
                                         entries={this.state.stops}  />
                                     </Button>
                             {

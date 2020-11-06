@@ -21,7 +21,7 @@ add_action("after_setup_theme", "museum_features");
 function museum_post_types() {
 	register_post_type("stop", array(
 		"show_in_rest" => true,
-		"supports" => array("title", "editor", "thumbnail"),
+		"supports" => array("title", "editor", "thumbnail", "author"),
 		"rewrite" => array("slug", "stops"),
 		"has_archive" => true,
 		"public" => true,
@@ -38,7 +38,7 @@ function museum_post_types() {
 	
 	register_post_type("tour", array(
 		"show_in_rest" => true,
-		"supports" => array("title", "editor", "thumbnail"),
+		"supports" => array("title", "editor", "thumbnail", "author"),
 		"rewrite" => array("slug", "tours"),
 		"has_archive" => false,
 		"public" => true,

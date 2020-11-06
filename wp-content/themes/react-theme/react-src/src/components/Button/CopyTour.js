@@ -6,51 +6,14 @@ import Typography from '@material-ui/core/Typography';
 import CloseIcon from '@material-ui/icons/Close';
 
 import './CreateTour.styles.css';
-
-
-async function copyTour(title, date, stops) {
-    let str = "<ol>";
-    stops.map(stop => {
-        const { id } = stop;
-        str += "<li>";
-        str += id.toString();
-        str += "</li>"
-    });
-    str += "</ol>"
-    str += "<h2>TourDate:";
-    str += date;
-    str += "</h2>";
-
-    const data = {
-      "title": title,
-      "status": "publish",
-      "content": str
-    };
-
-    const response = await fetch('/wp-json/wp/v2/tour/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'X-WP-Nonce': reactInit.nonce
-        },
-        body: JSON.stringify(data)
-    });
-
-    if(!response.ok) {
-        console.log(response);
-        return -1;
-    }
-
-    const tour = await response.json();
-    return tour.id;
-}
+import { RestAPICreateTour } from '../../helpers/RestAPIHelper.js';
 
 function CopyTour(props) {
   
-    const { id, name, date, entries } = props;
+    const { id, name, date, visibility, entries } = props;
     const [show, setShow] = useState(false);
     const [tourTitle, setTourTitle] = useState(name + " Copy");
-    const [isPrivate, setPrivate] = useState(true);
+    const [tourVilisibity, setTourVilisibity] = useState(visibility);
     const [tourDate, setTourDate] = useState(date);
 
     // TODO: save the new id somewhere else in library/my tour component
@@ -59,23 +22,23 @@ function CopyTour(props) {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-    const handleCopy = (title, date, stops, event) => {
-        console.log(stops);
+    const handleCopy = (title, date, visibility, stops, event) => {
+        // console.log(stops);
         if (!title || title.length === 0)
         {
-          console.log("Empty tour name is not allowed");
-          return;
+            console.log("Empty tour name is not allowed");
+            return;
         }
         // create new 
-        copyTour(title, date, stops).then((id) => {
-          setShow(false);
-          // TODO: check created id 
-          if (id == -1)
-          {
+        RestAPICreateTour(title, date, visibility, stops).then((id) => {
+        setShow(false);
+        // TODO: check created id 
+        if (id == -1)
+        {
             return;
-          }
-          // redirect
-          window.location.reload();
+        }
+        // redirect
+        window.location.reload();
         });   
     };
 
@@ -105,16 +68,16 @@ function CopyTour(props) {
             </Form.Group>
 
             <Form.Group>
-                    <Form.Label>Tour Visibility</Form.Label>
-                    <Form.Check type='radio' id='default-radio' label='COMPLETE' name='tourTypeRadio' />
-                    <Form.Check type='radio' label='INCOMPLETE' id='disabled-default-radio' name='tourTypeRadio' />
+                <Form.Label>Tour Visibility</Form.Label> <br></br>
+                <Form.Check type='radio' id='default-radio' value='private' label='COMPLETE' name='tourTypeRadio' checked={tourVilisibity === 'private'} onChange={event => setTourVilisibity(event.target.value)}/>
+                <Form.Check type='radio' label='INCOMPLETE' value='public' id='disabled-default-radio' name='tourTypeRadio' checked={tourVilisibity === 'public'} onChange={event => setTourVilisibity(event.target.value)}/>
             </Form.Group>
 
             </Form>
           </Modal.Body>
 
           <Modal.Footer>
-            <Button variant="primary" onClick={handleCopy.bind(this, tourTitle, tourDate, entries)}>
+            <Button variant="primary" onClick={handleCopy.bind(this, tourTitle, tourDate, tourVilisibity, entries)}>
               Save Changes
             </Button>
           </Modal.Footer>
