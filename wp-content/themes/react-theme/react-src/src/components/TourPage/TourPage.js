@@ -29,6 +29,7 @@ class TourPage extends React.Component {
             'visibility': 'public',
             'date': '',
             'stops': [],
+            'authorId': 0,
             'mode': editMode ? 'edit' : 'view',
             'showDeleteConfirmation': false
         };
@@ -63,11 +64,12 @@ class TourPage extends React.Component {
         .then(res => res.json())
         .then((data) => {
             // console.log(data);
-            const { id, title, content } = data;
+            const { id, title, content, author } = data;
             let parsedContent = this.parseContent(content.rendered);
             console.log(parsedContent);
             this.setState({
                 'name': title.rendered,
+                'authorId': author[0],
                 'date': parsedContent.tourDate,
                 'visibility': parsedContent.visibility
             });
@@ -215,6 +217,8 @@ class TourPage extends React.Component {
             root: {
             },
           }))(MuiAccordionDetails);
+        const { visibility, authorId } = this.state;
+        const canEditVisibility = authorId === reactInit.userId;
         if(this.state.mode === 'edit') {
             return(
                 <Form>
@@ -233,8 +237,8 @@ class TourPage extends React.Component {
 
                 <Form.Group>
                     <Form.Label>Tour Visibility</Form.Label>
-                    <Form.Check type='radio' id='default-radio' value='private' checked={this.state.visibility === 'private'} label='COMPLETE' name='tourTypeRadio' onChange={e => this.setState({visibility: e.target.value})}/>
-                    <Form.Check type='radio' label='INCOMPLETE' value='public' checked={this.state.visibility === 'public'} id='disabled-default-radio' name='tourTypeRadio' onChange={e => this.setState({visibility: e.target.value})}/>
+                    <Form.Check type='radio' disabled={!canEditVisibility} id='default-radio' value='private' checked={this.state.visibility === 'private'} label='COMPLETE' name='tourTypeRadio' onChange={e => this.setState({visibility: e.target.value})}/>
+                    <Form.Check type='radio' disabled={!canEditVisibility} label='INCOMPLETE' value='public' checked={this.state.visibility === 'public'} id='disabled-default-radio' name='tourTypeRadio' onChange={e => this.setState({visibility: e.target.value})}/>
                 </Form.Group>
     
                 </Form>
