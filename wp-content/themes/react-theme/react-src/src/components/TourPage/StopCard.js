@@ -1,4 +1,5 @@
 import React from 'react';
+import MediaCard from './MediaCard'
 import './SelectableCard.scss';
 
 

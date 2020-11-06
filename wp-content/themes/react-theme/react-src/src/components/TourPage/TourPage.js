@@ -1,8 +1,11 @@
 import React from 'react';
 import { Form, Button, Modal } from 'react-bootstrap';
 
-import Navbar from '../Navbar/Navbar';
-import Jumbotron from '../Jumbotron/Jumbotron';
+import Navbar from '../Navbar/Navbar'
+import Jumbotron from '../Jumbotron/Jumbotron'
+
+import CollapseNavbar from './CollapseNavbar';
+import BrandingLogo from '../Navbar/BrandingLogo';
 import AddStop from './AddStop'
 import StopBoxList from './CurrentStops'
 import MediaCard from './MediaCard';
@@ -261,7 +264,6 @@ class TourPage extends React.Component {
                 <div className='tour-info-display'>
                     <Accordion>
                         <AccordionSummary
-                        // expandIcon={<i className="fas fa-chevron-down"></i>}
                         expandIcon={<img src={dropdownIcon}></img>}
                         >
                         <span id='tour-name'>{this.state.name.toUpperCase()}</span>
@@ -413,15 +415,16 @@ class TourPage extends React.Component {
             <div>
                 <Navbar />
                 <Jumbotron />
-
+                {/* <div className="tour-page-branding-container">
+                    <BrandingLogo />
+                </div> */}
+                
                 <div id='tour-page'>
 
                     <div className='tour-info'>
                         {this.renderTourInfo()}
                     </div>
-                    
                     <br></br>
-
                     {this.renderTourStops()}
                     {this.renderDeleteConfirmation()}
                 </div>

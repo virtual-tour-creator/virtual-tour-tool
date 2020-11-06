@@ -1,6 +1,8 @@
 import React from 'react';
 import { Button, Modal } from 'react-bootstrap';
 
+import CloseIcon from '@material-ui/icons/Close';
+
 import StopCard from './StopCard'
 import './TourPage.styles.css'
 import './SelectableCard.scss';
@@ -46,6 +48,7 @@ class StopCardList extends React.Component {
         var selected = this.state.selected.indexOf(i) > -1;
         return (
           <StopCard key={i} 
+            stop={stop}
             thumbnailUrl={thumbnailUrl} name={name}
             selected={selected} 
             onClick={(e) => this.onItemSelected(i)} />
@@ -142,13 +145,14 @@ class AddStop extends React.Component {
                 <i className="fas fa-plus"></i>  Add Stop(s)
               </Button>
         
-              <Modal show={this.state.show} onHide={() => this.setState({show:false})} aria-labelledby="example-custom-modal-styling-title">
-                <Modal.Header closeButton>
+              <Modal show={this.state.show} onHide={() => this.setState({show:false})} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
+                <Modal.Header closeButton={false}>
                   <Modal.Title>Add Stop(s)</Modal.Title>
+                  <CloseIcon onClick={() => this.setState({show:false})} className="overlay-close-icon" />
                 </Modal.Header>
                  
                 <Modal.Body className="show-grid">
-                <div className='container'>
+                <div>
                   <StopCardListSelection stops={backendStops} onSelectStops={this.handleStops} />
                 </div>
                 </Modal.Body>

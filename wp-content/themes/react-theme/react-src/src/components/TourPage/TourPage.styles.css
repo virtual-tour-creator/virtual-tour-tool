@@ -33,7 +33,7 @@
 
 
 #tour-page {
-    margin: 20px 60px;
+    margin: 20px 100px;
 }
 
 
@@ -279,4 +279,11 @@ ul > .sortable-row {
     color: #0FBF00;
     border-radius: 0;
     border: 1px solid #0FBF00;
+}
+
+
+.tour-page-branding-container {
+    margin: 100px auto;
+    display: flex;
+    justify-content: center;
 }

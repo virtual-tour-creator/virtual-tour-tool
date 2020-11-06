@@ -18,7 +18,7 @@ body {
 .navbar {
     background-color:none;
     height: 64px;
-    margin: 15px 60px;
+    margin: 15px 80px;
     padding: 0;
 }
 
@@ -83,9 +83,10 @@ body {
     color: white;
     background-image: url(https://mediad.publicbroadcasting.net/p/wesa/files/styles/x_large/public/201804/clayton_1-300_cmyk.jpg);
     background-size: 100%;
+    background-repeat: no-repeat;
     background-position-y: center;
     padding-bottom: 20px;
-    margin:0 60px;
+    margin:0 80px;
     margin-bottom: 20px;
 }
 
@@ -166,7 +167,7 @@ body {
     box-sizing: border-box;
 }
 .public-playlist {
-    margin: 60px 60px 20px 60px;
+    margin: 60px 80px 20px 80px;
 }
 
 .title-container {
@@ -347,7 +348,7 @@ body {
     border: 1px solid transparent;
     /* display: flex; */
     /* margin-right: 60px; */
-    margin-right: 60px;
+    margin-right: 80px;
     padding: 2px 5px;
     border-radius: 0;
     font-size: 22px;
@@ -694,7 +695,7 @@ button.card {
 
 
 #tour-page {
-    margin: 20px 60px;
+    margin: 20px 100px;
 }
 
 
@@ -941,5 +942,13 @@ ul > .sortable-row {
     border-radius: 0;
     border: 1px solid #0FBF00;
 }
+
+
+.tour-page-branding-container {
+    margin: 100px auto;
+    display: flex;
+    justify-content: center;
+}
+
 
 /*# sourceMappingURL=main.chunk.css.map*/

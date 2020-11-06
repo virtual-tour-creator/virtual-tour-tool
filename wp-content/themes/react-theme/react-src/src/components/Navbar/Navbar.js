@@ -1,6 +1,6 @@
 import React from 'react';
 import './Navbar.styles.css';
-import { Link } from 'react-router-dom';
+import BrandingLogo from './BrandingLogo';
 
 class Navbar extends React.Component {
     constructor(props){
@@ -10,21 +10,10 @@ class Navbar extends React.Component {
     render() {
         return (
             <nav className="navbar navbar-light navbar-expand-md">
-            <Link className="navbar-brand" to="/"><img src="https://www.thefrickpittsburgh.org/Files/User/logo.png" width="120"/></Link>
+            <BrandingLogo className="nav-brand" />
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
                 <span className="navbar-toggler-icon"></span>
             </button>
-            {/* <div className="navbar-light">
-                <ul className="navbar-nav nav-left">
-                    <li className="nav-item">
-                        <a className="nav-link">LIBRARY</a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link">MY TOUR</a>
-                    </li>
-                    
-                </ul>     
-            </div> */}
             <div className="navbar-light collapse navbar-collapse" id="navbarNav">
                 <ul className="ml-auto navbar-nav">
                  <li className="nav-item">
