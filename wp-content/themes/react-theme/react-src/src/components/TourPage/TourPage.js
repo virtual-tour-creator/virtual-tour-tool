@@ -226,6 +226,7 @@ class TourPage extends React.Component {
         const { visibility, authorId, authorName, date } = this.state;
         const canEditVisibility = authorId === reactInit.userId;
         const canEdit = visibility === 'public' || authorId === reactInit.userId;
+        const canDelete = authorId === reactInit.userId;
         if(this.state.mode === 'edit') {
             return(
                 <Form>
@@ -263,17 +264,20 @@ class TourPage extends React.Component {
                         </AccordionSummary>
                         <AccordionDetails>
                             <TourStatus visibility={visibility} date={date} username={authorName}/>
+                            <div className="button-container">
                             {
                                 canEdit ? 
-                                <div className="button-container">
                                     <Button variant="primary" onClick={this.handleEditing.bind(this)} id='update-stop-button' className='tour-page-button'>
                                     <i className='fas fa-unlock-alt'></i>   EDIT THIS TOUR
-                                    </Button>
+                                    </Button> : ""
+                            }    
+                            {
+                                canDelete ?
                                     <Button variant="primary" onClick={this.handleDelete.bind(this)} id='delete-stop-button'  className='tour-page-button'>
                                     <i className="fas fa-trash-alt"></i> DELETE TOUR
-                                    </Button>
-                                </div> : ""
-                            }     
+                                    </Button> : ""
+                            } 
+                            </div>
                             
                         </AccordionDetails>
                     </Accordion>

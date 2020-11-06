@@ -201,7 +201,7 @@ const Playlist = props => {
                         }
 
                         {
-                            (visibility === 'public' || author[0] === reactInit.userId) ?
+                            author[0] === reactInit.userId ?
                                 <Dropdown.Item onClick={handleShowDelete}> <img src={DeleteIcon} style={{'width':'18px'}}></img> DELETE</Dropdown.Item> : ""
                         }
 
