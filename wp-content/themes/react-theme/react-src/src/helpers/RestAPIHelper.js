@@ -67,3 +67,16 @@ export async function RestAPIGetTourByAuthorId(author, time, callback) {
     const tours = await response.json();
     callback(tours);
 }
+
+export async function RestAPIGetStopsByPage(per_page, page_num, time, callback) {
+    const response = await fetch('/wp-json/wp/v2/stop/?timestamp=' + time + '&per_page=' + per_page + '&page=' + page_num);
+    if(!response.ok) {
+        console.log(response);
+        return;
+    }
+
+    const stops = await response.json();
+    const total_page_num = response.headers.get('x-wp-totalPages')
+    console.log(total_page_num);
+    callback(stops, total_page_num);
+}

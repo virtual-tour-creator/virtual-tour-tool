@@ -6,7 +6,8 @@ import CloseIcon from '@material-ui/icons/Close';
 import StopCard from './StopCard'
 import './TourPage.styles.css'
 import './SelectableCard.scss';
-
+import { RestAPIGetStopsByPage } from '../../helpers/RestAPIHelper.js';
+import Pagination from 'react-bootstrap/Pagination'
 
 class StopCardList extends React.Component {
 
@@ -96,7 +97,10 @@ class AddStop extends React.Component {
         super();
         this.state = {
             show: false,
-            backendStops: []
+            backendStops: [],
+            pageNum: 1,
+            currentPage: 1,
+            stopPerPage: 3
         }
     }
     
@@ -105,11 +109,12 @@ class AddStop extends React.Component {
 
     componentDidMount() {
       let time =  new Date().getTime();
-      fetch('/wp-json/wp/v2/stop?timestamp=' + time)
-      .then(res => res.json())
-      .then((data) => {
-          // console.log(data);
-          let allStopsInfo = data.map((stop) => {
+      const { stopPerPage } = this.state;
+      RestAPIGetStopsByPage(stopPerPage, 1, time, this.handleRestAPIResult)
+    }
+
+    handleRestAPIResult = (data, pageNum) => {
+      let allStopsInfo = data.map((stop) => {
               const {id, thumbnail_url, title} = stop;
               let stopInfo = {
                 'id': id,
@@ -118,8 +123,7 @@ class AddStop extends React.Component {
               };
               return stopInfo
           });
-          this.setState({ backendStops: allStopsInfo });
-      });
+      this.setState({ backendStops: allStopsInfo, pageNum: pageNum});
     }
 
     handleShow = () => this.setState({show: true})
@@ -127,6 +131,33 @@ class AddStop extends React.Component {
     handleStops = (selectedStops) => {
         this.props.onSelectStops(selectedStops);
         this.setState({show:false});
+    }
+
+    handleChangePage = (e) => {
+      const text = e.target.getAttribute('value');
+      const nextPageIdx = parseInt(text);
+      if (nextPageIdx) {
+        const { stopPerPage } = this.state;
+        let time =  new Date().getTime();
+        RestAPIGetStopsByPage(stopPerPage, nextPageIdx, time, this.handleRestAPIResult)
+        this.setState({currentPage: nextPageIdx});
+      }
+    }
+
+    renderPagination() {
+      const { pageNum, currentPage } = this.state;
+      let items = [];
+      for (let number = 1; number <= pageNum; number++) {
+        items.push(
+          <Pagination.Item key={number} value={number} active={number === currentPage}>
+            {number}
+          </Pagination.Item>,
+        );
+      }
+      return (
+        <div>
+          <Pagination onClick={this.handleChangePage.bind(this)}>{items}</Pagination>
+        </div>);
     }
 
     // const stopsToAdd = backendStops.map(singleStop =>
@@ -152,11 +183,13 @@ class AddStop extends React.Component {
                 </Modal.Header>
                  
                 <Modal.Body className="show-grid">
-                <div>
+                <div>   
                   <StopCardListSelection stops={backendStops} onSelectStops={this.handleStops} />
                 </div>
                 </Modal.Body>
-      
+                <Modal.Footer>
+                  {this.renderPagination()}
+                </Modal.Footer>
               </Modal>
             </>
           );
