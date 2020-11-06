@@ -1106,6 +1106,7 @@ const Playlist = props => {
       id,
       name,
       date,
+      author,
       visibility,
       entries
     } = playlist;
@@ -1385,23 +1386,23 @@ const Playlist = props => {
         lineNumber: 171,
         columnNumber: 33
       }
-    }, "Save Changes"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Dropdown__WEBPACK_IMPORTED_MODULE_7__["default"].Item, {
+    }, "Save Changes"))), visibility === 'public' || author[0] === reactInit.userId ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Dropdown__WEBPACK_IMPORTED_MODULE_7__["default"].Item, {
       onClick: () => props.history.push(`/tour/${playlist.id}`),
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 177,
-        columnNumber: 25
+        lineNumber: 181,
+        columnNumber: 33
       }
-    }, "EDIT"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Dropdown__WEBPACK_IMPORTED_MODULE_7__["default"].Item, {
+    }, "EDIT") : "", visibility === 'public' || author[0] === reactInit.userId ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Dropdown__WEBPACK_IMPORTED_MODULE_7__["default"].Item, {
       onClick: handleShowDelete,
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 179,
-        columnNumber: 25
+        lineNumber: 186,
+        columnNumber: 33
       }
-    }, "DETELE"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Modal"], {
+    }, "DELETE") : "", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Modal"], {
       show: showDelete,
       onHide: handleCloseDelete,
       "aria-labelledby": "contained-modal-title-vcenter",
@@ -1409,7 +1410,7 @@ const Playlist = props => {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 182,
+        lineNumber: 190,
         columnNumber: 25
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Modal"].Header, {
@@ -1417,14 +1418,14 @@ const Playlist = props => {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 183,
+        lineNumber: 191,
         columnNumber: 29
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Modal"].Title, {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 184,
+        lineNumber: 192,
         columnNumber: 33
       }
     }, "ARE YOU SURE?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -1433,7 +1434,7 @@ const Playlist = props => {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 185,
+        lineNumber: 193,
         columnNumber: 33
       }
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Modal"].Body, {
@@ -1441,7 +1442,7 @@ const Playlist = props => {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 187,
+        lineNumber: 195,
         columnNumber: 29
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1449,28 +1450,28 @@ const Playlist = props => {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 188,
+        lineNumber: 196,
         columnNumber: 29
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 189,
+        lineNumber: 197,
         columnNumber: 34
       }
     }, "Your're about to delete ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 189,
+        lineNumber: 197,
         columnNumber: 61
       }
     }, playlist.name.toUpperCase()), " and you won't be able to revert this. Are you sure?"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Modal"].Footer, {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 192,
+        lineNumber: 200,
         columnNumber: 29
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Button"], {
@@ -1479,7 +1480,7 @@ const Playlist = props => {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 193,
+        lineNumber: 201,
         columnNumber: 33
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
@@ -1487,7 +1488,7 @@ const Playlist = props => {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 194,
+        lineNumber: 202,
         columnNumber: 33
       }
     }), " YES, DELETE"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Button"], {
@@ -1496,16 +1497,17 @@ const Playlist = props => {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 196,
+        lineNumber: 204,
         columnNumber: 33
       }
     }, "NO, GO BACK"))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_TourStatus__WEBPACK_IMPORTED_MODULE_8__["default"], {
       visibility: visibility,
       date: date,
+      username: author[1],
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 204,
+        lineNumber: 212,
         columnNumber: 17
       }
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Entries_Entries__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -1514,7 +1516,7 @@ const Playlist = props => {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 205,
+        lineNumber: 213,
         columnNumber: 17
       }
     }));
@@ -1612,7 +1614,7 @@ const TourStatus = props => {
       lineNumber: 25,
       columnNumber: 13
     }
-  }, " Grace Kang "));
+  }, " ", username, " "));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (TourStatus);
@@ -1699,11 +1701,13 @@ class PublicLibrary extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compone
         const {
           id,
           title,
-          content
+          content,
+          author
         } = tour;
         return {
           id,
           name: title.rendered,
+          author,
           date: this.parseContentStopDate(content.rendered),
           visibility: this.parseContentStopVisibility(content.rendered),
           entries: this.parseContentStopId(content.rendered)
@@ -1742,6 +1746,7 @@ class PublicLibrary extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compone
           const {
             id,
             name,
+            author,
             date,
             visibility,
             entries
@@ -1753,6 +1758,7 @@ class PublicLibrary extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compone
             id,
             name,
             date,
+            author,
             visibility,
             entries: newStopInfo
           };
@@ -3206,5 +3212,5 @@ module.exports = __webpack_require__(/*! /Users/nouyang/Desktop/museum-live/wp-c
 
 /***/ })
 
-},[[0,"runtime-main",0]]]);
+},[[0,"runtime-main",1]]]);
 //# sourceMappingURL=main.chunk.js.map

@@ -58,9 +58,9 @@ class PublicLibrary extends React.Component {
         .then((data) => {
             console.log(data);
             let tourInfo = data.map((tour) => {
-                const {id, title, content} = tour;
+                const {id, title, content, author} = tour;
 
-                return {id, name: title.rendered, 
+                return {id, name: title.rendered, author,
                     date: this.parseContentStopDate(content.rendered), 
                     visibility: this.parseContentStopVisibility(content.rendered),
                     entries: this.parseContentStopId(content.rendered)};
@@ -97,11 +97,11 @@ class PublicLibrary extends React.Component {
                     });
                     return tourInfo.map(tour => 
                     {
-                        const { id, name, date, visibility, entries } = tour;
+                        const { id, name, author, date, visibility, entries } = tour;
                         let newStopInfo = entries.map(stopId => {
                             return stopDic[stopId];
                         });
-                        return {id, name, date, visibility, entries: newStopInfo};    
+                        return {id, name, date, author, visibility, entries: newStopInfo};    
                     }); 
                 });
         })

@@ -22,7 +22,7 @@ const TourStatus = (props) => {
         <div className="tour-status">
             {renderStatus(visibility)}
             <span className="creation-date"> {parseDate(date)} </span> by
-            <span className="creator"> Grace Kang </span>
+            <span className="creator"> {username} </span>
             
         </div>
     )

@@ -68,7 +68,7 @@ const Playlist = props => {
         {props.playlists.map(playlist => {
 
              // for copy tour
-            const { id, name, date, visibility, entries } = playlist;
+            const { id, name, date, author, visibility, entries } = playlist;
             const [show, setShow] = useState(false);
             const [showDelete, setShowDelete] = useState(false);
             const [tourTitle, setTourTitle] = useState(name + " Copy");
@@ -174,9 +174,17 @@ const Playlist = props => {
                             </Modal.Footer>
                         </Modal>
 
-                        <Dropdown.Item onClick={() => props.history.push(`/tour/${playlist.id}`)}>EDIT</Dropdown.Item>
+                        
 
-                        <Dropdown.Item onClick={handleShowDelete}>DETELE</Dropdown.Item>
+                        {
+                            (visibility === 'public' || author[0] === reactInit.userId) ?
+                                <Dropdown.Item onClick={() => props.history.push(`/tour/${playlist.id}`)}>EDIT</Dropdown.Item> : ""
+                        }
+
+                        {
+                            (visibility === 'public' || author[0] === reactInit.userId) ?
+                                <Dropdown.Item onClick={handleShowDelete}>DELETE</Dropdown.Item> : ""
+                        }
 
                         {/* delete tour popup */}
                         <Modal show={showDelete} onHide={handleCloseDelete} aria-labelledby="contained-modal-title-vcenter" centered>
@@ -201,7 +209,7 @@ const Playlist = props => {
 
                     </DropdownButton>
                 </div>
-                <TourStatus visibility={visibility} date={date}/>
+                <TourStatus visibility={visibility} date={date} username={author[1]}/>
                 <Entries listId={playlist.id} entries={playlist.entries}/>
             </div>
             )
