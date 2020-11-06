@@ -28,6 +28,12 @@ class PublicLibrary extends React.Component {
         return date;
     }
 
+    parseContentStopVisibility(content) {
+        let res = content.match(/<h2>Visibility:.+<\/h2>/gm);
+        let status = res ? res[0].slice(4, -5).split(":")[1] : "public";
+        return status;
+    }
+
     getStopInfo = (id) => {
         let time =  new Date().getTime();
         return fetch('/wp-json/wp/v2/stop/' + id +'?timestamp=' + time)
@@ -54,7 +60,10 @@ class PublicLibrary extends React.Component {
             let tourInfo = data.map((tour) => {
                 const {id, title, content} = tour;
 
-                return {id, name: title.rendered, date: this.parseContentStopDate(content.rendered), entries: this.parseContentStopId(content.rendered)};
+                return {id, name: title.rendered, 
+                    date: this.parseContentStopDate(content.rendered), 
+                    visibility: this.parseContentStopVisibility(content.rendered),
+                    entries: this.parseContentStopId(content.rendered)};
             });
             // console.log(playlistInfo);
             return tourInfo;
@@ -88,11 +97,11 @@ class PublicLibrary extends React.Component {
                     });
                     return tourInfo.map(tour => 
                     {
-                        const { id, name, date, entries } = tour;
+                        const { id, name, date, visibility, entries } = tour;
                         let newStopInfo = entries.map(stopId => {
                             return stopDic[stopId];
                         });
-                        return {id, name, date, entries: newStopInfo};    
+                        return {id, name, date, visibility, entries: newStopInfo};    
                     }); 
                 });
         })

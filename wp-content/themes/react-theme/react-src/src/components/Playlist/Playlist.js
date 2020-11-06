@@ -13,7 +13,7 @@ import TourStatus from './TourStatus';
 
 
 // copy tour function for the "copy tour" inside dropdown
-async function copyTour(title, date, stops) {
+async function copyTour(title, date, visibility, stops) {
     let str = "<ol>";
     stops.map(stop => {
         const { id } = stop;
@@ -24,6 +24,9 @@ async function copyTour(title, date, stops) {
     str += "</ol>"
     str += "<h2>TourDate:";
     str += date;
+    str += "</h2>";
+    str += "<h2>Visibility:";
+    str += visibility;
     str += "</h2>";
 
     const data = {
@@ -65,11 +68,11 @@ const Playlist = props => {
         {props.playlists.map(playlist => {
 
              // for copy tour
-            const { id, name, date, entries } = playlist;
+            const { id, name, date, visibility, entries } = playlist;
             const [show, setShow] = useState(false);
             const [showDelete, setShowDelete] = useState(false);
             const [tourTitle, setTourTitle] = useState(name + " Copy");
-            const [isPrivate, setPrivate] = useState(true);
+            const [tourVilisibity, setTourVilisibity] = useState(visibility);
             const [tourDate, setTourDate] = useState(date);
 
             // TODO: save the new id somewhere else in library/my tour component
@@ -80,15 +83,15 @@ const Playlist = props => {
             const handleShowDelete = () => setShowDelete(true);
             const handleCloseDelete = () => setShowDelete(false);
 
-            const handleCopy = (title, date, stops, event) => {
+            const handleCopy = (title, date, visibility, stops, event) => {
                 console.log(stops);
                 if (!title || title.length === 0)
                 {
-                console.log("Empty tour name is not allowed");
-                return;
+                    console.log("Empty tour name is not allowed");
+                    return;
                 }
                 // create new 
-                copyTour(title, date, stops).then((id) => {
+                copyTour(title, date, visibility, stops).then((id) => {
                 setShow(false);
                 // TODO: check created id 
                 if (id == -1)
@@ -158,14 +161,14 @@ const Playlist = props => {
 
                                 <Form.Group>
                                         <Form.Label>Tour Visibility</Form.Label> <br></br>
-                                        <Form.Check type='radio' id='default-radio' label='COMPLETE' name='tourTypeRadio' />
-                                        <Form.Check type='radio' label='INCOMPLETE' id='disabled-default-radio' name='tourTypeRadio' />
+                                        <Form.Check type='radio' id='default-radio' value='private' label='COMPLETE' name='tourTypeRadio' checked={tourVilisibity === 'private'} onChange={event => setTourVilisibity(event.target.value)}/>
+                                        <Form.Check type='radio' label='INCOMPLETE' value='public' id='disabled-default-radio' name='tourTypeRadio' checked={tourVilisibity === 'public'} onChange={event => setTourVilisibity(event.target.value)}/>
                                 </Form.Group>
 
                                 </Form>
                             </Modal.Body>
                             <Modal.Footer>
-                                <Button variant="primary" onClick={handleCopy.bind(this, tourTitle, tourDate, entries)}>
+                                <Button variant="primary" onClick={handleCopy.bind(this, tourTitle, tourDate, tourVilisibity, entries)}>
                                 Save Changes
                                 </Button>
                             </Modal.Footer>
@@ -198,7 +201,7 @@ const Playlist = props => {
 
                     </DropdownButton>
                 </div>
-                <TourStatus />
+                <TourStatus visibility={visibility} date={date}/>
                 <Entries listId={playlist.id} entries={playlist.entries}/>
             </div>
             )

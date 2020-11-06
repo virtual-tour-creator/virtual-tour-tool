@@ -39,7 +39,8 @@ class TourPage extends React.Component {
     parseContent(content) {
         let info = {
             'stopIds': [],
-            'tourDate': ""
+            'tourDate': "",
+            'visibility': ""
         };
         let res = content.match(/<li>\d+<\/li>/gm);
         let stops = res ? res.map(item => {
@@ -50,6 +51,9 @@ class TourPage extends React.Component {
         res = content.match(/<h2>TourDate:.+<\/h2>/gm);
         let date = res ? res[0].slice(4, -5).split(":")[1] : "";
         info.tourDate = date;
+        res = content.match(/<h2>Visibility:.+<\/h2>/gm);
+        let status = res ? res[0].slice(4, -5).split(":")[1] : "public";
+        info.visibility = status;
         return info;
     }
 
@@ -64,7 +68,8 @@ class TourPage extends React.Component {
             console.log(parsedContent);
             this.setState({
                 'name': title.rendered,
-                'date': parsedContent.tourDate
+                'date': parsedContent.tourDate,
+                'visibility': parsedContent.visibility
             });
             // Get all stop details
             const allRequests = parsedContent.stopIds.map(tourId => 
@@ -112,7 +117,7 @@ class TourPage extends React.Component {
     getContentString() {
         let str = "<ol>";
 
-        const { stops, date } = this.state;
+        const { stops, date, visibility } = this.state;
         stops.map(stop => {
             const { id } = stop;
             str += "<li>";
@@ -122,6 +127,9 @@ class TourPage extends React.Component {
         str += "</ol>"
         str += "<h2>TourDate:";
         str += date;
+        str += "</h2>";
+        str += "<h2>Visibility:";
+        str += visibility;
         str += "</h2>";
         return str;
     }
@@ -225,8 +233,8 @@ class TourPage extends React.Component {
 
                 <Form.Group>
                     <Form.Label>Tour Visibility</Form.Label>
-                    <Form.Check type='radio' id='default-radio' label='COMPLETE' name='tourTypeRadio' />
-                    <Form.Check type='radio' label='INCOMPLETE' id='disabled-default-radio' name='tourTypeRadio' />
+                    <Form.Check type='radio' id='default-radio' value='private' checked={this.state.visibility === 'private'} label='COMPLETE' name='tourTypeRadio' onChange={e => this.setState({visibility: e.target.value})}/>
+                    <Form.Check type='radio' label='INCOMPLETE' value='public' checked={this.state.visibility === 'public'} id='disabled-default-radio' name='tourTypeRadio' onChange={e => this.setState({visibility: e.target.value})}/>
                 </Form.Group>
     
                 </Form>
@@ -262,7 +270,7 @@ class TourPage extends React.Component {
                 <div>
                     <AddStop onSelectStops={this.handleAddedStops} />
                     <Button variant="primary" onClick={this.handleEditing.bind(this)} id='update-stop-button' className='tour-page-button'>
-                        <i class='fas fa-check'></i> DONE EDITING
+                        <i className='fas fa-check'></i> DONE EDITING
                     </Button>
                     <div className='grid-list-container'>
                         <StopBoxList 
