@@ -3887,7 +3887,7 @@ class TourPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
 /*!**************************************!*\
   !*** ./src/helpers/RestAPIHelper.js ***!
   \**************************************/
-/*! exports provided: RestAPICreateTour, RestAPIGetStopById, RestAPIGetTourByAuthorId, RestAPIGetStopsByPage */
+/*! exports provided: RestAPICreateTour, RestAPIGetStopById, RestAPIGetTourByAuthorId, RestAPIGetStopsByPage, RestAPIGetStopsBySearch */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3896,6 +3896,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RestAPIGetStopById", function() { return RestAPIGetStopById; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RestAPIGetTourByAuthorId", function() { return RestAPIGetTourByAuthorId; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RestAPIGetStopsByPage", function() { return RestAPIGetStopsByPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RestAPIGetStopsBySearch", function() { return RestAPIGetStopsBySearch; });
 function getTourContent(title, date, visibility, stops) {
   let str = "<ol>";
   if (stops) stops.map(stop => {
@@ -3971,7 +3972,18 @@ async function RestAPIGetStopsByPage(per_page, page_num, time, callback) {
 
   const stops = await response.json();
   const total_page_num = response.headers.get('x-wp-totalPages');
-  console.log(total_page_num);
+  callback(stops, total_page_num);
+}
+async function RestAPIGetStopsBySearch(search_keyword, per_page, page_num, time, callback) {
+  const response = await fetch('/wp-json/wp/v2/stop/?timestamp=' + time + '&search=' + search_keyword + '&per_page=' + per_page + '&page=' + page_num);
+
+  if (!response.ok) {
+    console.log(response);
+    return;
+  }
+
+  const stops = await response.json();
+  const total_page_num = response.headers.get('x-wp-totalPages');
   callback(stops, total_page_num);
 }
 
@@ -4074,5 +4086,5 @@ module.exports = __webpack_require__(/*! /Users/nouyang/Desktop/museum-live/wp-c
 
 /***/ })
 
-},[[0,"runtime-main",0]]]);
+},[[0,"runtime-main",1]]]);
 //# sourceMappingURL=main.chunk.js.map
