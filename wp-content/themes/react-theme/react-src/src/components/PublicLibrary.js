@@ -37,10 +37,16 @@ class PublicLibrary extends React.Component {
     getStopInfo = (id) => {
         let time =  new Date().getTime();
         return fetch('/wp-json/wp/v2/stop/' + id +'?timestamp=' + time)
-            .then(res => res.json())
+            .then(res => {
+                return res.ok && res.json ? res.json() : { id: -1 };
+            })
             .then(data => { 
                 // console.log(entry);
                 const { id, thumbnail_url, title, medium_url } = data;
+                // invalid stop
+                if (id === -1) {
+                    return { id };
+                }
                 const e = {
                     id,
                     thumbnail_url,
@@ -93,12 +99,16 @@ class PublicLibrary extends React.Component {
             return Promise.all(allRequests).then((stopData) => {
                     stopData.map(stop => {
                         const { id }  = stop;
-                        stopDic[id] = stop;
+                        if (id !== -1)
+                            stopDic[id] = stop;
                     });
                     return tourInfo.map(tour => 
                     {
                         const { id, name, author, date, visibility, entries } = tour;
-                        let newStopInfo = entries.map(stopId => {
+                        let newStopInfo = entries.filter(stopId => {
+                            return stopDic[stopId].hasOwnProperty('id');
+                        })
+                        .map(stopId => {
                             return stopDic[stopId];
                         });
                         return {id, name, date, author, visibility, entries: newStopInfo};    
