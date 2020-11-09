@@ -382,7 +382,6 @@ class TourPage extends React.Component {
     handleRemoveStop = (index) => {
         let stops = this.state.stops;
         // splice will operate directly on stops and return removed stops
-        alert("clicked!");
         stops.splice(index, 1);
         this.setState({
             'stops': stops

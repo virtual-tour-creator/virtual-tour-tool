@@ -3100,7 +3100,6 @@ class TourPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
     this.handleRemoveStop = index => {
       let stops = this.state.stops; // splice will operate directly on stops and return removed stops
 
-      alert("clicked!");
       stops.splice(index, 1);
       this.setState({
         'stops': stops
