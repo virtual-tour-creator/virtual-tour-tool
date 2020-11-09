@@ -3,7 +3,7 @@ import { SortableElement, SortableContainer } from 'react-sortable-hoc';
 import './TourPage.styles.css';
 
 import CloseIcon from '@material-ui/icons/Close';
-
+import IconButton from '@material-ui/core/IconButton';
 
 const StopBox = SortableElement(({singleStop, index, handleRemove, handleSwapLeft, handleSwapRight}) => {
     return (
@@ -13,7 +13,8 @@ const StopBox = SortableElement(({singleStop, index, handleRemove, handleSwapLef
                     <img alt={singleStop.name} src={singleStop.medium_url} style={{width: "18rem"}} className="stop-thumbnail"/>  
                     <button className='swap-button' id="swap-left"  onClick={() => handleSwapLeft(index)}></button>
                     <button className='swap-button' id="swap-right" onClick={() => handleSwapRight(index)}></button>
-                    <button className='remove tour-page-button' onClick={() => handleRemove(index)}> <CloseIcon /> </button>
+                    <button className='remove tour-page-button' onClick={() => handleRemove(index)}><CloseIcon style={{'pointerEvents':'none'}}/> </button>
+                    
                 </div>
                 <p className="stop-name">{singleStop.name}</p>
             </div>

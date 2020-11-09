@@ -651,11 +651,12 @@ input[type="radio"]:focus {
 .remove {
     position: absolute;
     top: -10px;
+    width: 35px;
     right: 0;
     z-index: 100;
     border-radius: 50%;
     border: none;
-    background-color: black;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAC7SURBVHgB7ZXbDYMwDEWtTpBu0G7ASN2EUegEHaEjtBvAKCaWAgqRASfE/OAj3R9wcgh5ARjG5UBEl1mf3YbrpPUZfB7CesoztGmhBPrq0AFK5ImU+EEpJJPIOWmN300j/6/JVaQSuZp0S55MRVdduiGfpaBNIic+UMAN8nEhEw0K93kRzOp9RyPvVeSMtAvPnZp8TRq9v1eX70mjmnpyiVRFjstLYnefMvJDl8QLMw6HSP71acAwjDMYAUb68N3Kf4BUAAAAAElFTkSuQmCC);
     color: white !important;
     background: #666E77 !important;
     padding: 0 3px;
