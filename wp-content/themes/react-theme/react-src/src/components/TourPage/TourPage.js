@@ -88,9 +88,12 @@ class TourPage extends React.Component {
             const allRequests = parsedContent.stopIds.map(tourId => 
                 {   
                     return fetch('/wp-json/wp/v2/stop/' + tourId +'?timestamp=' + time)
-                            .then(res => res.json())
+                            .then(res => {
+                                return res.ok && res.json ? res.json() : { id: -1 };
+                            })
                             .then(data => { 
                                 const { id, thumbnail_url, title, medium_url } = data;
+                                if (id === -1) return {};
                                 const stop = {
                                     "id": id,
                                     "thumbnailUrl": thumbnail_url,
@@ -106,7 +109,7 @@ class TourPage extends React.Component {
         })
         .then(allStops => {
             this.setState({
-                'stops': allStops
+                'stops': allStops.filter(stop => stop.hasOwnProperty('id'))
             });
         });
     }
