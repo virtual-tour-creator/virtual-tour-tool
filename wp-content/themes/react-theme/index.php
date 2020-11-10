@@ -46,7 +46,7 @@
         Learn how to configure a non-root public URL by running `npm run wpbuild`.
     -->
     <title>Museum.Live</title>
-<link href="/wp-content/themes/react-theme/static/css/0.chunk.css?8593a3b27e4020a74e78" rel="stylesheet"><link href="/wp-content/themes/react-theme/static/css/main.chunk.css?8593a3b27e4020a74e78" rel="stylesheet"></head>
+<link href="/wp-content/themes/react-theme/static/css/0.chunk.css?80da27e3a9042fca17a1" rel="stylesheet"><link href="/wp-content/themes/react-theme/static/css/main.chunk.css?80da27e3a9042fca17a1" rel="stylesheet"></head>
     <body>
     <noscript>
         You need to enable JavaScript to run this app.
@@ -93,10 +93,15 @@
          searchStopTagUrl: "<?php echo admin_url('edit.php?post_type=stop&tag='); ?>",
          searchMediaUrl: "<?php echo admin_url('upload.php?search='); ?>",
          adminUrl: "<?php echo admin_url(); ?>",
-         userId: "<?php echo get_current_user_id(); ?>"
+         userId: "<?php echo get_current_user_id(); ?>",
+         logoUrl: "<?php $custom_logo_id = get_theme_mod( 'custom_logo' );
+                        $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+                        echo $image[0]; ?>",
+         headerUrl: "<?php header_image(); ?>",
+
        };
 
     </script>
     <script src="https://kit.fontawesome.com/91b7b285ec.js" crossorigin="anonymous"></script>
-    <script src="/wp-content/themes/react-theme/static/js/bundle.js?8593a3b27e4020a74e78"></script><script src="/wp-content/themes/react-theme/static/js/0.chunk.js?8593a3b27e4020a74e78"></script><script src="/wp-content/themes/react-theme/static/js/main.chunk.js?8593a3b27e4020a74e78"></script></body>
+    <script src="/wp-content/themes/react-theme/static/js/bundle.js?80da27e3a9042fca17a1"></script><script src="/wp-content/themes/react-theme/static/js/0.chunk.js?80da27e3a9042fca17a1"></script><script src="/wp-content/themes/react-theme/static/js/main.chunk.js?80da27e3a9042fca17a1"></script></body>
 </html>

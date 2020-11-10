@@ -86,7 +86,12 @@
          searchStopTagUrl: "<?php echo admin_url('edit.php?post_type=stop&tag='); ?>",
          searchMediaUrl: "<?php echo admin_url('upload.php?search='); ?>",
          adminUrl: "<?php echo admin_url(); ?>",
-         userId: "<?php echo get_current_user_id(); ?>"
+         userId: "<?php echo get_current_user_id(); ?>",
+         logoUrl: "<?php $custom_logo_id = get_theme_mod( 'custom_logo' );
+                        $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+                        echo $image[0]; ?>",
+         headerUrl: "<?php header_image(); ?>",
+
        };
 
     </script>
