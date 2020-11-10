@@ -4,6 +4,8 @@ import Jumbotron from './Jumbotron/Jumbotron';
 import Playlist from './Playlist/Playlist';
 import CreateTour from './Button/CreateTour';
 
+import unescape from '../helpers/unescape';
+
 
 class PublicLibrary extends React.Component {
     constructor(props) {
@@ -51,7 +53,7 @@ class PublicLibrary extends React.Component {
                     id,
                     thumbnail_url,
                     medium_url,
-                    name: title.rendered,
+                    name: unescape(title.rendered),
                 };
                 return e;
             });
@@ -66,7 +68,7 @@ class PublicLibrary extends React.Component {
             let tourInfo = data.map((tour) => {
                 const {id, title, content, author} = tour;
 
-                return {id, name: title.rendered, author,
+                return {id, name: unescape(title.rendered), author,
                     date: this.parseContentStopDate(content.rendered), 
                     visibility: this.parseContentStopVisibility(content.rendered),
                     entries: this.parseContentStopId(content.rendered)};

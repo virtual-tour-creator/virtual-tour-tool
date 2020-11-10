@@ -25,6 +25,8 @@ import dropdownIcon from '../../images/dropdown-icon.png';
 // import hamburgerIcon from '../../images/hamburger.png';
 // import hamburgerCloseIcon from '../../images/hamburger-close.png';
 
+import unescape from '../../helpers/unescape';
+
 import arrayMove from 'array-move';
 
 import './TourPage.styles.css'
@@ -80,7 +82,7 @@ class TourPage extends React.Component {
             let parsedContent = this.parseContent(content.rendered);
             console.log(parsedContent);
             this.setState({
-                'name': title.rendered,
+                'name': unescape(title.rendered),
                 'authorId': author[0],
                 'authorName': author[1],
                 'date': parsedContent.tourDate,
@@ -99,7 +101,7 @@ class TourPage extends React.Component {
                                 const stop = {
                                     "id": id,
                                     "thumbnailUrl": thumbnail_url,
-                                    "name": title.rendered,
+                                    "name": unescape(title.rendered),
                                     "medium_url": medium_url
                                 };
                                 return stop;
@@ -150,6 +152,10 @@ class TourPage extends React.Component {
         str += visibility;
         str += "</h2>";
         return str;
+    }
+
+    sanitize(text){ 
+        
     }
 
     async updateTour(content) {
