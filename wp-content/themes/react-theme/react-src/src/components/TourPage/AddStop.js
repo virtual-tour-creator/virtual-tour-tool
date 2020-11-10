@@ -4,13 +4,16 @@ import { Button, Modal } from 'react-bootstrap';
 import CloseIcon from '@material-ui/icons/Close';
 
 import StopCard from './StopCard'
-import './TourPage.styles.css'
+import './TourPage.styles.css';
+import './AddStop.styles.css';
 import './SelectableCard.scss';
 import { RestAPIGetStopsByPage } from '../../helpers/RestAPIHelper.js';
-import Pagination from 'react-bootstrap/Pagination'
+import Pagination from './Pagination';
 
 import SearchIcon from '@material-ui/icons/Search';
 import InputBase from '@material-ui/core/InputBase';
+
+import NoResult from '../../images/no-result-sad-face.png';
 
 
 class StopCardList extends React.Component {
@@ -88,9 +91,9 @@ class StopCardListSelection extends React.Component {
             <StopCardList 
               stops={this.props.stops}
               onChange={this.onListChanged.bind(this)}/>
-            <button onClick={(e) => this.submit() }>
+            {/* <button onClick={(e) => this.submit() }>
               Add
-            </button>
+            </button> */}
         </div>);
     }
   }
@@ -108,7 +111,6 @@ class AddStop extends React.Component {
         }
     }
     
-
     // const [show, setShow] = useState(false);
 
     componentDidMount() {
@@ -138,44 +140,69 @@ class AddStop extends React.Component {
         this.setState({show:false});
     }
 
-    handleChangePage = (e) => {
-      const text = e.target.getAttribute('value');
-      const nextPageIdx = parseInt(text);
-      if (nextPageIdx) {
+    handleChangePage = (nextPageIdx) => {
         const { stopPerPage } = this.state;
         let time =  new Date().getTime();
         RestAPIGetStopsByPage(stopPerPage, nextPageIdx, time, this.handleRestAPIResult)
         this.setState({currentPage: nextPageIdx});
       }
+
+    handlePrevPage() {
+      const { currentPage } = this.state;
+      if(currentPage > 1){
+        const nextPageIdx = parseInt(currentPage) - 1;
+        this.handleChangePage(nextPageIdx);
+      }
+    }
+
+    handleNextPage() {
+      const { pageNum, currentPage } = this.state;
+      if(currentPage < pageNum){
+        const nextPageIdx = parseInt(currentPage) + 1;
+        console.log("next page:", nextPageIdx);
+        this.handleChangePage(nextPageIdx);   
+      }
     }
 
     renderPagination() {
       const { pageNum, currentPage } = this.state;
-      let items = [];
-      for (let number = 1; number <= pageNum; number++) {
-        items.push(
-          <Pagination.Item key={number} value={number} active={number === currentPage}>
-            {number}
-          </Pagination.Item>,
-        );
-      }
       return (
         <div>
-          <Pagination onClick={this.handleChangePage.bind(this)}>{items}</Pagination>
+          {/* <Pagination onClick={this.handleChangePage.bind(this)}>{items}</Pagination> */}
+          <Pagination pageNum={pageNum} currentPage={currentPage} handlePrevPage={this.handlePrevPage.bind(this)} handleNextPage={this.handleNextPage.bind(this)} />
         </div>);
     }
 
-    // const stopsToAdd = backendStops.map(singleStop =>
-    //     <div className='stop'>
-    //         <StopCard>
-    //             <img alt='stop' src={singleStop.thumbnailUrl} />
-    //             <p> {singleStop.name} </p>
-    //         </StopCard>
-    //     </div>)
+    renderModalBody() {
+      const { backendStops } = this.state;
+
+      // if(no result) {
+      //   return (
+      //     <div className="no-result-notification">
+      //       <img id="cute-no-result-face" src={NoResult} />
+      //       <p id="no-result-first-line">Sorry we can't find any stops matching your search!</p>
+      //       <p id="no-result-second-line">Please try another search.</p>
+      //     </div>
+      //   )
+      // }
+      
+      return (
+        <>
+          <Modal.Body className="show-grid">
+              <div>   
+                 <StopCardListSelection stops={backendStops} onSelectStops={this.handleStops} />
+              </div>
+          </Modal.Body>
+          <Modal.Footer>
+              {this.renderPagination()}
+          </Modal.Footer>
+        </>
+        
+      )
+    }
     
     render() {
-        const { backendStops } = this.state;
-
+       
         return (
             <>
               <Button className='tour-page-button' variant="primary" onClick={this.handleShow} id='add-stop-button'>
@@ -203,14 +230,9 @@ class AddStop extends React.Component {
 
                 </Modal.Header>
                  
-                <Modal.Body className="show-grid">
-                <div>   
-                  <StopCardListSelection stops={backendStops} onSelectStops={this.handleStops} />
-                </div>
-                </Modal.Body>
-                <Modal.Footer>
-                  {this.renderPagination()}
-                </Modal.Footer>
+                {this.renderModalBody()}
+                
+                
               </Modal>
             </>
           );

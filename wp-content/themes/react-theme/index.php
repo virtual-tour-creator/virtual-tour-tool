@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;400;500;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cantarell:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Amiko:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Spectral+SC:wght@400;500;700&display=swap" rel="stylesheet">
@@ -46,7 +46,7 @@
         Learn how to configure a non-root public URL by running `npm run wpbuild`.
     -->
     <title>Museum.Live</title>
-<link href="/wp-content/themes/react-theme/static/css/0.chunk.css?7d69b1c6f65c748502d5" rel="stylesheet"><link href="/wp-content/themes/react-theme/static/css/main.chunk.css?7d69b1c6f65c748502d5" rel="stylesheet"></head>
+<link href="/wp-content/themes/react-theme/static/css/0.chunk.css?31bb23fa2f791e311fa1" rel="stylesheet"><link href="/wp-content/themes/react-theme/static/css/main.chunk.css?31bb23fa2f791e311fa1" rel="stylesheet"></head>
     <body>
     <noscript>
         You need to enable JavaScript to run this app.
@@ -103,5 +103,5 @@
 
     </script>
     <script src="https://kit.fontawesome.com/91b7b285ec.js" crossorigin="anonymous"></script>
-    <script src="/wp-content/themes/react-theme/static/js/bundle.js?7d69b1c6f65c748502d5"></script><script src="/wp-content/themes/react-theme/static/js/0.chunk.js?7d69b1c6f65c748502d5"></script><script src="/wp-content/themes/react-theme/static/js/main.chunk.js?7d69b1c6f65c748502d5"></script></body>
+    <script src="/wp-content/themes/react-theme/static/js/bundle.js?31bb23fa2f791e311fa1"></script><script src="/wp-content/themes/react-theme/static/js/0.chunk.js?31bb23fa2f791e311fa1"></script><script src="/wp-content/themes/react-theme/static/js/main.chunk.js?31bb23fa2f791e311fa1"></script></body>
 </html>

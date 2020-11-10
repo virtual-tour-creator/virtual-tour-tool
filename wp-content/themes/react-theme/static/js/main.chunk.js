@@ -2237,14 +2237,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _StopCard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./StopCard */ "./src/components/TourPage/StopCard.js");
 /* harmony import */ var _TourPage_styles_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./TourPage.styles.css */ "./src/components/TourPage/TourPage.styles.css");
 /* harmony import */ var _TourPage_styles_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_TourPage_styles_css__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _SelectableCard_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./SelectableCard.scss */ "./src/components/TourPage/SelectableCard.scss");
-/* harmony import */ var _SelectableCard_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_SelectableCard_scss__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _helpers_RestAPIHelper_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../helpers/RestAPIHelper.js */ "./src/helpers/RestAPIHelper.js");
-/* harmony import */ var react_bootstrap_Pagination__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-bootstrap/Pagination */ "./node_modules/react-bootstrap/esm/Pagination.js");
-/* harmony import */ var _material_ui_icons_Search__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/icons/Search */ "./node_modules/@material-ui/icons/Search.js");
-/* harmony import */ var _material_ui_icons_Search__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Search__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _material_ui_core_InputBase__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/InputBase */ "./node_modules/@material-ui/core/esm/InputBase/index.js");
+/* harmony import */ var _AddStop_styles_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./AddStop.styles.css */ "./src/components/TourPage/AddStop.styles.css");
+/* harmony import */ var _AddStop_styles_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_AddStop_styles_css__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _SelectableCard_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./SelectableCard.scss */ "./src/components/TourPage/SelectableCard.scss");
+/* harmony import */ var _SelectableCard_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_SelectableCard_scss__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _helpers_RestAPIHelper_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../helpers/RestAPIHelper.js */ "./src/helpers/RestAPIHelper.js");
+/* harmony import */ var _Pagination__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Pagination */ "./src/components/TourPage/Pagination.js");
+/* harmony import */ var _material_ui_icons_Search__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/icons/Search */ "./node_modules/@material-ui/icons/Search.js");
+/* harmony import */ var _material_ui_icons_Search__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Search__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _material_ui_core_InputBase__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core/InputBase */ "./node_modules/@material-ui/core/esm/InputBase/index.js");
+/* harmony import */ var _images_no_result_sad_face_png__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../images/no-result-sad-face.png */ "./src/images/no-result-sad-face.png");
+/* harmony import */ var _images_no_result_sad_face_png__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_images_no_result_sad_face_png__WEBPACK_IMPORTED_MODULE_11__);
 var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/TourPage/AddStop.js";
+
+
 
 
 
@@ -2306,7 +2312,7 @@ class StopCardList extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Componen
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 55,
+          lineNumber: 58,
           columnNumber: 11
         }
       });
@@ -2316,7 +2322,7 @@ class StopCardList extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Componen
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 62,
+        lineNumber: 65,
         columnNumber: 15
       }
     }, stop);
@@ -2346,7 +2352,7 @@ class StopCardListSelection extends react__WEBPACK_IMPORTED_MODULE_0___default.a
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 87,
+        lineNumber: 90,
         columnNumber: 9
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(StopCardList, {
@@ -2355,18 +2361,10 @@ class StopCardListSelection extends react__WEBPACK_IMPORTED_MODULE_0___default.a
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 88,
-        columnNumber: 13
-      }
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-      onClick: e => this.submit(),
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
         lineNumber: 91,
         columnNumber: 13
       }
-    }, "Add"));
+    }));
   }
 
 }
@@ -2408,20 +2406,15 @@ class AddStop extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       });
     };
 
-    this.handleChangePage = e => {
-      const text = e.target.getAttribute('value');
-      const nextPageIdx = parseInt(text);
-
-      if (nextPageIdx) {
-        const {
-          stopPerPage
-        } = this.state;
-        let time = new Date().getTime();
-        Object(_helpers_RestAPIHelper_js__WEBPACK_IMPORTED_MODULE_6__["RestAPIGetStopsByPage"])(stopPerPage, nextPageIdx, time, this.handleRestAPIResult);
-        this.setState({
-          currentPage: nextPageIdx
-        });
-      }
+    this.handleChangePage = nextPageIdx => {
+      const {
+        stopPerPage
+      } = this.state;
+      let time = new Date().getTime();
+      Object(_helpers_RestAPIHelper_js__WEBPACK_IMPORTED_MODULE_7__["RestAPIGetStopsByPage"])(stopPerPage, nextPageIdx, time, this.handleRestAPIResult);
+      this.setState({
+        currentPage: nextPageIdx
+      });
     };
 
     this.state = {
@@ -2439,7 +2432,31 @@ class AddStop extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
     const {
       stopPerPage
     } = this.state;
-    Object(_helpers_RestAPIHelper_js__WEBPACK_IMPORTED_MODULE_6__["RestAPIGetStopsByPage"])(stopPerPage, 1, time, this.handleRestAPIResult);
+    Object(_helpers_RestAPIHelper_js__WEBPACK_IMPORTED_MODULE_7__["RestAPIGetStopsByPage"])(stopPerPage, 1, time, this.handleRestAPIResult);
+  }
+
+  handlePrevPage() {
+    const {
+      currentPage
+    } = this.state;
+
+    if (currentPage > 1) {
+      const nextPageIdx = parseInt(currentPage) - 1;
+      this.handleChangePage(nextPageIdx);
+    }
+  }
+
+  handleNextPage() {
+    const {
+      pageNum,
+      currentPage
+    } = this.state;
+
+    if (currentPage < pageNum) {
+      const nextPageIdx = parseInt(currentPage) + 1;
+      console.log("next page:", nextPageIdx);
+      this.handleChangePage(nextPageIdx);
+    }
   }
 
   renderPagination() {
@@ -2447,51 +2464,75 @@ class AddStop extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       pageNum,
       currentPage
     } = this.state;
-    let items = [];
-
-    for (let number = 1; number <= pageNum; number++) {
-      items.push( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Pagination__WEBPACK_IMPORTED_MODULE_7__["default"].Item, {
-        key: number,
-        value: number,
-        active: number === currentPage,
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 157,
-          columnNumber: 11
-        }
-      }, number));
-    }
-
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 163,
+        lineNumber: 170,
         columnNumber: 9
       }
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Pagination__WEBPACK_IMPORTED_MODULE_7__["default"], {
-      onClick: this.handleChangePage.bind(this),
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Pagination__WEBPACK_IMPORTED_MODULE_8__["default"], {
+      pageNum: pageNum,
+      currentPage: currentPage,
+      handlePrevPage: this.handlePrevPage.bind(this),
+      handleNextPage: this.handleNextPage.bind(this),
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 164,
+        lineNumber: 172,
         columnNumber: 11
       }
-    }, items));
-  } // const stopsToAdd = backendStops.map(singleStop =>
-  //     <div className='stop'>
-  //         <StopCard>
-  //             <img alt='stop' src={singleStop.thumbnailUrl} />
-  //             <p> {singleStop.name} </p>
-  //         </StopCard>
-  //     </div>)
+    }));
+  }
 
-
-  render() {
+  renderModalBody() {
     const {
       backendStops
-    } = this.state;
+    } = this.state; // if(no result) {
+    //   return (
+    //     <div className="no-result-notification">
+    //       <img id="cute-no-result-face" src={NoResult} />
+    //       <p id="no-result-first-line">Sorry we can't find any stops matching your search!</p>
+    //       <p id="no-result-second-line">Please try another search.</p>
+    //     </div>
+    //   )
+    // }
+
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Modal"].Body, {
+      className: "show-grid",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 191,
+        columnNumber: 11
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 192,
+        columnNumber: 15
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(StopCardListSelection, {
+      stops: backendStops,
+      onSelectStops: this.handleStops,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 193,
+        columnNumber: 18
+      }
+    }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Modal"].Footer, {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 196,
+        columnNumber: 11
+      }
+    }, this.renderPagination()));
+  }
+
+  render() {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
       className: "tour-page-button",
       variant: "primary",
@@ -2500,7 +2541,7 @@ class AddStop extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 181,
+        lineNumber: 208,
         columnNumber: 15
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
@@ -2508,7 +2549,7 @@ class AddStop extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 182,
+        lineNumber: 209,
         columnNumber: 17
       }
     }), "  Add Stop(s)"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Modal"], {
@@ -2523,7 +2564,7 @@ class AddStop extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 185,
+        lineNumber: 212,
         columnNumber: 15
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Modal"].Header, {
@@ -2532,7 +2573,7 @@ class AddStop extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 186,
+        lineNumber: 213,
         columnNumber: 17
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Modal"].Title, {
@@ -2540,7 +2581,7 @@ class AddStop extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 187,
+        lineNumber: 214,
         columnNumber: 19
       }
     }, "Add Stop(s) ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
@@ -2548,7 +2589,7 @@ class AddStop extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 187,
+        lineNumber: 214,
         columnNumber: 70
       }
     }, "Selected Stops: 2")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2556,10 +2597,10 @@ class AddStop extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 189,
+        lineNumber: 216,
         columnNumber: 19
       }
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_InputBase__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_InputBase__WEBPACK_IMPORTED_MODULE_10__["default"], {
       placeholder: "Search tour topic here...",
       className: "add-stop-search-input",
       inputProps: {
@@ -2568,7 +2609,7 @@ class AddStop extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 190,
+        lineNumber: 217,
         columnNumber: 21
       }
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2576,14 +2617,14 @@ class AddStop extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 195,
+        lineNumber: 222,
         columnNumber: 21
       }
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_Search__WEBPACK_IMPORTED_MODULE_8___default.a, {
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_Search__WEBPACK_IMPORTED_MODULE_9___default.a, {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 196,
+        lineNumber: 223,
         columnNumber: 23
       }
     }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -2595,7 +2636,7 @@ class AddStop extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 200,
+        lineNumber: 227,
         columnNumber: 19
       }
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -2604,46 +2645,26 @@ class AddStop extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 202,
+        lineNumber: 229,
         columnNumber: 19
       }
-    }, "DONE")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Modal"].Body, {
-      className: "show-grid",
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 206,
-        columnNumber: 17
-      }
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 207,
-        columnNumber: 17
-      }
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(StopCardListSelection, {
-      stops: backendStops,
-      onSelectStops: this.handleStops,
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 208,
-        columnNumber: 19
-      }
-    }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Modal"].Footer, {
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 211,
-        columnNumber: 17
-      }
-    }, this.renderPagination())));
+    }, "DONE")), this.renderModalBody()));
   }
 
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (AddStop);
+
+/***/ }),
+
+/***/ "./src/components/TourPage/AddStop.styles.css":
+/*!****************************************************!*\
+  !*** ./src/components/TourPage/AddStop.styles.css ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
 
 /***/ }),
 
@@ -2860,6 +2881,122 @@ function MediaCard({
     }, stop.name))
   );
 }
+
+/***/ }),
+
+/***/ "./src/components/TourPage/Pagination.js":
+/*!***********************************************!*\
+  !*** ./src/components/TourPage/Pagination.js ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _images_pagination_left_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../images/pagination-left.png */ "./src/images/pagination-left.png");
+/* harmony import */ var _images_pagination_left_png__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_images_pagination_left_png__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _images_pagination_right_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../images/pagination-right.png */ "./src/images/pagination-right.png");
+/* harmony import */ var _images_pagination_right_png__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_images_pagination_right_png__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _images_pagination_left_greyout_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../images/pagination-left-greyout.png */ "./src/images/pagination-left-greyout.png");
+/* harmony import */ var _images_pagination_left_greyout_png__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_images_pagination_left_greyout_png__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _images_pagination_right_greyout_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../images/pagination-right-greyout.png */ "./src/images/pagination-right-greyout.png");
+/* harmony import */ var _images_pagination_right_greyout_png__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_images_pagination_right_greyout_png__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _Pagination_styles_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Pagination.styles.css */ "./src/components/TourPage/Pagination.styles.css");
+/* harmony import */ var _Pagination_styles_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_Pagination_styles_css__WEBPACK_IMPORTED_MODULE_5__);
+var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/TourPage/Pagination.js";
+
+
+
+
+
+
+
+const Pagination = ({
+  pageNum,
+  currentPage,
+  handlePrevPage,
+  handleNextPage
+}) => {
+  var LeftIcon = _images_pagination_left_png__WEBPACK_IMPORTED_MODULE_1___default.a;
+  var RightIcon = _images_pagination_right_png__WEBPACK_IMPORTED_MODULE_2___default.a;
+
+  if (currentPage == 1) {
+    LeftIcon = _images_pagination_left_greyout_png__WEBPACK_IMPORTED_MODULE_3___default.a;
+  }
+
+  if (currentPage == pageNum) {
+    RightIcon = _images_pagination_right_greyout_png__WEBPACK_IMPORTED_MODULE_4___default.a;
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "add-stop-pagination pagination",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15,
+      columnNumber: 9
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "pagination-arrow",
+    src: LeftIcon,
+    onClick: handlePrevPage,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16,
+      columnNumber: 13
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "pagination-center",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17,
+      columnNumber: 13
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "current-page",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18,
+      columnNumber: 5
+    }
+  }, currentPage), " /", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "page-number",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19,
+      columnNumber: 17
+    }
+  }, pageNum)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "pagination-arrow",
+    src: RightIcon,
+    onClick: handleNextPage,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21,
+      columnNumber: 13
+    }
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Pagination);
+
+/***/ }),
+
+/***/ "./src/components/TourPage/Pagination.styles.css":
+/*!*******************************************************!*\
+  !*** ./src/components/TourPage/Pagination.styles.css ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
 
 /***/ }),
 
@@ -4091,6 +4228,61 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABz
 /***/ (function(module, exports) {
 
 module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAZCAYAAAA8CX6UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAHWSURBVHgBpZTNLjtRGMbfc86kXfw3lv9lXYCkQn2EBVaWLoGFEomaWVAraqe1MD4ik1qoGyBugEo0QQh2duYSJhGS+pjX+46pVBUz40nOnHNyTn7zPGfeOQB/0KSeTUxksjM8FhBRDHABcgRoAURDg5DSdb3lEeOLiKCzCwRY+6eeSqEcjU/NJoUm92mYIIAjEJeKGwWT1wI7qkUBjgJgqycYtKyCXVv/FcRRHjC+SlFGP6LIas60TKd+nwgTRaEwrI3lUrO9En6IApo8Ygi1a4rS/h2EpUWN0igRNUqjZNQojdK8AnuN75CDkTBRvoDuX2IDSkLSnzvkxAwLYXlnNKnPJ1wXD2nYyjDyZVBfKq4XAoMUPy5OT5y23tSuQvWf2D3URvglnV39x5fnlUCgLwWZzsznyNECrwmEsniGMcvK26FBLL8M9uA9qi29/+pnWNPK3t5auZZSDJGzK5om3BjcpafndAjr6JO7TNakTTP+brO4ljcigVieGyFW/WnTqIEvNr6fXRdqlW9Llz7CZr5cW1dBQRenFSfV23+ALoEE9KCA0Y7uPrg8qxyHclSvdCabo27RAyCUqqpqBHZUL3JRTqb6boQQw+xOYewW/iI+N98dvAGezMoAonYS5wAAAABJRU5ErkJggg=="
+
+/***/ }),
+
+/***/ "./src/images/no-result-sad-face.png":
+/*!*******************************************!*\
+  !*** ./src/images/no-result-sad-face.png ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/media/no-result-sad-face.2d8fa6dc.png";
+
+/***/ }),
+
+/***/ "./src/images/pagination-left-greyout.png":
+/*!************************************************!*\
+  !*** ./src/images/pagination-left-greyout.png ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAcCAYAAAC6YTVCAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFZSURBVHgBjVTbUcMwEJRu8k/SgVNCqABTAUMDQAUkFSShAGIqIDQQKjDGDcBQAekAKrDZTeSJLKzHzWxkRV7t7Z0spRKjqqoxcMPnkUqPJTAvy3KqU96Gwj2GAvgFZpJAyDCszHSd5/leRwhjDJ8AiU8gzPl/TGlpCHtLTemASs8H0+rWxEPIlOPDXvelVwH0Qx+FuygDKhs14MOOnic07lZEns106qbVxchSyDBszHThI7jpdT62Qz7+kRwfCxUJMWkdTm/TNC/q2JcwyeT+cJiIsKEzbBQm8YceoEIf9LQDJiFSr+RQ+KAS8A5cYrPWq2TFNfANXACPdV2rqJJRI+GNa/B4h7TZgjDJEPndsA2s5DnVbeLggXUKQ9VJyNNpQWStTl/tzm6DlwQ1psbC/KhjYVYdMXob2YUxm7ymXmF2YeJXmEm1aNt2i8cz4Cr5htVa8/R/cYM/Y7aGjJYxH8UAAAAASUVORK5CYII="
+
+/***/ }),
+
+/***/ "./src/images/pagination-left.png":
+/*!****************************************!*\
+  !*** ./src/images/pagination-left.png ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAcCAYAAAC6YTVCAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGxSURBVHgBlZS9TgJBEMd39owYK3wDSisjGlADJGBl7QuIRpGYQI5CiBVnZcDED0wszkJ9AQs7LdQCDYkXxCcAOzqhA0JunQVOLwFu10kuO7N7v8z8ZydLyD8sHs94+AqyQCyZzuLvGiE0SmWAuMozcKBvQogDpkmeB+GhXji6FUKmyTRcPPjV9EJOE2Ya6NjgAO2QiLUPgrKq/YhGeVnWGZXVYT+nsjocoXE67AayOkZmEukYCYl0DEEyOuwGUVV1T5qu717EWEq/yJ+JIKVSKrUWloJu7MgyAZj1eYP3hvHacMxkObuJzBMDEgFGXhglq/p5jhEnTT1agS1cqgiGcT2JJQ/Embjt7O3PwwQt9/fpJut2b64uj4cgxR6U39/qi/5AE7WtYVfCxGSPcwF/HXWPLs8y3j0Uwzvoxqx3hJEZx/LshneHZYK31xhgEb2QH5/p94DSdfLXGM3eGGUcZJSKDa8v9AlAcFIAQfjCO6wYRlH8hMUSaRUbc4puA0dsoTXVrkq9e9vJ9DXFiUO31qFtr9S716WdFF7BB7oel+nKKjIQn0/fSuiBMWhO03buB/xZtTI9nQxDAAAAAElFTkSuQmCC"
+
+/***/ }),
+
+/***/ "./src/images/pagination-right-greyout.png":
+/*!*************************************************!*\
+  !*** ./src/images/pagination-right-greyout.png ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAcCAYAAAC6YTVCAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFOSURBVHgBlVTtVcJAENy753+xg2gFagMR04BWYDqADkAbIFYAVBAbiKEEK1A6kAoSZ2VPLnhfzHvzNrnc7OxuciEC2radgCNKhG6aZopYgYtkEfCGuANLSRCFkvIeEGpZGwOboJPsYrdnWauRJIs6GWBzi3AHfojjzutk4RHcgtfgjELlGUjmMe0HM/UNRrkWUWWJsDzkGg5Gu0TYtOq67lVul8eDcYoYRVFwaRuQBXWSSPA3GLgtkkQyGBYOBqMoAdg8x+c2E/HNWUwgX/+T3K7hvlURAfV9v1JKsegLgite1yEB9yGCb/DePFMBwSX4+ZtZ6zLP87V57nO6AN/lurIFTidfHzb0sQCYuPpwiqw+5rL0wuMNioCR9MGxgqAiD7Tlwm884z7ocPSdUKYP2v/GuI9bX1m2U0YJfQxEOGwl4jlF+vgHPt6n/JZ/APAQh+TDOSrQAAAAAElFTkSuQmCC"
+
+/***/ }),
+
+/***/ "./src/images/pagination-right.png":
+/*!*****************************************!*\
+  !*** ./src/images/pagination-right.png ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAcCAYAAAC6YTVCAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGySURBVHgBlVQ9TwJBEJ3ZU7H0H4j/QEAhEUygswQrS40RiOHLQs5O6MRGQigMNpbaiPwCpTiDyJednZRaiZ2QcOcucMlxeHfrSy43O7dv37zZyQFQRKOiHf4BIZIQk7IAN2se72LzWarykMhQhlcEWALATDQm+nlIQqsudV0eH+WBX0EIrjt8t42G1DMjoRqE42KZroI07A5I33GdzxsSiRoMhP4eI9DHPj+0XYCZJzVgJxMCAQWghwi74Xg6BVblqdiPpYMCwfLoRBkCl8Xco36PoE+069KbpjF+2piKvjEzSioicfGBkWjYoY0JaBtDjEh9oR+CcWNWFxTbqWl5Kjq12o/TtVEFgju0HL/L7f1u1qWaKYmh9fL04XJvfiK7P8QtekiF5RA4cJAQ83RjEiYXT6wI4UQaUIHlyfJrdJ+mCofH7JWZjNc7GeA2SxiWF02dwHAwdOAcaY0SshIqFc/vWWiipKxQwt04xqxKMFRiPkBBderbpULOqf1OeH1ogbw+TJSMffypZOVjRonHx5QSrw+dkmLn8TFFov89Noj2sY+zDHCAXBVyR1Qta+VDi19TO7h/2x9HxAAAAABJRU5ErkJggg=="
 
 /***/ }),
 

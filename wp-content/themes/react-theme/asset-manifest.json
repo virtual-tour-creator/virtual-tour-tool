@@ -10,7 +10,8 @@
     "main.js.map": "/wp-content/themes/react-theme/static/js/main.chunk.js.map",
     "runtime-main.js": "/wp-content/themes/react-theme/static/js/bundle.js",
     "runtime-main.js.map": "/wp-content/themes/react-theme/static/js/bundle.js.map",
-    "index.php": "/wp-content/themes/react-theme/index.php"
+    "index.php": "/wp-content/themes/react-theme/index.php",
+    "static/media/no-result-sad-face.png": "/wp-content/themes/react-theme/static/media/no-result-sad-face.2d8fa6dc.png"
   },
   "entrypoints": [
     "static/js/bundle.js",

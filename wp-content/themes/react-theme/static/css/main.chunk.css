@@ -1019,5 +1019,31 @@ ul > .sortable-row {
 .tour-page-nav {
     display: inline;
 }
+.no-result-notification {
+    display: block;
+    text-align: center;
+    margin: 50px auto;
+    text-transform: uppercase;
+    width: 500px;
+}
+
+#no-result-first-line {
+    font-size:24px;
+    font-weight:700;
+    font-family: Spectral SC;
+}
+
+#no-result-second-line {
+    font-size: 16px;
+    font-weight: 400;
+
+}
+.pagination-arrow {
+    cursor: pointer;
+}
+
+.pagination-center {
+    margin: 3px 20px;
+}
 
 /*# sourceMappingURL=main.chunk.css.map*/

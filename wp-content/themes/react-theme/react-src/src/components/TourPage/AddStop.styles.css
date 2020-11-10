@@ -1,0 +1,19 @@
+.no-result-notification {
+    display: block;
+    text-align: center;
+    margin: 50px auto;
+    text-transform: uppercase;
+    width: 500px;
+}
+
+#no-result-first-line {
+    font-size:24px;
+    font-weight:700;
+    font-family: Spectral SC;
+}
+
+#no-result-second-line {
+    font-size: 16px;
+    font-weight: 400;
+
+}
