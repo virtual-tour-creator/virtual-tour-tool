@@ -46,7 +46,7 @@ class StopCardList extends React.Component {
   
       var stop = stops.map((cardContent, i) => {
         var {
-          thumbnailUrl,
+          medium_url,
           name
           // selected
         } = cardContent;
@@ -54,7 +54,7 @@ class StopCardList extends React.Component {
         return (
           <StopCard key={i} 
             stop={stop}
-            thumbnailUrl={thumbnailUrl} name={name}
+            medium_url={medium_url} name={name}
             selected={selected} 
             onClick={(e) => this.onItemSelected(i)} />
         );
@@ -119,10 +119,11 @@ class AddStop extends React.Component {
 
     handleRestAPIResult = (data, pageNum) => {
       let allStopsInfo = data.map((stop) => {
-              const {id, medium_url, title} = stop;
+              const {id, thumbnail_url, medium_url, title} = stop;
               let stopInfo = {
                 'id': id,
-                'thumbnailUrl': medium_url,
+                'thumbnailUrl': thumbnail_url,
+                'medium_url': medium_url,
                 'name': title.rendered
               };
               return stopInfo

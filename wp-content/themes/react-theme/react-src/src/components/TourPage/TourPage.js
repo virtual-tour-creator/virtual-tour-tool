@@ -22,8 +22,8 @@ import MuiAccordionSummary from '@material-ui/core/AccordionSummary';
 import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
 
 import dropdownIcon from '../../images/dropdown-icon.png';
-import hamburgerIcon from '../../images/hamburger.png';
-import hamburgerCloseIcon from '../../images/hamburger-close.png';
+// import hamburgerIcon from '../../images/hamburger.png';
+// import hamburgerCloseIcon from '../../images/hamburger-close.png';
 
 import arrayMove from 'array-move';
 
@@ -337,6 +337,7 @@ class TourPage extends React.Component {
             return(
 
                 <div className='stops-container-view'>
+                    {console.log("the last stop:", this.state.stops[this.state.stops.length-1])}
                     {this.state.stops.map(singleStop => (
                         <MediaCard stop={singleStop} onClick={() => this.props.history.push(`/stop/${singleStop.id}`)}/>
                     ))}
