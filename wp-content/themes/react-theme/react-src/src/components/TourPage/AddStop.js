@@ -9,6 +9,10 @@ import './SelectableCard.scss';
 import { RestAPIGetStopsByPage } from '../../helpers/RestAPIHelper.js';
 import Pagination from 'react-bootstrap/Pagination'
 
+import SearchIcon from '@material-ui/icons/Search';
+import InputBase from '@material-ui/core/InputBase';
+
+
 class StopCardList extends React.Component {
 
     constructor(props) {
@@ -84,7 +88,7 @@ class StopCardListSelection extends React.Component {
             <StopCardList 
               stops={this.props.stops}
               onChange={this.onListChanged.bind(this)}/>
-            <button className="card" onClick={(e) => this.submit() }>
+            <button onClick={(e) => this.submit() }>
               Add
             </button>
         </div>);
@@ -100,7 +104,7 @@ class AddStop extends React.Component {
             backendStops: [],
             pageNum: 1,
             currentPage: 1,
-            stopPerPage: 3
+            stopPerPage: 8
         }
     }
     
@@ -115,10 +119,10 @@ class AddStop extends React.Component {
 
     handleRestAPIResult = (data, pageNum) => {
       let allStopsInfo = data.map((stop) => {
-              const {id, thumbnail_url, title} = stop;
+              const {id, medium_url, title} = stop;
               let stopInfo = {
                 'id': id,
-                'thumbnailUrl': thumbnail_url,
+                'thumbnailUrl': medium_url,
                 'name': title.rendered
               };
               return stopInfo
@@ -170,16 +174,32 @@ class AddStop extends React.Component {
     
     render() {
         const { backendStops } = this.state;
+
         return (
             <>
               <Button className='tour-page-button' variant="primary" onClick={this.handleShow} id='add-stop-button'>
                 <i className="fas fa-plus"></i>  Add Stop(s)
               </Button>
         
-              <Modal show={this.state.show} onHide={() => this.setState({show:false})} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
-                <Modal.Header closeButton={false}>
-                  <Modal.Title>Add Stop(s)</Modal.Title>
-                  <CloseIcon onClick={() => this.setState({show:false})} className="overlay-close-icon" />
+              <Modal id="add-stop-modal" show={this.state.show} onHide={() => this.setState({show:false})} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
+                <Modal.Header id="add-stop-modal-header" closeButton={false}>
+                  <Modal.Title id="add-stop-modal-title">Add Stop(s) <span className="selected-stops-count">Selected Stops: 2</span></Modal.Title>
+                
+                  <div className='add-stop-search'>
+                    <InputBase
+                      placeholder="Search tour topic here..."
+                      className="add-stop-search-input"
+                      inputProps={{ 'aria-label': 'search' }}
+                    />
+                    <div className='search-icon'>
+                      <SearchIcon />
+                    </div>
+                  </div>
+
+                  <CloseIcon onClick={() => this.setState({show:false})} className="overlay-close-icon" id="add-stop-close-icon" />
+
+                  <button className="btn-primary" id="add-stop-done-button">DONE</button>
+
                 </Modal.Header>
                  
                 <Modal.Body className="show-grid">

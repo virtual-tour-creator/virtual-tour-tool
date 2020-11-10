@@ -1,11 +1,18 @@
 import React from 'react';
-import MediaCard from './MediaCard'
+// import MediaCard from './MediaCard'
 import './SelectableCard.scss';
+import AddIcon from '../../images/add-stop-icon.png';
 
 
 class Card extends React.Component {
     render() {
-      return (<div className="card">{this.props.children}</div>)
+      var isSelected = this.props.selected ? "selected" : "";
+      var className = "card " + isSelected;
+      return (
+      <div className={className}>
+        {this.props.children}
+        <div className="middle"><img src={AddIcon} /></div>
+      </div>)
     }
   }
 
@@ -13,13 +20,11 @@ class Card extends React.Component {
 class SelectableCard extends React.Component {
 
     render() {
-      var isSelected = this.props.selected ? "selected" : "";
-      var className = "selectable " + isSelected;
+      
       return (
-        <Card>
-          <div className={className} onClick={this.props.onClick}>
+        <Card selected={this.props.selected}>
+          <div className="selectable" onClick={this.props.onClick}>
             {this.props.children}
-            <div className="check"><span className="checkmark">✔</span></div>
           </div>
         </Card>
       );
@@ -34,12 +39,13 @@ class StopCard extends React.Component {
         name,
         selected
       } = this.props;
+
       return (
         <SelectableCard onClick={this.props.onClick}
           selected={selected}>
-          <div className="stop">
-            <img alt='stop-thumbnail' src={thumbnailUrl} style={{width:"10rem"}} />
-            <p className="name">{name}</p>
+          <div className="stop-card-selectable">
+            <img alt='stop-card-thumbnail' src={thumbnailUrl} style={{'width':"100%"}} />
+            <p className="stop-card-name">{name}</p>
           </div>
         </SelectableCard>
       );

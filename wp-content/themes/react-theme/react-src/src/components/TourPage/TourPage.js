@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 import { Form, Button, Modal } from 'react-bootstrap';
 
 import Navbar from '../Navbar/Navbar'
-// import Jumbotron from '../Jumbotron/Jumbotron'
+import Jumbotron from '../Jumbotron/Jumbotron'
 
 // import CollapseNavbar from './CollapseNavbar';
 // import BrandingLogo from '../Navbar/BrandingLogo';

@@ -1,66 +1,72 @@
-$transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+$transition: all 0.1s cubic-bezier(.25,.8,.25,1);
 
 /* Card */
 $card-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 $card-shadow-hover: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 
+.middle {
+  opacity: 0;
+  font-size: 40px;
+  position: absolute;
+  left: 56px;
+  top: 80px;
+}
+
 .card {
   transition: $transition;
-  box-shadow: $card-shadow;
-  background: #fff;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  background: #F2F2F2;
   margin: 20px 10px;
   cursor: pointer;
   &:hover {
-    box-shadow: $card-shadow-hover;
+    .stop-card-selectable{
+      opacity: .5;
+    }
+    
   }
+}
+
+.card:hover .middle {
+  opacity:1;
+  color: black;
+  pointer-events: none;
+}
+
+.selected:hover .stop-card-selectable {
+  opacity: 1 !important;
+}
+
+.selected:hover .middle{
+  opacity:0 !important;
 }
 
 /* Selectable */
 $check-size: 20px;
 $selected-color: #000;
 
+.stop-card-list {
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: repeat(4, minmax(170px, 1fr));
+  grid-template-rows: repeat(2, 290px);
+}
+
 .card .selectable {
   position: relative;
   transition: $transition;
-  border: 4px solid transparent;
-  .check {
-    transition: $transition;
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 10;
-    width: $check-size;    
-    height: $check-size;
-    &:before {
-      transition: $transition;
-      content: '';
-      border: $check-size solid;
-      border-color: transparent;
-      position: absolute;
-      top: 0;
-      right: 0;
-      z-index: -1;
-    }
-    .checkmark {
-      display: block;
-      font: $check-size sans-serif;
-      line-height: $check-size;
-      text-align: center;
-      color: transparent;  
-    }
+}
+
+.selected {
+    outline: 7px solid black;
+    box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.50) !important;
   }
-  
-  &.selected {
-    border-color: $selected-color;
-    .check {
-      &:before {
-        border-color: $selected-color $selected-color rgba(0,0,255,0) rgba(255,0,0,0);
-      }
-      .checkmark {
-        color: #fff;
-      }
-    }
-  }
+
+
+
+#add-stop-modal > .modal-content {
+  width: 1000px !important;
 }
 
 .content {
@@ -82,11 +88,10 @@ $selected-color: #000;
 button.card {
   cursor: pointer;
   width: 180px;
-  margin: 20px auto;
+  margin: 16px auto;
   text-align: center;
-  padding: 16px;
+  padding: 20px;
   border-color: transparent;
-  border-radius: 10px;
   background: $selected-color !important;
   color: #fff;
   text-transform: uppercase;
@@ -96,3 +101,59 @@ button.card {
     box-shadow: $card-shadow;
   }
 }
+
+.stop-card-name {
+  font-family: Spectral SC;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 21px;
+  margin: 5px 10px 0 10px;
+  text-overflow: ellipsis;
+}
+
+.search-icon {
+  display: inline-block;
+  padding-top:3px;
+}
+
+.add-stop-search {
+  position: absolute;
+  top: 95px;
+  border: 1px solid black;
+  display: flex;
+  padding: 0 10px;
+}
+
+
+#add-stop-modal-header {
+  margin: 0 50px;
+}
+
+#add-stop-modal-title {
+  margin-top: 50px !important;
+  margin-bottom: 50px;
+}
+
+#add-stop-done-button {
+  position: absolute;
+  top: 95px;
+  right: 50px;
+}
+
+#add-stop-close-icon {
+  margin-top: 40px;
+  margin-right: 0;
+}
+
+.selected-stops-count {
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 400;
+}
+
+.add-stop-search-input > .MuiInputBase-input {
+  font-family: 'Work Sans', sans-serif !important;
+  width: 350px !important;
+}
+
+
