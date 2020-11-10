@@ -254,3 +254,30 @@ function replace_howdy_greeting( $wp_admin_bar ) {
   ) );
 }
 add_filter( 'admin_bar_menu', 'replace_howdy_greeting', 12 );
+
+// custom header
+add_theme_support('custom-header');
+
+$header_info = array(
+    'width'         => 1600,
+    'height'        => 450,
+    'default-image' => 'https://mediad.publicbroadcasting.net/p/wesa/files/styles/x_large/public/201804/clayton_1-300_cmyk.jpg',
+    // get_template_directory_uri() . '/images/sunset.jpg',
+);
+add_theme_support( 'custom-header', $header_info );
+
+// custom logo
+add_theme_support( 'custom-logo' );
+
+function themename_custom_logo_setup() {
+    $defaults = array(
+        'height'      => 100,
+        'width'       => 130,
+        'flex-height' => true,
+        'flex-width'  => true,
+        'header-text' => array( 'site-title', 'site-description' ),
+        'unlink-homepage-logo' => true,
+    );
+ add_theme_support( 'custom-logo', $defaults );
+}
+add_action( 'after_setup_theme', 'themename_custom_logo_setup' );
