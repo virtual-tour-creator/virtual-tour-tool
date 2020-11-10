@@ -172,3 +172,8 @@ function replace_howdy_greeting( $wp_admin_bar ) {
 }
 add_filter( 'admin_bar_menu', 'replace_howdy_greeting', 12 );
 
+
+function custom_login_stylesheet() {
+    wp_enqueue_style( 'custom-login', get_stylesheet_directory_uri() . '/login/login.css' );
+}
+add_action( 'login_enqueue_scripts', 'custom_login_stylesheet' );

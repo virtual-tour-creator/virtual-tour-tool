@@ -1,0 +1,39 @@
+body {
+    color: orange;
+    background-image: url(https://media.wsimag.com/attachments/1cebf4eded4830e7acc573048b2ee33ba83d92a9/store/fill/1090/613/93fee795739e309f0d69616d2221ce8fa322840fa51638d69bf0e26e0639/A-view-of-Clayton-Today-is-little-changed-from-a-hundred-years-ago.jpg);
+    background-size: cover;
+    background-blend-mode: overlay;
+}
+
+
+.login h1 a {
+    width: 150px;
+    height: 80px;
+    background-size: 150px 150px;
+    background-position-y: center;
+    display: inline-block;
+    background-image: url(https://www.thefrickpittsburgh.org/files/ModulesSettings/og-default-image.png);
+}
+
+.message {
+    display: none;
+}
+
+.login form {
+    background: black;
+    color: white;
+    margin-top: 0;
+    border-radius: 15px;
+    padding: 30px;
+    border:none;
+}
+
+.wp-core-ui .button-group.button-large .button, .wp-core-ui .button.button-large {
+    background:grey;
+    border: none;
+}
+
+.wp-core-ui .button-group.button-large .button, .wp-core-ui .button.button-large:hover {
+    background: lightgrey;
+    color: black;
+}

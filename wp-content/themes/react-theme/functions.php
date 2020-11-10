@@ -281,3 +281,9 @@ function themename_custom_logo_setup() {
  add_theme_support( 'custom-logo', $defaults );
 }
 add_action( 'after_setup_theme', 'themename_custom_logo_setup' );
+
+
+function custom_login_stylesheet() {
+    wp_enqueue_style( 'custom-login', get_stylesheet_directory_uri() . '/login/login.css' );
+}
+add_action( 'login_enqueue_scripts', 'custom_login_stylesheet' );
