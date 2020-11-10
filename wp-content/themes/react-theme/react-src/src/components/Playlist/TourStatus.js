@@ -6,6 +6,11 @@ const renderStatus = (status) => status === 'private'?
 	<span className="complete-status">COMPLETE</span> :
 	<span className="incomplete-status">INCOMPLETE</span>
 
+const creationDetails = (status) => status === 'private'?
+	"complete-details" : "incomplete-details"
+
+
+
 const parseDate = (date) => {
 	if (date) {
 		const parts = date.split('-');
@@ -21,9 +26,7 @@ const TourStatus = (props) => {
     return (
         <div className="tour-status">
             {renderStatus(visibility)}
-            <span className="creation-date"> {parseDate(date)} </span> by
-            <span className="creator"> {username} </span>
-            
+            <span className={creationDetails(visibility)}> Tour Date: {parseDate(date)} | Tour Editor: {username} </span> 
         </div>
     )
 }

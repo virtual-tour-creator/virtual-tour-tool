@@ -169,6 +169,15 @@
     line-height: 32px;
 }
 
+.complete-details {
+    margin-left: 8px;
+}
+
+.incomplete-details {
+    color: #C90000;
+    margin-left: 8px;
+}
+
 .tour-status {
     font-size: 16px;
 }

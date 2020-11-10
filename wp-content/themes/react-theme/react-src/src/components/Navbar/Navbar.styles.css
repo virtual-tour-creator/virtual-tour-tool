@@ -11,6 +11,7 @@
     letter-spacing: 0.055em;
     color: black !important;
     margin-left: 20px;
+    transition: .1s;
 }
 
 .nav-link {
@@ -49,4 +50,10 @@
 .nav-left {
     position:absolute;
     bottom: 0;
+}
+
+/* hamburger */
+.nav-hamburger {
+    cursor: pointer;
+    margin-left: 10px;
 }

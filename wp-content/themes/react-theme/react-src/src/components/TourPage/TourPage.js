@@ -1,11 +1,12 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import { Form, Button, Modal } from 'react-bootstrap';
 
 import Navbar from '../Navbar/Navbar'
-import Jumbotron from '../Jumbotron/Jumbotron'
+// import Jumbotron from '../Jumbotron/Jumbotron'
 
-import CollapseNavbar from './CollapseNavbar';
-import BrandingLogo from '../Navbar/BrandingLogo';
+// import CollapseNavbar from './CollapseNavbar';
+// import BrandingLogo from '../Navbar/BrandingLogo';
 import AddStop from './AddStop'
 import StopBoxList from './CurrentStops'
 import MediaCard from './MediaCard';
@@ -21,7 +22,8 @@ import MuiAccordionSummary from '@material-ui/core/AccordionSummary';
 import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
 
 import dropdownIcon from '../../images/dropdown-icon.png';
-
+import hamburgerIcon from '../../images/hamburger.png';
+import hamburgerCloseIcon from '../../images/hamburger-close.png';
 
 import arrayMove from 'array-move';
 
@@ -417,14 +419,9 @@ class TourPage extends React.Component {
     render() {
         return (
             <div>
-                <Navbar />
-                <Jumbotron />
-                {/* <div className="tour-page-branding-container">
-                    <BrandingLogo />
-                </div> */}
+                <Navbar isTourPage={true} />
                 
                 <div id='tour-page'>
-
                     <div className='tour-info'>
                         {this.renderTourInfo()}
                     </div>
@@ -440,4 +437,4 @@ class TourPage extends React.Component {
 }
 
 
-export default TourPage;
+export default withRouter(TourPage);
