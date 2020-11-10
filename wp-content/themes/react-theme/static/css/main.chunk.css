@@ -642,7 +642,11 @@ input[type="radio"]:focus {
 
 .card .selectable {
   position: relative;
-  transition: all 0.1s cubic-bezier(0.25, 0.8, 0.25, 1); }
+  transition: all 0.1s cubic-bezier(0.25, 0.8, 0.25, 1);
+  height: 100%; }
+
+.stop-card-selectable {
+  height: 100%; }
 
 .selected {
   outline: 7px solid black;

@@ -56,6 +56,11 @@ $selected-color: #000;
 .card .selectable {
   position: relative;
   transition: $transition;
+  height: 100%;
+}
+
+.stop-card-selectable {
+  height: 100%;
 }
 
 .selected {

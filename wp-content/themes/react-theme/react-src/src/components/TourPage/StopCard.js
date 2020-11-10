@@ -42,9 +42,9 @@ class StopCard extends React.Component {
       } = this.props;
 
       return (
-        <SelectableCard onClick={this.props.onClick}
+        <SelectableCard
           selected={selected}>
-          <div className="stop-card-selectable">
+          <div className="stop-card-selectable" onClick={this.props.onClick}>
             <img alt='stop-card-thumbnail' src={medium_url} style={{'width':"100%"}} />
             <p className="stop-card-name">{name}</p>
           </div>

@@ -2962,7 +2962,6 @@ class StopCard extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       selected
     } = this.props;
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SelectableCard, {
-      onClick: this.props.onClick,
       selected: selected,
       __self: this,
       __source: {
@@ -2972,6 +2971,7 @@ class StopCard extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "stop-card-selectable",
+      onClick: this.props.onClick,
       __self: this,
       __source: {
         fileName: _jsxFileName,
