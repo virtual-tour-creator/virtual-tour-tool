@@ -1036,11 +1036,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Navbar_styles_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Navbar.styles.css */ "./src/components/Navbar/Navbar.styles.css");
 /* harmony import */ var _Navbar_styles_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Navbar_styles_css__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _BrandingLogo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./BrandingLogo */ "./src/components/Navbar/BrandingLogo.js");
-/* harmony import */ var _images_hamburger_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../images/hamburger.png */ "./src/images/hamburger.png");
-/* harmony import */ var _images_hamburger_png__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_images_hamburger_png__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _images_hamburger_close_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../images/hamburger-close.png */ "./src/images/hamburger-close.png");
-/* harmony import */ var _images_hamburger_close_png__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_images_hamburger_close_png__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _StressTest__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./StressTest */ "./src/components/Navbar/StressTest.js");
+/* harmony import */ var _images_hamburger_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../images/hamburger.png */ "./src/images/hamburger.png");
+/* harmony import */ var _images_hamburger_png__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_images_hamburger_png__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _images_hamburger_close_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../images/hamburger-close.png */ "./src/images/hamburger-close.png");
+/* harmony import */ var _images_hamburger_close_png__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_images_hamburger_close_png__WEBPACK_IMPORTED_MODULE_5__);
 var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/components/Navbar/Navbar.js";
+
 
 
 
@@ -1074,7 +1076,7 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
           columnNumber: 17
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: this.state.showNavlink == true ? _images_hamburger_close_png__WEBPACK_IMPORTED_MODULE_4___default.a : _images_hamburger_png__WEBPACK_IMPORTED_MODULE_3___default.a,
+        src: this.state.showNavlink == true ? _images_hamburger_close_png__WEBPACK_IMPORTED_MODULE_5___default.a : _images_hamburger_png__WEBPACK_IMPORTED_MODULE_4___default.a,
         __self: this,
         __source: {
           fileName: _jsxFileName,
@@ -1194,13 +1196,20 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         lineNumber: 64,
         columnNumber: 17
       }
-    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_StressTest__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 66,
+        columnNumber: 13
+      }
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "navbar-light collapse navbar-collapse",
       id: "navbarNav",
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 66,
+        lineNumber: 67,
         columnNumber: 13
       }
     }, this.renderNavlinks()));
@@ -1220,6 +1229,132 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
+
+/***/ }),
+
+/***/ "./src/components/Navbar/StressTest.js":
+/*!*********************************************!*\
+  !*** ./src/components/Navbar/StressTest.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/index.js");
+/* harmony import */ var _helpers_RestAPIHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../helpers/RestAPIHelper.js */ "./src/helpers/RestAPIHelper.js");
+var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/components/Navbar/StressTest.js";
+
+
+
+
+const generateTour = (num, stopStr, setText) => {
+  const enteredStops = [];
+  stopStr.split(',').map(block => {
+    const id = parseInt(block);
+    if (isNaN(id)) return;
+    enteredStops.push(id);
+  });
+  const stops = [];
+
+  for (let i = 0; i < enteredStops.length; i++) {
+    stops.push({
+      id: enteredStops[i]
+    });
+  }
+
+  const title = "Stress Test - "; // RestAPICreateTour(title, "", "public", stops)
+
+  const allRequests = [];
+
+  for (let i = 1; i <= num; i++) {
+    allRequests.push(Object(_helpers_RestAPIHelper_js__WEBPACK_IMPORTED_MODULE_2__["RestAPICreateTour"])(title + i, "", "public", stops));
+  }
+
+  setText("Wait");
+  Promise.all(allRequests).then(newTourIds => {
+    console.log(newTourIds);
+    setText("Done, refresh page");
+  });
+};
+
+const StressTest = () => {
+  const [num, setNum] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(100);
+  const [text, setText] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])("Generate");
+  const [stopText, setStopText] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])("0,0,0,0,0");
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "d-flex flex-row",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 39,
+      columnNumber: 9
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 40,
+      columnNumber: 13
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Label, {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 41,
+      columnNumber: 17
+    }
+  }, "Tour # ", num), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Control, {
+    type: "range",
+    value: num,
+    onChange: e => setNum(e.target.value),
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 42,
+      columnNumber: 17
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 44,
+      columnNumber: 13
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Label, {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 45,
+      columnNumber: 17
+    }
+  }, "Stop ids (seperate by ,)"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Control, {
+    type: "text",
+    value: stopText,
+    onChange: e => setStopText(e.target.value),
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 46,
+      columnNumber: 17
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+    className: "btn-primary",
+    id: "button",
+    disabled: text !== "Generate",
+    onClick: generateTour.bind(undefined, num, stopText, setText),
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 48,
+      columnNumber: 13
+    }
+  }, text));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (StressTest);
 
 /***/ }),
 
@@ -2013,8 +2148,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Jumbotron_Jumbotron__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Jumbotron/Jumbotron */ "./src/components/Jumbotron/Jumbotron.js");
 /* harmony import */ var _Playlist_Playlist__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Playlist/Playlist */ "./src/components/Playlist/Playlist.js");
 /* harmony import */ var _Button_CreateTour__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Button/CreateTour */ "./src/components/Button/CreateTour.js");
-/* harmony import */ var _helpers_unescape__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../helpers/unescape */ "./src/helpers/unescape.js");
+/* harmony import */ var _TourPage_Pagination__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./TourPage/Pagination */ "./src/components/TourPage/Pagination.js");
+/* harmony import */ var _helpers_unescape__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../helpers/unescape */ "./src/helpers/unescape.js");
+/* harmony import */ var _helpers_RestAPIHelper_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../helpers/RestAPIHelper.js */ "./src/helpers/RestAPIHelper.js");
 var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/components/PublicLibrary.js";
+
+
 
 
 
@@ -2033,7 +2172,6 @@ class PublicLibrary extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compone
           id: -1
         };
       }).then(data => {
-        // console.log(entry);
         const {
           id,
           thumbnail_url,
@@ -2051,14 +2189,17 @@ class PublicLibrary extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compone
           id,
           thumbnail_url,
           medium_url,
-          name: Object(_helpers_unescape__WEBPACK_IMPORTED_MODULE_5__["default"])(title.rendered)
+          name: Object(_helpers_unescape__WEBPACK_IMPORTED_MODULE_6__["default"])(title.rendered)
         };
         return e;
       });
     };
 
     this.state = {
-      playlists: []
+      playlists: [],
+      totalPageNum: 1,
+      currentPage: 1,
+      maxPerPage: 100
     };
   }
 
@@ -2083,85 +2224,145 @@ class PublicLibrary extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compone
     return status;
   }
 
-  componentDidMount() {
-    let time = new Date().getTime();
-    fetch('/wp-json/wp/v2/tour?timestamp=' + time).then(res => res.json()).then(data => {
-      console.log(data);
-      let tourInfo = data.map(tour => {
-        const {
-          id,
-          title,
-          content,
-          author
-        } = tour;
-        return {
-          id,
-          name: Object(_helpers_unescape__WEBPACK_IMPORTED_MODULE_5__["default"])(title.rendered),
-          author,
-          date: this.parseContentStopDate(content.rendered),
-          visibility: this.parseContentStopVisibility(content.rendered),
-          entries: this.parseContentStopId(content.rendered)
-        };
-      }); // console.log(playlistInfo);
+  getAllStopsInTours(data, totalPageNum) {
+    let tourInfo = data.map(tour => {
+      const {
+        id,
+        title,
+        content,
+        author
+      } = tour;
+      return {
+        id,
+        name: Object(_helpers_unescape__WEBPACK_IMPORTED_MODULE_6__["default"])(title.rendered),
+        author,
+        date: this.parseContentStopDate(content.rendered),
+        visibility: this.parseContentStopVisibility(content.rendered),
+        entries: this.parseContentStopId(content.rendered)
+      };
+    });
+    let stopDic = {};
+    tourInfo.map(tour => {
+      const {
+        entries
+      } = tour;
+      entries.map(stop => {
+        if (!stopDic[stop]) {
+          stopDic[stop] = {};
+        }
+      });
+    });
+    const allRequests = [];
 
-      return tourInfo;
-    }).then(tourInfo => {
-      // get stop per tour
-      let stopDic = {};
-      tourInfo.map(tour => {
+    for (var stopId in stopDic) {
+      allRequests.push(this.getStopInfo(stopId));
+    }
+
+    Promise.all(allRequests).then(stopData => {
+      stopData.map(stop => {
         const {
+          id
+        } = stop;
+        if (id !== -1) stopDic[id] = stop;
+      });
+      const finalInfo = tourInfo.map(tour => {
+        const {
+          id,
+          name,
+          author,
+          date,
+          visibility,
           entries
         } = tour;
-        entries.map(stop => {
-          if (!stopDic[stop]) {
-            stopDic[stop] = {};
-          }
+        let newStopInfo = entries.filter(stopId => {
+          return stopDic[stopId].hasOwnProperty('id');
+        }).map(stopId => {
+          return stopDic[stopId];
         });
+        return {
+          id,
+          name,
+          date,
+          author,
+          visibility,
+          entries: newStopInfo
+        };
       });
-      const allRequests = [];
-
-      for (var stopId in stopDic) {
-        allRequests.push(this.getStopInfo(stopId));
-      } // wait for all requests to finish
-
-
-      return Promise.all(allRequests).then(stopData => {
-        stopData.map(stop => {
-          const {
-            id
-          } = stop;
-          if (id !== -1) stopDic[id] = stop;
-        });
-        return tourInfo.map(tour => {
-          const {
-            id,
-            name,
-            author,
-            date,
-            visibility,
-            entries
-          } = tour;
-          let newStopInfo = entries.filter(stopId => {
-            return stopDic[stopId].hasOwnProperty('id');
-          }).map(stopId => {
-            return stopDic[stopId];
-          });
-          return {
-            id,
-            name,
-            date,
-            author,
-            visibility,
-            entries: newStopInfo
-          };
-        });
-      });
-    }).then(finalInfo => {
-      console.log(finalInfo);
       this.setState({
-        playlists: finalInfo
+        playlists: finalInfo,
+        totalPageNum: totalPageNum
       });
-    }).catch(console.log);
+    }).catch(console.log("Get stops in tour failed"));
+  }
+
+  componentDidMount() {
+    const {
+      totalPageNum,
+      currentPage,
+      maxPerPage
+    } = this.state;
+    let time = new Date().getTime();
+    Object(_helpers_RestAPIHelper_js__WEBPACK_IMPORTED_MODULE_7__["RestAPIGetTourByPage"])(maxPerPage, currentPage, time, this.getAllStopsInTours.bind(this));
+  }
+
+  handlePrevPage() {
+    const {
+      maxPerPage,
+      currentPage
+    } = this.state;
+    let time = new Date().getTime();
+
+    if (currentPage > 1) {
+      const nextPageIdx = parseInt(currentPage) - 1;
+      Object(_helpers_RestAPIHelper_js__WEBPACK_IMPORTED_MODULE_7__["RestAPIGetTourByPage"])(maxPerPage, nextPageIdx, time, this.getAllStopsInTours.bind(this));
+      this.setState({
+        currentPage: nextPageIdx
+      });
+    }
+  }
+
+  handleNextPage() {
+    const {
+      maxPerPage,
+      totalPageNum,
+      currentPage
+    } = this.state;
+    let time = new Date().getTime(); // TO FIX: last page break the page (early return?)
+
+    if (currentPage < totalPageNum) {
+      const nextPageIdx = parseInt(currentPage) + 1;
+      console.log("next page:", nextPageIdx);
+      Object(_helpers_RestAPIHelper_js__WEBPACK_IMPORTED_MODULE_7__["RestAPIGetTourByPage"])(maxPerPage, nextPageIdx, time, this.getAllStopsInTours.bind(this));
+      this.setState({
+        currentPage: nextPageIdx
+      });
+    }
+  }
+
+  renderPagination() {
+    const {
+      totalPageNum,
+      currentPage
+    } = this.state;
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 144,
+        columnNumber: 9
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_TourPage_Pagination__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      pageNum: totalPageNum,
+      currentPage: currentPage,
+      handlePrevPage: this.handlePrevPage.bind(this),
+      handleNextPage: this.handleNextPage.bind(this),
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 145,
+        columnNumber: 11
+      }
+    }));
   }
 
   render() {
@@ -2170,28 +2371,28 @@ class PublicLibrary extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compone
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 132,
+        lineNumber: 151,
         columnNumber: 13
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navbar_Navbar__WEBPACK_IMPORTED_MODULE_1__["default"], {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 133,
+        lineNumber: 152,
         columnNumber: 17
       }
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Jumbotron_Jumbotron__WEBPACK_IMPORTED_MODULE_2__["default"], {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 134,
+        lineNumber: 153,
         columnNumber: 17
       }
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 135,
+        lineNumber: 154,
         columnNumber: 17
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Button_CreateTour__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -2199,7 +2400,7 @@ class PublicLibrary extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compone
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 135,
+        lineNumber: 154,
         columnNumber: 22
       }
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Playlist_Playlist__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -2208,10 +2409,10 @@ class PublicLibrary extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compone
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 136,
+        lineNumber: 155,
         columnNumber: 17
       }
-    }));
+    }), this.renderPagination());
   }
 
 }
@@ -3085,7 +3286,7 @@ const Pagination = ({
     __source: {
       fileName: _jsxFileName,
       lineNumber: 18,
-      columnNumber: 5
+      columnNumber: 17
     }
   }, currentPage), " /", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "page-number",
@@ -4148,7 +4349,7 @@ class TourPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
 /*!**************************************!*\
   !*** ./src/helpers/RestAPIHelper.js ***!
   \**************************************/
-/*! exports provided: RestAPICreateTour, RestAPIGetStopById, RestAPIGetTourByAuthorId, RestAPIGetStopsByPage, RestAPIGetStopsBySearch */
+/*! exports provided: RestAPICreateTour, RestAPIGetStopById, RestAPIGetTourByAuthorId, RestAPIGetStopsByPage, RestAPIGetStopsBySearch, RestAPIGetTourByPage */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4158,6 +4359,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RestAPIGetTourByAuthorId", function() { return RestAPIGetTourByAuthorId; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RestAPIGetStopsByPage", function() { return RestAPIGetStopsByPage; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RestAPIGetStopsBySearch", function() { return RestAPIGetStopsBySearch; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RestAPIGetTourByPage", function() { return RestAPIGetTourByPage; });
 function getTourContent(title, date, visibility, stops) {
   let str = "<ol>";
   if (stops) stops.map(stop => {
@@ -4246,6 +4448,18 @@ async function RestAPIGetStopsBySearch(search_keyword, per_page, page_num, time,
   const stops = await response.json();
   const total_page_num = response.headers.get('x-wp-totalPages');
   callback(stops, total_page_num);
+}
+async function RestAPIGetTourByPage(per_page, page_num, time, callback) {
+  const response = await fetch('/wp-json/wp/v2/tour/?timestamp=' + time + '&per_page=' + per_page + '&page=' + page_num);
+
+  if (!response.ok) {
+    console.log(response);
+    return;
+  }
+
+  const tours = await response.json();
+  const total_page_num = response.headers.get('x-wp-totalPages');
+  callback(tours, total_page_num);
 }
 
 /***/ }),

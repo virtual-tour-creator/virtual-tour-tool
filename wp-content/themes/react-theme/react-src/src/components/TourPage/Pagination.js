@@ -15,7 +15,7 @@ const Pagination = ({pageNum, currentPage, handlePrevPage, handleNextPage}) => {
         <div className="add-stop-pagination pagination">
             <img className="pagination-arrow" src={LeftIcon} onClick={handlePrevPage} />
             <div className="pagination-center">
-    <span className="current-page">{currentPage}</span> / 
+                <span className="current-page">{currentPage}</span> / 
                 <span className="page-number">{pageNum}</span>
             </div>
             <img className="pagination-arrow" src={RightIcon} onClick={handleNextPage}/>

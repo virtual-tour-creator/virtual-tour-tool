@@ -5,3 +5,9 @@
 .pagination-center {
     margin: 3px 20px;
 }
+
+.pagination {
+	margin: auto;
+    width: fit-content;
+}
+   

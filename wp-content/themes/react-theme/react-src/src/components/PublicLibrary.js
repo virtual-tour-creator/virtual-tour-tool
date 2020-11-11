@@ -3,15 +3,18 @@ import Navbar from './Navbar/Navbar';
 import Jumbotron from './Jumbotron/Jumbotron';
 import Playlist from './Playlist/Playlist';
 import CreateTour from './Button/CreateTour';
-
+import Pagination from './TourPage/Pagination';
 import unescape from '../helpers/unescape';
-
+import { RestAPIGetTourByPage } from '../helpers/RestAPIHelper.js';
 
 class PublicLibrary extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            playlists: []
+            playlists: [],
+            totalPageNum: 1,
+            currentPage: 1,
+            maxPerPage: 100,
           };
     }
 
@@ -43,7 +46,6 @@ class PublicLibrary extends React.Component {
                 return res.ok && res.json ? res.json() : { id: -1 };
             })
             .then(data => { 
-                // console.log(entry);
                 const { id, thumbnail_url, title, medium_url } = data;
                 // invalid stop
                 if (id === -1) {
@@ -59,73 +61,90 @@ class PublicLibrary extends React.Component {
             });
     };
 
-    componentDidMount() {
-        let time =  new Date().getTime();
-        fetch('/wp-json/wp/v2/tour?timestamp=' + time)
-        .then(res => res.json())
-        .then((data) => {
-            console.log(data);
-            let tourInfo = data.map((tour) => {
-                const {id, title, content, author} = tour;
+    getAllStopsInTours(data, totalPageNum) {
+        let tourInfo = data.map((tour) => {
+            const {id, title, content, author} = tour;
 
-                return {id, name: unescape(title.rendered), author,
-                    date: this.parseContentStopDate(content.rendered), 
-                    visibility: this.parseContentStopVisibility(content.rendered),
-                    entries: this.parseContentStopId(content.rendered)};
+            return {id, name: unescape(title.rendered), author,
+                date: this.parseContentStopDate(content.rendered), 
+                visibility: this.parseContentStopVisibility(content.rendered),
+                entries: this.parseContentStopId(content.rendered)};
+        });
+
+        let stopDic = {};
+        tourInfo.map(tour => 
+        {
+            const { entries } = tour;
+            entries.map(stop => {
+                if (!stopDic[stop])
+                {
+                    stopDic[stop] = {};
+                }
+            });    
+        });
+
+        const allRequests = [];
+        for (var stopId in stopDic)
+        {
+            allRequests.push(this.getStopInfo(stopId));
+        }
+
+        Promise.all(allRequests).then((stopData) => {
+            stopData.map(stop => {
+                const { id }  = stop;
+                if (id !== -1)
+                    stopDic[id] = stop;
             });
-            // console.log(playlistInfo);
-            return tourInfo;
-        })
-        .then((tourInfo) => {
-            // get stop per tour
-
-            let stopDic = {};
-            tourInfo.map(tour => 
+            const finalInfo = tourInfo.map(tour => 
             {
-                const { entries } = tour;
-                entries.map(stop => {
-                    if (!stopDic[stop])
-                    {
-                        stopDic[stop] = {};
-                    }
-                });    
-            });           
-            const allRequests = [];
-            for (var stopId in stopDic)
-            {
-
-                allRequests.push(this.getStopInfo(stopId));
-            }
-
-            // wait for all requests to finish
-            return Promise.all(allRequests).then((stopData) => {
-                    stopData.map(stop => {
-                        const { id }  = stop;
-                        if (id !== -1)
-                            stopDic[id] = stop;
-                    });
-                    return tourInfo.map(tour => 
-                    {
-                        const { id, name, author, date, visibility, entries } = tour;
-                        let newStopInfo = entries.filter(stopId => {
-                            return stopDic[stopId].hasOwnProperty('id');
-                        })
-                        .map(stopId => {
-                            return stopDic[stopId];
-                        });
-                        return {id, name, date, author, visibility, entries: newStopInfo};    
-                    }); 
+                const { id, name, author, date, visibility, entries } = tour;
+                let newStopInfo = entries.filter(stopId => {
+                    return stopDic[stopId].hasOwnProperty('id');
+                })
+                .map(stopId => {
+                    return stopDic[stopId];
                 });
-        })
-        .then((finalInfo) => {
-            console.log(finalInfo);
-            this.setState({ playlists: finalInfo });
-        })
-        .catch(console.log);
-
-        
+                return {id, name, date, author, visibility, entries: newStopInfo};    
+            }); 
+            this.setState({ playlists: finalInfo, totalPageNum: totalPageNum});
+        }).catch(console.log("Get stops in tour failed"));
     }
 
+    componentDidMount() {
+        const { totalPageNum, currentPage, maxPerPage} = this.state;
+        let time =  new Date().getTime();
+        RestAPIGetTourByPage(maxPerPage, currentPage, time, this.getAllStopsInTours.bind(this));        
+    }
+
+    handlePrevPage() {
+        const { maxPerPage, currentPage } = this.state;
+        let time =  new Date().getTime();
+        if(currentPage > 1) {
+            const nextPageIdx = parseInt(currentPage) - 1;
+            RestAPIGetTourByPage(maxPerPage, nextPageIdx, time, this.getAllStopsInTours.bind(this));
+            this.setState({currentPage: nextPageIdx});
+        }
+    }
+
+    handleNextPage() {
+        const { maxPerPage, totalPageNum, currentPage } = this.state;
+        let time =  new Date().getTime();
+        // TO FIX: last page break the page (early return?)
+        if(currentPage < totalPageNum) {
+            const nextPageIdx = parseInt(currentPage) + 1;
+            console.log("next page:", nextPageIdx);
+            RestAPIGetTourByPage(maxPerPage, nextPageIdx, time, this.getAllStopsInTours.bind(this));
+            this.setState({currentPage: nextPageIdx}); 
+        }
+    }
+
+    renderPagination() {
+      const { totalPageNum, currentPage } = this.state;
+      return (
+        <div>
+          <Pagination pageNum={totalPageNum} currentPage={currentPage} handlePrevPage={this.handlePrevPage.bind(this)} handleNextPage={this.handleNextPage.bind(this)} />
+        </div>);
+    }
 
     render() { 
         return (
@@ -134,6 +153,7 @@ class PublicLibrary extends React.Component {
                 <Jumbotron />
                 <div><CreateTour props={this.props}/></div>
                 <Playlist props={this.props} playlists={this.state.playlists} />
+                {this.renderPagination()}
             </div>
         )
     }

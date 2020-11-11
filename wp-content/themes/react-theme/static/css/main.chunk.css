@@ -533,6 +533,20 @@ input[type="radio"]:focus {
 }
 
 
+.pagination-arrow {
+    cursor: pointer;
+}
+
+.pagination-center {
+    margin: 3px 20px;
+}
+
+.pagination {
+	margin: auto;
+    width: -moz-fit-content;
+    width: fit-content;
+}
+   
 .entry-page {
     position: fixed;
     top: 0;
@@ -1037,13 +1051,6 @@ ul > .sortable-row {
     font-size: 16px;
     font-weight: 400;
 
-}
-.pagination-arrow {
-    cursor: pointer;
-}
-
-.pagination-center {
-    margin: 3px 20px;
 }
 
 /*# sourceMappingURL=main.chunk.css.map*/

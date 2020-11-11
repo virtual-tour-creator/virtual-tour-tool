@@ -91,3 +91,15 @@ export async function RestAPIGetStopsBySearch(search_keyword, per_page, page_num
     const total_page_num = response.headers.get('x-wp-totalPages');
     callback(stops, total_page_num);
 }
+
+export async function RestAPIGetTourByPage(per_page, page_num, time, callback) {
+    const response = await fetch('/wp-json/wp/v2/tour/?timestamp=' + time + '&per_page=' + per_page + '&page=' + page_num);
+    if(!response.ok) {
+        console.log(response);
+        return;
+    }
+
+    const tours = await response.json();
+    const total_page_num = response.headers.get('x-wp-totalPages');
+    callback(tours, total_page_num);
+}
