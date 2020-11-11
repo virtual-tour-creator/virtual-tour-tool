@@ -12,7 +12,7 @@
 .jumbotron {
     height: 450px;
     color: white;
-    background-image: url(https://mediad.publicbroadcasting.net/p/wesa/files/styles/x_large/public/201804/clayton_1-300_cmyk.jpg);
+    /* background-image: url(https://mediad.publicbroadcasting.net/p/wesa/files/styles/x_large/public/201804/clayton_1-300_cmyk.jpg); */
     background-size: 100%;
     background-repeat: no-repeat;
     background-position-y: center;
