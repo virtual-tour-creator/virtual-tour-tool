@@ -955,7 +955,7 @@ const Jumbotron = () => {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "jumbotron jzumbotron-fluid",
     style: {
-      'backgroundImage': bannerUrl
+      'backgroundImage': `url(${bannerUrl})`
     },
     __self: undefined,
     __source: {
