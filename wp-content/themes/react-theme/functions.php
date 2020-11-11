@@ -259,8 +259,8 @@ add_filter( 'admin_bar_menu', 'replace_howdy_greeting', 12 );
 add_theme_support('custom-header');
 
 $header_info = array(
-    'width'         => 1600,
-    'height'        => 450,
+    'width'         => 1314,
+    'height'        => 478,
     'default-image' => 'https://mediad.publicbroadcasting.net/p/wesa/files/styles/x_large/public/201804/clayton_1-300_cmyk.jpg',
     // get_template_directory_uri() . '/images/sunset.jpg',
 );
