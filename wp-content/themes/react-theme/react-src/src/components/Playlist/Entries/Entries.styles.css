@@ -50,15 +50,17 @@
 }
 
 
-
-.carousel-arrow {
-    color: #666E77;
-    font-size: 2rem !important;
+.carousel-arrow-btn {
+    background: none;
+    border:none;
 }
 
-.carousel-arrow:hover {
-    color: black;
-    cursor: pointer;
+.carousel-arrow-btn:hover {
+    opacity: .7;
+}
+
+.carousel-arrow-btn:focus {
+    outline: none;
 }
 
 .BrainhubCarousel {
@@ -69,3 +71,4 @@
     align-items: flex-start !important;
     box-sizing: border-box;
 }
+

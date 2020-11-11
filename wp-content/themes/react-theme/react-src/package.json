@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "private": true,
     "dependencies": {
-        "@brainhubeu/react-carousel": "^1.19.26",
+        "@brainhubeu/react-carousel": "^2.0.1",
         "@devloco/react-scripts-wptheme": "3.4.1-wp.1",
         "@fortawesome/fontawesome-free": "^5.15.1",
         "@material-ui/core": "^4.11.0",

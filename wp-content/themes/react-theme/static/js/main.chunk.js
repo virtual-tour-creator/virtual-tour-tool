@@ -1374,8 +1374,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _images_left_arrow_png__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_images_left_arrow_png__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _images_right_arrow_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../images/right-arrow.png */ "./src/images/right-arrow.png");
 /* harmony import */ var _images_right_arrow_png__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_images_right_arrow_png__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _images_placeholder_thumbnail_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../images/placeholder-thumbnail.png */ "./src/images/placeholder-thumbnail.png");
-/* harmony import */ var _images_placeholder_thumbnail_png__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_images_placeholder_thumbnail_png__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _images_left_arrow_disabled_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../images/left-arrow-disabled.png */ "./src/images/left-arrow-disabled.png");
+/* harmony import */ var _images_left_arrow_disabled_png__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_images_left_arrow_disabled_png__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _images_right_arrow_disabled_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../images/right-arrow-disabled.png */ "./src/images/right-arrow-disabled.png");
+/* harmony import */ var _images_right_arrow_disabled_png__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_images_right_arrow_disabled_png__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _images_placeholder_thumbnail_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../images/placeholder-thumbnail.png */ "./src/images/placeholder-thumbnail.png");
+/* harmony import */ var _images_placeholder_thumbnail_png__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_images_placeholder_thumbnail_png__WEBPACK_IMPORTED_MODULE_9__);
 var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/Playlist/Entries/Entries.js";
 
 
@@ -1386,45 +1390,148 @@ var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/rea
 
 
 
+
+const customArrow = {
+  resolve: _brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_3__["arrowsPlugin"],
+  options: {
+    arrowLeft: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      className: "carousel-arrow-btn",
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 18,
+        columnNumber: 18
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      className: "carousel-arrow",
+      src: _images_left_arrow_png__WEBPACK_IMPORTED_MODULE_5___default.a,
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 18,
+        columnNumber: 57
+      }
+    })),
+    arrowLeftDisabled: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      className: "carousel-arrow-btn",
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 19,
+        columnNumber: 25
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      className: "carousel-arrow",
+      src: _images_left_arrow_disabled_png__WEBPACK_IMPORTED_MODULE_7___default.a,
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 19,
+        columnNumber: 64
+      }
+    })),
+    arrowRight: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      className: "carousel-arrow-btn",
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 20,
+        columnNumber: 19
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      className: "carousel-arrow",
+      src: _images_right_arrow_png__WEBPACK_IMPORTED_MODULE_6___default.a,
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 20,
+        columnNumber: 58
+      }
+    })),
+    arrowRightDisabled: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      className: "carousel-arrow-btn",
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 21,
+        columnNumber: 27
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      className: "carousel-arrow",
+      src: _images_right_arrow_disabled_png__WEBPACK_IMPORTED_MODULE_8___default.a,
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 21,
+        columnNumber: 66
+      }
+    })),
+    addArrowClickHandler: true
+  }
+};
+
 const Entries = props => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
   key: props.listId,
   className: "row stop-carousel",
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 15,
+    lineNumber: 27,
     columnNumber: 5
   }
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_3___default.a, {
   arrows: true,
-  slidesPerPage: 5,
-  slidesPerScroll: 5,
-  arrowLeft: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    className: "carousel-arrow",
-    src: _images_left_arrow_png__WEBPACK_IMPORTED_MODULE_5___default.a,
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 20,
-      columnNumber: 24
-    }
-  }),
-  arrowRight: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    className: "carousel-arrow",
-    src: _images_right_arrow_png__WEBPACK_IMPORTED_MODULE_6___default.a,
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 21,
-      columnNumber: 25
-    }
-  }),
   addArrowClickHandler: true,
   offset: 0,
+  plugins: [{
+    resolve: _brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_3__["slidesToShowPlugin"],
+    options: {
+      numberOfSlides: 5
+    }
+  }, {
+    resolve: _brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_3__["slidesToScrollPlugin"],
+    options: {
+      numberOfSlides: 5
+    }
+  }, customArrow],
+  breakpoints: {
+    790: {
+      plugins: [{
+        resolve: _brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_3__["slidesToShowPlugin"],
+        options: {
+          numberOfSlides: 1
+        }
+      }, customArrow]
+    },
+    1110: {
+      plugins: [{
+        resolve: _brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_3__["slidesToShowPlugin"],
+        options: {
+          numberOfSlides: 2
+        }
+      }, customArrow]
+    },
+    1420: {
+      plugins: [{
+        resolve: _brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_3__["slidesToShowPlugin"],
+        options: {
+          numberOfSlides: 3
+        }
+      }, customArrow]
+    },
+    1800: {
+      plugins: [{
+        resolve: _brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_3__["slidesToShowPlugin"],
+        options: {
+          numberOfSlides: 4
+        }
+      }, customArrow]
+    }
+  },
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 16,
+    lineNumber: 28,
     columnNumber: 9
   }
 }, props.entries.map(entry => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1433,7 +1540,7 @@ const Entries = props => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 27,
+    lineNumber: 96,
     columnNumber: 13
   }
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -1441,12 +1548,12 @@ const Entries = props => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default
     width: "19rem"
   },
   alt: "entry",
-  src: entry.medium_url == false ? _images_placeholder_thumbnail_png__WEBPACK_IMPORTED_MODULE_7___default.a : entry.medium_url,
+  src: entry.medium_url == false ? _images_placeholder_thumbnail_png__WEBPACK_IMPORTED_MODULE_9___default.a : entry.medium_url,
   onClick: () => props.history.push(`/stop/${entry.id}`),
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 28,
+    lineNumber: 97,
     columnNumber: 17
   }
 }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
@@ -1454,7 +1561,7 @@ const Entries = props => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 29,
+    lineNumber: 98,
     columnNumber: 17
   }
 }, " ", entry.name, " ")))));
@@ -4563,6 +4670,17 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABz
 
 /***/ }),
 
+/***/ "./src/images/left-arrow-disabled.png":
+/*!********************************************!*\
+  !*** ./src/images/left-arrow-disabled.png ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAZCAYAAAA8CX6UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAF0SURBVHgBpZXtbYMwEIaNYQBGoBvQTtAUwe+MkExQWKChE4ROECZo+xvxkQ3aDcoILAD0PeKoVnFTm5xkfJZ9j+41d8DYFdY0jYfxSL7FFhoBxnFM4bqYE4cZGgAuph2CY1pjfuGc50YZAeIj8A2uh9HBfw6CIKM9bZAsBaO1LGsFa8/7/4KElD0gG/YjJQWkk89ZhlISSMlVZzm7LKURkE9Iuf0LosxIV8pFkImU38aXSpllRFKGYTggcG0iZZZR3/f3gPhi3QGSmUKmjOhBzYdMarg3BAM4wZwDqA2a7ogqFMF3FMxOTXjAnNZ1rV35s4NVVaWAPom9I/yt3AraILKiKHzHcV7ZSeqsr1SmrOwoiuj1P8D9wKD7+0KmMTPNSDYAMkCnryCAGWorWQQSsBiwvVgqpZp8jzyp8lvU3zYMw+N5n+uCRImsAHsnmG3bYDc744xkEyUyQQDO0Q3J4r9IWZZrAKhwXUA37Bqje6PsyP8GNTHdOGCRKo0AAAAASUVORK5CYII="
+
+/***/ }),
+
 /***/ "./src/images/left-arrow.png":
 /*!***********************************!*\
   !*** ./src/images/left-arrow.png ***!
@@ -4637,6 +4755,17 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAcCAYAAAC6
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "static/media/placeholder-thumbnail.e012da90.png";
+
+/***/ }),
+
+/***/ "./src/images/right-arrow-disabled.png":
+/*!*********************************************!*\
+  !*** ./src/images/right-arrow-disabled.png ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAZCAYAAAA8CX6UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGGSURBVHgBpZVRVoJQEIbvRd61HdgOqhVEHn3OFcQOgBVgLUDZQbmB9B0IWgHuQHeQC+BA/9RQRCBc/M+Z4yDOd/4ZhqsQUBRFLmIszpAWhqGZ5/kCkQRBcC96SoO2+FwjRsg35E70kCwSOFtIKb8gcLcF1DEM46AMIvm+fzsYDJ6RjhEHgI2uMK18MZ1OYyomCMHgbA+ndheQbLoBgAeoRTmA3mQycUQfEMNswFZ8uUM+b2r1JIhE+wVHkeC5pWk6n81mu+rvtDYQOeC5xQTTdT2pW5FWR2VVVuSFV+SoDGKYyXMbidKKKINIPLekgGVZ5rTOqAZCxRZDSO9Y4ljJETvZIL1CHJE/Yr88utcZBMgDLab4nQ3t1M8ayJZiwYUuIMWrsgbELp5WK4ghlwC81rVSlWwA0PfUyqqplaq0GsgFYgkIHSdDbuX6FOSPo1Irb+L7vfpA/tTUyj9QqRULhS63soeLO5UTUuPCJc9jSI8YkBsVCEnHept8gCm1Uis6wM79X/sEjrvWKbV3QEYAAAAASUVORK5CYII="
 
 /***/ }),
 
