@@ -1374,7 +1374,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _images_left_arrow_png__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_images_left_arrow_png__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _images_right_arrow_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../images/right-arrow.png */ "./src/images/right-arrow.png");
 /* harmony import */ var _images_right_arrow_png__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_images_right_arrow_png__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _images_placeholder_thumbnail_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../images/placeholder-thumbnail.png */ "./src/images/placeholder-thumbnail.png");
+/* harmony import */ var _images_placeholder_thumbnail_png__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_images_placeholder_thumbnail_png__WEBPACK_IMPORTED_MODULE_7__);
 var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/Playlist/Entries/Entries.js";
+
 
 
 
@@ -1389,7 +1392,7 @@ const Entries = props => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 14,
+    lineNumber: 15,
     columnNumber: 5
   }
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -1402,7 +1405,7 @@ const Entries = props => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19,
+      lineNumber: 20,
       columnNumber: 24
     }
   }),
@@ -1412,7 +1415,7 @@ const Entries = props => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20,
+      lineNumber: 21,
       columnNumber: 25
     }
   }),
@@ -1421,7 +1424,7 @@ const Entries = props => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 15,
+    lineNumber: 16,
     columnNumber: 9
   }
 }, props.entries.map(entry => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1430,7 +1433,7 @@ const Entries = props => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 26,
+    lineNumber: 27,
     columnNumber: 13
   }
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -1438,12 +1441,12 @@ const Entries = props => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default
     width: "19rem"
   },
   alt: "entry",
-  src: entry.medium_url,
+  src: entry.medium_url == false ? _images_placeholder_thumbnail_png__WEBPACK_IMPORTED_MODULE_7___default.a : entry.medium_url,
   onClick: () => props.history.push(`/stop/${entry.id}`),
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 27,
+    lineNumber: 28,
     columnNumber: 17
   }
 }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
@@ -1451,7 +1454,7 @@ const Entries = props => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 28,
+    lineNumber: 29,
     columnNumber: 17
   }
 }, " ", entry.name, " ")))));
@@ -3003,7 +3006,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/icons/Close */ "./node_modules/@material-ui/icons/Close.js");
 /* harmony import */ var _material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/IconButton */ "./node_modules/@material-ui/core/esm/IconButton/index.js");
+/* harmony import */ var _images_placeholder_thumbnail_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../images/placeholder-thumbnail.png */ "./src/images/placeholder-thumbnail.png");
+/* harmony import */ var _images_placeholder_thumbnail_png__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_images_placeholder_thumbnail_png__WEBPACK_IMPORTED_MODULE_5__);
 var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/TourPage/CurrentStops.js";
+
 
 
 
@@ -3021,7 +3027,7 @@ const StopBox = Object(react_sortable_hoc__WEBPACK_IMPORTED_MODULE_1__["Sortable
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10,
+      lineNumber: 12,
       columnNumber: 9
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3029,7 +3035,7 @@ const StopBox = Object(react_sortable_hoc__WEBPACK_IMPORTED_MODULE_1__["Sortable
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11,
+      lineNumber: 13,
       columnNumber: 13
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3037,12 +3043,12 @@ const StopBox = Object(react_sortable_hoc__WEBPACK_IMPORTED_MODULE_1__["Sortable
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12,
+      lineNumber: 14,
       columnNumber: 17
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     alt: singleStop.name,
-    src: singleStop.medium_url,
+    src: singleStop.medium_url == false ? _images_placeholder_thumbnail_png__WEBPACK_IMPORTED_MODULE_5___default.a : singleStop.medium_url,
     style: {
       width: "18rem"
     },
@@ -3050,7 +3056,7 @@ const StopBox = Object(react_sortable_hoc__WEBPACK_IMPORTED_MODULE_1__["Sortable
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13,
+      lineNumber: 15,
       columnNumber: 21
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -3060,7 +3066,7 @@ const StopBox = Object(react_sortable_hoc__WEBPACK_IMPORTED_MODULE_1__["Sortable
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14,
+      lineNumber: 16,
       columnNumber: 21
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -3070,7 +3076,7 @@ const StopBox = Object(react_sortable_hoc__WEBPACK_IMPORTED_MODULE_1__["Sortable
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15,
+      lineNumber: 17,
       columnNumber: 21
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -3079,7 +3085,7 @@ const StopBox = Object(react_sortable_hoc__WEBPACK_IMPORTED_MODULE_1__["Sortable
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16,
+      lineNumber: 18,
       columnNumber: 21
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -3089,7 +3095,7 @@ const StopBox = Object(react_sortable_hoc__WEBPACK_IMPORTED_MODULE_1__["Sortable
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16,
+      lineNumber: 18,
       columnNumber: 101
     }
   }), " ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
@@ -3097,7 +3103,7 @@ const StopBox = Object(react_sortable_hoc__WEBPACK_IMPORTED_MODULE_1__["Sortable
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19,
+      lineNumber: 21,
       columnNumber: 17
     }
   }, singleStop.name)));
@@ -3112,7 +3118,7 @@ const StopBoxList = Object(react_sortable_hoc__WEBPACK_IMPORTED_MODULE_1__["Sort
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28,
+      lineNumber: 30,
       columnNumber: 13
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
@@ -3120,7 +3126,7 @@ const StopBoxList = Object(react_sortable_hoc__WEBPACK_IMPORTED_MODULE_1__["Sort
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29,
+      lineNumber: 31,
       columnNumber: 17
     }
   }, stops.map((singleStop, index) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(StopBox, {
@@ -3133,7 +3139,7 @@ const StopBoxList = Object(react_sortable_hoc__WEBPACK_IMPORTED_MODULE_1__["Sort
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31,
+      lineNumber: 33,
       columnNumber: 21
     }
   }))));
@@ -3156,7 +3162,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _TourPage_styles_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TourPage.styles.css */ "./src/components/TourPage/TourPage.styles.css");
 /* harmony import */ var _TourPage_styles_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_TourPage_styles_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _images_placeholder_thumbnail_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../images/placeholder-thumbnail.png */ "./src/images/placeholder-thumbnail.png");
+/* harmony import */ var _images_placeholder_thumbnail_png__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_images_placeholder_thumbnail_png__WEBPACK_IMPORTED_MODULE_2__);
 var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/TourPage/MediaCard.js";
+
 
 
 function MediaCard({
@@ -3171,12 +3180,12 @@ function MediaCard({
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 7,
+        lineNumber: 9,
         columnNumber: 5
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
       alt: stop.name,
-      src: stop.medium_url,
+      src: stop.medium_url == false ? _images_placeholder_thumbnail_png__WEBPACK_IMPORTED_MODULE_2___default.a : stop.medium_url,
       style: {
         width: "18rem"
       },
@@ -3185,7 +3194,7 @@ function MediaCard({
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 8,
+        lineNumber: 10,
         columnNumber: 9
       }
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
@@ -3193,7 +3202,7 @@ function MediaCard({
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 9,
+        lineNumber: 11,
         columnNumber: 9
       }
     }, stop.name))
@@ -4625,9 +4634,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAcCAYAAAC6
   !*** ./src/images/placeholder-thumbnail.png ***!
   \**********************************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = "data:image/png;base64,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"
+module.exports = __webpack_require__.p + "static/media/placeholder-thumbnail.e012da90.png";
 
 /***/ }),
 
@@ -4706,5 +4715,5 @@ module.exports = __webpack_require__(/*! /Users/chenjiewen/Localdev/museum-live/
 
 /***/ })
 
-},[[0,"runtime-main",1]]]);
+},[[0,"runtime-main",0]]]);
 //# sourceMappingURL=main.chunk.js.map

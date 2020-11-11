@@ -8,6 +8,7 @@ import '@brainhubeu/react-carousel/lib/style.css';
 
 import LeftIcon from '../../../images/left-arrow.png';
 import RightIcon from '../../../images/right-arrow.png';
+import PlaceholderThumbnail from '../../../images/placeholder-thumbnail.png';
 
 
 const Entries = props => (
@@ -24,7 +25,7 @@ const Entries = props => (
 
         {props.entries.map(entry =>
             <div key={entry.id} className='entry'>
-                <img style={{width:"19rem"}} alt='entry' src={entry.medium_url} onClick={() => props.history.push(`/stop/${entry.id}`) }/> 
+                <img style={{width:"19rem"}} alt='entry' src={entry.medium_url==false? PlaceholderThumbnail : entry.medium_url} onClick={() => props.history.push(`/stop/${entry.id}`) }/> 
                 <p className="entry-name"> {entry.name} </p>
             </div> )}  
         </Carousel>
