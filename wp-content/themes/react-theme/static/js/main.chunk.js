@@ -3344,8 +3344,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _SelectableCard_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_SelectableCard_scss__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _images_add_stop_icon_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../images/add-stop-icon.png */ "./src/images/add-stop-icon.png");
 /* harmony import */ var _images_add_stop_icon_png__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_images_add_stop_icon_png__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _images_placeholder_thumbnail_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../images/placeholder-thumbnail.png */ "./src/images/placeholder-thumbnail.png");
+/* harmony import */ var _images_placeholder_thumbnail_png__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_images_placeholder_thumbnail_png__WEBPACK_IMPORTED_MODULE_3__);
 var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/TourPage/StopCard.js";
  // import MediaCard from './MediaCard'
+
 
 
 
@@ -3359,7 +3362,7 @@ class Card extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 12,
+        lineNumber: 13,
         columnNumber: 7
       }
     }, this.props.children, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3367,7 +3370,7 @@ class Card extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 14,
+        lineNumber: 15,
         columnNumber: 9
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -3375,7 +3378,7 @@ class Card extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 14,
+        lineNumber: 15,
         columnNumber: 33
       }
     })));
@@ -3391,7 +3394,7 @@ class SelectableCard extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compon
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 25,
+        lineNumber: 26,
         columnNumber: 9
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3400,7 +3403,7 @@ class SelectableCard extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compon
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 26,
+        lineNumber: 27,
         columnNumber: 11
       }
     }, this.props.children));
@@ -3421,7 +3424,7 @@ class StopCard extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 45,
+        lineNumber: 47,
         columnNumber: 9
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3430,19 +3433,19 @@ class StopCard extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 47,
+        lineNumber: 49,
         columnNumber: 11
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
       alt: "stop-card-thumbnail",
-      src: medium_url,
+      src: medium_url == false ? _images_placeholder_thumbnail_png__WEBPACK_IMPORTED_MODULE_3___default.a : medium_url,
       style: {
         'width': "100%"
       },
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 48,
+        lineNumber: 50,
         columnNumber: 13
       }
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
@@ -3450,7 +3453,7 @@ class StopCard extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 49,
+        lineNumber: 51,
         columnNumber: 13
       }
     }, name)));
@@ -4617,6 +4620,17 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAcCAYAAAC6
 
 /***/ }),
 
+/***/ "./src/images/placeholder-thumbnail.png":
+/*!**********************************************!*\
+  !*** ./src/images/placeholder-thumbnail.png ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,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"
+
+/***/ }),
+
 /***/ "./src/images/right-arrow.png":
 /*!************************************!*\
   !*** ./src/images/right-arrow.png ***!
@@ -4692,5 +4706,5 @@ module.exports = __webpack_require__(/*! /Users/chenjiewen/Localdev/museum-live/
 
 /***/ })
 
-},[[0,"runtime-main",0]]]);
+},[[0,"runtime-main",1]]]);
 //# sourceMappingURL=main.chunk.js.map
