@@ -63,7 +63,7 @@ class Navbar extends React.Component {
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
                 <span className="navbar-toggler-icon"></span>
             </button>
-            < StressTest />
+            {/* < StressTest /> */}
             <div className="navbar-light collapse navbar-collapse" id="navbarNav">
                 {this.renderNavlinks()}
             </div>
