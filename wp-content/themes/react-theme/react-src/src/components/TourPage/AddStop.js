@@ -7,7 +7,7 @@ import StopCard from './StopCard'
 import './TourPage.styles.css';
 import './AddStop.styles.css';
 import './SelectableCard.scss';
-import { RestAPIGetStopsByPage } from '../../helpers/RestAPIHelper.js';
+import { RestAPIGetStopsByPage, RestAPIGetStopsBySearch } from '../../helpers/RestAPIHelper.js';
 import Pagination from './Pagination';
 
 import SearchIcon from '@material-ui/icons/Search';
@@ -20,26 +20,26 @@ class StopCardList extends React.Component {
 
     constructor(props) {
       super(props);
-      var selected = [];
-      var initialState = {
+      const { selected } = props;
+      this.state = {
         selected: selected
       };
-      this.state = initialState;
     }
   
+    componentDidUpdate(prevProps) {
+      const { selected } = this.props;
+      if (prevProps.selected !== selected)
+        this.setState({selected: selected});
+    }
+
     onItemSelected(index) {
       this.setState((prevState, props) => {
-        var selectedIndexes = prevState.selected;
-        var selectedIndex = selectedIndexes.indexOf(index);
-        if (selectedIndex > -1) {
-            selectedIndexes.splice(selectedIndex, 1);
-            props.onChange(selectedIndexes);
-        } else {
-            selectedIndexes.push(index);
-            props.onChange(selectedIndexes);
-        }
+        // pass changing index
+        props.onChange(index);
+        const { selected } = props;
+        selected[index] = !prevState.selected[index];
         return {
-        selected: selectedIndexes
+          selected: selected
         };
       });
     }
@@ -53,7 +53,7 @@ class StopCardList extends React.Component {
           name
           // selected
         } = cardContent;
-        var selected = this.state.selected.indexOf(i) > -1;
+        var selected = this.state.selected[i];
         return (
           <StopCard key={i} 
             stop={stop}
@@ -69,26 +69,25 @@ class StopCardList extends React.Component {
   
 class StopCardListSelection extends React.Component {
     
-    onListChanged(selected) {
-      this.setState({
-        selected: this.getSelectedStops(selected)
-      });
+    constructor(props) {
+      super(props);
+      const { preSelectedStops } = props;
+      this.state = {
+
+      };
     }
 
-    getSelectedStops(selectedIndexes) {
-        const selectedStops = selectedIndexes.map(index =>
-            this.props.stops[index]);
-
-        return selectedStops;
+    onListChanged(selectedStopIdx) {
+      const { stops, onSelectStop } = this.props;
+      onSelectStop(stops[selectedStopIdx]);    
     }
 
-    submit() {
-      this.props.onSelectStops(this.state.selected);
-    }
     render() {
+      const { preSelectedStops } = this.props;
       return (
         <div className="column">
             <StopCardList 
+              selected={preSelectedStops}
               stops={this.props.stops}
               onChange={this.onListChanged.bind(this)}/>
             {/* <button onClick={(e) => this.submit() }>
@@ -107,7 +106,9 @@ class AddStop extends React.Component {
             backendStops: [],
             pageNum: 1,
             currentPage: 1,
-            stopPerPage: 8
+            stopPerPage: 8,
+            selectedStops: new Map(),
+            searchKeyword: "",
         }
     }
     
@@ -117,6 +118,15 @@ class AddStop extends React.Component {
       let time =  new Date().getTime();
       const { stopPerPage } = this.state;
       RestAPIGetStopsByPage(stopPerPage, 1, time, this.handleRestAPIResult)
+    }
+
+    getPreSelectedStopStatus = () => {
+      const { backendStops, selectedStops } = this.state;
+      const status = backendStops.map(stop => {
+        const { id } = stop;
+        return selectedStops.has(id);
+      });
+      return status;
     }
 
     handleRestAPIResult = (data, pageNum) => {
@@ -133,17 +143,60 @@ class AddStop extends React.Component {
       this.setState({ backendStops: allStopsInfo, pageNum: pageNum});
     }
 
-    handleShow = () => this.setState({show: true})
+    handleShow = () => {
+      this.handleChangePage(1);
+      this.setState({show: true});
+    }
 
-    handleStops = (selectedStops) => {
-        this.props.onSelectStops(selectedStops);
-        this.setState({show:false});
+    handleStopToggle = (stop) => {
+        // called everytime select/unselect a stop card
+        const { id } = stop;
+        const { selectedStops } = this.state;
+        if (selectedStops.has(id)) {
+          // unselect stop id
+          selectedStops.delete(id);
+        } else {
+          // select stop id
+          selectedStops.set(id, stop);
+        }
+        this.setState({selectedStops: selectedStops});
+        console.log(stop);
+    }
+
+    handleDoneAddingStops = () => {
+      const { selectedStops } = this.state;
+      let stops = [];
+      for (const stop of selectedStops.values()) {
+          stops.push(stop);
+      }
+      this.props.onSelectStops(stops);
+      selectedStops.clear();
+      // close overlay
+      this.setState({show:false, searchKeyword: ""});
+    }
+
+    handleSearchByKeyword = (e) => {
+        const keyword = e.target.value;
+        const { stopPerPage } = this.state;
+        let time =  new Date().getTime();
+        if (keyword === "" || keyword.trim() === "") {
+          RestAPIGetStopsByPage(stopPerPage, 1, time, this.handleRestAPIResult);
+        }
+        else {
+          RestAPIGetStopsBySearch(keyword.trim(), stopPerPage, 1, time, this.handleRestAPIResult);
+        }   
+        this.setState({currentPage: 1, searchKeyword: keyword.trim()});     
     }
 
     handleChangePage = (nextPageIdx) => {
-        const { stopPerPage } = this.state;
+        const { stopPerPage, searchKeyword } = this.state;
         let time =  new Date().getTime();
-        RestAPIGetStopsByPage(stopPerPage, nextPageIdx, time, this.handleRestAPIResult)
+        if (searchKeyword === "") {
+          RestAPIGetStopsByPage(stopPerPage, nextPageIdx, time, this.handleRestAPIResult);
+        }
+        else {
+          RestAPIGetStopsBySearch(searchKeyword, stopPerPage, nextPageIdx, time, this.handleRestAPIResult);
+        }
         this.setState({currentPage: nextPageIdx});
       }
 
@@ -176,21 +229,21 @@ class AddStop extends React.Component {
     renderModalBody() {
       const { backendStops } = this.state;
 
-      // if(no result) {
-      //   return (
-      //     <div className="no-result-notification">
-      //       <img id="cute-no-result-face" src={NoResult} />
-      //       <p id="no-result-first-line">Sorry we can't find any stops matching your search!</p>
-      //       <p id="no-result-second-line">Please try another search.</p>
-      //     </div>
-      //   )
-      // }
+      if(backendStops.length === 0) {
+        return (
+          <div className="no-result-notification">
+            <img id="cute-no-result-face" src={NoResult} />
+            <p id="no-result-first-line">Sorry we can't find any stops matching your search!</p>
+            <p id="no-result-second-line">Please try another search.</p>
+          </div>
+        )
+      }
       
       return (
         <>
           <Modal.Body className="show-grid">
               <div>   
-                 <StopCardListSelection stops={backendStops} onSelectStops={this.handleStops} />
+                 <StopCardListSelection preSelectedStops={this.getPreSelectedStopStatus()} stops={backendStops} onSelectStop={this.handleStopToggle} />
               </div>
           </Modal.Body>
           <Modal.Footer>
@@ -211,13 +264,15 @@ class AddStop extends React.Component {
         
               <Modal id="add-stop-modal" show={this.state.show} onHide={() => this.setState({show:false})} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
                 <Modal.Header id="add-stop-modal-header" closeButton={false}>
-                  <Modal.Title id="add-stop-modal-title">Add Stop(s) <span className="selected-stops-count">Selected Stops: 2</span></Modal.Title>
+                  <Modal.Title id="add-stop-modal-title">Add Stop(s) <span className="selected-stops-count">Selected Stops: {this.state.selectedStops.size}</span></Modal.Title>
                 
                   <div className='add-stop-search'>
                     <InputBase
                       placeholder="Search tour topic here..."
                       className="add-stop-search-input"
                       inputProps={{ 'aria-label': 'search' }}
+                      type='text'
+                      onChange={this.handleSearchByKeyword.bind(this)}
                     />
                     <div className='search-icon'>
                       <SearchIcon />
@@ -226,7 +281,7 @@ class AddStop extends React.Component {
 
                   <CloseIcon onClick={() => this.setState({show:false})} className="overlay-close-icon" id="add-stop-close-icon" />
 
-                  <button className="btn-primary" id="add-stop-done-button">DONE</button>
+                  <button className="btn-primary" id="add-stop-done-button" onClick={this.handleDoneAddingStops.bind(this)} >DONE</button>
 
                 </Modal.Header>
                  

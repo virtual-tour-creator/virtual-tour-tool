@@ -12,10 +12,11 @@
         "@testing-library/jest-dom": "^4.2.4",
         "@testing-library/react": "^9.5.0",
         "@testing-library/user-event": "^7.2.1",
+        "adjust-sourcemap-loader": "^4.0.0",
         "array-move": "^3.0.1",
         "bootstrap": "^4.5.3",
         "html-escaper": "^3.0.0",
-        "jquery": "^1.12.4",
+        "jquery": "^3.5.1",
         "material-design-icons": "^3.0.1",
         "popper.js": "^1.16.1",
         "react": "^16.13.1",
@@ -33,6 +34,7 @@
         "reactstrap": "^8.7.0",
         "redux": "^4.0.5",
         "redux-thunk": "^2.3.0",
+        "serialize-javascript": "^5.0.1",
         "slick-carousel": "^1.8.1"
     },
     "scripts": {
