@@ -271,8 +271,8 @@ add_theme_support( 'custom-logo' );
 
 function themename_custom_logo_setup() {
     $defaults = array(
-        'height'      => 100,
-        'width'       => 130,
+        'height'      => 76,
+        'width'       => 400,
         'flex-height' => true,
         'flex-width'  => true,
         'header-text' => array( 'site-title', 'site-description' ),
@@ -287,3 +287,51 @@ function custom_login_stylesheet() {
     wp_enqueue_style( 'custom-login', get_stylesheet_directory_uri() . '/login/login.css' );
 }
 add_action( 'login_enqueue_scripts', 'custom_login_stylesheet' );
+
+// hide screen options
+add_filter( 'screen_options_show_screen', '__return_false' );
+
+// add get started page
+add_action( 'admin_menu', 'instruction_menu_page' );
+ 
+function instruction_menu_page() {
+ 
+    add_menu_page(
+        'Get Started', // page <title>Title</title>
+        'Get Started', // menu link text
+        'read', // capability to access the page
+        'get-started', // page URL slug
+        'instruction_page_content', // callback function /w content
+        'dashicons-star-half', // menu icon
+        5 // priority, display at top
+    );
+ 
+}
+ 
+function instruction_page_content(){
+ 
+    echo '
+        <div class="wrap">
+        <h1>Get Started</h1>
+        <h1>Video</h1>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/tZszDu9sxng" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </iframe>
+        </div>';
+ 
+}
+
+// add_action( "load-upload.php", 'sp_help_tabs');
+
+
+// function sp_help_tabs() {
+
+//     $screen = get_current_screen();
+//     $screen->add_help_tab(
+//         array(
+//             'id'      => 'sp_overview',
+//             'title'   => 'Overview',
+//             'content' => '<p>Test</p>'
+//         )
+//     );
+
+// }
