@@ -960,10 +960,10 @@ var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/rea
 
 
 
-const getContent = entry => {
-  if (entry.content) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+const getContent = stop => {
+  if (stop.content) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     dangerouslySetInnerHTML: {
-      __html: entry.content.rendered
+      __html: stop.content.rendered
     },
     __self: undefined,
     __source: {
@@ -1015,15 +1015,19 @@ const StopOverlay = ({
   };
 
   const gotoPrevPage = () => {
-    const index = (currentIndex - 1) % stopIds.length;
-    setCurrentIndex(index);
-    Object(_helpers_RestAPIHelper__WEBPACK_IMPORTED_MODULE_3__["RestAPIGetStopById"])(stopIds[index], time, setStop);
+    if (currentIndex > 0) {
+      let newIndex = currentIndex - 1;
+      setCurrentIndex(newIndex);
+      Object(_helpers_RestAPIHelper__WEBPACK_IMPORTED_MODULE_3__["RestAPIGetStopById"])(stopIds[newIndex], time, setStop);
+    }
   };
 
   const gotoNextPage = () => {
-    const index = (currentIndex + 1) % stopIds.length;
-    setCurrentIndex(index);
-    Object(_helpers_RestAPIHelper__WEBPACK_IMPORTED_MODULE_3__["RestAPIGetStopById"])(stopIds[index], time, setStop);
+    if (currentIndex < stopIds.length - 1) {
+      let newIndex = currentIndex + 1;
+      setCurrentIndex(newIndex);
+      Object(_helpers_RestAPIHelper__WEBPACK_IMPORTED_MODULE_3__["RestAPIGetStopById"])(stopIds[newIndex], time, setStop);
+    }
   }; // load media
 
 
@@ -1065,8 +1069,7 @@ const StopOverlay = ({
       photo['description'] = media.title;
       return photo;
     });
-  } // console.log(Photos);
-  // load tags
+  } // load tags
 
 
   let tag_lists = "None";
@@ -1076,7 +1079,7 @@ const StopOverlay = ({
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 107,
+        lineNumber: 109,
         columnNumber: 15
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -1084,7 +1087,7 @@ const StopOverlay = ({
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 107,
+        lineNumber: 109,
         columnNumber: 19
       }
     }, "#", tag[0])));
@@ -1096,11 +1099,25 @@ const StopOverlay = ({
     stop_name = stop.title.rendered;
   }
 
+  const renderLeftNav = (onClick, disabled) => {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      className: "image-gallery-custom-left-nav",
+      disabled: disabled,
+      onClick: onClick,
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 122,
+        columnNumber: 9
+      }
+    });
+  };
+
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 119,
+      lineNumber: 130,
       columnNumber: 9
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1108,14 +1125,14 @@ const StopOverlay = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 120,
+      lineNumber: 131,
       columnNumber: 13
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navbar_BrandingLogo__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 120,
+      lineNumber: 131,
       columnNumber: 41
     }
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -1125,7 +1142,7 @@ const StopOverlay = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 121,
+      lineNumber: 132,
       columnNumber: 13
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1136,7 +1153,7 @@ const StopOverlay = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 122,
+      lineNumber: 133,
       columnNumber: 13
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -1144,7 +1161,7 @@ const StopOverlay = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 123,
+      lineNumber: 134,
       columnNumber: 17
     }
   }, "Previous Stop"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -1152,14 +1169,14 @@ const StopOverlay = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 124,
+      lineNumber: 135,
       columnNumber: 17
     }
   }, "Next Stop"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 125,
+      lineNumber: 136,
       columnNumber: 17
     }
   }, "Stop Name: ", stop_name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1167,7 +1184,7 @@ const StopOverlay = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 128,
+      lineNumber: 139,
       columnNumber: 13
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_image_gallery__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -1175,13 +1192,21 @@ const StopOverlay = ({
     showPlayButton: false,
     showFullscreenButton: false,
     infinite: false,
+    showNav: false,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 129,
+      lineNumber: 140,
       columnNumber: 17
     }
-  })));
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 148,
+      columnNumber: 13
+    }
+  }, "Stop Description: ", getContent(stop)));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (StopOverlay);
@@ -5155,5 +5180,5 @@ module.exports = __webpack_require__(/*! /Users/chenjiewen/Localdev/museum-live/
 
 /***/ })
 
-},[[0,"runtime-main",0]]]);
+},[[0,"runtime-main",1]]]);
 //# sourceMappingURL=main.chunk.js.map

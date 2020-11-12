@@ -10,10 +10,10 @@ import './StopOverlay.styles.css';
 
 
 
-const getContent = entry => {
-    if (entry.content) 
+const getContent = stop => {
+    if (stop.content) 
         return (
-            <div dangerouslySetInnerHTML={{ __html: entry.content.rendered }} />
+            <div dangerouslySetInnerHTML={{ __html: stop.content.rendered }} />
         );
 }
 
@@ -48,20 +48,23 @@ const StopOverlay = ({handleClose, stopIds, index}) => {
 
 
     const gotoPrevPage = () => {
-        const index = (currentIndex - 1) % stopIds.length
-        setCurrentIndex(index);
-        RestAPIGetStopById(stopIds[index], time, setStop);
+        if(currentIndex > 0) {
+            let newIndex = currentIndex - 1
+            setCurrentIndex(newIndex);
+            RestAPIGetStopById(stopIds[newIndex], time, setStop);
+        }
+       
 
     }
 
     const gotoNextPage = () => {
-        const index = (currentIndex + 1) % stopIds.length
-        setCurrentIndex(index);
-        RestAPIGetStopById(stopIds[index], time, setStop);
- 
+        if(currentIndex < stopIds.length - 1){
+            let newIndex = currentIndex + 1
+            setCurrentIndex(newIndex);
+            RestAPIGetStopById(stopIds[newIndex], time, setStop);
+        } 
     }
 
-   
 
       // load media
       let Photos = [];
@@ -97,7 +100,6 @@ const StopOverlay = ({handleClose, stopIds, index}) => {
           });
       }
   
-      // console.log(Photos);
   
       // load tags
       let tag_lists = "None"
@@ -115,6 +117,15 @@ const StopOverlay = ({handleClose, stopIds, index}) => {
       }
 
 
+    const renderLeftNav = (onClick, disabled) => {
+    return (
+        <button
+        className='image-gallery-custom-left-nav'
+        disabled={disabled}
+        onClick={onClick}/>
+    )
+    }
+
     return(
         <div>
             <div id="presentation-logo"><BrandingLogo/></div>
@@ -130,8 +141,11 @@ const StopOverlay = ({handleClose, stopIds, index}) => {
                     items={Photos}
                     showPlayButton={false}
                     showFullscreenButton={false}
-                    infinite={false} />
+                    infinite={false}
+                    showNav={false} />
             </div>
+
+            <p>Stop Description: {getContent(stop)}</p>
            
             
         </div>
