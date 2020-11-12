@@ -1,0 +1,28 @@
+.presentation-close-icon {
+    position: absolute;
+    float: right;
+    top: 1rem;
+    right: 0;
+    z-index: -1;
+}
+
+.presentation-close-icon:hover {
+    cursor: pointer;
+    opacity: .7;
+}
+
+#presentation-logo {
+    position:absolute;
+    left: 1rem;
+    top: 1rem;
+}
+
+/* .image-gallery {
+    position: absolute;
+} */
+
+/* .image-gallery-container {
+    padding-top: 5%;
+    padding-left: 15%;
+    padding-right: 15%;
+} */

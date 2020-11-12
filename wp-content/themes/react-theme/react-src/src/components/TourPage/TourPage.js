@@ -11,6 +11,7 @@ import AddStop from './AddStop'
 import StopBoxList from './CurrentStops'
 import MediaCard from './MediaCard';
 import TourStatus from '../Playlist/TourStatus';
+import StopOverlay from '../EntryPage/StopOverlay';
 import CloseIcon from '@material-ui/icons/Close';
 
 import CopyTour from '../Button/CopyTour';
@@ -20,10 +21,9 @@ import { withStyles } from '@material-ui/core/styles';
 import MuiAccordion from '@material-ui/core/Accordion';
 import MuiAccordionSummary from '@material-ui/core/AccordionSummary';
 import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
+import { Overlay } from 'react-portal-overlay';
 
 import dropdownIcon from '../../images/dropdown-icon.png';
-// import hamburgerIcon from '../../images/hamburger.png';
-// import hamburgerCloseIcon from '../../images/hamburger-close.png';
 
 import unescape from '../../helpers/unescape';
 
@@ -46,7 +46,9 @@ class TourPage extends React.Component {
             'authorId': 0,
             'authorName': "",
             'mode': editMode ? 'edit' : 'view',
-            'showDeleteConfirmation': false
+            'showDeleteConfirmation': false,
+            'showStopOverlay': false,
+            'currentStopIndex': ""
         };
         this.handleRemoveStop = this.handleRemoveStop.bind(this);
     }
@@ -315,6 +317,9 @@ class TourPage extends React.Component {
     }
 
     renderTourStops() {
+        var stopIds = this.state.stops.map(singleStop => singleStop.id)
+
+
         if(this.state.mode === 'edit') {
             return(
                 <div>
@@ -343,10 +348,24 @@ class TourPage extends React.Component {
             return(
 
                 <div className='stops-container-view'>
-                    {console.log("the last stop:", this.state.stops[this.state.stops.length-1])}
-                    {this.state.stops.map(singleStop => (
-                        <MediaCard stop={singleStop} onClick={() => this.props.history.push(`/stop/${singleStop.id}`)}/>
+                    {this.state.stops.map((singleStop,index) => (
+                        <MediaCard stop={singleStop} onClick={() => this.setState({'showStopOverlay':true, 'currentStopIndex':index}) }/>  
                     ))}
+                    <Overlay
+                        style={{
+                            "background": 'white',
+                            "width": '100%',
+                            "padding": "0 2rem",
+                        }}
+                        open={this.state.showStopOverlay}
+                        >
+                        <StopOverlay
+                            handleClose={() => this.setState({'showStopOverlay':false})}
+                            stopIds={stopIds}
+                            index={this.state.currentStopIndex}
+                            />
+                        
+                    </Overlay>
                 </div>
             )
         }
