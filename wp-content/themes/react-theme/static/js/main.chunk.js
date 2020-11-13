@@ -1101,7 +1101,7 @@ const StopOverlay = ({
   const renderLeftNav = () => {
     let index = currentImageIndex;
 
-    if (index == 0) {
+    if (index == 0 && currentIndex !== 0) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "image-gallery-custom-left-nav",
         onClick: gotoPrevStop,
@@ -1113,7 +1113,8 @@ const StopOverlay = ({
           columnNumber: 17
         }
       });
-    } else {
+    } else if (index !== 0) {
+      console.log("current stop index", currentIndex);
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "image-gallery-custom-left-nav",
         onClick: gotoPrevImage,
@@ -1121,7 +1122,7 @@ const StopOverlay = ({
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 126,
+          lineNumber: 127,
           columnNumber: 17
         }
       });
@@ -1131,7 +1132,7 @@ const StopOverlay = ({
   const renderRightNav = () => {
     let index = currentImageIndex;
 
-    if (index == Photos.length - 1) {
+    if (index == Photos.length - 1 && currentIndex !== stopIds.length - 1) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "image-gallery-custom-right-nav",
         onClick: gotoNextStop,
@@ -1139,11 +1140,11 @@ const StopOverlay = ({
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 139,
+          lineNumber: 140,
           columnNumber: 17
         }
       });
-    } else {
+    } else if (index !== Photos.length - 1) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "image-gallery-custom-right-nav",
         onClick: gotoNextImage,
@@ -1151,7 +1152,7 @@ const StopOverlay = ({
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 147,
+          lineNumber: 148,
           columnNumber: 17
         }
       });
@@ -1201,7 +1202,7 @@ const StopOverlay = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 197,
+      lineNumber: 198,
       columnNumber: 9
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1209,14 +1210,14 @@ const StopOverlay = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 198,
+      lineNumber: 199,
       columnNumber: 13
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navbar_BrandingLogo__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 198,
+      lineNumber: 199,
       columnNumber: 41
     }
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -1226,7 +1227,7 @@ const StopOverlay = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 199,
+      lineNumber: 200,
       columnNumber: 13
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1237,7 +1238,7 @@ const StopOverlay = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 200,
+      lineNumber: 201,
       columnNumber: 13
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1245,7 +1246,7 @@ const StopOverlay = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 205,
+      lineNumber: 206,
       columnNumber: 13
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_image_gallery__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -1259,21 +1260,21 @@ const StopOverlay = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 206,
+      lineNumber: 207,
       columnNumber: 17
     }
   }), renderLeftNav(), renderRightNav(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 216,
+      lineNumber: 217,
       columnNumber: 13
     }
   }, "Stop Name: ", stop_name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 219,
+      lineNumber: 220,
       columnNumber: 13
     }
   }, "Stop Description: ", getContent(stop)));
@@ -1741,7 +1742,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _images_right_arrow_disabled_png__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_images_right_arrow_disabled_png__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var _images_placeholder_thumbnail_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../images/placeholder-thumbnail.png */ "./src/images/placeholder-thumbnail.png");
 /* harmony import */ var _images_placeholder_thumbnail_png__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_images_placeholder_thumbnail_png__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var react_portal_overlay__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-portal-overlay */ "./node_modules/react-portal-overlay/index.es.js");
+/* harmony import */ var _EntryPage_StopOverlay__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../EntryPage/StopOverlay */ "./src/components/EntryPage/StopOverlay.js");
 var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/Playlist/Entries/Entries.js";
+
+
 
 
 
@@ -1760,7 +1765,7 @@ const customArrow = {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 18,
+        lineNumber: 21,
         columnNumber: 18
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -1769,7 +1774,7 @@ const customArrow = {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 18,
+        lineNumber: 21,
         columnNumber: 57
       }
     })),
@@ -1778,7 +1783,7 @@ const customArrow = {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 19,
+        lineNumber: 22,
         columnNumber: 25
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -1787,7 +1792,7 @@ const customArrow = {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 19,
+        lineNumber: 22,
         columnNumber: 64
       }
     })),
@@ -1796,7 +1801,7 @@ const customArrow = {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 20,
+        lineNumber: 23,
         columnNumber: 19
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -1805,7 +1810,7 @@ const customArrow = {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 20,
+        lineNumber: 23,
         columnNumber: 58
       }
     })),
@@ -1814,7 +1819,7 @@ const customArrow = {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 21,
+        lineNumber: 24,
         columnNumber: 27
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -1823,7 +1828,7 @@ const customArrow = {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 21,
+        lineNumber: 24,
         columnNumber: 66
       }
     })),
@@ -1831,101 +1836,135 @@ const customArrow = {
   }
 };
 
-const Entries = props => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-  key: props.listId,
-  className: "row stop-carousel",
-  __self: undefined,
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 27,
-    columnNumber: 5
-  }
-}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_3___default.a, {
-  arrows: true,
-  addArrowClickHandler: true,
-  offset: 0,
-  plugins: [{
-    resolve: _brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_3__["slidesToShowPlugin"],
-    options: {
-      numberOfSlides: 5
+const Entries = props => {
+  const [showStopOverlay, setShowStopOverlay] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
+  const [currentIndex, setCurrentIndex] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0);
+  const stopIds = props.entries.map(singleStop => singleStop.id);
+
+  const handleClick = index => {
+    setShowStopOverlay(true);
+    setCurrentIndex(index);
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    key: props.listId,
+    className: "row stop-carousel",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 41,
+      columnNumber: 11
     }
-  }, {
-    resolve: _brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_3__["slidesToScrollPlugin"],
-    options: {
-      numberOfSlides: 5
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    arrows: true,
+    addArrowClickHandler: true,
+    offset: 0,
+    plugins: [{
+      resolve: _brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_3__["slidesToShowPlugin"],
+      options: {
+        numberOfSlides: 5
+      }
+    }, {
+      resolve: _brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_3__["slidesToScrollPlugin"],
+      options: {
+        numberOfSlides: 5
+      }
+    }, customArrow],
+    breakpoints: {
+      790: {
+        plugins: [{
+          resolve: _brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_3__["slidesToShowPlugin"],
+          options: {
+            numberOfSlides: 1
+          }
+        }, customArrow]
+      },
+      1110: {
+        plugins: [{
+          resolve: _brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_3__["slidesToShowPlugin"],
+          options: {
+            numberOfSlides: 2
+          }
+        }, customArrow]
+      },
+      1420: {
+        plugins: [{
+          resolve: _brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_3__["slidesToShowPlugin"],
+          options: {
+            numberOfSlides: 3
+          }
+        }, customArrow]
+      },
+      1800: {
+        plugins: [{
+          resolve: _brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_3__["slidesToShowPlugin"],
+          options: {
+            numberOfSlides: 4
+          }
+        }, customArrow]
+      }
+    },
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 42,
+      columnNumber: 11
     }
-  }, customArrow],
-  breakpoints: {
-    790: {
-      plugins: [{
-        resolve: _brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_3__["slidesToShowPlugin"],
-        options: {
-          numberOfSlides: 1
-        }
-      }, customArrow]
-    },
-    1110: {
-      plugins: [{
-        resolve: _brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_3__["slidesToShowPlugin"],
-        options: {
-          numberOfSlides: 2
-        }
-      }, customArrow]
-    },
-    1420: {
-      plugins: [{
-        resolve: _brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_3__["slidesToShowPlugin"],
-        options: {
-          numberOfSlides: 3
-        }
-      }, customArrow]
-    },
-    1800: {
-      plugins: [{
-        resolve: _brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_3__["slidesToShowPlugin"],
-        options: {
-          numberOfSlides: 4
-        }
-      }, customArrow]
+  }, props.entries.map((entry, index) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    key: entry.id,
+    className: "entry",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 110,
+      columnNumber: 15
     }
-  },
-  __self: undefined,
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 28,
-    columnNumber: 9
-  }
-}, props.entries.map(entry => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-  key: entry.id,
-  className: "entry",
-  __self: undefined,
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 96,
-    columnNumber: 13
-  }
-}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-  style: {
-    width: "19rem"
-  },
-  alt: "entry",
-  src: entry.medium_url == false ? _images_placeholder_thumbnail_png__WEBPACK_IMPORTED_MODULE_9___default.a : entry.medium_url,
-  onClick: () => props.history.push(`/stop/${entry.id}`),
-  __self: undefined,
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 97,
-    columnNumber: 17
-  }
-}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-  className: "entry-name",
-  __self: undefined,
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 98,
-    columnNumber: 17
-  }
-}, " ", entry.name, " ")))));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    style: {
+      width: "19rem"
+    },
+    alt: "entry",
+    src: entry.medium_url == false ? _images_placeholder_thumbnail_png__WEBPACK_IMPORTED_MODULE_9___default.a : entry.medium_url,
+    onClick: () => handleClick(index),
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 111,
+      columnNumber: 19
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "entry-name",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 112,
+      columnNumber: 19
+    }
+  }, " ", entry.name, " ")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_portal_overlay__WEBPACK_IMPORTED_MODULE_10__["Overlay"], {
+    style: {
+      "background": 'white',
+      "width": '100%',
+      "padding": "0 2rem"
+    },
+    open: showStopOverlay,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 116,
+      columnNumber: 11
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_EntryPage_StopOverlay__WEBPACK_IMPORTED_MODULE_11__["default"], {
+    handleClose: () => setShowStopOverlay(false),
+    stopIds: stopIds,
+    index: currentIndex,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 124,
+      columnNumber: 13
+    }
+  })));
+};
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(Entries));
 
@@ -5294,5 +5333,5 @@ module.exports = __webpack_require__(/*! /Users/chenjiewen/Localdev/museum-live/
 
 /***/ })
 
-},[[0,"runtime-main",0]]]);
+},[[0,"runtime-main",1]]]);
 //# sourceMappingURL=main.chunk.js.map

@@ -177,6 +177,78 @@ body {
 }
 
 
+.presentation-close-icon {
+    position: absolute;
+    float: right;
+    top: 1rem;
+    right: 0;
+    z-index: -1;
+}
+
+.presentation-close-icon:hover {
+    cursor: pointer;
+    opacity: .7;
+}
+
+#presentation-logo {
+    position:absolute;
+    left: 1rem;
+    top: 1rem;
+}
+
+
+/* gallery styling */
+.image-gallery-container {
+    padding: 30px;
+    padding-bottom: 100px;
+}
+
+.image-gallery-description {
+    background: rgba(255,255,255,0.7) !important;
+    font-weight: 600;
+    color: black !important;
+    padding: 15px 30px !important;
+    font-size: 18px;
+}
+
+.image-gallery-thumbnails {
+    margin-top: 20px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.active {
+    border: 10px solid black !important
+}
+
+/* gallery custom arrow */
+
+.image-gallery-custom-left-nav {
+    position: absolute;
+    top: 450px;
+    left: 0;
+}
+
+.image-gallery-custom-right-nav {
+    position: absolute;
+    top:450px;
+    right: 0;
+}
+
+
+.image-gallery-custom-left-nav:hover {
+    cursor: pointer;
+    opacity: .7;
+}
+
+.image-gallery-custom-right-nav:hover {
+    cursor: pointer;
+    opacity: .7;
+}
+
+.image-gallery-content .image-gallery-slide .image-gallery-image {
+    max-height: calc(100vh - 180px) !important;
+}
 .public-playlist {
     margin: 60px 80px 20px 80px;
 }
@@ -1055,78 +1127,6 @@ ul > .sortable-row {
     font-size: 16px;
     font-weight: 400;
 
-}
-.presentation-close-icon {
-    position: absolute;
-    float: right;
-    top: 1rem;
-    right: 0;
-    z-index: -1;
-}
-
-.presentation-close-icon:hover {
-    cursor: pointer;
-    opacity: .7;
-}
-
-#presentation-logo {
-    position:absolute;
-    left: 1rem;
-    top: 1rem;
-}
-
-
-/* gallery styling */
-.image-gallery-container {
-    padding: 30px;
-    padding-bottom: 100px;
-}
-
-.image-gallery-description {
-    background: rgba(255,255,255,0.7) !important;
-    font-weight: 600;
-    color: black !important;
-    padding: 15px 30px !important;
-    font-size: 18px;
-}
-
-.image-gallery-thumbnails {
-    margin-top: 20px;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-}
-
-.active {
-    border: 10px solid black !important
-}
-
-/* gallery custom arrow */
-
-.image-gallery-custom-left-nav {
-    position: absolute;
-    top: 450px;
-    left: 0;
-}
-
-.image-gallery-custom-right-nav {
-    position: absolute;
-    top:450px;
-    right: 0;
-}
-
-
-.image-gallery-custom-left-nav:hover {
-    cursor: pointer;
-    opacity: .7;
-}
-
-.image-gallery-custom-right-nav:hover {
-    cursor: pointer;
-    opacity: .7;
-}
-
-.image-gallery-content .image-gallery-slide .image-gallery-image {
-    max-height: calc(100vh - 180px) !important;
 }
 
 /*# sourceMappingURL=main.chunk.css.map*/

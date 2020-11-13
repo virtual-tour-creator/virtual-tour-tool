@@ -113,7 +113,7 @@ const StopOverlay = ({handleClose, stopIds, index}) => {
     // arrow change
     const renderLeftNav = () => {
         let index = currentImageIndex;
-        if(index == 0) {
+        if(index == 0 && currentIndex !== 0) {
             return(
                 <img
                 className='image-gallery-custom-left-nav'
@@ -121,7 +121,8 @@ const StopOverlay = ({handleClose, stopIds, index}) => {
                 src={PrevStopIcon}
                 />
             )
-        } else {
+        } else if(index !== 0) {
+            console.log("current stop index", currentIndex);
             return (
                 <img
                 className='image-gallery-custom-left-nav'
@@ -134,7 +135,7 @@ const StopOverlay = ({handleClose, stopIds, index}) => {
 
     const renderRightNav = () => {
         let index = currentImageIndex;
-        if (index == Photos.length - 1){
+        if (index == Photos.length - 1 && currentIndex !== stopIds.length-1){
             return(
                 <img
                 className='image-gallery-custom-right-nav'
@@ -142,7 +143,7 @@ const StopOverlay = ({handleClose, stopIds, index}) => {
                 src={NextStopIcon}
                 />
             )
-        } else{
+        } else if (index !== Photos.length - 1){
             return (
                 <img
                 className='image-gallery-custom-right-nav'
