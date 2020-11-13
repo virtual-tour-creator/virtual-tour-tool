@@ -1,10 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 
 import ImageGallery from 'react-image-gallery';
 import BrandingLogo from '../Navbar/BrandingLogo';
 import { RestAPIGetStopById } from '../../helpers/RestAPIHelper';
 
 import CloseIcon from '../../images/overlay-close-icon.png';
+
+import LeftIcon from '../../images/gallery-left.png';
+import RightIcon from '../../images/gallery-right.png';
+import PrevStopIcon  from '../../images/prev-stop.png';
+import NextStopIcon from '../../images/next-stop.png';
+
 
 import './StopOverlay.styles.css';
 
@@ -30,10 +36,14 @@ const _renderVideo = item => {
     );
 }
 
+
 const StopOverlay = ({handleClose, stopIds, index}) => {
+
+    const ref = useRef(null)
 
     let time =  new Date().getTime();
     const [currentIndex, setCurrentIndex] = useState(index);
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
     const [searchStr, setSearchStr] = useState("");
     const [stop, setStop] = useState([]);
@@ -46,24 +56,6 @@ const StopOverlay = ({handleClose, stopIds, index}) => {
         return reactInit.searchMediaUrl + encodeURI(searchStr);
     };
 
-
-    const gotoPrevPage = () => {
-        if(currentIndex > 0) {
-            let newIndex = currentIndex - 1
-            setCurrentIndex(newIndex);
-            RestAPIGetStopById(stopIds[newIndex], time, setStop);
-        }
-       
-
-    }
-
-    const gotoNextPage = () => {
-        if(currentIndex < stopIds.length - 1){
-            let newIndex = currentIndex + 1
-            setCurrentIndex(newIndex);
-            RestAPIGetStopById(stopIds[newIndex], time, setStop);
-        } 
-    }
 
 
       // load media
@@ -117,32 +109,111 @@ const StopOverlay = ({handleClose, stopIds, index}) => {
       }
 
 
-    const renderLeftNav = (onClick, disabled) => {
-    return (
-        <button
-        className='image-gallery-custom-left-nav'
-        disabled={disabled}
-        onClick={onClick}/>
-    )
+
+    // arrow change
+    const renderLeftNav = () => {
+        let index = currentImageIndex;
+        if(index == 0) {
+            return(
+                <img
+                className='image-gallery-custom-left-nav'
+                onClick={gotoPrevStop}
+                src={PrevStopIcon}
+                />
+            )
+        } else {
+            return (
+                <img
+                className='image-gallery-custom-left-nav'
+                onClick={gotoPrevImage}
+                src={LeftIcon}
+                />
+            )
+        }
     }
+
+    const renderRightNav = () => {
+        let index = currentImageIndex;
+        if (index == Photos.length - 1){
+            return(
+                <img
+                className='image-gallery-custom-right-nav'
+                onClick={gotoNextStop}
+                src={NextStopIcon}
+                />
+            )
+        } else{
+            return (
+                <img
+                className='image-gallery-custom-right-nav'
+                onClick={gotoNextImage}
+                src={RightIcon}
+                />
+            )
+        }
+    }
+
+    
+    // for gallery
+    const gotoPrevImage =  () => {
+        let index = ref.current.getCurrentIndex()
+
+        let newIndex = index - 1;
+        ref.current.slideToIndex(newIndex);
+        setCurrentImageIndex(newIndex);
+    }
+
+    const gotoNextImage =  () => {
+        let index = ref.current.getCurrentIndex()
+        let newIndex = index + 1;
+        ref.current.slideToIndex(newIndex);
+        setCurrentImageIndex(newIndex);
+    }
+
+    const gotoPrevStop = () => {
+        setCurrentImageIndex(0);
+        if(currentIndex > 0) {
+            let newIndex = currentIndex - 1
+            setCurrentIndex(newIndex);
+            RestAPIGetStopById(stopIds[newIndex], time, setStop);
+        }
+    }
+
+    const gotoNextStop = () => {
+        setCurrentImageIndex(0);
+        if(currentIndex < stopIds.length - 1){
+            let newIndex = currentIndex + 1
+            setCurrentIndex(newIndex);
+            RestAPIGetStopById(stopIds[newIndex], time, setStop);
+        } 
+    }
+
+    const handleThumbnailClick = () => {
+        setCurrentIndex(0);
+    }
+
 
     return(
         <div>
             <div id="presentation-logo"><BrandingLogo/></div>
             <img onClick={handleClose} className="presentation-close-icon" src={CloseIcon} />
             <div className='container' style={{'textAlign':'center'}}>
-                <button onClick={gotoPrevPage}>Previous Stop</button> 
-                <button onClick={gotoNextPage}>Next Stop</button>
-                <h1>Stop Name: {stop_name}</h1>
+                {/* <h1>CurrentImageIndex: {currentImageIndex}</h1> */}
+                
             </div>
             {/* <h1>current index:{currentIndex}</h1> */}
             <div className="image-gallery-container">
                 <ImageGallery 
+                    ref={ref}
                     items={Photos}
                     showPlayButton={false}
                     showFullscreenButton={false}
                     infinite={false}
-                    showNav={false} />
+                    showNav={false}
+                    onThumbnailClick={handleThumbnailClick} />
+                {renderLeftNav()}
+                {renderRightNav()}
+            <h1>Stop Name: {stop_name}</h1>
             </div>
 
             <p>Stop Description: {getContent(stop)}</p>
@@ -153,3 +224,4 @@ const StopOverlay = ({handleClose, stopIds, index}) => {
 }
 
 export default StopOverlay;
+
