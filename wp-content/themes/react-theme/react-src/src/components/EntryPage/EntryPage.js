@@ -88,7 +88,7 @@ const EntryPage = props => {
         );
     }
     
-    // const [isOpen, setIsOpen] = useState(false);
+    const [show, setShow] = useState(false);
 
 
     return(

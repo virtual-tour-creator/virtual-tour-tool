@@ -751,9 +751,9 @@ const EntryPage = props => {
         columnNumber: 17
       }
     }, "#", tag[0])));
-  } // const [isOpen, setIsOpen] = useState(false);
+  }
 
-
+  const [show, setShow] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "entry-page",
     __self: undefined,
@@ -933,6 +933,276 @@ const EntryPage = props => {
 
 /***/ }),
 
+/***/ "./src/components/EntryPage/SpeakerNote.js":
+/*!*************************************************!*\
+  !*** ./src/components/EntryPage/SpeakerNote.js ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _images_edit_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../images/edit.png */ "./src/images/edit.png");
+/* harmony import */ var _images_edit_png__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_images_edit_png__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/index.js");
+/* harmony import */ var _SpeakerNote_styles_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./SpeakerNote.styles.css */ "./src/components/EntryPage/SpeakerNote.styles.css");
+/* harmony import */ var _SpeakerNote_styles_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_SpeakerNote_styles_css__WEBPACK_IMPORTED_MODULE_3__);
+var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/EntryPage/SpeakerNote.js";
+
+
+
+
+
+const SpeakerNote = ({
+  description,
+  tags,
+  id
+}) => {
+  const [searchStr, setSearchStr] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])("");
+
+  const getMediaSearchLink = () => {
+    if (searchStr === '') return "";
+    return reactInit.searchMediaUrl + encodeURI(searchStr);
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    id: "speaker-note-container",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19,
+      columnNumber: 9
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    className: "speaker-note-nav nav nav-tabs",
+    id: "myTab",
+    role: "tablist",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20,
+      columnNumber: 9
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "nav-item",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21,
+      columnNumber: 13
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    className: "speaker-note-nav nav-link active",
+    id: "home-tab",
+    "data-toggle": "tab",
+    href: "#caption",
+    role: "tab",
+    "aria-controls": "home",
+    "aria-selected": "true",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 22,
+      columnNumber: 17
+    }
+  }, "CAPTION")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "nav-item",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24,
+      columnNumber: 13
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    className: "speaker-note-nav nav-link",
+    id: "profile-tab",
+    "data-toggle": "tab",
+    href: "#description",
+    role: "tab",
+    "aria-controls": "profile",
+    "aria-selected": "false",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 25,
+      columnNumber: 17
+    }
+  }, "STOP DESCRIPTION")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "nav-item",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 27,
+      columnNumber: 13
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    className: "speaker-note-nav nav-link",
+    id: "contact-tab",
+    "data-toggle": "tab",
+    href: "#misc",
+    role: "tab",
+    "aria-controls": "contact",
+    "aria-selected": "false",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 28,
+      columnNumber: 17
+    }
+  }, "MISC"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "tab-content",
+    id: "myTabContent",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 31,
+      columnNumber: 13
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "tab-pane fade show active",
+    id: "caption",
+    role: "tabpanel",
+    "aria-labelledby": "home-tab",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 32,
+      columnNumber: 13
+    }
+  }, "Coming Soon..."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "tab-pane fade",
+    id: "description",
+    role: "tabpanel",
+    "aria-labelledby": "profile-tab",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 33,
+      columnNumber: 13
+    }
+  }, description, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35,
+      columnNumber: 17
+    }
+  }, "Search related tags:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 37,
+      columnNumber: 21
+    }
+  }, tags))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "tab-pane fade",
+    id: "misc",
+    role: "tabpanel",
+    "aria-labelledby": "contact-tab",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 41,
+      columnNumber: 13
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "media-search-bar",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 42,
+      columnNumber: 13
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 43,
+      columnNumber: 17
+    }
+  }, "Search Media Files: "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 44,
+      columnNumber: 17
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Row, {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 45,
+      columnNumber: 17
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 46,
+      columnNumber: 21
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Control, {
+    placeholder: "Search Media",
+    onChange: event => setSearchStr(event.target.value),
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 47,
+      columnNumber: 25
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 49,
+      columnNumber: 21
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+    variant: "primary",
+    href: getMediaSearchLink(),
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 50,
+      columnNumber: 21
+    }
+  }, "Search")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+    className: "tour-page-button presentation-edit-button",
+    href: reactInit.adminUrl + 'post.php?post=' + id + '&action=edit',
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 57,
+      columnNumber: 17
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: _images_edit_png__WEBPACK_IMPORTED_MODULE_1___default.a,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 58,
+      columnNumber: 21
+    }
+  }), "Edit this Stop")))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (SpeakerNote);
+
+/***/ }),
+
+/***/ "./src/components/EntryPage/SpeakerNote.styles.css":
+/*!*********************************************************!*\
+  !*** ./src/components/EntryPage/SpeakerNote.styles.css ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
 /***/ "./src/components/EntryPage/StopOverlay.js":
 /*!*************************************************!*\
   !*** ./src/components/EntryPage/StopOverlay.js ***!
@@ -958,9 +1228,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _images_prev_stop_png__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_images_prev_stop_png__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _images_next_stop_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../images/next-stop.png */ "./src/images/next-stop.png");
 /* harmony import */ var _images_next_stop_png__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_images_next_stop_png__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _StopOverlay_styles_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./StopOverlay.styles.css */ "./src/components/EntryPage/StopOverlay.styles.css");
-/* harmony import */ var _StopOverlay_styles_css__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_StopOverlay_styles_css__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _images_info_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../images/info.png */ "./src/images/info.png");
+/* harmony import */ var _images_info_png__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_images_info_png__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _images_close_info_png__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../images/close-info.png */ "./src/images/close-info.png");
+/* harmony import */ var _images_close_info_png__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_images_close_info_png__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _SpeakerNote__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./SpeakerNote */ "./src/components/EntryPage/SpeakerNote.js");
+/* harmony import */ var _StopOverlay_styles_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./StopOverlay.styles.css */ "./src/components/EntryPage/StopOverlay.styles.css");
+/* harmony import */ var _StopOverlay_styles_css__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_StopOverlay_styles_css__WEBPACK_IMPORTED_MODULE_12__);
 var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/EntryPage/StopOverlay.js";
+
+
+
 
 
 
@@ -980,7 +1258,7 @@ const getContent = stop => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22,
+      lineNumber: 26,
       columnNumber: 13
     }
   });
@@ -992,7 +1270,7 @@ const _renderVideo = item => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28,
+      lineNumber: 32,
       columnNumber: 9
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("iframe", {
@@ -1002,7 +1280,7 @@ const _renderVideo = item => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29,
+      lineNumber: 33,
       columnNumber: 13
     }
   }));
@@ -1017,17 +1295,12 @@ const StopOverlay = ({
   let time = new Date().getTime();
   const [currentIndex, setCurrentIndex] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(index);
   const [currentImageIndex, setCurrentImageIndex] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0);
+  const [show, setShow] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
   const [searchStr, setSearchStr] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])("");
   const [stop, setStop] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
     Object(_helpers_RestAPIHelper__WEBPACK_IMPORTED_MODULE_3__["RestAPIGetStopById"])(stopIds[currentIndex], time, setStop);
-  }, []);
-
-  const getMediaSearchLink = () => {
-    if (searchStr === '') return "";
-    return reactInit.searchMediaUrl + encodeURI(searchStr);
-  }; // load media
-
+  }, []); // load media
 
   let Photos = [];
 
@@ -1074,6 +1347,7 @@ const StopOverlay = ({
 
   if (stop.tag_names) {
     tag_lists = stop.tag_names.map(tag => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      className: "related-topic-tag",
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
@@ -1081,12 +1355,13 @@ const StopOverlay = ({
         columnNumber: 15
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      className: "related-topic-link",
       href: reactInit.searchStopTagUrl + tag[1],
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 101,
-        columnNumber: 19
+        columnNumber: 49
       }
     }, "#", tag[0])));
   }
@@ -1114,7 +1389,6 @@ const StopOverlay = ({
         }
       });
     } else if (index !== 0) {
-      console.log("current stop index", currentIndex);
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "image-gallery-custom-left-nav",
         onClick: gotoPrevImage,
@@ -1122,7 +1396,7 @@ const StopOverlay = ({
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 127,
+          lineNumber: 126,
           columnNumber: 17
         }
       });
@@ -1140,7 +1414,7 @@ const StopOverlay = ({
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 140,
+          lineNumber: 139,
           columnNumber: 17
         }
       });
@@ -1152,7 +1426,7 @@ const StopOverlay = ({
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 148,
+          lineNumber: 147,
           columnNumber: 17
         }
       });
@@ -1175,13 +1449,13 @@ const StopOverlay = ({
   };
 
   const gotoPrevStop = () => {
-    setCurrentImageIndex(0);
-
     if (currentIndex > 0) {
       let newIndex = currentIndex - 1;
       setCurrentIndex(newIndex);
       Object(_helpers_RestAPIHelper__WEBPACK_IMPORTED_MODULE_3__["RestAPIGetStopById"])(stopIds[newIndex], time, setStop);
     }
+
+    setCurrentImageIndex(0);
   };
 
   const gotoNextStop = () => {
@@ -1195,14 +1469,26 @@ const StopOverlay = ({
   };
 
   const handleThumbnailClick = () => {
-    setCurrentIndex(0);
+    return Promise.resolve("");
+  };
+
+  const [isOpen, setIsOpen] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
+
+  const handleInfoClick = () => {
+    setIsOpen(!isOpen);
+    return Promise.resolve("");
+  };
+
+  const gotoBottom = () => {
+    let element = document.getElementById("scroll");
+    element.scrollTop = element.scrollHeight;
   };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 198,
+      lineNumber: 210,
       columnNumber: 9
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1210,14 +1496,14 @@ const StopOverlay = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 199,
+      lineNumber: 211,
       columnNumber: 13
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navbar_BrandingLogo__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 199,
+      lineNumber: 211,
       columnNumber: 41
     }
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -1227,7 +1513,7 @@ const StopOverlay = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 200,
+      lineNumber: 212,
       columnNumber: 13
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1238,7 +1524,7 @@ const StopOverlay = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 201,
+      lineNumber: 213,
       columnNumber: 13
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1246,7 +1532,7 @@ const StopOverlay = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 206,
+      lineNumber: 218,
       columnNumber: 13
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_image_gallery__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -1256,28 +1542,82 @@ const StopOverlay = ({
     showFullscreenButton: false,
     infinite: false,
     showNav: false,
-    onThumbnailClick: handleThumbnailClick,
+    onThumbnailClick: () => handleThumbnailClick().then(() => setCurrentImageIndex(ref.current.getCurrentIndex())),
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 207,
+      lineNumber: 219,
       columnNumber: 17
     }
-  }), renderLeftNav(), renderRightNav(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+  }), renderLeftNav(), renderRightNav(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "presentation-stop-name",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 217,
+      lineNumber: 229,
       columnNumber: 13
     }
-  }, "Stop Name: ", stop_name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+  }, stop_name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "info-btn",
+    type: "button",
+    "data-toggle": "collapse",
+    "data-target": "#collapseExample",
+    "aria-expanded": "false",
+    "aria-controls": "collapseExample",
+    href: "#collapseExample",
+    onClick: () => handleInfoClick().then(() => gotoBottom()),
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 220,
+      lineNumber: 232,
       columnNumber: 13
     }
-  }, "Stop Description: ", getContent(stop)));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: isOpen == true ? _images_close_info_png__WEBPACK_IMPORTED_MODULE_10___default.a : _images_info_png__WEBPACK_IMPORTED_MODULE_9___default.a,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 241,
+      columnNumber: 17
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    id: "scroll",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 243,
+      columnNumber: 13
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 244,
+      columnNumber: 17
+    }
+  }, " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    class: "collapse",
+    id: "collapseExample",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 245,
+      columnNumber: 17
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SpeakerNote__WEBPACK_IMPORTED_MODULE_11__["default"], {
+    description: getContent(stop),
+    tags: tag_lists,
+    id: stop.id,
+    style: {
+      'display': 'none'
+    },
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 246,
+      columnNumber: 21
+    }
+  }))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (StopOverlay);
@@ -5071,6 +5411,17 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACsAAAAsCAYAAAD8
 
 /***/ }),
 
+/***/ "./src/images/close-info.png":
+/*!***********************************!*\
+  !*** ./src/images/close-info.png ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAAlCAYAAADFniADAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAJTSURBVHgBzZg5bttAFIYfRwuQpFGfxcoJjNRaeQPfwEqRKoUjXSBSLmDlBGFu4FRpApDW0gUwnCYwYMAyDNd2rdX/T1sCJWshqYXzAcRInJH48703M++NIQGxbTsVi8WKhmHw2h+NRmm06XE/vnfwvYP2HJczGAwc0zTvJQCG34HNZrOI5gDXIR6akmBYvV6vBnEdP4NXioJl0vF4/BhCDmR9fIlbKqrdbh8Nh8NqCMssg66sZbPZugQV1Wq1jtF8kS2BF61mMpna3D6ZL+gHmpJsHwsW+zh7U83egMu+7kgQKT15ZApjRtARpnFddk/ZG2MTUU+z7GzDQe2Xe8zKD+NZOXEfFsRqRIJIKplMTtzoWopWSiQSVxIxCB0zl8s5rqVoJdEDd4E2uJfBSneiB4yt94qbq+gDY6uguNuLRmBbMylqXzSCehTzIdEI6lHeBE0HqCcuIfl79k9+/3GWjql8/iSvXr6QoKwl6v/F5cL+vbevQwkijKmOhOD65nZp/967NxIGN8dH6mDjc1H0waGlzkUjqIeiHNEIpZStWJfJYzKvBd1u91SxUIS1fooeWNQzTvJORANYE7J1RTGxwkoatTDrWToMX5YlothC+NyNrTQliioR9DWJAHjpm7eUn6r7CoVCHaq/yw7B856V8HMr5EajYWG9OJQtg4TOyufzqytkgoElvoFsjxGL3nmCFooimJFVxNjGg59BjaaC/y8vGuPrfIol2AbcSeuc9Pv9ylrnUxsQRyG0NHeMX1wP/fzItyiPuFVnnleeM8/TMGeeDwgjGfRRPQICAAAAAElFTkSuQmCC"
+
+/***/ }),
+
 /***/ "./src/images/dropdown-icon.png":
 /*!**************************************!*\
   !*** ./src/images/dropdown-icon.png ***!
@@ -5079,6 +5430,17 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACsAAAAsCAYAAAD8
 /***/ (function(module, exports) {
 
 module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAALCAYAAACUPhZAAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFlSURBVHgBrVI7TgJRFD13IEFjwxJmAxoKIQYtoLOUHWABEiPjWMDYDXSCiSIYQsAEXQFLEAsTLEzGHcwSaDR+53kfMIYgHzGc5t3cz3n3nPcARlLLmqmUoWIBSOmGuqcZhzKmRDoTJ1KaHHchRL5eKZbwTyQPsjtCoSYBfuY68qyFQ7YivMuciIBoez20pa6Gg3dWp/M6FzGr5/ka8yw5oJsVz9sJucVE+jgOEue9WwFbeUe0VivYs0h1Xfc/f/laRLycBG/sqqfhRumX4+CWQ7WfEbl6uZifRJzYzwTIq7QG/TbP7l5dFtpuncYOaUaJC/1HEbimD+RHVchHc4DcQKnFSmOjPYRJW7FNRMJ0txKfTqxRPbWkDS/CZ0JA72kDLhrlgj6OYyK5xC+bCCVmi3AUYNIuzfhdU8ldJDUjx4c5lPpRMm3Ogz/g8eG+HQhuPilEG0LA4m8WrVbObCwS0u95+r8BkU6JI3sqwhgAAAAASUVORK5CYII="
+
+/***/ }),
+
+/***/ "./src/images/edit.png":
+/*!*****************************!*\
+  !*** ./src/images/edit.png ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAZCAYAAAArK+5dAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGhSURBVHgB7ZW/SwJhGMefuwxMGrT+gYuIoEREwQiEhBwKamiooYYcKqIhbgltu5p0SESdbKohiAiihobAdBAykoIgiCD/gNRc6m7y7X0vT85+gHf3NgR+4O64947P932P530OgDI8z1vV9x1AiVU+yLk83ttOc3fY4R6BQj6XpRZA5LUaXE5P+rmFuRm4u3/wDTlccojhAEVu6TLL8t4eGzgdw3KI3e7OsmAA9czHfV7YSaSgXHltescEOlHLpyb8jXESQsBBW6lkJKNrBb/JRz1uEEXxUx6PCKAHIl9ZDxbPzi+QmlK5gjaFMMLPBNBLW/4/5czP4hA+oz5ciumvpUg2Un1DtVSKjBZ5CcujGuTfAmjLCaw2eVXzDlW1ilbkYQH0sMQHgVTL4fFpU7W8NKolJIBOlBX4SD/HPVyeMbWZQ71dszUUIJ9FlCRZujg/C3sHR4blcsDy2ga+MGODA/1gs1nh8ekZoskUwmPbRuXKCpz44HL5Alxd36C3dynDIBTHP4sToIAJTGwAX4vpbG7fwkqx3USsCjTB9c/BH/IBYxGX5LQVPcAAAAAASUVORK5CYII="
 
 /***/ }),
 
@@ -5123,6 +5485,17 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABz
 /***/ (function(module, exports) {
 
 module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAA9SURBVHgB7dShFQAgDAPRwLBILDNgkSwLrqK+L+a+rOmpSIBZy4cx11Oxe3b87TIjwB4AO3aAAHYAAAC7D5+7CBMtk+QjAAAAAElFTkSuQmCC"
+
+/***/ }),
+
+/***/ "./src/images/info.png":
+/*!*****************************!*\
+  !*** ./src/images/info.png ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAAmCAYAAABDClKtAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAALdSURBVHgBzZg9b9NAGMcfO04kyhIBnaAkA6iiEgIktrxLLGwVEwtK+AQhExILycrS8AlIv0G+QUJe5qpLqwokUgpTkioLQcprn78bR7abtLbPcfuTrPM5jv33c/+7e+4kskmlUgn6fL6kJEk4nk2n0zCXYe13rre43uJyn4/qeDyuplKpHtlAsnpjvV5PcrHNR5pfGiR7lIbDYYHFtazcfKUojkxYUZQdFrJN4lgSd6moZrOZnUwmeQeRuQw0ZSEajRbJrqhGo7HDxQdaEfyh+UgkUlj4Gy0W9I2LDK2eEkfsvfmibL7ATfbZI0EgM2sRA5JJUJa7cZG8J6f32FzUrJftuWxqq/S4V77QeuW8+XhAzF+TIBAMBALzZlQjhSj5/f5fJMi/fp863VP1PLTxgOzC1knFYrGqggqiRC7wqfCF2jNR796+odevkmQTDNBVGXOZLMtpEuTg6MdcEDg++Ut2YfukVT2YXMkFbq/dMtRfPn9KDoC3EhJPtEVWmCUXaHdOOVpd1U9mkVZhX31VkH6QS6zfu6MeIkCPMsuHSJTsx7yoyVWgR9YnaE5pd7oGk29tPianQI9MLvBb19PW2EuhjfskgiuiDo5+zs9FBQEZOTUJgjFKQ6TpAPTAUy0SoN//bxgon2w+IhGgB5HaJwFaJ38MdSdznh7ogagqCXCo8xOi5HTQ1OApryJjXUbnybwj9H4SjRIYDAbfZSwUOVq75BC9n7YE/cSUoEcbEsrkgGP2E4yuEXooFimsCVGqopBYsettCzs0jU/rd4XmvZKWDhtydM4+9/jU85SY7dMbjUYXc3RcYNMX6BrgVjIs5Q3TTCKRKCKfIQ/h911Ywi/MWWq1WsmNFPkqeJ9iNx6PZ8zXF07IuBFfQCsELbJI0FJRgHtknj2WI4GBdYkYPC/Hz1+6eWJpfwpLMDeakwWVuZflhPan3BA3iwxmjDLGQyv/sZ2ce7HneSM5A/S8VCB7VtOaAAAAAElFTkSuQmCC"
 
 /***/ }),
 

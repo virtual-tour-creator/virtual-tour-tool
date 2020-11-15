@@ -10,6 +10,10 @@ import LeftIcon from '../../images/gallery-left.png';
 import RightIcon from '../../images/gallery-right.png';
 import PrevStopIcon  from '../../images/prev-stop.png';
 import NextStopIcon from '../../images/next-stop.png';
+import InfoIcon from '../../images/info.png';
+import CloseInfoIcon from '../../images/close-info.png';
+
+import SpeakerNote from './SpeakerNote';
 
 
 import './StopOverlay.styles.css';
@@ -45,18 +49,14 @@ const StopOverlay = ({handleClose, stopIds, index}) => {
     const [currentIndex, setCurrentIndex] = useState(index);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
+     
+    const [show, setShow] = useState(false);
+
     const [searchStr, setSearchStr] = useState("");
     const [stop, setStop] = useState([]);
     useEffect(() => {
         RestAPIGetStopById(stopIds[currentIndex], time, setStop);
     },[])
-
-    const getMediaSearchLink = () => {
-        if (searchStr === '') return "";
-        return reactInit.searchMediaUrl + encodeURI(searchStr);
-    };
-
-
 
       // load media
       let Photos = [];
@@ -98,7 +98,7 @@ const StopOverlay = ({handleClose, stopIds, index}) => {
       if (stop.tag_names)
       {
           tag_lists = stop.tag_names.map((tag) =>
-              <li><a href={reactInit.searchStopTagUrl + tag[1]}>#{tag[0]}</a></li>
+              <li className="related-topic-tag"><a className="related-topic-link" href={reactInit.searchStopTagUrl + tag[1]}>#{tag[0]}</a></li>
           );
       }
 
@@ -122,7 +122,6 @@ const StopOverlay = ({handleClose, stopIds, index}) => {
                 />
             )
         } else if(index !== 0) {
-            console.log("current stop index", currentIndex);
             return (
                 <img
                 className='image-gallery-custom-left-nav'
@@ -171,13 +170,13 @@ const StopOverlay = ({handleClose, stopIds, index}) => {
         setCurrentImageIndex(newIndex);
     }
 
-    const gotoPrevStop = () => {
-        setCurrentImageIndex(0);
+    const gotoPrevStop = () => {   
         if(currentIndex > 0) {
             let newIndex = currentIndex - 1
             setCurrentIndex(newIndex);
             RestAPIGetStopById(stopIds[newIndex], time, setStop);
         }
+        setCurrentImageIndex(0);
     }
 
     const gotoNextStop = () => {
@@ -189,8 +188,21 @@ const StopOverlay = ({handleClose, stopIds, index}) => {
         } 
     }
 
+
     const handleThumbnailClick = () => {
-        setCurrentIndex(0);
+        return Promise.resolve("")
+    }
+
+    const [isOpen, setIsOpen] = useState(false);
+
+    const handleInfoClick = () => {
+        setIsOpen(!isOpen);
+        return Promise.resolve("")
+    }
+
+    const gotoBottom = () => {
+        let element = document.getElementById("scroll");
+        element.scrollTop = element.scrollHeight;
     }
 
 
@@ -211,13 +223,36 @@ const StopOverlay = ({handleClose, stopIds, index}) => {
                     showFullscreenButton={false}
                     infinite={false}
                     showNav={false}
-                    onThumbnailClick={handleThumbnailClick} />
+                    onThumbnailClick={() => handleThumbnailClick().then(() => setCurrentImageIndex(ref.current.getCurrentIndex()))} />
                 {renderLeftNav()}
                 {renderRightNav()}
-            <h1>Stop Name: {stop_name}</h1>
+            <div className="presentation-stop-name">{stop_name}</div>
             </div>
 
-            <p>Stop Description: {getContent(stop)}</p>
+            <button 
+                className="info-btn"
+                type="button"
+                data-toggle="collapse"
+                data-target="#collapseExample"
+                aria-expanded="false"
+                aria-controls="collapseExample"
+                href="#collapseExample"
+                onClick={() => handleInfoClick().then(() => gotoBottom())}>
+                <img src={isOpen==true ? CloseInfoIcon : InfoIcon } />
+            </button>
+            <div id="scroll">
+                <h1> </h1>
+                <div class="collapse" id="collapseExample">
+                    <SpeakerNote 
+                        description={getContent(stop)}
+                        tags={tag_lists}
+                        id={stop.id}
+                        style={{'display': 'none'}}
+                        />
+                </div>
+            </div>
+           
+            
            
             
         </div>
