@@ -68,7 +68,7 @@
 
 .image-gallery-content .image-gallery-slide .image-gallery-image {
     max-height: calc(100vh - 220px) !important;
-    max-width: 80%;
+    /* max-width: 80%; */
 }
 
 .image-gallery-description {

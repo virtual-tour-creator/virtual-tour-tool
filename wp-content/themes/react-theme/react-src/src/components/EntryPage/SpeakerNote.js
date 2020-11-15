@@ -7,7 +7,7 @@ import './SpeakerNote.styles.css';
 
 
 
-const SpeakerNote = ({description, tags, id}) => {
+const SpeakerNote = ({description, tags, id, caption}) => {
     const [searchStr, setSearchStr] = useState("");
 
     const getMediaSearchLink = () => {
@@ -29,7 +29,12 @@ const SpeakerNote = ({description, tags, id}) => {
             </li>
             </ul>
             <div className="tab-content" id="myTabContent">
-            <div className="tab-pane fade show active" id="caption" role="tabpanel" aria-labelledby="home-tab">Coming Soon...</div>
+            
+            <div className="tab-pane fade show active" id="caption" role="tabpanel" aria-labelledby="home-tab">
+                {caption}
+            </div>
+
+
             <div className="tab-pane fade" id="description" role="tabpanel" aria-labelledby="profile-tab">
                 {description}
                 <div>

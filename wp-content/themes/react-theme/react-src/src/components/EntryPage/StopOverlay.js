@@ -60,6 +60,7 @@ const StopOverlay = ({handleClose, stopIds, index}) => {
 
       // load media
       let Photos = [];
+      let Captions = [];
       if (stop.acf_media)
       {
           Photos = stop.acf_media.map((media) => {
@@ -88,8 +89,11 @@ const StopOverlay = ({handleClose, stopIds, index}) => {
               photo['original'] = media.full_url;
               photo['thumbnail'] = media.thumbnail_url;
               photo['description'] = media.title;
+              console.log("caption:", media.caption)
               return photo;
           });
+
+          Captions = stop.acf_media.map((media) => media.caption);
       }
   
   
@@ -248,6 +252,7 @@ const StopOverlay = ({handleClose, stopIds, index}) => {
                         tags={tag_lists}
                         id={stop.id}
                         style={{'display': 'none'}}
+                        caption={Captions[currentImageIndex]}
                         />
                 </div>
             </div>

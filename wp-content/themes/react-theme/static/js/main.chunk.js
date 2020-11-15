@@ -958,7 +958,8 @@ var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/rea
 const SpeakerNote = ({
   description,
   tags,
-  id
+  id,
+  caption
 }) => {
   const [searchStr, setSearchStr] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])("");
 
@@ -1068,10 +1069,10 @@ const SpeakerNote = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32,
+      lineNumber: 33,
       columnNumber: 13
     }
-  }, "Coming Soon..."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, caption), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "tab-pane fade",
     id: "description",
     role: "tabpanel",
@@ -1079,21 +1080,21 @@ const SpeakerNote = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33,
+      lineNumber: 38,
       columnNumber: 13
     }
   }, description, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35,
+      lineNumber: 40,
       columnNumber: 17
     }
   }, "Search related tags:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37,
+      lineNumber: 42,
       columnNumber: 21
     }
   }, tags))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1104,7 +1105,7 @@ const SpeakerNote = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41,
+      lineNumber: 46,
       columnNumber: 13
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1112,35 +1113,35 @@ const SpeakerNote = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42,
+      lineNumber: 47,
       columnNumber: 13
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43,
+      lineNumber: 48,
       columnNumber: 17
     }
   }, "Search Media Files: "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44,
+      lineNumber: 49,
       columnNumber: 17
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Row, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
+      lineNumber: 50,
       columnNumber: 17
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46,
+      lineNumber: 51,
       columnNumber: 21
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Control, {
@@ -1149,14 +1150,14 @@ const SpeakerNote = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47,
+      lineNumber: 52,
       columnNumber: 25
     }
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49,
+      lineNumber: 54,
       columnNumber: 21
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
@@ -1165,7 +1166,7 @@ const SpeakerNote = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50,
+      lineNumber: 55,
       columnNumber: 21
     }
   }, "Search")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
@@ -1174,7 +1175,7 @@ const SpeakerNote = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57,
+      lineNumber: 62,
       columnNumber: 17
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -1182,7 +1183,7 @@ const SpeakerNote = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
+      lineNumber: 63,
       columnNumber: 21
     }
   }), "Edit this Stop")))));
@@ -1303,6 +1304,7 @@ const StopOverlay = ({
   }, []); // load media
 
   let Photos = [];
+  let Captions = [];
 
   if (stop.acf_media) {
     Photos = stop.acf_media.map(media => {
@@ -1338,8 +1340,10 @@ const StopOverlay = ({
       photo['original'] = media.full_url;
       photo['thumbnail'] = media.thumbnail_url;
       photo['description'] = media.title;
+      console.log("caption:", media.caption);
       return photo;
     });
+    Captions = stop.acf_media.map(media => media.caption);
   } // load tags
 
 
@@ -1351,7 +1355,7 @@ const StopOverlay = ({
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 101,
+        lineNumber: 105,
         columnNumber: 15
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -1360,7 +1364,7 @@ const StopOverlay = ({
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 101,
+        lineNumber: 105,
         columnNumber: 49
       }
     }, "#", tag[0])));
@@ -1384,7 +1388,7 @@ const StopOverlay = ({
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 118,
+          lineNumber: 122,
           columnNumber: 17
         }
       });
@@ -1396,7 +1400,7 @@ const StopOverlay = ({
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 126,
+          lineNumber: 130,
           columnNumber: 17
         }
       });
@@ -1414,7 +1418,7 @@ const StopOverlay = ({
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 139,
+          lineNumber: 143,
           columnNumber: 17
         }
       });
@@ -1426,7 +1430,7 @@ const StopOverlay = ({
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 147,
+          lineNumber: 151,
           columnNumber: 17
         }
       });
@@ -1488,7 +1492,7 @@ const StopOverlay = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 210,
+      lineNumber: 214,
       columnNumber: 9
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1496,14 +1500,14 @@ const StopOverlay = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 211,
+      lineNumber: 215,
       columnNumber: 13
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navbar_BrandingLogo__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 211,
+      lineNumber: 215,
       columnNumber: 41
     }
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -1513,7 +1517,7 @@ const StopOverlay = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 212,
+      lineNumber: 216,
       columnNumber: 13
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1524,7 +1528,7 @@ const StopOverlay = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 213,
+      lineNumber: 217,
       columnNumber: 13
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1532,7 +1536,7 @@ const StopOverlay = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 218,
+      lineNumber: 222,
       columnNumber: 13
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_image_gallery__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -1546,7 +1550,7 @@ const StopOverlay = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 219,
+      lineNumber: 223,
       columnNumber: 17
     }
   }), renderLeftNav(), renderRightNav(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1554,7 +1558,7 @@ const StopOverlay = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 229,
+      lineNumber: 233,
       columnNumber: 13
     }
   }, stop_name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -1569,7 +1573,7 @@ const StopOverlay = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 232,
+      lineNumber: 236,
       columnNumber: 13
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -1577,7 +1581,7 @@ const StopOverlay = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 241,
+      lineNumber: 245,
       columnNumber: 17
     }
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1585,14 +1589,14 @@ const StopOverlay = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 243,
+      lineNumber: 247,
       columnNumber: 13
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 244,
+      lineNumber: 248,
       columnNumber: 17
     }
   }, " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1601,7 +1605,7 @@ const StopOverlay = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 245,
+      lineNumber: 249,
       columnNumber: 17
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SpeakerNote__WEBPACK_IMPORTED_MODULE_11__["default"], {
@@ -1611,10 +1615,11 @@ const StopOverlay = ({
     style: {
       'display': 'none'
     },
+    caption: Captions[currentImageIndex],
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 246,
+      lineNumber: 250,
       columnNumber: 21
     }
   }))));
