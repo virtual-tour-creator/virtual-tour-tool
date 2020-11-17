@@ -80,7 +80,7 @@ class Navbar extends React.Component {
     render() {
         return (
             <nav className="navbar navbar-light navbar-expand-md">
-            <BrandingLogo className="nav-brand" />
+            <BrandingLogo className="nav-brand" handleClickNavLink={this.handleClickNavLink}/>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
                 <span className="navbar-toggler-icon"></span>
             </button>

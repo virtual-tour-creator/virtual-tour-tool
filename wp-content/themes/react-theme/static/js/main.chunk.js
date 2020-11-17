@@ -1713,25 +1713,18 @@ var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-t
 
 const getLogo = () => reactInit.logoUrl ? reactInit.logoUrl : "https://www.thefrickpittsburgh.org/Files/User/logo.png";
 
-const BrandingLogo = () => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-  to: "/",
+const BrandingLogo = props => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+  id: "brading-logo-img",
+  src: getLogo(),
+  width: "130",
+  onClick: () => props.handleClickNavLink(false),
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
     lineNumber: 6,
     columnNumber: 5
   }
-}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-  id: "brading-logo-img",
-  src: getLogo(),
-  width: "130",
-  __self: undefined,
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 6,
-    columnNumber: 18
-  }
-}));
+});
 
 /* harmony default export */ __webpack_exports__["default"] = (BrandingLogo);
 
@@ -1930,6 +1923,7 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_BrandingLogo__WEBPACK_IMPORTED_MODULE_2__["default"], {
       className: "nav-brand",
+      handleClickNavLink: this.handleClickNavLink,
       __self: this,
       __source: {
         fileName: _jsxFileName,
@@ -5936,5 +5930,5 @@ module.exports = __webpack_require__(/*! /Users/nouyang/Desktop/museum-live/wp-c
 
 /***/ })
 
-},[[0,"runtime-main",0]]]);
+},[[0,"runtime-main",1]]]);
 //# sourceMappingURL=main.chunk.js.map
