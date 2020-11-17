@@ -30,7 +30,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_TourPage_TourPage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/TourPage/TourPage */ "./src/components/TourPage/TourPage.js");
 /* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.min.css */ "./node_modules/bootstrap/dist/css/bootstrap.min.css");
 /* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_6__);
-var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/App.js";
+var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/App.js";
 
 
 
@@ -41,15 +41,18 @@ var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/rea
 
 function App(props) {
   const [editMode, setEditMode] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
+  const [displayAuthorOnly, setAuthorOnly] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
 
   const setMode = mode => setEditMode(mode);
+
+  const setLibraryMode = authorOnly => setAuthorOnly(authorOnly);
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "App",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15,
+      lineNumber: 17,
       columnNumber: 9
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
@@ -58,17 +61,19 @@ function App(props) {
     render: props => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_PublicLibrary__WEBPACK_IMPORTED_MODULE_3__["default"], Object.assign({}, props, {
       editMode: editMode,
       setEditMode: setMode,
+      authorOnly: displayAuthorOnly,
+      setAuthorOnly: setLibraryMode,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 18,
+        lineNumber: 20,
         columnNumber: 9
       }
     })),
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16,
+      lineNumber: 18,
       columnNumber: 13
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
@@ -78,17 +83,18 @@ function App(props) {
     render: props => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_EntryPage_EntryPage__WEBPACK_IMPORTED_MODULE_4__["default"], Object.assign({}, props, {
       editMode: editMode,
       setEditMode: setMode,
+      setAuthorOnly: setLibraryMode,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 24,
+        lineNumber: 27,
         columnNumber: 9
       }
     })),
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21,
+      lineNumber: 24,
       columnNumber: 13
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
@@ -97,17 +103,18 @@ function App(props) {
     render: props => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_TourPage_TourPage__WEBPACK_IMPORTED_MODULE_5__["default"], Object.assign({}, props, {
       editMode: editMode,
       setEditMode: setMode,
+      setAuthorOnly: setLibraryMode,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 30,
+        lineNumber: 33,
         columnNumber: 8
       }
     })),
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27,
+      lineNumber: 30,
       columnNumber: 13
     }
   }));
@@ -136,7 +143,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _CreateTour_styles_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./CreateTour.styles.css */ "./src/components/Button/CreateTour.styles.css");
 /* harmony import */ var _CreateTour_styles_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_CreateTour_styles_css__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _helpers_RestAPIHelper_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../helpers/RestAPIHelper.js */ "./src/helpers/RestAPIHelper.js");
-var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/Button/CopyTour.js";
+var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/components/Button/CopyTour.js";
 
 
 
@@ -383,7 +390,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _material_ui_icons_Add__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/icons/Add */ "./node_modules/@material-ui/icons/Add.js");
 /* harmony import */ var _material_ui_icons_Add__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Add__WEBPACK_IMPORTED_MODULE_5__);
-var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/Button/CreateTour.js";
+var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/components/Button/CreateTour.js";
 
 
 
@@ -629,7 +636,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/index.js");
 /* harmony import */ var _helpers_RestAPIHelper_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../helpers/RestAPIHelper.js */ "./src/helpers/RestAPIHelper.js");
-var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/EntryPage/EntryPage.js";
+var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/components/EntryPage/EntryPage.js";
 
 
 
@@ -949,7 +956,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/index.js");
 /* harmony import */ var _SpeakerNote_styles_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./SpeakerNote.styles.css */ "./src/components/EntryPage/SpeakerNote.styles.css");
 /* harmony import */ var _SpeakerNote_styles_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_SpeakerNote_styles_css__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/EntryPage/SpeakerNote.js";
+var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/components/EntryPage/SpeakerNote.js";
 
 
 
@@ -1236,7 +1243,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _SpeakerNote__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./SpeakerNote */ "./src/components/EntryPage/SpeakerNote.js");
 /* harmony import */ var _StopOverlay_styles_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./StopOverlay.styles.css */ "./src/components/EntryPage/StopOverlay.styles.css");
 /* harmony import */ var _StopOverlay_styles_css__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_StopOverlay_styles_css__WEBPACK_IMPORTED_MODULE_12__);
-var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/EntryPage/StopOverlay.js";
+var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/components/EntryPage/StopOverlay.js";
 
 
 
@@ -1653,7 +1660,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Jumbotron_styles_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Jumbotron.styles.css */ "./src/components/Jumbotron/Jumbotron.styles.css");
 /* harmony import */ var _Jumbotron_styles_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Jumbotron_styles_css__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/Jumbotron/Jumbotron.js";
+var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/components/Jumbotron/Jumbotron.js";
 
 
 
@@ -1700,7 +1707,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/Navbar/BrandingLogo.js";
+var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/components/Navbar/BrandingLogo.js";
 
 
 
@@ -1749,7 +1756,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _images_hamburger_png__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_images_hamburger_png__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _images_hamburger_close_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../images/hamburger-close.png */ "./src/images/hamburger-close.png");
 /* harmony import */ var _images_hamburger_close_png__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_images_hamburger_close_png__WEBPACK_IMPORTED_MODULE_5__);
-var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/Navbar/Navbar.js";
+var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/components/Navbar/Navbar.js";
 
 
 
@@ -1767,6 +1774,15 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       });
     };
 
+    this.handleClickNavLink = authorOnly => {
+      const {
+        setAuthorOnly,
+        history
+      } = this.props;
+      setAuthorOnly(authorOnly);
+      history.push(`/`);
+    };
+
     this.state = {
       showNavlink: this.props.isTourPage == true ? false : true
     };
@@ -1780,7 +1796,7 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 26,
+          lineNumber: 32,
           columnNumber: 17
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -1788,7 +1804,7 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 26,
+          lineNumber: 32,
           columnNumber: 78
         }
       }));
@@ -1806,12 +1822,19 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       }
     }
 
+    const {
+      authorOnly
+    } = this.props;
+    let libraryLink = "nav-link";
+    let mytoursLink = "nav-link";
+    if (authorOnly === false) libraryLink += " select";
+    if (authorOnly === true) mytoursLink += " select";
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
       className: "ml-auto navbar-nav",
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 42,
+        lineNumber: 53,
         columnNumber: 9
       }
     }, console.log('this.state.showNavlink=', this.state.showNavlink), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
@@ -1819,16 +1842,16 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 44,
+        lineNumber: 55,
         columnNumber: 17
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-      className: "nav-link",
-      href: "/",
+      className: libraryLink,
+      onClick: () => this.handleClickNavLink(false),
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 45,
+        lineNumber: 56,
         columnNumber: 21
       }
     }, "LIBRARY")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
@@ -1836,7 +1859,24 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 47,
+        lineNumber: 58,
+        columnNumber: 17
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      className: mytoursLink,
+      onClick: () => this.handleClickNavLink(true),
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 59,
+        columnNumber: 21
+      }
+    }, "MY TOURS")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      className: "nav-item",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 61,
         columnNumber: 17
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -1845,7 +1885,7 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 48,
+        lineNumber: 62,
         columnNumber: 21
       }
     }, "DASHBOARD")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
@@ -1853,7 +1893,7 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 50,
+        lineNumber: 64,
         columnNumber: 17
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -1862,10 +1902,21 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 51,
+        lineNumber: 65,
         columnNumber: 21
       }
     }, "LOGOUT")), this.renderHamburger());
+  }
+
+  renderUsername() {
+    if (this.state.showNavlink) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 76,
+        columnNumber: 17
+      }
+    }, reactInit.username);
   }
 
   render() {
@@ -1874,7 +1925,7 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 61,
+        lineNumber: 82,
         columnNumber: 13
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_BrandingLogo__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -1882,7 +1933,7 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 62,
+        lineNumber: 83,
         columnNumber: 13
       }
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -1893,7 +1944,7 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 63,
+        lineNumber: 84,
         columnNumber: 13
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
@@ -1901,7 +1952,7 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 64,
+        lineNumber: 85,
         columnNumber: 17
       }
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1910,10 +1961,10 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 67,
+        lineNumber: 88,
         columnNumber: 13
       }
-    }, this.renderNavlinks()));
+    }, this.renderUsername(), this.renderNavlinks()));
   }
 
 }
@@ -1946,7 +1997,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/index.js");
 /* harmony import */ var _helpers_RestAPIHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../helpers/RestAPIHelper.js */ "./src/helpers/RestAPIHelper.js");
-var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/Navbar/StressTest.js";
+var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/components/Navbar/StressTest.js";
 
 
 
@@ -2089,7 +2140,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _images_placeholder_thumbnail_png__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_images_placeholder_thumbnail_png__WEBPACK_IMPORTED_MODULE_9__);
 /* harmony import */ var react_portal_overlay__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-portal-overlay */ "./node_modules/react-portal-overlay/index.es.js");
 /* harmony import */ var _EntryPage_StopOverlay__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../EntryPage/StopOverlay */ "./src/components/EntryPage/StopOverlay.js");
-var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/Playlist/Entries/Entries.js";
+var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/components/Playlist/Entries/Entries.js";
 
 
 
@@ -2339,15 +2390,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _Entries_Entries__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Entries/Entries */ "./src/components/Playlist/Entries/Entries.js");
-/* harmony import */ var _Playlist_styles_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Playlist.styles.css */ "./src/components/Playlist/Playlist.styles.css");
-/* harmony import */ var _Playlist_styles_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_Playlist_styles_css__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/index.js");
-/* harmony import */ var _material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/icons/Close */ "./node_modules/@material-ui/icons/Close.js");
-/* harmony import */ var _material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var react_bootstrap_DropdownButton__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-bootstrap/DropdownButton */ "./node_modules/react-bootstrap/esm/DropdownButton.js");
-/* harmony import */ var react_bootstrap_Dropdown__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-bootstrap/Dropdown */ "./node_modules/react-bootstrap/esm/Dropdown.js");
-/* harmony import */ var _TourStatus__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./TourStatus */ "./src/components/Playlist/TourStatus.js");
-var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/Playlist/Playlist.js";
+/* harmony import */ var _PlaylistWrapper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./PlaylistWrapper */ "./src/components/Playlist/PlaylistWrapper.js");
+/* harmony import */ var _Playlist_styles_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Playlist.styles.css */ "./src/components/Playlist/Playlist.styles.css");
+/* harmony import */ var _Playlist_styles_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_Playlist_styles_css__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/index.js");
+/* harmony import */ var _material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/icons/Close */ "./node_modules/@material-ui/icons/Close.js");
+/* harmony import */ var _material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var react_bootstrap_DropdownButton__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-bootstrap/DropdownButton */ "./node_modules/react-bootstrap/esm/DropdownButton.js");
+/* harmony import */ var react_bootstrap_Dropdown__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-bootstrap/Dropdown */ "./node_modules/react-bootstrap/esm/Dropdown.js");
+/* harmony import */ var _TourStatus__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./TourStatus */ "./src/components/Playlist/TourStatus.js");
+var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/components/Playlist/Playlist.js";
+
 
 
 
@@ -2413,481 +2466,21 @@ const Playlist = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70,
+      lineNumber: 71,
       columnNumber: 3
     }
-  }, props.playlists.map(playlist => {
-    // for copy tour
-    const {
-      id,
-      name,
-      date,
-      author,
-      visibility,
-      entries
-    } = playlist;
-    const [show, setShow] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
-    const [showDelete, setShowDelete] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
-    const [tourTitle, setTourTitle] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(name + " Copy");
-    const [tourVilisibity, setTourVilisibity] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(visibility);
-    const [tourDate, setTourDate] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(date); // TODO: save the new id somewhere else in library/my tour component
-
-    const [newTourId, setNewTourId] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(-1);
-
-    const handleClose = () => setShow(false);
-
-    const handleShow = () => setShow(true);
-
-    const handleShowDelete = () => setShowDelete(true);
-
-    const handleCloseDelete = () => setShowDelete(false);
-
-    const handleCopy = (title, date, visibility, stops, event) => {
-      console.log(stops);
-
-      if (!title || title.length === 0) {
-        console.log("Empty tour name is not allowed");
-        return;
-      } // create new 
-
-
-      copyTour(title, date, visibility, stops).then(id => {
-        setShow(false); // TODO: check created id 
-
-        if (id == -1) {
-          return;
-        } // redirect
-
-
-        window.location.reload();
-      });
-    };
-
-    const gotoEdit = () => {
-      changeToEditMode();
-      props.history.push(`/tour/${id}`);
-    };
-
-    const gotoView = () => {
-      changeToViewMode();
-      props.history.push(`/tour/${id}`);
-    }; //for delete tour
-
-
-    async function deleteTour() {
-      const response = await fetch('/wp-json/wp/v2/tour/' + playlist.id, {
-        method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json',
-          'X-WP-Nonce': reactInit.nonce
-        }
-      });
-
-      if (!response.ok) {
-        console.log(response);
-      }
-
-      const tour = await response.json();
-      window.location.reload();
+  }, props.playlists.map(playlist => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_PlaylistWrapper__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    playlist: playlist,
+    history: props.history,
+    changeToEditMode: changeToEditMode,
+    changeToViewMode: changeToViewMode,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 73,
+      columnNumber: 13
     }
-
-    const handleDelete = () => {
-      deleteTour();
-    };
-
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      key: playlist.id,
-      className: "public-playlist",
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 144,
-        columnNumber: 17
-      }
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "title-container",
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 145,
-        columnNumber: 17
-      }
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-      className: "tour-title",
-      onClick: gotoView,
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 146,
-        columnNumber: 21
-      }
-    }, playlist.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_DropdownButton__WEBPACK_IMPORTED_MODULE_6__["default"], {
-      title: "",
-      id: "dropdown-menu-align-right",
-      menuAlign: "right",
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 148,
-        columnNumber: 21
-      }
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Dropdown__WEBPACK_IMPORTED_MODULE_7__["default"].Item, {
-      onClick: gotoView,
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 153,
-        columnNumber: 25
-      }
-    }, "VIEW ALL"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Dropdown__WEBPACK_IMPORTED_MODULE_7__["default"].Item, {
-      onClick: handleShow,
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 154,
-        columnNumber: 25
-      }
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "copy-tour-icon-img",
-      style: {
-        'width': '18px',
-        'height': '20px'
-      },
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 154,
-        columnNumber: 61
-      }
-    }), " COPY THIS TOUR"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Modal"], {
-      show: show,
-      onHide: handleClose,
-      size: "md",
-      "aria-labelledby": "contained-modal-title-vcenter",
-      centered: true,
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 157,
-        columnNumber: 25
-      }
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Modal"].Header, {
-      closeButton: false,
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 158,
-        columnNumber: 29
-      }
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Modal"].Title, {
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 159,
-        columnNumber: 33
-      }
-    }, "Copy This Tour"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_5___default.a, {
-      onClick: handleClose,
-      className: "overlay-close-icon",
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 160,
-        columnNumber: 33
-      }
-    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Modal"].Body, {
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 163,
-        columnNumber: 29
-      }
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Form"], {
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 164,
-        columnNumber: 33
-      }
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Form"].Group, {
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 166,
-        columnNumber: 33
-      }
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Form"].Label, {
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 167,
-        columnNumber: 37
-      }
-    }, "Tour Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Form"].Control, {
-      className: "create-tour-input",
-      type: "text",
-      value: tourTitle,
-      onChange: event => setTourTitle(event.target.value),
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 168,
-        columnNumber: 37
-      }
-    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Form"].Group, {
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 171,
-        columnNumber: 33
-      }
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Form"].Label, {
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 172,
-        columnNumber: 37
-      }
-    }, "Tour Date"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Form"].Control, {
-      className: "create-tour-input",
-      type: "date",
-      value: tourDate,
-      onChange: event => setTourDate(event.target.value),
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 173,
-        columnNumber: 37
-      }
-    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Form"].Group, {
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 176,
-        columnNumber: 33
-      }
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Form"].Label, {
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 177,
-        columnNumber: 37
-      }
-    }, "Tour Visibility"), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 177,
-        columnNumber: 78
-      }
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Form"].Check, {
-      type: "radio",
-      id: "default-radio",
-      value: "private",
-      label: "COMPLETE",
-      name: "tourTypeRadio",
-      checked: tourVilisibity === 'private',
-      onChange: event => setTourVilisibity(event.target.value),
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 178,
-        columnNumber: 37
-      }
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Form"].Check, {
-      type: "radio",
-      label: "INCOMPLETE",
-      value: "public",
-      id: "disabled-default-radio",
-      name: "tourTypeRadio",
-      checked: tourVilisibity === 'public',
-      onChange: event => setTourVilisibity(event.target.value),
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 179,
-        columnNumber: 37
-      }
-    })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Modal"].Footer, {
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 184,
-        columnNumber: 29
-      }
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Button"], {
-      variant: "primary",
-      onClick: handleCopy.bind(undefined, tourTitle, tourDate, tourVilisibity, entries),
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 185,
-        columnNumber: 33
-      }
-    }, "Save Changes"))), visibility === 'public' || author[0] === reactInit.userId ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Dropdown__WEBPACK_IMPORTED_MODULE_7__["default"].Item, {
-      onClick: gotoEdit,
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 195,
-        columnNumber: 33
-      }
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "edit-tour-icon-img",
-      style: {
-        'width': '18px',
-        'height': '20px'
-      },
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 195,
-        columnNumber: 67
-      }
-    }), " EDIT THIS TOUR") : "", author[0] === reactInit.userId ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Dropdown__WEBPACK_IMPORTED_MODULE_7__["default"].Item, {
-      className: "delete-tour",
-      onClick: handleShowDelete,
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 200,
-        columnNumber: 33
-      }
-    }, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "delete-tour-icon-img",
-      style: {
-        'width': '18px',
-        'height': '20px'
-      },
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 200,
-        columnNumber: 100
-      }
-    }), " DELETE THIS TOUR") : "", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Modal"], {
-      show: showDelete,
-      onHide: handleCloseDelete,
-      "aria-labelledby": "contained-modal-title-vcenter",
-      centered: true,
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 204,
-        columnNumber: 25
-      }
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Modal"].Header, {
-      closeButton: false,
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 205,
-        columnNumber: 29
-      }
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Modal"].Title, {
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 206,
-        columnNumber: 33
-      }
-    }, "ARE YOU SURE?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_5___default.a, {
-      onClick: handleCloseDelete,
-      className: "overlay-close-icon",
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 207,
-        columnNumber: 33
-      }
-    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Modal"].Body, {
-      className: "show-grid",
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 209,
-        columnNumber: 29
-      }
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "container",
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 210,
-        columnNumber: 29
-      }
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 211,
-        columnNumber: 34
-      }
-    }, "Your're about to delete ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 211,
-        columnNumber: 61
-      }
-    }, playlist.name.toUpperCase()), " and you won't be able to revert this. Are you sure?"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Modal"].Footer, {
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 214,
-        columnNumber: 29
-      }
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Button"], {
-      className: "delete-tour",
-      onClick: handleDelete,
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 215,
-        columnNumber: 33
-      }
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "delete-tour-icon-img",
-      style: {
-        'width': '18px',
-        'height': '20px'
-      },
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 216,
-        columnNumber: 37
-      }
-    }), " YES, DELETE"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Button"], {
-      variant: "primary",
-      onClick: handleCloseDelete,
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 218,
-        columnNumber: 33
-      }
-    }, "NO, GO BACK"))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_TourStatus__WEBPACK_IMPORTED_MODULE_8__["default"], {
-      visibility: visibility,
-      date: date,
-      username: author[1],
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 226,
-        columnNumber: 17
-      }
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Entries_Entries__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      listId: playlist.id,
-      entries: playlist.entries,
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 227,
-        columnNumber: 17
-      }
-    }));
-  }));
+  })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(Playlist));
@@ -2905,6 +2498,558 @@ const Playlist = props => {
 
 /***/ }),
 
+/***/ "./src/components/Playlist/PlaylistWrapper.js":
+/*!****************************************************!*\
+  !*** ./src/components/Playlist/PlaylistWrapper.js ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _Entries_Entries__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Entries/Entries */ "./src/components/Playlist/Entries/Entries.js");
+/* harmony import */ var _Playlist_styles_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Playlist.styles.css */ "./src/components/Playlist/Playlist.styles.css");
+/* harmony import */ var _Playlist_styles_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_Playlist_styles_css__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/index.js");
+/* harmony import */ var _material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/icons/Close */ "./node_modules/@material-ui/icons/Close.js");
+/* harmony import */ var _material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var react_bootstrap_DropdownButton__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-bootstrap/DropdownButton */ "./node_modules/react-bootstrap/esm/DropdownButton.js");
+/* harmony import */ var react_bootstrap_Dropdown__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-bootstrap/Dropdown */ "./node_modules/react-bootstrap/esm/Dropdown.js");
+/* harmony import */ var _TourStatus__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./TourStatus */ "./src/components/Playlist/TourStatus.js");
+var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/components/Playlist/PlaylistWrapper.js";
+
+
+
+
+
+
+
+
+ // copy tour function for the "copy tour" inside dropdown
+
+async function copyTour(title, date, visibility, stops) {
+  let str = "<ol>";
+  stops.map(stop => {
+    const {
+      id
+    } = stop;
+    str += "<li>";
+    str += id.toString();
+    str += "</li>";
+  });
+  str += "</ol>";
+  str += "<h2>TourDate:";
+  str += date;
+  str += "</h2>";
+  str += "<h2>Visibility:";
+  str += visibility;
+  str += "</h2>";
+  const data = {
+    "title": title,
+    "status": "publish",
+    "content": str
+  };
+  const response = await fetch('/wp-json/wp/v2/tour/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-WP-Nonce': reactInit.nonce
+    },
+    body: JSON.stringify(data)
+  });
+
+  if (!response.ok) {
+    console.log(response);
+    return -1;
+  }
+
+  const tour = await response.json();
+  return tour.id;
+}
+
+const PlaylistWrapper = props => {
+  const {
+    playlist
+  } = props; // for copy tour
+
+  const {
+    id,
+    name,
+    date,
+    author,
+    visibility,
+    entries
+  } = playlist;
+  const [show, setShow] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
+  const [showDelete, setShowDelete] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
+  const [tourTitle, setTourTitle] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(name + " Copy");
+  const [tourVilisibity, setTourVilisibity] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(visibility);
+  const [tourDate, setTourDate] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(date); // TODO: save the new id somewhere else in library/my tour component
+
+  const [newTourId, setNewTourId] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(-1);
+
+  const handleClose = () => setShow(false);
+
+  const handleShow = () => setShow(true);
+
+  const handleShowDelete = () => setShowDelete(true);
+
+  const handleCloseDelete = () => setShowDelete(false);
+
+  const handleCopy = (title, date, visibility, stops, event) => {
+    console.log(stops);
+
+    if (!title || title.length === 0) {
+      console.log("Empty tour name is not allowed");
+      return;
+    } // create new 
+
+
+    copyTour(title, date, visibility, stops).then(id => {
+      setShow(false); // TODO: check created id 
+
+      if (id == -1) {
+        return;
+      } // redirect
+
+
+      window.location.reload();
+    });
+  };
+
+  const gotoEdit = () => {
+    props.changeToEditMode();
+    props.history.push(`/tour/${id}`);
+  };
+
+  const gotoView = () => {
+    props.changeToViewMode();
+    props.history.push(`/tour/${id}`);
+  }; //for delete tour
+
+
+  async function deleteTour() {
+    const response = await fetch('/wp-json/wp/v2/tour/' + playlist.id, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-WP-Nonce': reactInit.nonce
+      }
+    });
+
+    if (!response.ok) {
+      console.log(response);
+    }
+
+    const tour = await response.json();
+    window.location.reload();
+  }
+
+  const handleDelete = () => {
+    deleteTour();
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    key: playlist.id,
+    className: "public-playlist",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 131,
+      columnNumber: 9
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "title-container",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 132,
+      columnNumber: 13
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "tour-title",
+    onClick: gotoView,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 133,
+      columnNumber: 17
+    }
+  }, playlist.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_DropdownButton__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    title: "",
+    id: "dropdown-menu-align-right",
+    menuAlign: "right",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 135,
+      columnNumber: 17
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Dropdown__WEBPACK_IMPORTED_MODULE_7__["default"].Item, {
+    onClick: gotoView,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 140,
+      columnNumber: 21
+    }
+  }, "VIEW ALL"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Dropdown__WEBPACK_IMPORTED_MODULE_7__["default"].Item, {
+    onClick: handleShow,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 141,
+      columnNumber: 21
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "copy-tour-icon-img",
+    style: {
+      'width': '18px',
+      'height': '20px'
+    },
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 141,
+      columnNumber: 57
+    }
+  }), " COPY THIS TOUR"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Modal"], {
+    show: show,
+    onHide: handleClose,
+    size: "md",
+    "aria-labelledby": "contained-modal-title-vcenter",
+    centered: true,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 144,
+      columnNumber: 21
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Modal"].Header, {
+    closeButton: false,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 145,
+      columnNumber: 25
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Modal"].Title, {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 146,
+      columnNumber: 29
+    }
+  }, "Copy This Tour"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_5___default.a, {
+    onClick: handleClose,
+    className: "overlay-close-icon",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 147,
+      columnNumber: 29
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Modal"].Body, {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 150,
+      columnNumber: 25
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Form"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 151,
+      columnNumber: 29
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Form"].Group, {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 153,
+      columnNumber: 29
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Form"].Label, {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 154,
+      columnNumber: 33
+    }
+  }, "Tour Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Form"].Control, {
+    className: "create-tour-input",
+    type: "text",
+    value: tourTitle,
+    onChange: event => setTourTitle(event.target.value),
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 155,
+      columnNumber: 33
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Form"].Group, {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 158,
+      columnNumber: 29
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Form"].Label, {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 159,
+      columnNumber: 33
+    }
+  }, "Tour Date"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Form"].Control, {
+    className: "create-tour-input",
+    type: "date",
+    value: tourDate,
+    onChange: event => setTourDate(event.target.value),
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 160,
+      columnNumber: 33
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Form"].Group, {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 163,
+      columnNumber: 29
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Form"].Label, {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 164,
+      columnNumber: 33
+    }
+  }, "Tour Visibility"), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 164,
+      columnNumber: 74
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Form"].Check, {
+    type: "radio",
+    id: "default-radio",
+    value: "private",
+    label: "COMPLETE",
+    name: "tourTypeRadio",
+    checked: tourVilisibity === 'private',
+    onChange: event => setTourVilisibity(event.target.value),
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 165,
+      columnNumber: 33
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Form"].Check, {
+    type: "radio",
+    label: "INCOMPLETE",
+    value: "public",
+    id: "disabled-default-radio",
+    name: "tourTypeRadio",
+    checked: tourVilisibity === 'public',
+    onChange: event => setTourVilisibity(event.target.value),
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 166,
+      columnNumber: 33
+    }
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Modal"].Footer, {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 171,
+      columnNumber: 25
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Button"], {
+    variant: "primary",
+    onClick: handleCopy.bind(undefined, tourTitle, tourDate, tourVilisibity, entries),
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 172,
+      columnNumber: 29
+    }
+  }, "Save Changes"))), visibility === 'public' || author[0] === reactInit.userId ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Dropdown__WEBPACK_IMPORTED_MODULE_7__["default"].Item, {
+    onClick: gotoEdit,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 182,
+      columnNumber: 29
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "edit-tour-icon-img",
+    style: {
+      'width': '18px',
+      'height': '20px'
+    },
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 182,
+      columnNumber: 63
+    }
+  }), " EDIT THIS TOUR") : "", author[0] === reactInit.userId ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Dropdown__WEBPACK_IMPORTED_MODULE_7__["default"].Item, {
+    className: "delete-tour",
+    onClick: handleShowDelete,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 187,
+      columnNumber: 29
+    }
+  }, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "delete-tour-icon-img",
+    style: {
+      'width': '18px',
+      'height': '20px'
+    },
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 187,
+      columnNumber: 96
+    }
+  }), " DELETE THIS TOUR") : "", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Modal"], {
+    show: showDelete,
+    onHide: handleCloseDelete,
+    "aria-labelledby": "contained-modal-title-vcenter",
+    centered: true,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 191,
+      columnNumber: 21
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Modal"].Header, {
+    closeButton: false,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 192,
+      columnNumber: 25
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Modal"].Title, {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 193,
+      columnNumber: 29
+    }
+  }, "ARE YOU SURE?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_5___default.a, {
+    onClick: handleCloseDelete,
+    className: "overlay-close-icon",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 194,
+      columnNumber: 29
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Modal"].Body, {
+    className: "show-grid",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 196,
+      columnNumber: 25
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "container",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 197,
+      columnNumber: 25
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 198,
+      columnNumber: 30
+    }
+  }, "Your're about to delete ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 198,
+      columnNumber: 57
+    }
+  }, playlist.name.toUpperCase()), " and you won't be able to revert this. Are you sure?"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Modal"].Footer, {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 201,
+      columnNumber: 25
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Button"], {
+    className: "delete-tour",
+    onClick: handleDelete,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 202,
+      columnNumber: 29
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "delete-tour-icon-img",
+    style: {
+      'width': '18px',
+      'height': '20px'
+    },
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 203,
+      columnNumber: 33
+    }
+  }), " YES, DELETE"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Button"], {
+    variant: "primary",
+    onClick: handleCloseDelete,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 205,
+      columnNumber: 29
+    }
+  }, "NO, GO BACK"))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_TourStatus__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    visibility: visibility,
+    date: date,
+    username: author[1],
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 213,
+      columnNumber: 13
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Entries_Entries__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    listId: playlist.id,
+    entries: playlist.entries,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 214,
+      columnNumber: 13
+    }
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(PlaylistWrapper));
+
+/***/ }),
+
 /***/ "./src/components/Playlist/TourStatus.js":
 /*!***********************************************!*\
   !*** ./src/components/Playlist/TourStatus.js ***!
@@ -2918,7 +3063,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Playlist_styles_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Playlist.styles.css */ "./src/components/Playlist/Playlist.styles.css");
 /* harmony import */ var _Playlist_styles_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Playlist_styles_css__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/Playlist/TourStatus.js";
+var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/components/Playlist/TourStatus.js";
 
 
 
@@ -3000,7 +3145,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _TourPage_Pagination__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./TourPage/Pagination */ "./src/components/TourPage/Pagination.js");
 /* harmony import */ var _helpers_unescape__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../helpers/unescape */ "./src/helpers/unescape.js");
 /* harmony import */ var _helpers_RestAPIHelper_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../helpers/RestAPIHelper.js */ "./src/helpers/RestAPIHelper.js");
-var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/PublicLibrary.js";
+var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/components/PublicLibrary.js";
 
 
 
@@ -3048,7 +3193,7 @@ class PublicLibrary extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compone
       playlists: [],
       totalPageNum: 1,
       currentPage: 1,
-      maxPerPage: 100
+      maxPerPage: 5
     };
   }
 
@@ -3151,7 +3296,33 @@ class PublicLibrary extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compone
       maxPerPage
     } = this.state;
     let time = new Date().getTime();
-    Object(_helpers_RestAPIHelper_js__WEBPACK_IMPORTED_MODULE_7__["RestAPIGetTourByPage"])(maxPerPage, currentPage, time, this.getAllStopsInTours.bind(this));
+
+    if (this.props.authorOnly) {
+      Object(_helpers_RestAPIHelper_js__WEBPACK_IMPORTED_MODULE_7__["RestAPIGetTourByAuthorId"])(reactInit.userId, maxPerPage, currentPage, time, this.getAllStopsInTours.bind(this));
+    } else {
+      Object(_helpers_RestAPIHelper_js__WEBPACK_IMPORTED_MODULE_7__["RestAPIGetTourByPage"])(maxPerPage, currentPage, time, this.getAllStopsInTours.bind(this));
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.authorOnly !== prevProps.authorOnly) {
+      const {
+        totalPageNum,
+        currentPage,
+        maxPerPage
+      } = this.state;
+      let time = new Date().getTime();
+
+      if (this.props.authorOnly) {
+        Object(_helpers_RestAPIHelper_js__WEBPACK_IMPORTED_MODULE_7__["RestAPIGetTourByAuthorId"])(reactInit.userId, maxPerPage, 1, time, this.getAllStopsInTours.bind(this));
+      } else {
+        Object(_helpers_RestAPIHelper_js__WEBPACK_IMPORTED_MODULE_7__["RestAPIGetTourByPage"])(maxPerPage, 1, time, this.getAllStopsInTours.bind(this));
+      }
+
+      this.setState({
+        currentPage: 1
+      });
+    }
   }
 
   handlePrevPage() {
@@ -3197,7 +3368,7 @@ class PublicLibrary extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compone
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 144,
+        lineNumber: 163,
         columnNumber: 9
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_TourPage_Pagination__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -3208,40 +3379,48 @@ class PublicLibrary extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compone
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 145,
+        lineNumber: 164,
         columnNumber: 11
       }
     }));
   }
 
   render() {
+    const {
+      authorOnly,
+      setAuthorOnly,
+      history
+    } = this.props;
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "public-library",
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 151,
+        lineNumber: 171,
         columnNumber: 13
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navbar_Navbar__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      history: history,
+      authorOnly: authorOnly,
+      setAuthorOnly: setAuthorOnly,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 152,
+        lineNumber: 172,
         columnNumber: 17
       }
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Jumbotron_Jumbotron__WEBPACK_IMPORTED_MODULE_2__["default"], {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 153,
+        lineNumber: 173,
         columnNumber: 17
       }
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 154,
+        lineNumber: 174,
         columnNumber: 17
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Button_CreateTour__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -3249,7 +3428,7 @@ class PublicLibrary extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compone
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 154,
+        lineNumber: 174,
         columnNumber: 22
       }
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Playlist_Playlist__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -3258,7 +3437,7 @@ class PublicLibrary extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compone
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 155,
+        lineNumber: 175,
         columnNumber: 17
       }
     }), this.renderPagination());
@@ -3298,7 +3477,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_InputBase__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core/InputBase */ "./node_modules/@material-ui/core/esm/InputBase/index.js");
 /* harmony import */ var _images_no_result_sad_face_png__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../images/no-result-sad-face.png */ "./src/images/no-result-sad-face.png");
 /* harmony import */ var _images_no_result_sad_face_png__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_images_no_result_sad_face_png__WEBPACK_IMPORTED_MODULE_11__);
-var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/TourPage/AddStop.js";
+var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/components/TourPage/AddStop.js";
 
 
 
@@ -3860,7 +4039,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/IconButton */ "./node_modules/@material-ui/core/esm/IconButton/index.js");
 /* harmony import */ var _images_placeholder_thumbnail_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../images/placeholder-thumbnail.png */ "./src/images/placeholder-thumbnail.png");
 /* harmony import */ var _images_placeholder_thumbnail_png__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_images_placeholder_thumbnail_png__WEBPACK_IMPORTED_MODULE_5__);
-var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/TourPage/CurrentStops.js";
+var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/components/TourPage/CurrentStops.js";
 
 
 
@@ -4016,7 +4195,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _TourPage_styles_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_TourPage_styles_css__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _images_placeholder_thumbnail_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../images/placeholder-thumbnail.png */ "./src/images/placeholder-thumbnail.png");
 /* harmony import */ var _images_placeholder_thumbnail_png__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_images_placeholder_thumbnail_png__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/TourPage/MediaCard.js";
+var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/components/TourPage/MediaCard.js";
 
 
 
@@ -4084,7 +4263,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _images_pagination_right_greyout_png__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_images_pagination_right_greyout_png__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _Pagination_styles_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Pagination.styles.css */ "./src/components/TourPage/Pagination.styles.css");
 /* harmony import */ var _Pagination_styles_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_Pagination_styles_css__WEBPACK_IMPORTED_MODULE_5__);
-var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/TourPage/Pagination.js";
+var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/components/TourPage/Pagination.js";
 
 
 
@@ -4207,7 +4386,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _images_add_stop_icon_png__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_images_add_stop_icon_png__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _images_placeholder_thumbnail_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../images/placeholder-thumbnail.png */ "./src/images/placeholder-thumbnail.png");
 /* harmony import */ var _images_placeholder_thumbnail_png__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_images_placeholder_thumbnail_png__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/TourPage/StopCard.js";
+var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/components/TourPage/StopCard.js";
  // import MediaCard from './MediaCard'
 
 
@@ -4363,7 +4542,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var array_move__WEBPACK_IMPORTED_MODULE_20___default = /*#__PURE__*/__webpack_require__.n(array_move__WEBPACK_IMPORTED_MODULE_20__);
 /* harmony import */ var _TourPage_styles_css__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./TourPage.styles.css */ "./src/components/TourPage/TourPage.styles.css");
 /* harmony import */ var _TourPage_styles_css__WEBPACK_IMPORTED_MODULE_21___default = /*#__PURE__*/__webpack_require__.n(_TourPage_styles_css__WEBPACK_IMPORTED_MODULE_21__);
-var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/TourPage/TourPage.js";
+var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/components/TourPage/TourPage.js";
 
 
 
@@ -5179,19 +5358,25 @@ class TourPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
   }
 
   render() {
+    const {
+      history,
+      setAuthorOnly
+    } = this.props;
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 447,
+        lineNumber: 448,
         columnNumber: 13
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navbar_Navbar__WEBPACK_IMPORTED_MODULE_3__["default"], {
       isTourPage: true,
+      history: history,
+      setAuthorOnly: setAuthorOnly,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 448,
+        lineNumber: 449,
         columnNumber: 17
       }
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -5199,7 +5384,7 @@ class TourPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 450,
+        lineNumber: 451,
         columnNumber: 17
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -5207,14 +5392,14 @@ class TourPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 451,
+        lineNumber: 452,
         columnNumber: 21
       }
     }, this.renderTourInfo()), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 454,
+        lineNumber: 455,
         columnNumber: 21
       }
     }), this.renderTourStops(), this.renderDeleteConfirmation()));
@@ -5241,17 +5426,40 @@ class TourPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
 /*!**************************************!*\
   !*** ./src/helpers/RestAPIHelper.js ***!
   \**************************************/
-/*! exports provided: RestAPICreateTour, RestAPIGetStopById, RestAPIGetTourByAuthorId, RestAPIGetStopsByPage, RestAPIGetStopsBySearch, RestAPIGetTourByPage */
+/*! exports provided: parseContent, RestAPICreateTour, RestAPIGetStopById, RestAPIGetTourByAuthorId, RestAPIGetStopsByPage, RestAPIGetStopsBySearch, RestAPIGetTourByPage, RestAPIDeleteTour */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "parseContent", function() { return parseContent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RestAPICreateTour", function() { return RestAPICreateTour; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RestAPIGetStopById", function() { return RestAPIGetStopById; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RestAPIGetTourByAuthorId", function() { return RestAPIGetTourByAuthorId; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RestAPIGetStopsByPage", function() { return RestAPIGetStopsByPage; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RestAPIGetStopsBySearch", function() { return RestAPIGetStopsBySearch; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RestAPIGetTourByPage", function() { return RestAPIGetTourByPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RestAPIDeleteTour", function() { return RestAPIDeleteTour; });
+function parseContent(content) {
+  let info = {
+    'stopIds': [],
+    'tourDate': "",
+    'visibility': ""
+  };
+  let res = content.match(/<li>\d+<\/li>/gm);
+  let stops = res ? res.map(item => {
+    let idStr = item.slice(4, -5);
+    return parseInt(idStr);
+  }) : [];
+  info.stopIds = stops;
+  res = content.match(/<h2>TourDate:.+<\/h2>/gm);
+  let date = res ? res[0].slice(4, -5).split(":")[1] : "";
+  info.tourDate = date;
+  res = content.match(/<h2>Visibility:.+<\/h2>/gm);
+  let status = res ? res[0].slice(4, -5).split(":")[1] : "public";
+  info.visibility = status;
+  return info;
+}
+
 function getTourContent(title, date, visibility, stops) {
   let str = "<ol>";
   if (stops) stops.map(stop => {
@@ -5306,8 +5514,8 @@ async function RestAPIGetStopById(id, time, callback) {
   const stop = await response.json();
   callback(stop);
 }
-async function RestAPIGetTourByAuthorId(author, time, callback) {
-  const response = await fetch('/wp-json/wp/v2/tour/?author=' + author + '?timestamp=' + time);
+async function RestAPIGetTourByAuthorId(author, per_page, page_num, time, callback) {
+  const response = await fetch('/wp-json/wp/v2/tour/?timestamp=' + time + '&author=' + author + '&per_page=' + per_page + '&page=' + page_num);
 
   if (!response.ok) {
     console.log(response);
@@ -5315,7 +5523,8 @@ async function RestAPIGetTourByAuthorId(author, time, callback) {
   }
 
   const tours = await response.json();
-  callback(tours);
+  const total_page_num = response.headers.get('x-wp-totalPages');
+  callback(tours, total_page_num);
 }
 async function RestAPIGetStopsByPage(per_page, page_num, time, callback) {
   const response = await fetch('/wp-json/wp/v2/stop/?timestamp=' + time + '&per_page=' + per_page + '&page=' + page_num);
@@ -5352,6 +5561,22 @@ async function RestAPIGetTourByPage(per_page, page_num, time, callback) {
   const tours = await response.json();
   const total_page_num = response.headers.get('x-wp-totalPages');
   callback(tours, total_page_num);
+}
+async function RestAPIDeleteTour(id, callback) {
+  const response = await fetch('/wp-json/wp/v2/tour/' + id, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-WP-Nonce': reactInit.nonce
+    }
+  });
+
+  if (!response.ok) {
+    console.log(response);
+  }
+
+  const tour = await response.json();
+  callback();
 }
 
 /***/ }),
@@ -5675,7 +5900,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./index.css */ "./src/index.css");
 /* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_index_css__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./App */ "./src/App.js");
-var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/index.js";
+var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/index.js";
 
 
 
@@ -5706,10 +5931,10 @@ react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/index.js */"./src/index.js");
+module.exports = __webpack_require__(/*! /Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/index.js */"./src/index.js");
 
 
 /***/ })
 
-},[[0,"runtime-main",1]]]);
+},[[0,"runtime-main",0]]]);
 //# sourceMappingURL=main.chunk.js.map

@@ -443,9 +443,10 @@ class TourPage extends React.Component {
     }
 
     render() {
+        const { history, setAuthorOnly } = this.props;
         return (
             <div>
-                <Navbar isTourPage={true} />
+                <Navbar isTourPage={true} history={history} setAuthorOnly={setAuthorOnly}/>
                 
                 <div id='tour-page'>
                     <div className='tour-info'>

@@ -20,6 +20,12 @@ class Navbar extends React.Component {
         
     }
 
+    handleClickNavLink = (authorOnly) => {
+        const { setAuthorOnly, history } = this.props;
+        setAuthorOnly(authorOnly);
+        history.push(`/`);
+    }
+
     renderHamburger(){
         if(this.props.isTourPage == true){
             return(
@@ -38,11 +44,19 @@ class Navbar extends React.Component {
             }
         }
 
+        const { authorOnly } = this.props;
+        let libraryLink = "nav-link";
+        let mytoursLink = "nav-link";
+        if (authorOnly === false) libraryLink += " select";
+        if (authorOnly === true) mytoursLink += " select";
         return(
         <ul className="ml-auto navbar-nav">
             {console.log('this.state.showNavlink=',this.state.showNavlink)}
                 <li className="nav-item" >
-                    <a className="nav-link" href='/'>LIBRARY</a>
+                    <a className={libraryLink} onClick={() => this.handleClickNavLink(false)}>LIBRARY</a>
+                </li>
+                <li className="nav-item" >
+                    <a className={mytoursLink} onClick={() => this.handleClickNavLink(true)}>MY TOURS</a>
                 </li>
                 <li className="nav-item" >
                     <a className="nav-link" href='/wp-admin'>DASHBOARD</a>
@@ -56,6 +70,13 @@ class Navbar extends React.Component {
         )
     }
 
+    renderUsername() {
+        if(this.state.showNavlink)
+            return (
+                <span>{reactInit.username}</span>
+            );
+    }
+
     render() {
         return (
             <nav className="navbar navbar-light navbar-expand-md">
@@ -65,6 +86,7 @@ class Navbar extends React.Component {
             </button>
             {/* < StressTest /> */}
             <div className="navbar-light collapse navbar-collapse" id="navbarNav">
+                {this.renderUsername()}
                 {this.renderNavlinks()}
             </div>
             </nav>

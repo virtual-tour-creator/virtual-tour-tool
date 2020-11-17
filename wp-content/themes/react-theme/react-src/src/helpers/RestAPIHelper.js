@@ -1,4 +1,25 @@
 
+export function parseContent(content) {
+    let info = {
+        'stopIds': [],
+        'tourDate': "",
+        'visibility': ""
+    };
+    let res = content.match(/<li>\d+<\/li>/gm);
+    let stops = res ? res.map(item => {
+        let idStr = item.slice(4, -5)
+        return parseInt(idStr);
+    }) : [];
+    info.stopIds = stops;
+    res = content.match(/<h2>TourDate:.+<\/h2>/gm);
+    let date = res ? res[0].slice(4, -5).split(":")[1] : "";
+    info.tourDate = date;
+    res = content.match(/<h2>Visibility:.+<\/h2>/gm);
+    let status = res ? res[0].slice(4, -5).split(":")[1] : "public";
+    info.visibility = status;
+    return info;
+}
+
 function getTourContent(title, date, visibility, stops) {
     let str = "<ol>";
     if (stops)
@@ -57,15 +78,16 @@ export async function RestAPIGetStopById(id, time, callback) {
     callback(stop);
 }
 
-export async function RestAPIGetTourByAuthorId(author, time, callback) {
-    const response = await fetch('/wp-json/wp/v2/tour/?author=' + author + '?timestamp=' + time);
+export async function RestAPIGetTourByAuthorId(author, per_page, page_num, time, callback) {
+    const response = await fetch('/wp-json/wp/v2/tour/?timestamp=' + time + '&author=' + author + '&per_page=' + per_page + '&page=' + page_num);
     if(!response.ok) {
         console.log(response);
         return;
     }
 
     const tours = await response.json();
-    callback(tours);
+    const total_page_num = response.headers.get('x-wp-totalPages');
+    callback(tours, total_page_num);
 }
 
 export async function RestAPIGetStopsByPage(per_page, page_num, time, callback) {
@@ -102,4 +124,20 @@ export async function RestAPIGetTourByPage(per_page, page_num, time, callback) {
     const tours = await response.json();
     const total_page_num = response.headers.get('x-wp-totalPages');
     callback(tours, total_page_num);
+}
+
+export async function RestAPIDeleteTour(id, callback) {
+    const response = await fetch('/wp-json/wp/v2/tour/' + id, {
+        method: 'DELETE',
+        headers: {
+        'Content-Type': 'application/json',
+        'X-WP-Nonce': reactInit.nonce
+        },
+    });
+
+    if(!response.ok) {
+        console.log(response);
+    }
+    const tour = await response.json();
+    callback();
 }

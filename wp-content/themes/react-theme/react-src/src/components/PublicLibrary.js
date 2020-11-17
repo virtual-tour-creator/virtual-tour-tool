@@ -5,7 +5,7 @@ import Playlist from './Playlist/Playlist';
 import CreateTour from './Button/CreateTour';
 import Pagination from './TourPage/Pagination';
 import unescape from '../helpers/unescape';
-import { RestAPIGetTourByPage } from '../helpers/RestAPIHelper.js';
+import { RestAPIGetTourByPage, RestAPIGetTourByAuthorId } from '../helpers/RestAPIHelper.js';
 
 class PublicLibrary extends React.Component {
     constructor(props) {
@@ -14,7 +14,7 @@ class PublicLibrary extends React.Component {
             playlists: [],
             totalPageNum: 1,
             currentPage: 1,
-            maxPerPage: 100,
+            maxPerPage: 5,
           };
     }
 
@@ -113,7 +113,26 @@ class PublicLibrary extends React.Component {
     componentDidMount() {
         const { totalPageNum, currentPage, maxPerPage} = this.state;
         let time =  new Date().getTime();
-        RestAPIGetTourByPage(maxPerPage, currentPage, time, this.getAllStopsInTours.bind(this));        
+        if (this.props.authorOnly) {
+            RestAPIGetTourByAuthorId(reactInit.userId, maxPerPage, currentPage, time, this.getAllStopsInTours.bind(this)); 
+        } 
+        else {
+            RestAPIGetTourByPage(maxPerPage, currentPage, time, this.getAllStopsInTours.bind(this)); 
+        }       
+    }
+
+    componentDidUpdate(prevProps) {
+      if (this.props.authorOnly !== prevProps.authorOnly) {
+        const { totalPageNum, currentPage, maxPerPage} = this.state;
+        let time =  new Date().getTime();
+        if (this.props.authorOnly) {
+            RestAPIGetTourByAuthorId(reactInit.userId, maxPerPage, 1, time, this.getAllStopsInTours.bind(this)); 
+        } 
+        else {
+            RestAPIGetTourByPage(maxPerPage, 1, time, this.getAllStopsInTours.bind(this)); 
+        }
+        this.setState({currentPage: 1});
+      }
     }
 
     handlePrevPage() {
@@ -147,9 +166,10 @@ class PublicLibrary extends React.Component {
     }
 
     render() { 
+        const { authorOnly, setAuthorOnly, history } = this.props;
         return (
             <div className="public-library">
-                <Navbar />
+                <Navbar history={history} authorOnly={authorOnly} setAuthorOnly={setAuthorOnly}/>
                 <Jumbotron />
                 <div><CreateTour props={this.props}/></div>
                 <Playlist props={this.props} playlists={this.state.playlists} />
