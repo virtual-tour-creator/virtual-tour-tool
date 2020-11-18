@@ -54,7 +54,7 @@ const EntryPage = props => {
                     embedUrl: full_url,
                     description: '',
                     renderItem: _renderVideo,
-                    thumbnail: 'https://picsum.photos/150/150',
+                    thumbnail: thumbnail_url,
                     original: ''
                 };
                 return video;
@@ -64,7 +64,7 @@ const EntryPage = props => {
                     embedUrl: full_url,
                     description: '',
                     renderItem: _renderVideo,
-                    thumbnail: 'https://picsum.photos/150/150',
+                    thumbnail: thumbnail_url,
                     original: ''
                 };
                 return audio;
