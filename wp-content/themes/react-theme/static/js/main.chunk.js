@@ -1326,7 +1326,7 @@ const StopOverlay = ({
           embedUrl: full_url,
           description: '',
           renderItem: _renderVideo,
-          thumbnail: 'https://picsum.photos/150/150',
+          thumbnail: thumbnail_url,
           original: ''
         };
         return video;
@@ -1337,7 +1337,7 @@ const StopOverlay = ({
           embedUrl: full_url,
           description: '',
           renderItem: _renderVideo,
-          thumbnail: 'https://picsum.photos/150/150',
+          thumbnail: thumbnail_url,
           original: ''
         };
         return audio;
@@ -5930,5 +5930,5 @@ module.exports = __webpack_require__(/*! /Users/nouyang/Desktop/museum-live/wp-c
 
 /***/ })
 
-},[[0,"runtime-main",1]]]);
+},[[0,"runtime-main",0]]]);
 //# sourceMappingURL=main.chunk.js.map

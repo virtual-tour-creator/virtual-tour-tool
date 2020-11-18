@@ -70,7 +70,7 @@ const StopOverlay = ({handleClose, stopIds, index}) => {
                       embedUrl: full_url,
                       description: '',
                       renderItem: _renderVideo,
-                      thumbnail: 'https://picsum.photos/150/150',
+                      thumbnail: thumbnail_url,
                       original: ''
                   };
                   return video;
@@ -80,7 +80,7 @@ const StopOverlay = ({handleClose, stopIds, index}) => {
                       embedUrl: full_url,
                       description: '',
                       renderItem: _renderVideo,
-                      thumbnail: 'https://picsum.photos/150/150',
+                      thumbnail: thumbnail_url,
                       original: ''
                   };
                   return audio;
