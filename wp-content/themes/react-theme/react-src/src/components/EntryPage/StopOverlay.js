@@ -15,9 +15,9 @@ import CloseInfoIcon from '../../images/close-info.png';
 
 import SpeakerNote from './SpeakerNote';
 
-
 import './StopOverlay.styles.css';
 
+import unescape from '../../helpers/unescape';
 
 
 const getContent = stop => {
@@ -109,7 +109,7 @@ const StopOverlay = ({handleClose, stopIds, index}) => {
       let stop_name = ""
       if (stop.title != undefined)
       {
-          stop_name = stop.title.rendered;
+          stop_name = unescape(stop.title.rendered);
       }
 
 

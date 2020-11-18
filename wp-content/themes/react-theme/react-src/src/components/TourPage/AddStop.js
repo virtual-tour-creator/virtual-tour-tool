@@ -15,6 +15,8 @@ import InputBase from '@material-ui/core/InputBase';
 
 import NoResult from '../../images/no-result-sad-face.png';
 
+import unescape from '../../helpers/unescape';
+
 
 class StopCardList extends React.Component {
 
@@ -136,7 +138,7 @@ class AddStop extends React.Component {
                 'id': id,
                 'thumbnailUrl': thumbnail_url,
                 'medium_url': medium_url,
-                'name': title.rendered
+                'name': unescape(title.rendered)
               };
               return stopInfo
           });
