@@ -116,6 +116,10 @@ function create_ACF_meta_in_REST() {
         			$pieces = explode("/", $field->post_mime_type);
         			$md->type = $pieces[0];
         			$md->format = $pieces[1];
+
+                    if ($md->type != 'image')
+                        $md->thumbnail_url = get_the_post_thumbnail_url($field->ID, 'thumbnail');
+
         			$area[] = $md;
     			}
     			return $area;
