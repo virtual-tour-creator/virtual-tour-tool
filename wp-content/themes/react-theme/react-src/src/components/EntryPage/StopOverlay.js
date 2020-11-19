@@ -37,7 +37,7 @@ const _renderVideo = item => {
               width="80%"
             >
             </iframe> */}
-            <video controls="true" poster={item.thumbnail_url}>
+            <video controls="true" poster={item.original}>
                 <source src={item.embedUrl} type="video/mp4" />
             </video>
         </div>     
@@ -48,7 +48,7 @@ const _renderAudio = item => {
     return (
         <div className='video-wrapper'>
             {console.log(item.thumbnail)}
-            <img className="audio-image" src={item.thumbnail}/>
+            <img className="audio-image" src={item.original}/>
             <video controls="true">
                 <source src={item.embedUrl} type="video/mp4" />
             </video>
@@ -80,24 +80,24 @@ const StopOverlay = ({handleClose, stopIds, index}) => {
       if (stop.acf_media)
       {
           Photos = stop.acf_media.map((media) => {
-              const { type, thumbnail_url, full_url } = media;
+              const { type, thumbnail_url, full_url, file_url } = media;
               if (type === "video") {
                   let video = {
-                      embedUrl: full_url,
+                      embedUrl: file_url,
                       description: '',
                       renderItem: _renderVideo,
                       thumbnail: thumbnail_url,
-                      original: ''
+                      original: full_url
                   };
                   return video;
               }
               if (type === "audio") {
                   let audio = {
-                      embedUrl: full_url,
+                      embedUrl: file_url,
                       description: '',
                       renderItem: _renderAudio,
                       thumbnail: thumbnail_url,
-                      original: ''
+                      original: full_url
                   };
                   return audio;
               }

@@ -76,6 +76,7 @@ class MediaData
 {
     public $thumbnail_url;
     public $full_url;
+    public $file_url;
     public $title;
     public $caption;
     public $alt_text;
@@ -117,8 +118,11 @@ function create_ACF_meta_in_REST() {
         			$md->type = $pieces[0];
         			$md->format = $pieces[1];
 
-                    if ($md->type != 'image')
+                    if ($md->type != 'image') {
                         $md->thumbnail_url = get_the_post_thumbnail_url($field->ID, 'thumbnail');
+                        $md->file_url = $md->full_url;
+                        $md->full_url = get_the_post_thumbnail_url($field->ID, 'full');
+                    }
 
         			$area[] = $md;
     			}
