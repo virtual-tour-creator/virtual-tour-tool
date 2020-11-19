@@ -86,7 +86,7 @@
 #swap-right {
     position: absolute;
     bottom: 20px;
-    left: 170px;
+    right: 35%;
     z-index: 100;
     background-image:url("../../images/right-arrow.png");
     background-size: auto;
@@ -97,7 +97,7 @@
 #swap-left {
     position: absolute;
     bottom: 20px;
-    left: 120px;
+    left: 35%;
     z-index: 100;
     background-image:url("../../images/left-arrow.png");
     background-size: auto;
@@ -190,6 +190,7 @@ ul > .sortable-row {
     font-weight: 500;
     line-height: 133.4%;
     margin-top: 15px;
+    max-width: 18rem;
 }
 
 
@@ -291,3 +292,16 @@ ul > .sortable-row {
 .tour-page-nav {
     display: inline;
 }
+
+.tour-page-button .done-editing-icon-img {
+    display: inline-block;
+    background-size: cover;
+    background-image: url("../../images/done-editing.png");
+}
+
+.tour-page-button:hover .done-editing-icon-img {
+    display: inline-block;
+    background-size: cover;
+    background-image: url("../../images/done-hover.png");
+}
+

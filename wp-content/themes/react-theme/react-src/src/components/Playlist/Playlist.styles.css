@@ -86,16 +86,21 @@
 }
 
 .dropdown-item:hover {
-    background: black;
-    color: white;
+    background: rgba(0, 0, 0, 0.15);
+    color: black
 }
 
 .delete-tour:hover {
-    background: #C90000 !important;
-    color: white;
+    color:  #C90000;
+}
+
+#delete-tour-confirm:hover {
+    background: #C90000;
+    border: 1px solid #C90000;
 }
 
 /* icon */
+
 .copy-tour-icon-img {
     display: inline-block;
     background-size: cover;
@@ -134,17 +139,16 @@
 .dropdown-item:hover .delete-tour-icon-img {
     display: inline-block;
     background-size: cover;
-    background-image: url("../../images/delete-hover.png");
+    background-image: url("../../images/delete-hover2.png");
     margin-right: 5px;
 }
 
 .delete-tour:hover .delete-tour-icon-img {
     display: inline-block;
     background-size: cover;
-    background-image: url("../../images/delete-hover.png");
+    background-image: url("../../images/delete-hover2.png");
     margin-right: 5px;
 }
-
 
 /* playlist status */
 .complete-status {

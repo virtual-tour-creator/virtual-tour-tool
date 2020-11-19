@@ -199,8 +199,8 @@ const PlaylistWrapper = props => {
                         </div>
                         </Modal.Body>
                         <Modal.Footer>
-                            <Button className="delete-tour" onClick={handleDelete}>
-                                <div className="delete-tour-icon-img" style={{'width':'18px', 'height':'20px'}}></div> YES, DELETE
+                            <Button id="delete-tour-confirm" onClick={handleDelete}>
+                                YES, DELETE
                             </Button>
                             <Button variant="primary" onClick={handleCloseDelete}>
                             NO, GO BACK

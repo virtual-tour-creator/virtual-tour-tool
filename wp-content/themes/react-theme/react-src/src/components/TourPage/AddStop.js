@@ -14,6 +14,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import InputBase from '@material-ui/core/InputBase';
 
 import NoResult from '../../images/no-result-sad-face.png';
+import AddStopIcon from '../../images/add-stop.png';
 
 import unescape from '../../helpers/unescape';
 
@@ -261,7 +262,7 @@ class AddStop extends React.Component {
         return (
             <>
               <Button className='tour-page-button' variant="primary" onClick={this.handleShow} id='add-stop-button'>
-                <i className="fas fa-plus"></i>  Add Stop(s)
+                <img src={AddStopIcon} style={{'width':'18px', 'height':'20px','marginBottom': '5px'}}/>  Add Stop(s)
               </Button>
         
               <Modal id="add-stop-modal" show={this.state.show} onHide={() => this.setState({show:false})} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>

@@ -325,8 +325,11 @@ class TourPage extends React.Component {
                 <div>
                     <div className="top-button-container">
                         <AddStop onSelectStops={this.handleAddedStops} />
+                        <Button variant="primary" onClick={this.handleDelete.bind(this)} id='delete-stop-button'  className='tour-page-button'>
+                                    <div className="delete-tour-icon-img" style={{'width':'18px', 'height':'20px','marginRight': '0'}}></div> DELETE TOUR
+                                    </Button>
                         <Button variant="primary" onClick={this.handleEditing.bind(this)} id='update-stop-button' className='tour-page-button'>
-                            <i className='fas fa-check'></i> DONE EDITING
+                            <div className="done-editing-icon-img" style={{'width':'24px', 'height':'18px','backgroundSize':'cover'}}></div> DONE EDITING
                         </Button>
                     </div>
                
@@ -385,8 +388,8 @@ class TourPage extends React.Component {
                 </div>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button className="delete-tour" onClick={this.deleteTour.bind(this)}>
-                            <div className="delete-tour-icon-img" style={{'width':'18px', 'height':'20px'}}></div> YES, DELETE
+                    <Button id="delete-tour-confirm" onClick={this.deleteTour.bind(this)}>
+                        YES, DELETE
                         </Button>
                         <Button variant="primary" onClick={() => this.setState({showDeleteConfirmation:false})}>
                         NO, GO BACK
