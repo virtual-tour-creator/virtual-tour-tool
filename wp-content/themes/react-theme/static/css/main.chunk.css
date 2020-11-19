@@ -343,6 +343,49 @@ body {
 .info-btn:focus {
     outline: none;
 }
+
+
+/* video */
+/* .video-wrapper {
+    object-fit: contain !important;
+    object-position: center;
+    padding: 21% 30% !important;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 50% !important;
+    transform: translateX(-50%);
+    height: 100%;
+    width: 80% !important;
+} */
+
+.video-wrapper {
+    height: 100% !important;
+    padding: 0 !important;
+}
+
+.video-wrapper video {
+    /* position: absolute; */
+    /* top: 0;
+    left: 50% !important;
+    transform: translateX(-50%);
+    /* height: 100%; */
+    width: 80% !important;
+    height: 750px;
+}
+
+.video-wrapper video:focus {
+    outline: none;
+}
+
+.audio-image {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
 .public-playlist {
     margin: 60px 80px 20px 80px;
 }

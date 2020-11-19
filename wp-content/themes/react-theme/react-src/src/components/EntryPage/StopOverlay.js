@@ -30,12 +30,28 @@ const getContent = stop => {
 const _renderVideo = item => {
     return (
         <div className='video-wrapper'>
-            <iframe
+            {/* <iframe
               src={item.embedUrl}
               frameBorder='0'
               allowFullScreen
+              width="80%"
             >
-            </iframe>
+            </iframe> */}
+            <video controls="true" poster={item.thumbnail_url}>
+                <source src={item.embedUrl} type="video/mp4" />
+            </video>
+        </div>     
+    );
+}
+
+const _renderAudio = item => {
+    return (
+        <div className='video-wrapper'>
+            {console.log(item.thumbnail)}
+            <img className="audio-image" src={item.thumbnail}/>
+            <video controls="true">
+                <source src={item.embedUrl} type="video/mp4" />
+            </video>
         </div>     
     );
 }
@@ -79,7 +95,7 @@ const StopOverlay = ({handleClose, stopIds, index}) => {
                   let audio = {
                       embedUrl: full_url,
                       description: '',
-                      renderItem: _renderVideo,
+                      renderItem: _renderAudio,
                       thumbnail: thumbnail_url,
                       original: ''
                   };
