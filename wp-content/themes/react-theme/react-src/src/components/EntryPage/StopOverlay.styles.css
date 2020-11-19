@@ -127,7 +127,7 @@
     transform: translateX(-50%);
     /* height: 100%; */
     width: 80% !important;
-    height: 77.5vh;
+    height: calc(100vh - 220px) !important
 }
 
 .video-wrapper video:focus {
