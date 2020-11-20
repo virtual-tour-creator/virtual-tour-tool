@@ -35,11 +35,18 @@
 }
 
 #speaker-note-container {
-    margin: 0 100px !important;
+    width: 100%;
+    border-top: 1px solid #666e77;
+    position: absolute;
+    left: 0;
+}
+
+.speaker-note-nav {
+    padding-left: 80px;
 }
 
 .tab-pane {
-    padding: 20px 25px;
+    padding: 20px 105px;
     min-height: 200px;
 }
 

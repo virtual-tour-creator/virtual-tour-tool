@@ -54,6 +54,7 @@
 .carousel-arrow-btn {
     background: none;
     border:none;
+    padding-bottom: 200px;
 }
 
 .carousel-arrow-btn:hover {
@@ -72,4 +73,3 @@
     align-items: flex-start !important;
     box-sizing: border-box;
 }
-

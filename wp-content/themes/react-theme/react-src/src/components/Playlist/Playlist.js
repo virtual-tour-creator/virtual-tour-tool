@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import { withRouter, Link } from 'react-router-dom';
-import Entries from './Entries/Entries';
+// import Entries from './Entries/Entries';
 import PlaylistWrapper from './PlaylistWrapper';
 import './Playlist.styles.css';
 
-import { Button, Modal, Form } from 'react-bootstrap';
-import CloseIcon from '@material-ui/icons/Close';
+// import { Button, Modal, Form } from 'react-bootstrap';
+// import CloseIcon from '@material-ui/icons/Close';
 
-import DropdownButton from 'react-bootstrap/DropdownButton';
-import Dropdown from 'react-bootstrap/Dropdown';
+// import DropdownButton from 'react-bootstrap/DropdownButton';
+// import Dropdown from 'react-bootstrap/Dropdown';
 
-import TourStatus from './TourStatus';
+// import TourStatus from './TourStatus';
 
 
 // copy tour function for the "copy tour" inside dropdown

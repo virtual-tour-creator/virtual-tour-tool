@@ -17,3 +17,8 @@
     font-weight: 400;
 
 }
+
+.stop-card-image {
+    max-height: 80%;
+    object-fit: cover;
+}

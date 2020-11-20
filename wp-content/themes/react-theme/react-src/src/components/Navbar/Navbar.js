@@ -51,7 +51,6 @@ class Navbar extends React.Component {
         if (authorOnly === true) mytoursLink += " select";
         return(
         <ul className="ml-auto navbar-nav">
-            {console.log('this.state.showNavlink=',this.state.showNavlink)}
                 <li className="nav-item" >
                     <a className={libraryLink} onClick={() => this.handleClickNavLink(false)}>LIBRARY</a>
                 </li>
@@ -73,7 +72,7 @@ class Navbar extends React.Component {
     renderUsername() {
         if(this.state.showNavlink)
             return (
-                <span>{reactInit.username}</span>
+                <span id="user-name">{reactInit.username}</span>
             );
     }
 

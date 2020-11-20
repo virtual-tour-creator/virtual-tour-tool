@@ -78,6 +78,12 @@ const Entries = props => {
                           numberOfSlides: 2
                         }
                       },
+                      {
+                        resolve: slidesToScrollPlugin,
+                        options: {
+                          numberOfSlides: 2
+                        }
+                      },
                       customArrow
                     ]
                     },
@@ -89,6 +95,12 @@ const Entries = props => {
                         numberOfSlides: 3
                       }
                     },
+                    {
+                      resolve: slidesToScrollPlugin,
+                      options: {
+                        numberOfSlides: 3
+                      }
+                    },
                     customArrow
                   ]
                   },
@@ -96,6 +108,12 @@ const Entries = props => {
                       plugins: [
                       {
                         resolve: slidesToShowPlugin,
+                        options: {
+                          numberOfSlides: 4
+                        }
+                      },
+                      {
+                        resolve: slidesToScrollPlugin,
                         options: {
                           numberOfSlides: 4
                         }

@@ -293,19 +293,19 @@ class TourPage extends React.Component {
                                         date={date}
                                         visibility={visibility}
                                         entries={this.state.stops}  />
-                                    </Button>
-                            {
-                                canEdit ? 
-                                    <Button variant="primary" onClick={this.handleEditing.bind(this)} className='tour-page-button'>
-                                    <div className="edit-tour-icon-img" style={{'width':'18px', 'height':'20px', 'marginRight': '0'}}></div>   EDIT THIS TOUR
-                                    </Button> : ""
-                            }    
+                                    </Button>  
                             {
                                 canDelete ?
                                     <Button variant="primary" onClick={this.handleDelete.bind(this)} id='delete-stop-button'  className='tour-page-button'>
                                     <div className="delete-tour-icon-img" style={{'width':'18px', 'height':'20px','marginRight': '0'}}></div> DELETE TOUR
                                     </Button> : ""
                             } 
+                              {
+                                canEdit ? 
+                                    <Button variant="primary" onClick={this.handleEditing.bind(this)} className='tour-page-button'>
+                                    <div className="edit-tour-icon-img" style={{'width':'18px', 'height':'20px', 'marginRight': '0'}}></div>   EDIT THIS TOUR
+                                    </Button> : ""
+                            }    
                             </div>
                             
                         </AccordionDetails>
