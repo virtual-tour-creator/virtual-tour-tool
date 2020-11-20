@@ -103,9 +103,9 @@ function create_ACF_meta_in_REST() {
     				$thumbnail = $metadata['sizes']['thumbnail']['file'];
     				$dir = dirname($metadata['file']) . "/";
 					$md = new MediaData();
-					//$md->title = $metadata['image_meta']['title'];
+                    
 					$md->title = $field->post_title;
-					$md->caption = $metadata['image_meta']['caption'];
+					$md->caption = wp_get_attachment_caption($field->ID);
 
 					$pieces = explode("/", $field->guid);
 					$filename = end($pieces);
