@@ -1,6 +1,6 @@
 body {
     color: orange;
-    background-image: url(https://media.wsimag.com/attachments/1cebf4eded4830e7acc573048b2ee33ba83d92a9/store/fill/1090/613/93fee795739e309f0d69616d2221ce8fa322840fa51638d69bf0e26e0639/A-view-of-Clayton-Today-is-little-changed-from-a-hundred-years-ago.jpg);
+    background-image: url(https://www.etc.cmu.edu/wp-content/uploads/2013/09/img_hero-ETC-Building_color.jpg);
     background-size: cover;
     background-blend-mode: overlay;
 }
@@ -12,7 +12,7 @@ body {
     background-size: 150px 150px;
     background-position-y: center;
     display: inline-block;
-    background-image: url(https://www.thefrickpittsburgh.org/files/ModulesSettings/og-default-image.png);
+    background-image: url(http://www.etc.cmu.edu/wp-content/uploads/2020/09/Museum.live_logo.png);
 }
 
 .message {
