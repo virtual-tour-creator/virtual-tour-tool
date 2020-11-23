@@ -13,9 +13,10 @@
     height: 450px;
     color: white;
     /* background-image: url(https://mediad.publicbroadcasting.net/p/wesa/files/styles/x_large/public/201804/clayton_1-300_cmyk.jpg); */
-    background-size: 100%;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position-y: center;
+    background-position-x: center;
     padding-bottom: 20px;
     margin:0 80px;
     margin-bottom: 20px;
