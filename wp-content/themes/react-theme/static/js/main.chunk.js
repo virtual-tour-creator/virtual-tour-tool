@@ -1179,6 +1179,7 @@ const SpeakerNote = ({
   }, "Search")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
     className: "tour-page-button presentation-edit-button",
     href: reactInit.adminUrl + 'post.php?post=' + id + '&action=edit',
+    target: "_blank",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
@@ -6015,5 +6016,5 @@ module.exports = __webpack_require__(/*! /Users/chenjiewen/Localdev/museum-live/
 
 /***/ })
 
-},[[0,"runtime-main",0]]]);
+},[[0,"runtime-main",1]]]);
 //# sourceMappingURL=main.chunk.js.map

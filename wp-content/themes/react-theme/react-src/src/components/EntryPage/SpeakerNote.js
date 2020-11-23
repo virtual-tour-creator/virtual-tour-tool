@@ -59,7 +59,7 @@ const SpeakerNote = ({description, tags, id, caption}) => {
                         
                 </Form.Row>
                 </Form>
-                <Button className="tour-page-button presentation-edit-button" href={reactInit.adminUrl + 'post.php?post=' + id + '&action=edit'}>
+                <Button className="tour-page-button presentation-edit-button" href={reactInit.adminUrl + 'post.php?post=' + id + '&action=edit'} target="_blank">
                     <img src={EditIcon} />Edit this Stop
                 </Button>
             </div>
