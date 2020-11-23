@@ -76,7 +76,9 @@ function CreateTour(props) {
           </Modal.Header>
 
           <Modal.Body>
-            <Form>
+            <Form onSubmit={(event) => {
+              event.preventDefault();
+              handleCreate.bind(this, tourTitle, tourDate, event)}}>
 
             <Form.Group>
                 <Form.Label>Tour Name</Form.Label>
@@ -87,12 +89,12 @@ function CreateTour(props) {
                 <Form.Label>Tour Date</Form.Label>
                 <Form.Control className="create-tour-input" type="date" onChange={event => setTourDate(event.target.value)}/>
             </Form.Group>
-
+            <input type="submit" style={{display: 'none'}} />
             </Form>
           </Modal.Body>
 
           <Modal.Footer>
-            <Button variant="primary" onClick={handleCreate.bind(this, tourTitle, tourDate)}>
+            <Button type="submit" variant="primary" onClick={handleCreate.bind(this, tourTitle, tourDate)}>
               Create
             </Button>
           </Modal.Footer>

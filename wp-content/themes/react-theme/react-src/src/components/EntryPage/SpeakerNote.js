@@ -46,13 +46,15 @@ const SpeakerNote = ({description, tags, id, caption}) => {
             <div className="tab-pane fade" id="misc" role="tabpanel" aria-labelledby="contact-tab">
             <div className="media-search-bar">
                 <span>Search Media Files: </span>
-                <Form>
+                <Form onSubmit={(event) => {
+                    window.open(getMediaSearchLink(), "_blank");
+                    event.preventDefault();}}>
                 <Form.Row>
                     <Col>
                         <Form.Control placeholder="Search Media" onChange={event => setSearchStr(event.target.value)}/>
                     </Col>
                     <Col>
-                    <Button variant="primary" href={getMediaSearchLink()}>
+                    <Button type="submit" variant="primary" href={getMediaSearchLink()} target="_blank">
                         Search
                     </Button>
                     </Col>
