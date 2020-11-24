@@ -79,6 +79,10 @@ body {
     margin-left: 10px;
 }
 
+.hamburger-icon {
+    width: 25px;
+}
+
 #user-name {
     font-family: 'Cantarell', sans-serif;
     font-size: .8rem;

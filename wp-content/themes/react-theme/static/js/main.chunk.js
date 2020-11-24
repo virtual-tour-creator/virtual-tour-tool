@@ -1865,6 +1865,7 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
           columnNumber: 17
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "hamburger-icon",
         src: this.state.showNavlink == true ? _images_hamburger_close_png__WEBPACK_IMPORTED_MODULE_5___default.a : _images_hamburger_png__WEBPACK_IMPORTED_MODULE_4___default.a,
         __self: this,
         __source: {
@@ -5805,7 +5806,7 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAA7CAYAAACD
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAExSURBVHgB7VUxDsIwDLyQj/AHBgYYyk+YYIKRjrRjV5iAx1AGBgbeVJLSSkhtHDuREBI9KarUxr6r4/iAAQMG/DJW293eLgSAG6upBIDKzEom0xmej/sNAnJurKYTtOCLkMZqfwJeotDYUc9mBSdU5jpXNzmdt1MBo7KcTOd2c4L+RJ2/8ZMjPx+KjCVAKiKGvM4EAqttmpmH8ypVFUpT2ASB5Baa+uirhCEfI4LcK4AjIoacJSBABJvcQkGA9Sa9VsSZK9MTp2OxgACsCljU3a7UktxkekI6tlkCGFftU4XIO7wCZORyETqGvJkDY0SIGCGQ3CC/vBsud29xe0cLph13ydurFuIdpICQ2R4jQmjH7iHTvKeOI9qOvRMuJJZrx+zxGhPbgbXjxpK/GvtfeAEXP9Py5oBUpAAAAABJRU5ErkJggg=="
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAE1SURBVHgB7ZUhEsIwEEU3cBHugECAKDdBgQIJklZiQQGHAQQCwZlKAu0USDf5mxRU30ynM002/zfZ7BK1CJkulmvzUAB1sV0S8ApWqX6S/mBI99v1EhsLG6gWKMFNuGIhA/YCuAlfbIcglHKMpVxO8OLVutAO6D889wcjYyJhFrJ2wi9O2WG7SeEckJhAxZ9RJGS6WKX6xV7DPKezPrCEAHGD6BoafDuhxXsEigcZQEyg4sEGAkzUihvEOfDNbL465Y4zVzon9rvNmBsP3gHDM9uVmjgn6ZxwFatgA8BVe3fBVswgAzJxtwmxAZ94UQd6BJoAewEmrsmOr4TL+CmfvSOiHdvi5VWTlO3IdmyLl6AmGmjHfJEpvruOI7ods+JobEw79oo3EWth2nHRkv8a29LS8jMetgXNulWiR64AAAAASUVORK5CYII="
 
 /***/ }),
 
@@ -5816,7 +5817,7 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABz
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAA9SURBVHgB7dShFQAgDAPRwLBILDNgkSwLrqK+L+a+rOmpSIBZy4cx11Oxe3b87TIjwB4AO3aAAHYAAAC7D5+7CBMtk+QjAAAAAElFTkSuQmCC"
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAA9SURBVHgB7dShFQAgDAPRwLBILDNgkSwLrqK+L+a+rOmpSADMWj6MuZ6K3bPjb5cZAfYA2LEDBLADAAC7D30fCBPwHdyRAAAAAElFTkSuQmCC"
 
 /***/ }),
 

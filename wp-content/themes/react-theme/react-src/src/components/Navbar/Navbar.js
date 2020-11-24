@@ -29,7 +29,7 @@ class Navbar extends React.Component {
     renderHamburger(){
         if(this.props.isTourPage == true){
             return(
-                <li className="nav-hamburger" onClick={this.toggleHamburger}><img src={this.state.showNavlink==true? HamburgerCloseIcon : HamburgerIcon } /></li>
+                <li className="nav-hamburger" onClick={this.toggleHamburger}><img className="hamburger-icon" src={this.state.showNavlink==true? HamburgerCloseIcon : HamburgerIcon } /></li>
             )
         }
     }

@@ -46,7 +46,7 @@
         Learn how to configure a non-root public URL by running `npm run wpbuild`.
     -->
     <title>Museum.Live</title>
-<link href="/wp-content/themes/react-theme/static/css/0.chunk.css?78dfb53a4699d5432a5e" rel="stylesheet"><link href="/wp-content/themes/react-theme/static/css/main.chunk.css?78dfb53a4699d5432a5e" rel="stylesheet"></head>
+<link href="/wp-content/themes/react-theme/static/css/0.chunk.css?319273595a8813a52ffd" rel="stylesheet"><link href="/wp-content/themes/react-theme/static/css/main.chunk.css?319273595a8813a52ffd" rel="stylesheet"></head>
     <body>
     <noscript>
         You need to enable JavaScript to run this app.
@@ -103,5 +103,5 @@
 
     </script>
     <script src="https://kit.fontawesome.com/91b7b285ec.js" crossorigin="anonymous"></script>
-    <script src="/wp-content/themes/react-theme/static/js/bundle.js?78dfb53a4699d5432a5e"></script><script src="/wp-content/themes/react-theme/static/js/0.chunk.js?78dfb53a4699d5432a5e"></script><script src="/wp-content/themes/react-theme/static/js/main.chunk.js?78dfb53a4699d5432a5e"></script></body>
+    <script src="/wp-content/themes/react-theme/static/js/bundle.js?319273595a8813a52ffd"></script><script src="/wp-content/themes/react-theme/static/js/0.chunk.js?319273595a8813a52ffd"></script><script src="/wp-content/themes/react-theme/static/js/main.chunk.js?319273595a8813a52ffd"></script></body>
 </html>
