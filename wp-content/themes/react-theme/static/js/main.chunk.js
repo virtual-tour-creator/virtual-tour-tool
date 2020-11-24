@@ -2310,139 +2310,170 @@ const Entries = props => {
     setCurrentIndex(index);
   };
 
+  const renderStops = () => {
+    if (props.entries.length == 0) {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "empty-card",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 43,
+          columnNumber: 11
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "empty-text",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 44,
+          columnNumber: 13
+        }
+      }, "THIS TOUR IS EMPTY"));
+    } else {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        key: props.listId,
+        className: "row stop-carousel",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 49,
+          columnNumber: 11
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_3___default.a, {
+        arrows: true,
+        addArrowClickHandler: true,
+        offset: 0,
+        plugins: [{
+          resolve: _brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_3__["slidesToShowPlugin"],
+          options: {
+            numberOfSlides: 5
+          }
+        }, {
+          resolve: _brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_3__["slidesToScrollPlugin"],
+          options: {
+            numberOfSlides: 5
+          }
+        }, customArrow],
+        breakpoints: {
+          790: {
+            plugins: [{
+              resolve: _brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_3__["slidesToShowPlugin"],
+              options: {
+                numberOfSlides: 1
+              }
+            }, customArrow]
+          },
+          1110: {
+            plugins: [{
+              resolve: _brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_3__["slidesToShowPlugin"],
+              options: {
+                numberOfSlides: 2
+              }
+            }, {
+              resolve: _brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_3__["slidesToScrollPlugin"],
+              options: {
+                numberOfSlides: 2
+              }
+            }, customArrow]
+          },
+          1420: {
+            plugins: [{
+              resolve: _brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_3__["slidesToShowPlugin"],
+              options: {
+                numberOfSlides: 3
+              }
+            }, {
+              resolve: _brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_3__["slidesToScrollPlugin"],
+              options: {
+                numberOfSlides: 3
+              }
+            }, customArrow]
+          },
+          1700: {
+            plugins: [{
+              resolve: _brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_3__["slidesToShowPlugin"],
+              options: {
+                numberOfSlides: 4
+              }
+            }, {
+              resolve: _brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_3__["slidesToScrollPlugin"],
+              options: {
+                numberOfSlides: 4
+              }
+            }, customArrow]
+          }
+        },
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 50,
+          columnNumber: 11
+        }
+      }, props.entries.map((entry, index) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        key: entry.id,
+        className: "entry",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 136,
+          columnNumber: 15
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        style: {
+          width: "18rem"
+        },
+        alt: "entry",
+        src: entry.medium_url == false ? _images_placeholder_thumbnail_png__WEBPACK_IMPORTED_MODULE_9___default.a : entry.medium_url,
+        onClick: () => handleClick(index),
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 137,
+          columnNumber: 19
+        }
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "entry-name",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 138,
+          columnNumber: 19
+        }
+      }, " ", entry.name, " ")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_portal_overlay__WEBPACK_IMPORTED_MODULE_10__["Overlay"], {
+        style: {
+          "background": 'white',
+          "width": '100%',
+          "padding": "0 2rem"
+        },
+        open: showStopOverlay,
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 142,
+          columnNumber: 11
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_EntryPage_StopOverlay__WEBPACK_IMPORTED_MODULE_11__["default"], {
+        handleClose: () => setShowStopOverlay(false),
+        stopIds: stopIds,
+        index: currentIndex,
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 150,
+          columnNumber: 13
+        }
+      })));
+    }
+  };
+
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    key: props.listId,
-    className: "row stop-carousel",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41,
-      columnNumber: 11
+      lineNumber: 163,
+      columnNumber: 7
     }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_3___default.a, {
-    arrows: true,
-    addArrowClickHandler: true,
-    offset: 0,
-    plugins: [{
-      resolve: _brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_3__["slidesToShowPlugin"],
-      options: {
-        numberOfSlides: 5
-      }
-    }, {
-      resolve: _brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_3__["slidesToScrollPlugin"],
-      options: {
-        numberOfSlides: 5
-      }
-    }, customArrow],
-    breakpoints: {
-      790: {
-        plugins: [{
-          resolve: _brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_3__["slidesToShowPlugin"],
-          options: {
-            numberOfSlides: 1
-          }
-        }, customArrow]
-      },
-      1110: {
-        plugins: [{
-          resolve: _brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_3__["slidesToShowPlugin"],
-          options: {
-            numberOfSlides: 2
-          }
-        }, {
-          resolve: _brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_3__["slidesToScrollPlugin"],
-          options: {
-            numberOfSlides: 2
-          }
-        }, customArrow]
-      },
-      1420: {
-        plugins: [{
-          resolve: _brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_3__["slidesToShowPlugin"],
-          options: {
-            numberOfSlides: 3
-          }
-        }, {
-          resolve: _brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_3__["slidesToScrollPlugin"],
-          options: {
-            numberOfSlides: 3
-          }
-        }, customArrow]
-      },
-      1800: {
-        plugins: [{
-          resolve: _brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_3__["slidesToShowPlugin"],
-          options: {
-            numberOfSlides: 4
-          }
-        }, {
-          resolve: _brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_3__["slidesToScrollPlugin"],
-          options: {
-            numberOfSlides: 4
-          }
-        }, customArrow]
-      }
-    },
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 42,
-      columnNumber: 11
-    }
-  }, props.entries.map((entry, index) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    key: entry.id,
-    className: "entry",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 128,
-      columnNumber: 15
-    }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    style: {
-      width: "19rem"
-    },
-    alt: "entry",
-    src: entry.medium_url == false ? _images_placeholder_thumbnail_png__WEBPACK_IMPORTED_MODULE_9___default.a : entry.medium_url,
-    onClick: () => handleClick(index),
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 129,
-      columnNumber: 19
-    }
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    className: "entry-name",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 130,
-      columnNumber: 19
-    }
-  }, " ", entry.name, " ")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_portal_overlay__WEBPACK_IMPORTED_MODULE_10__["Overlay"], {
-    style: {
-      "background": 'white',
-      "width": '100%',
-      "padding": "0 2rem"
-    },
-    open: showStopOverlay,
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 134,
-      columnNumber: 11
-    }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_EntryPage_StopOverlay__WEBPACK_IMPORTED_MODULE_11__["default"], {
-    handleClose: () => setShowStopOverlay(false),
-    stopIds: stopIds,
-    index: currentIndex,
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 142,
-      columnNumber: 13
-    }
-  })));
+  }, renderStops());
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(Entries));
@@ -5195,11 +5226,95 @@ class TourPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
     var stopIds = this.state.stops.map(singleStop => singleStop.id);
 
     if (this.state.mode === 'edit') {
+      if (this.state.stops.length == 0) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "top-button-container",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 326,
+            columnNumber: 21
+          }
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AddStop__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          onSelectStops: this.handleAddedStops,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 327,
+            columnNumber: 29
+          }
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+          variant: "primary",
+          onClick: this.handleDelete.bind(this),
+          id: "delete-stop-button",
+          className: "tour-page-button",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 328,
+            columnNumber: 29
+          }
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "delete-tour-icon-img",
+          style: {
+            'width': '18px',
+            'height': '20px',
+            'marginRight': '0'
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 329,
+            columnNumber: 41
+          }
+        }), " DELETE TOUR"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+          variant: "primary",
+          onClick: this.handleEditing.bind(this),
+          id: "update-stop-button",
+          className: "tour-page-button",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 331,
+            columnNumber: 29
+          }
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "done-editing-icon-img",
+          style: {
+            'width': '24px',
+            'height': '18px',
+            'backgroundSize': 'cover'
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 332,
+            columnNumber: 33
+          }
+        }), " DONE EDITING")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "empty-card",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 335,
+            columnNumber: 25
+          }
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          className: "empty-text",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 336,
+            columnNumber: 29
+          }
+        }, "THIS TOUR IS EMPTY. ADD SOME STOPS!")));
+      }
+
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 325,
+          lineNumber: 342,
           columnNumber: 17
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -5207,7 +5322,7 @@ class TourPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 326,
+          lineNumber: 343,
           columnNumber: 21
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AddStop__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -5215,7 +5330,7 @@ class TourPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 327,
+          lineNumber: 344,
           columnNumber: 25
         }
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
@@ -5226,7 +5341,7 @@ class TourPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 328,
+          lineNumber: 345,
           columnNumber: 25
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -5239,7 +5354,7 @@ class TourPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 329,
+          lineNumber: 346,
           columnNumber: 37
         }
       }), " DELETE TOUR"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
@@ -5250,7 +5365,7 @@ class TourPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 331,
+          lineNumber: 348,
           columnNumber: 25
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -5263,7 +5378,7 @@ class TourPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 332,
+          lineNumber: 349,
           columnNumber: 29
         }
       }), " DONE EDITING")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -5271,7 +5386,7 @@ class TourPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 336,
+          lineNumber: 353,
           columnNumber: 21
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_CurrentStops__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -5285,19 +5400,39 @@ class TourPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 337,
+          lineNumber: 354,
           columnNumber: 25
         }
       })));
     }
 
     if (this.state.mode === 'view') {
+      if (this.state.stops.length == 0) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "empty-card",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 368,
+            columnNumber: 21
+          }
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          className: "empty-text",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 369,
+            columnNumber: 25
+          }
+        }, "THIS TOUR IS EMPTY. ADD SOME STOPS!"));
+      }
+
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "stops-container-view",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 353,
+          lineNumber: 374,
           columnNumber: 17
         }
       }, this.state.stops.map((singleStop, index) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_MediaCard__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -5309,7 +5444,7 @@ class TourPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 355,
+          lineNumber: 376,
           columnNumber: 25
         }
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_portal_overlay__WEBPACK_IMPORTED_MODULE_17__["Overlay"], {
@@ -5322,7 +5457,7 @@ class TourPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 357,
+          lineNumber: 378,
           columnNumber: 21
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_EntryPage_StopOverlay__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -5334,7 +5469,7 @@ class TourPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 365,
+          lineNumber: 386,
           columnNumber: 25
         }
       })));
@@ -5353,7 +5488,7 @@ class TourPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 380,
+        lineNumber: 402,
         columnNumber: 13
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Modal"].Header, {
@@ -5361,14 +5496,14 @@ class TourPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 381,
+        lineNumber: 403,
         columnNumber: 17
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Modal"].Title, {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 382,
+        lineNumber: 404,
         columnNumber: 19
       }
     }, "Are you sure?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_10___default.a, {
@@ -5379,7 +5514,7 @@ class TourPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 383,
+        lineNumber: 405,
         columnNumber: 19
       }
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Modal"].Body, {
@@ -5387,7 +5522,7 @@ class TourPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 385,
+        lineNumber: 407,
         columnNumber: 17
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -5395,28 +5530,28 @@ class TourPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 386,
+        lineNumber: 408,
         columnNumber: 17
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 387,
+        lineNumber: 409,
         columnNumber: 21
       }
     }, "Your're about to delete ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 387,
+        lineNumber: 409,
         columnNumber: 48
       }
     }, this.state.name.toUpperCase()), " and you won't be able to revert this. Are you sure?"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Modal"].Footer, {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 390,
+        lineNumber: 412,
         columnNumber: 17
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
@@ -5425,7 +5560,7 @@ class TourPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 391,
+        lineNumber: 413,
         columnNumber: 21
       }
     }, "YES, DELETE"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
@@ -5436,7 +5571,7 @@ class TourPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 394,
+        lineNumber: 416,
         columnNumber: 25
       }
     }, "NO, GO BACK")));
@@ -5458,7 +5593,7 @@ class TourPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 451,
+        lineNumber: 473,
         columnNumber: 13
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navbar_Navbar__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -5468,7 +5603,7 @@ class TourPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 452,
+        lineNumber: 474,
         columnNumber: 17
       }
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -5476,7 +5611,7 @@ class TourPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 454,
+        lineNumber: 476,
         columnNumber: 17
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -5484,14 +5619,14 @@ class TourPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 455,
+        lineNumber: 477,
         columnNumber: 21
       }
     }, this.renderTourInfo()), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 458,
+        lineNumber: 480,
         columnNumber: 21
       }
     }), this.renderTourStops(), this.renderDeleteConfirmation()));
@@ -5839,7 +5974,7 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAAmCAYAAABD
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAZCAYAAAA8CX6UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAF0SURBVHgBpZXtbYMwEIaNYQBGoBvQTtAUwe+MkExQWKChE4ROECZo+xvxkQ3aDcoILAD0PeKoVnFTm5xkfJZ9j+41d8DYFdY0jYfxSL7FFhoBxnFM4bqYE4cZGgAuph2CY1pjfuGc50YZAeIj8A2uh9HBfw6CIKM9bZAsBaO1LGsFa8/7/4KElD0gG/YjJQWkk89ZhlISSMlVZzm7LKURkE9Iuf0LosxIV8pFkImU38aXSpllRFKGYTggcG0iZZZR3/f3gPhi3QGSmUKmjOhBzYdMarg3BAM4wZwDqA2a7ogqFMF3FMxOTXjAnNZ1rV35s4NVVaWAPom9I/yt3AraILKiKHzHcV7ZSeqsr1SmrOwoiuj1P8D9wKD7+0KmMTPNSDYAMkCnryCAGWorWQQSsBiwvVgqpZp8jzyp8lvU3zYMw+N5n+uCRImsAHsnmG3bYDc744xkEyUyQQDO0Q3J4r9IWZZrAKhwXUA37Bqje6PsyP8GNTHdOGCRKo0AAAAASUVORK5CYII="
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAZCAYAAAA8CX6UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADDSURBVHgB7ZRhDcJADIUfDpBwOEACEuYAHIAD5mA4mAQk4AAcbBLmgNKGLmsu/Gm7n3zJS5Yl9+Xe7TogAREVzhkZRMCZ6MsFXnjRltPRwk3eeSV7zqiCKboTW0VkxbN+rtKvXeUEL1WV178K3VNVVNRUdQqi6PAN9mw4CPHja7WcTUYogrfKHpwdoug1GMJzVcnk3J6mqn/SK6H993TIILsxslWqjkZ2QBSV2Sm4IoNekZk+NFJG1tAy5Edk0KqtPH8A8rO7IutZFLYAAAAASUVORK5CYII="
 
 /***/ }),
 
@@ -5960,7 +6095,7 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFcAAAA8CAYAAAAT
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAZCAYAAAA8CX6UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGGSURBVHgBpZVRVoJQEIbvRd61HdgOqhVEHn3OFcQOgBVgLUDZQbmB9B0IWgHuQHeQC+BA/9RQRCBc/M+Z4yDOd/4ZhqsQUBRFLmIszpAWhqGZ5/kCkQRBcC96SoO2+FwjRsg35E70kCwSOFtIKb8gcLcF1DEM46AMIvm+fzsYDJ6RjhEHgI2uMK18MZ1OYyomCMHgbA+ndheQbLoBgAeoRTmA3mQycUQfEMNswFZ8uUM+b2r1JIhE+wVHkeC5pWk6n81mu+rvtDYQOeC5xQTTdT2pW5FWR2VVVuSFV+SoDGKYyXMbidKKKINIPLekgGVZ5rTOqAZCxRZDSO9Y4ljJETvZIL1CHJE/Yr88utcZBMgDLab4nQ3t1M8ayJZiwYUuIMWrsgbELp5WK4ghlwC81rVSlWwA0PfUyqqplaq0GsgFYgkIHSdDbuX6FOSPo1Irb+L7vfpA/tTUyj9QqRULhS63soeLO5UTUuPCJc9jSI8YkBsVCEnHept8gCm1Uis6wM79X/sEjrvWKbV3QEYAAAAASUVORK5CYII="
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAZCAYAAAA8CX6UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADPSURBVHgBtZNhDcIwEIUPB+CgOEACEnAAEuZgOBgOmAMkIGEOqAPqoOVdOMJlIWTX217y0v1Yv9xL3xFBpZQWDuQRAKfyVoIPVCtcXsN9+aoljwA4K9jNFRWX93AUWPTCgoKxGvIIgIuCdeQRT6Ngw5xR+dxRrQR2X6oiV+4g1Uo2Ic1ZEQ2zr5asVKci9uaIMskggGQqK37+nMdRnOk1YAi8cUURyNYVBV79eGZXlGwunooSBfKsjdKoKA9zY0cFy/Jt3yGZJJuj/IEFcugFCErM9SETQKIAAAAASUVORK5CYII="
 
 /***/ }),
 
@@ -6039,5 +6174,5 @@ module.exports = __webpack_require__(/*! /Users/chenjiewen/Localdev/museum-live/
 
 /***/ })
 
-},[[0,"runtime-main",0]]]);
+},[[0,"runtime-main",1]]]);
 //# sourceMappingURL=main.chunk.js.map

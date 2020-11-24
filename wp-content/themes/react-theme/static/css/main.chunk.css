@@ -151,7 +151,7 @@ body {
     font-weight: 500;
     line-height: 133.4%;
     margin-top: 15px;
-    max-width: 19rem;
+    max-width: 18rem;
 }
 
 .entry:hover::after {
@@ -192,6 +192,23 @@ body {
     box-sizing: border-box;
 }
 
+
+.empty-card {
+    background: rgba(102, 110, 119, 0.1);
+    margin-top: 25px;
+    height: 30vh;
+    text-align: center;
+}
+
+.empty-text {
+    line-height: 30vh;
+    font-family: Spectral SC;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    letter-spacing: 0.055em;
+    color: #666e77;
+}
 .nav-tabs {
     border-bottom: none;
 }

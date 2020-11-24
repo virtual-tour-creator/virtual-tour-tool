@@ -37,7 +37,15 @@ const Entries = props => {
     setCurrentIndex(index);
   }
 
-  return(
+  const renderStops = () => {
+      if(props.entries.length == 0) {
+        return(
+          <div className="empty-card">
+            <p className="empty-text">THIS TOUR IS EMPTY</p>
+          </div>
+        )
+      } else {
+        return (
           <div key={props.listId} className='row stop-carousel'>
           <Carousel 
               arrows
@@ -104,7 +112,7 @@ const Entries = props => {
                     customArrow
                   ]
                   },
-                  1800: {
+                  1700: {
                       plugins: [
                       {
                         resolve: slidesToShowPlugin,
@@ -126,7 +134,7 @@ const Entries = props => {
 
           {props.entries.map((entry,index) =>
               <div key={entry.id} className='entry'>
-                  <img style={{width:"19rem"}} alt='entry' src={entry.medium_url==false? PlaceholderThumbnail : entry.medium_url} onClick={() => handleClick(index)}/> 
+                  <img style={{width:"18rem"}} alt='entry' src={entry.medium_url==false? PlaceholderThumbnail : entry.medium_url} onClick={() => handleClick(index)}/> 
                   <p className="entry-name"> {entry.name} </p>
               </div> )}
           </Carousel>
@@ -147,7 +155,14 @@ const Entries = props => {
             
         </Overlay>  
       </div>
+        )
+      }
+  }
 
+  return(
+      <div>
+        {renderStops()}
+      </div>
   )
 }
    

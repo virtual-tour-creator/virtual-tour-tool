@@ -318,9 +318,26 @@ class TourPage extends React.Component {
 
     renderTourStops() {
         var stopIds = this.state.stops.map(singleStop => singleStop.id)
-
-
         if(this.state.mode === 'edit') {
+
+            if(this.state.stops.length == 0) {
+                return(
+                   <>
+                    <div className="top-button-container">
+                            <AddStop onSelectStops={this.handleAddedStops} />
+                            <Button variant="primary" onClick={this.handleDelete.bind(this)} id='delete-stop-button'  className='tour-page-button'>
+                                        <div className="delete-tour-icon-img" style={{'width':'18px', 'height':'20px','marginRight': '0'}}></div> DELETE TOUR
+                                        </Button>
+                            <Button variant="primary" onClick={this.handleEditing.bind(this)} id='update-stop-button' className='tour-page-button'>
+                                <div className="done-editing-icon-img" style={{'width':'24px', 'height':'18px','backgroundSize':'cover'}}></div> DONE EDITING
+                            </Button>
+                        </div>
+                        <div className="empty-card">
+                            <p className="empty-text">THIS TOUR IS EMPTY. ADD SOME STOPS!</p>
+                        </div>
+                    </>
+                )
+            }
             return(
                 <div>
                     <div className="top-button-container">
@@ -332,7 +349,7 @@ class TourPage extends React.Component {
                             <div className="done-editing-icon-img" style={{'width':'24px', 'height':'18px','backgroundSize':'cover'}}></div> DONE EDITING
                         </Button>
                     </div>
-               
+                
                     <div className='grid-list-container'>
                         <StopBoxList 
                             stops={this.state.stops} 
@@ -343,13 +360,17 @@ class TourPage extends React.Component {
                             axis='xy'
                             useWindowAsScrollContainer={true}/>
                     </div>
-                </div>
-                
-                
+                </div> 
             )
         } if(this.state.mode === 'view') {
+            if(this.state.stops.length == 0) {
+                return(
+                    <div className="empty-card">
+                        <p className="empty-text">THIS TOUR IS EMPTY. ADD SOME STOPS!</p>
+                    </div>
+                )
+            }
             return(
-
                 <div className='stops-container-view'>
                     {this.state.stops.map((singleStop,index) => (
                         <MediaCard stop={singleStop} onClick={() => this.setState({'showStopOverlay':true, 'currentStopIndex':index}) }/>  
@@ -373,6 +394,7 @@ class TourPage extends React.Component {
             )
         }
     }
+
 
     renderDeleteConfirmation() {
 
