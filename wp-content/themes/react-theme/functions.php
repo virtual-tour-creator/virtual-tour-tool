@@ -320,10 +320,38 @@ function instruction_page_content(){
  
     echo '
         <div class="wrap">
-        <h1>Get Started</h1>
-        <h1>Video</h1>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/tZszDu9sxng" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </iframe>
+        <h1>Virtual Tour Creator Get Started Guide</h1>
+        <div id="dashboard-widgets" class="metabox-holder">
+            <div id="postbox-container-1" class="postbox-container">
+                <div id="normal-sortables" class=" ui-sortable empty-container" data-emptystring="" style="outline:none;min-height:300px;">
+                    <iframe src="https://www.youtube-nocookie.com/embed/KiM2jdSYI6Q" allowfullscreen="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;" width="100%" height="250"></iframe>
+                </div>
+            </div>
+            <div id="postbox-container-2" class="postbox-container">
+            <div id="normal-sortables" class=" ui-sortable empty-container" data-emptystring="" style="outline:none;min-height:300px;padding:15px">
+                <h2>To get started follow these steps in this video</h2>
+                <ul>
+                <li><p>Login and see tours on the homepage</p></li>
+                <li><p>Learn how to upload media</p></li>
+                <li><p>Make your first tour stop</p></li>
+                <li><p>Add your stop to your tour your fist tour tour</p></li>
+                <li><p><b>Repeat!</b></p></li>
+                </ul>
+            </div>
+            </div>
+        <div id="postbox-container-3" class="postbox-container">
+        <div id="normal-sortables" class=" ui-sortable empty-container" data-emptystring="" style="outline:none;min-height:300px;padding:15px">
+            <h2>Helpful Links in the <a href="https://docs.google.com/document/d/1sL2rZ1Cs4mB4IxS35fGkypwMHSWSGMyBhZtb69TJlRY/edit?usp=sharing" target="_blank">Documentation &#x279C;</a></h2>
+            <ul>
+            <li><p><a href="https://docs.google.com/document/d/1sL2rZ1Cs4mB4IxS35fGkypwMHSWSGMyBhZtb69TJlRY/edit#heading=h.f1kwspf256nd" target="_blank">Helpful Zoom Links</a></p></li>
+            <li><p><a href="https://docs.google.com/document/d/1sL2rZ1Cs4mB4IxS35fGkypwMHSWSGMyBhZtb69TJlRY/edit#heading=h.kc4cgdbehw3h" target="_blank">Host Best Practices</a></p></li>
+            <li><p><a href="https://docs.google.com/document/d/1sL2rZ1Cs4mB4IxS35fGkypwMHSWSGMyBhZtb69TJlRY/edit#heading=h.701i5fhy14g0" target="_blank">Hardware Recommendations</a></p></li>
+            <li><p><a href="https://docs.google.com/document/d/1sL2rZ1Cs4mB4IxS35fGkypwMHSWSGMyBhZtb69TJlRY/edit#heading=h.m2fidr32q86p" target="_blank">Common Errors</a></p></li>
+            <li><p><a href="https://docs.google.com/document/d/1sL2rZ1Cs4mB4IxS35fGkypwMHSWSGMyBhZtb69TJlRY/edit#heading=h.8mdb8fgicn0m" target="_blank">Glossary</a></p></li>
+            </ul>
+        </div>
+        </div>
+        </div>
         </div>';
  
 }
