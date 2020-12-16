@@ -30,7 +30,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_TourPage_TourPage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/TourPage/TourPage */ "./src/components/TourPage/TourPage.js");
 /* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.min.css */ "./node_modules/bootstrap/dist/css/bootstrap.min.css");
 /* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_6__);
-var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/App.js";
+var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/App.js";
 
 
 
@@ -143,7 +143,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _CreateTour_styles_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./CreateTour.styles.css */ "./src/components/Button/CreateTour.styles.css");
 /* harmony import */ var _CreateTour_styles_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_CreateTour_styles_css__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _helpers_RestAPIHelper_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../helpers/RestAPIHelper.js */ "./src/helpers/RestAPIHelper.js");
-var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/components/Button/CopyTour.js";
+var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/Button/CopyTour.js";
 
 
 
@@ -390,7 +390,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _material_ui_icons_Add__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/icons/Add */ "./node_modules/@material-ui/icons/Add.js");
 /* harmony import */ var _material_ui_icons_Add__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Add__WEBPACK_IMPORTED_MODULE_5__);
-var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/components/Button/CreateTour.js";
+var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/Button/CreateTour.js";
 
 
 
@@ -652,7 +652,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/index.js");
 /* harmony import */ var _helpers_RestAPIHelper_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../helpers/RestAPIHelper.js */ "./src/helpers/RestAPIHelper.js");
-var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/components/EntryPage/EntryPage.js";
+var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/EntryPage/EntryPage.js";
 
 
 
@@ -972,7 +972,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/index.js");
 /* harmony import */ var _SpeakerNote_styles_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./SpeakerNote.styles.css */ "./src/components/EntryPage/SpeakerNote.styles.css");
 /* harmony import */ var _SpeakerNote_styles_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_SpeakerNote_styles_css__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/components/EntryPage/SpeakerNote.js";
+var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/EntryPage/SpeakerNote.js";
 
 
 
@@ -1245,29 +1245,31 @@ const SpeakerNote = ({
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_image_gallery__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-image-gallery */ "./node_modules/react-image-gallery/build/image-gallery.js");
-/* harmony import */ var react_image_gallery__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_image_gallery__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Navbar_BrandingLogo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Navbar/BrandingLogo */ "./src/components/Navbar/BrandingLogo.js");
-/* harmony import */ var _helpers_RestAPIHelper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../helpers/RestAPIHelper */ "./src/helpers/RestAPIHelper.js");
-/* harmony import */ var _images_overlay_close_icon_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../images/overlay-close-icon.png */ "./src/images/overlay-close-icon.png");
-/* harmony import */ var _images_overlay_close_icon_png__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_images_overlay_close_icon_png__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _images_gallery_left_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../images/gallery-left.png */ "./src/images/gallery-left.png");
-/* harmony import */ var _images_gallery_left_png__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_images_gallery_left_png__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _images_gallery_right_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../images/gallery-right.png */ "./src/images/gallery-right.png");
-/* harmony import */ var _images_gallery_right_png__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_images_gallery_right_png__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _images_prev_stop_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../images/prev-stop.png */ "./src/images/prev-stop.png");
-/* harmony import */ var _images_prev_stop_png__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_images_prev_stop_png__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _images_next_stop_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../images/next-stop.png */ "./src/images/next-stop.png");
-/* harmony import */ var _images_next_stop_png__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_images_next_stop_png__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _images_info_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../images/info.png */ "./src/images/info.png");
-/* harmony import */ var _images_info_png__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_images_info_png__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _images_close_info_png__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../images/close-info.png */ "./src/images/close-info.png");
-/* harmony import */ var _images_close_info_png__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_images_close_info_png__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _SpeakerNote__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./SpeakerNote */ "./src/components/EntryPage/SpeakerNote.js");
-/* harmony import */ var _StopOverlay_styles_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./StopOverlay.styles.css */ "./src/components/EntryPage/StopOverlay.styles.css");
-/* harmony import */ var _StopOverlay_styles_css__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_StopOverlay_styles_css__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _helpers_unescape__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../helpers/unescape */ "./src/helpers/unescape.js");
-var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/components/EntryPage/StopOverlay.js";
+/* harmony import */ var react_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var react_image_gallery__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-image-gallery */ "./node_modules/react-image-gallery/build/image-gallery.js");
+/* harmony import */ var react_image_gallery__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_image_gallery__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _Navbar_BrandingLogo__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Navbar/BrandingLogo */ "./src/components/Navbar/BrandingLogo.js");
+/* harmony import */ var _helpers_RestAPIHelper__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../helpers/RestAPIHelper */ "./src/helpers/RestAPIHelper.js");
+/* harmony import */ var _images_overlay_close_icon_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../images/overlay-close-icon.png */ "./src/images/overlay-close-icon.png");
+/* harmony import */ var _images_overlay_close_icon_png__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_images_overlay_close_icon_png__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _images_gallery_left_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../images/gallery-left.png */ "./src/images/gallery-left.png");
+/* harmony import */ var _images_gallery_left_png__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_images_gallery_left_png__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _images_gallery_right_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../images/gallery-right.png */ "./src/images/gallery-right.png");
+/* harmony import */ var _images_gallery_right_png__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_images_gallery_right_png__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _images_prev_stop_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../images/prev-stop.png */ "./src/images/prev-stop.png");
+/* harmony import */ var _images_prev_stop_png__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_images_prev_stop_png__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _images_next_stop_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../images/next-stop.png */ "./src/images/next-stop.png");
+/* harmony import */ var _images_next_stop_png__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_images_next_stop_png__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _images_info_png__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../images/info.png */ "./src/images/info.png");
+/* harmony import */ var _images_info_png__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_images_info_png__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _images_close_info_png__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../images/close-info.png */ "./src/images/close-info.png");
+/* harmony import */ var _images_close_info_png__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_images_close_info_png__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _SpeakerNote__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./SpeakerNote */ "./src/components/EntryPage/SpeakerNote.js");
+/* harmony import */ var _StopOverlay_styles_css__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./StopOverlay.styles.css */ "./src/components/EntryPage/StopOverlay.styles.css");
+/* harmony import */ var _StopOverlay_styles_css__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_StopOverlay_styles_css__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var _helpers_unescape__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../helpers/unescape */ "./src/helpers/unescape.js");
+var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/EntryPage/StopOverlay.js";
+
 
 
 
@@ -1291,10 +1293,39 @@ const getContent = stop => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26,
+      lineNumber: 27,
       columnNumber: 13
     }
   });
+};
+
+const _renderImage = item => {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "image-wrapper",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 33,
+      columnNumber: 9
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "image-description",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 34,
+      columnNumber: 13
+    }
+  }, item.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "image-gallery-image-customize",
+    src: item.original,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35,
+      columnNumber: 13
+    }
+  }));
 };
 
 const _renderVideo = item => {
@@ -1303,7 +1334,7 @@ const _renderVideo = item => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32,
+      lineNumber: 42,
       columnNumber: 9
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("video", {
@@ -1312,7 +1343,7 @@ const _renderVideo = item => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40,
+      lineNumber: 50,
       columnNumber: 13
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("source", {
@@ -1321,7 +1352,7 @@ const _renderVideo = item => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41,
+      lineNumber: 51,
       columnNumber: 17
     }
   })));
@@ -1333,7 +1364,7 @@ const _renderAudio = item => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49,
+      lineNumber: 59,
       columnNumber: 9
     }
   }, console.log(item.thumbnail), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -1342,7 +1373,7 @@ const _renderAudio = item => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51,
+      lineNumber: 61,
       columnNumber: 13
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("video", {
@@ -1350,7 +1381,7 @@ const _renderAudio = item => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52,
+      lineNumber: 62,
       columnNumber: 13
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("source", {
@@ -1359,7 +1390,7 @@ const _renderAudio = item => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53,
+      lineNumber: 63,
       columnNumber: 17
     }
   })));
@@ -1368,7 +1399,8 @@ const _renderAudio = item => {
 const StopOverlay = ({
   handleClose,
   stopIds,
-  index
+  index,
+  history
 }) => {
   const ref = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
   let time = new Date().getTime();
@@ -1378,7 +1410,7 @@ const StopOverlay = ({
   const [searchStr, setSearchStr] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])("");
   const [stop, setStop] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-    Object(_helpers_RestAPIHelper__WEBPACK_IMPORTED_MODULE_3__["RestAPIGetStopById"])(stopIds[currentIndex], time, setStop);
+    Object(_helpers_RestAPIHelper__WEBPACK_IMPORTED_MODULE_4__["RestAPIGetStopById"])(stopIds[currentIndex], time, setStop);
   }, []); // load media
 
   let Photos = [];
@@ -1396,7 +1428,7 @@ const StopOverlay = ({
       if (type === "video") {
         let video = {
           embedUrl: file_url,
-          description: '',
+          description: media.title,
           renderItem: _renderVideo,
           thumbnail: thumbnail_url,
           original: full_url
@@ -1407,12 +1439,20 @@ const StopOverlay = ({
       if (type === "audio") {
         let audio = {
           embedUrl: file_url,
-          description: '',
+          description: media.title,
           renderItem: _renderAudio,
           thumbnail: thumbnail_url,
           original: full_url
         };
         return audio;
+      } else {
+        let image = {
+          original: full_url,
+          renderItem: _renderImage,
+          description: media.title,
+          thumbnail: thumbnail_url
+        };
+        return image;
       }
 
       let photo = {};
@@ -1434,7 +1474,7 @@ const StopOverlay = ({
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 121,
+        lineNumber: 139,
         columnNumber: 15
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -1443,7 +1483,7 @@ const StopOverlay = ({
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 121,
+        lineNumber: 139,
         columnNumber: 49
       }
     }, "#", tag[0])));
@@ -1452,7 +1492,7 @@ const StopOverlay = ({
   let stop_name = "";
 
   if (stop.title != undefined) {
-    stop_name = Object(_helpers_unescape__WEBPACK_IMPORTED_MODULE_13__["default"])(stop.title.rendered);
+    stop_name = Object(_helpers_unescape__WEBPACK_IMPORTED_MODULE_14__["default"])(stop.title.rendered);
   } // arrow change
 
 
@@ -1463,11 +1503,11 @@ const StopOverlay = ({
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "image-gallery-custom-left-nav",
         onClick: gotoPrevStop,
-        src: _images_prev_stop_png__WEBPACK_IMPORTED_MODULE_7___default.a,
+        src: _images_prev_stop_png__WEBPACK_IMPORTED_MODULE_8___default.a,
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 138,
+          lineNumber: 156,
           columnNumber: 17
         }
       });
@@ -1475,11 +1515,11 @@ const StopOverlay = ({
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "image-gallery-custom-left-nav",
         onClick: gotoPrevImage,
-        src: _images_gallery_left_png__WEBPACK_IMPORTED_MODULE_5___default.a,
+        src: _images_gallery_left_png__WEBPACK_IMPORTED_MODULE_6___default.a,
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 146,
+          lineNumber: 164,
           columnNumber: 17
         }
       });
@@ -1493,11 +1533,11 @@ const StopOverlay = ({
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "image-gallery-custom-right-nav",
         onClick: gotoNextStop,
-        src: _images_next_stop_png__WEBPACK_IMPORTED_MODULE_8___default.a,
+        src: _images_next_stop_png__WEBPACK_IMPORTED_MODULE_9___default.a,
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 159,
+          lineNumber: 177,
           columnNumber: 17
         }
       });
@@ -1505,11 +1545,11 @@ const StopOverlay = ({
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "image-gallery-custom-right-nav",
         onClick: gotoNextImage,
-        src: _images_gallery_right_png__WEBPACK_IMPORTED_MODULE_6___default.a,
+        src: _images_gallery_right_png__WEBPACK_IMPORTED_MODULE_7___default.a,
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 167,
+          lineNumber: 185,
           columnNumber: 17
         }
       });
@@ -1535,7 +1575,7 @@ const StopOverlay = ({
     if (currentIndex > 0) {
       let newIndex = currentIndex - 1;
       setCurrentIndex(newIndex);
-      Object(_helpers_RestAPIHelper__WEBPACK_IMPORTED_MODULE_3__["RestAPIGetStopById"])(stopIds[newIndex], time, setStop);
+      Object(_helpers_RestAPIHelper__WEBPACK_IMPORTED_MODULE_4__["RestAPIGetStopById"])(stopIds[newIndex], time, setStop);
     }
 
     setCurrentImageIndex(0);
@@ -1547,7 +1587,7 @@ const StopOverlay = ({
     if (currentIndex < stopIds.length - 1) {
       let newIndex = currentIndex + 1;
       setCurrentIndex(newIndex);
-      Object(_helpers_RestAPIHelper__WEBPACK_IMPORTED_MODULE_3__["RestAPIGetStopById"])(stopIds[newIndex], time, setStop);
+      Object(_helpers_RestAPIHelper__WEBPACK_IMPORTED_MODULE_4__["RestAPIGetStopById"])(stopIds[newIndex], time, setStop);
     }
   };
 
@@ -1571,7 +1611,7 @@ const StopOverlay = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 230,
+      lineNumber: 248,
       columnNumber: 9
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1579,24 +1619,27 @@ const StopOverlay = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 231,
+      lineNumber: 249,
       columnNumber: 13
     }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navbar_BrandingLogo__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navbar_BrandingLogo__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    handleClickNavLink: () => {
+      handleClose();
+    },
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 231,
+      lineNumber: 249,
       columnNumber: 41
     }
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     onClick: handleClose,
     className: "presentation-close-icon",
-    src: _images_overlay_close_icon_png__WEBPACK_IMPORTED_MODULE_4___default.a,
+    src: _images_overlay_close_icon_png__WEBPACK_IMPORTED_MODULE_5___default.a,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 232,
+      lineNumber: 252,
       columnNumber: 13
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1607,7 +1650,7 @@ const StopOverlay = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 233,
+      lineNumber: 253,
       columnNumber: 13
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1615,10 +1658,10 @@ const StopOverlay = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 238,
+      lineNumber: 258,
       columnNumber: 13
     }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_image_gallery__WEBPACK_IMPORTED_MODULE_1___default.a, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_image_gallery__WEBPACK_IMPORTED_MODULE_2___default.a, {
     ref: ref,
     items: Photos,
     showPlayButton: false,
@@ -1629,7 +1672,7 @@ const StopOverlay = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 239,
+      lineNumber: 259,
       columnNumber: 17
     }
   }), renderLeftNav(), renderRightNav(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1637,7 +1680,7 @@ const StopOverlay = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 249,
+      lineNumber: 269,
       columnNumber: 13
     }
   }, stop_name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -1652,15 +1695,15 @@ const StopOverlay = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 252,
+      lineNumber: 272,
       columnNumber: 13
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: isOpen == true ? _images_close_info_png__WEBPACK_IMPORTED_MODULE_10___default.a : _images_info_png__WEBPACK_IMPORTED_MODULE_9___default.a,
+    src: isOpen == true ? _images_close_info_png__WEBPACK_IMPORTED_MODULE_11___default.a : _images_info_png__WEBPACK_IMPORTED_MODULE_10___default.a,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 261,
+      lineNumber: 281,
       columnNumber: 17
     }
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1668,14 +1711,14 @@ const StopOverlay = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 263,
+      lineNumber: 283,
       columnNumber: 13
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 264,
+      lineNumber: 284,
       columnNumber: 17
     }
   }, " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1684,10 +1727,10 @@ const StopOverlay = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 265,
+      lineNumber: 285,
       columnNumber: 17
     }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SpeakerNote__WEBPACK_IMPORTED_MODULE_11__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SpeakerNote__WEBPACK_IMPORTED_MODULE_12__["default"], {
     description: getContent(stop),
     tags: tag_lists,
     id: stop.id,
@@ -1698,13 +1741,13 @@ const StopOverlay = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 266,
+      lineNumber: 286,
       columnNumber: 21
     }
   }))));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (StopOverlay);
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(StopOverlay));
 
 /***/ }),
 
@@ -1732,7 +1775,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Jumbotron_styles_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Jumbotron.styles.css */ "./src/components/Jumbotron/Jumbotron.styles.css");
 /* harmony import */ var _Jumbotron_styles_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Jumbotron_styles_css__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/components/Jumbotron/Jumbotron.js";
+var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/Jumbotron/Jumbotron.js";
 
 
 
@@ -1779,13 +1822,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/components/Navbar/BrandingLogo.js";
+var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/Navbar/BrandingLogo.js";
 
 
 
 const getLogo = () => reactInit.logoUrl ? reactInit.logoUrl : "https://www.thefrickpittsburgh.org/Files/User/logo.png";
 
 const BrandingLogo = props => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+  style: {
+    'cursor': 'pointer'
+  },
   id: "brading-logo-img",
   src: getLogo(),
   width: "130",
@@ -1821,7 +1867,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _images_hamburger_png__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_images_hamburger_png__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _images_hamburger_close_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../images/hamburger-close.png */ "./src/images/hamburger-close.png");
 /* harmony import */ var _images_hamburger_close_png__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_images_hamburger_close_png__WEBPACK_IMPORTED_MODULE_5__);
-var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/components/Navbar/Navbar.js";
+var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/Navbar/Navbar.js";
 
 
 
@@ -2065,7 +2111,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/index.js");
 /* harmony import */ var _helpers_RestAPIHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../helpers/RestAPIHelper.js */ "./src/helpers/RestAPIHelper.js");
-var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/components/Navbar/StressTest.js";
+var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/Navbar/StressTest.js";
 
 
 
@@ -2208,7 +2254,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _images_placeholder_thumbnail_png__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_images_placeholder_thumbnail_png__WEBPACK_IMPORTED_MODULE_9__);
 /* harmony import */ var react_portal_overlay__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-portal-overlay */ "./node_modules/react-portal-overlay/index.es.js");
 /* harmony import */ var _EntryPage_StopOverlay__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../EntryPage/StopOverlay */ "./src/components/EntryPage/StopOverlay.js");
-var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/components/Playlist/Entries/Entries.js";
+var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/Playlist/Entries/Entries.js";
 
 
 
@@ -2506,7 +2552,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _PlaylistWrapper__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./PlaylistWrapper */ "./src/components/Playlist/PlaylistWrapper.js");
 /* harmony import */ var _Playlist_styles_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Playlist.styles.css */ "./src/components/Playlist/Playlist.styles.css");
 /* harmony import */ var _Playlist_styles_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_Playlist_styles_css__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/components/Playlist/Playlist.js";
+var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/Playlist/Playlist.js";
 
  // import Entries from './Entries/Entries';
 
@@ -2626,7 +2672,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_bootstrap_DropdownButton__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-bootstrap/DropdownButton */ "./node_modules/react-bootstrap/esm/DropdownButton.js");
 /* harmony import */ var react_bootstrap_Dropdown__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-bootstrap/Dropdown */ "./node_modules/react-bootstrap/esm/Dropdown.js");
 /* harmony import */ var _TourStatus__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./TourStatus */ "./src/components/Playlist/TourStatus.js");
-var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/components/Playlist/PlaylistWrapper.js";
+var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/Playlist/PlaylistWrapper.js";
 
 
 
@@ -3158,7 +3204,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Playlist_styles_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Playlist.styles.css */ "./src/components/Playlist/Playlist.styles.css");
 /* harmony import */ var _Playlist_styles_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Playlist_styles_css__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/components/Playlist/TourStatus.js";
+var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/Playlist/TourStatus.js";
 
 
 
@@ -3240,7 +3286,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _TourPage_Pagination__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./TourPage/Pagination */ "./src/components/TourPage/Pagination.js");
 /* harmony import */ var _helpers_unescape__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../helpers/unescape */ "./src/helpers/unescape.js");
 /* harmony import */ var _helpers_RestAPIHelper_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../helpers/RestAPIHelper.js */ "./src/helpers/RestAPIHelper.js");
-var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/components/PublicLibrary.js";
+var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/PublicLibrary.js";
 
 
 
@@ -3460,6 +3506,10 @@ class PublicLibrary extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compone
       currentPage
     } = this.state;
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      style: {
+        margin: '4rem 0'
+      },
+      className: "library-pagination",
       __self: this,
       __source: {
         fileName: _jsxFileName,
@@ -3575,7 +3625,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _images_add_stop_png__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../images/add-stop.png */ "./src/images/add-stop.png");
 /* harmony import */ var _images_add_stop_png__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_images_add_stop_png__WEBPACK_IMPORTED_MODULE_12__);
 /* harmony import */ var _helpers_unescape__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../helpers/unescape */ "./src/helpers/unescape.js");
-var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/components/TourPage/AddStop.js";
+var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/TourPage/AddStop.js";
 
 
 
@@ -4144,7 +4194,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/IconButton */ "./node_modules/@material-ui/core/esm/IconButton/index.js");
 /* harmony import */ var _images_placeholder_thumbnail_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../images/placeholder-thumbnail.png */ "./src/images/placeholder-thumbnail.png");
 /* harmony import */ var _images_placeholder_thumbnail_png__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_images_placeholder_thumbnail_png__WEBPACK_IMPORTED_MODULE_5__);
-var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/components/TourPage/CurrentStops.js";
+var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/TourPage/CurrentStops.js";
 
 
 
@@ -4300,7 +4350,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _TourPage_styles_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_TourPage_styles_css__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _images_placeholder_thumbnail_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../images/placeholder-thumbnail.png */ "./src/images/placeholder-thumbnail.png");
 /* harmony import */ var _images_placeholder_thumbnail_png__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_images_placeholder_thumbnail_png__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/components/TourPage/MediaCard.js";
+var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/TourPage/MediaCard.js";
 
 
 
@@ -4368,7 +4418,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _images_pagination_right_greyout_png__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_images_pagination_right_greyout_png__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _Pagination_styles_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Pagination.styles.css */ "./src/components/TourPage/Pagination.styles.css");
 /* harmony import */ var _Pagination_styles_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_Pagination_styles_css__WEBPACK_IMPORTED_MODULE_5__);
-var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/components/TourPage/Pagination.js";
+var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/TourPage/Pagination.js";
 
 
 
@@ -4491,7 +4541,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _images_add_stop_icon_png__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_images_add_stop_icon_png__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _images_placeholder_thumbnail_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../images/placeholder-thumbnail.png */ "./src/images/placeholder-thumbnail.png");
 /* harmony import */ var _images_placeholder_thumbnail_png__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_images_placeholder_thumbnail_png__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/components/TourPage/StopCard.js";
+var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/TourPage/StopCard.js";
  // import MediaCard from './MediaCard'
 
 
@@ -4648,7 +4698,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var array_move__WEBPACK_IMPORTED_MODULE_20___default = /*#__PURE__*/__webpack_require__.n(array_move__WEBPACK_IMPORTED_MODULE_20__);
 /* harmony import */ var _TourPage_styles_css__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./TourPage.styles.css */ "./src/components/TourPage/TourPage.styles.css");
 /* harmony import */ var _TourPage_styles_css__WEBPACK_IMPORTED_MODULE_21___default = /*#__PURE__*/__webpack_require__.n(_TourPage_styles_css__WEBPACK_IMPORTED_MODULE_21__);
-var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/components/TourPage/TourPage.js";
+var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/TourPage/TourPage.js";
 
 
 
@@ -6138,7 +6188,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./index.css */ "./src/index.css");
 /* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_index_css__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./App */ "./src/App.js");
-var _jsxFileName = "/Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/index.js";
+var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/index.js";
 
 
 
@@ -6169,7 +6219,7 @@ react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/nouyang/Desktop/museum-live/wp-content/themes/react-theme/react-src/src/index.js */"./src/index.js");
+module.exports = __webpack_require__(/*! /Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/index.js */"./src/index.js");
 
 
 /***/ })

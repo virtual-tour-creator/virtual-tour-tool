@@ -1,3 +1,7 @@
+// This is the first version of the stop presentation page
+// Currently not showing at all in the site
+// A path like '/stop/:stopId' will lead to this page
+
 import React, { useEffect, useState } from 'react';
 import './EntryPage.styles.css';
 
@@ -8,6 +12,8 @@ import Collapsible from 'react-collapsible';
 import CloseIcon from '@material-ui/icons/Close';
 import { Button, Modal, Form, Col, Row } from 'react-bootstrap';
 import { RestAPIGetStopById } from '../../helpers/RestAPIHelper.js';
+
+
 
 const getContent = entry => {
     if (entry.content) 

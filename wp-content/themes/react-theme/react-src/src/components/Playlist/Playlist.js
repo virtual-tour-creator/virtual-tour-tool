@@ -1,19 +1,8 @@
-import React, { useState } from 'react';
-import { withRouter, Link } from 'react-router-dom';
-// import Entries from './Entries/Entries';
+import React from 'react';
+import { withRouter } from 'react-router-dom';
 import PlaylistWrapper from './PlaylistWrapper';
 import './Playlist.styles.css';
 
-// import { Button, Modal, Form } from 'react-bootstrap';
-// import CloseIcon from '@material-ui/icons/Close';
-
-// import DropdownButton from 'react-bootstrap/DropdownButton';
-// import Dropdown from 'react-bootstrap/Dropdown';
-
-// import TourStatus from './TourStatus';
-
-
-// copy tour function for the "copy tour" inside dropdown
 async function copyTour(title, date, visibility, stops) {
     let str = "<ol>";
     stops.map(stop => {
