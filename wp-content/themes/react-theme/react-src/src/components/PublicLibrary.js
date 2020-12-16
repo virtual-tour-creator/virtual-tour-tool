@@ -160,7 +160,7 @@ class PublicLibrary extends React.Component {
     renderPagination() {
       const { totalPageNum, currentPage } = this.state;
       return (
-        <div>
+        <div style={{margin : '4rem 0'}} className="library-pagination">
           <Pagination pageNum={totalPageNum} currentPage={currentPage} handlePrevPage={this.handlePrevPage.bind(this)} handleNextPage={this.handleNextPage.bind(this)} />
         </div>);
     }
