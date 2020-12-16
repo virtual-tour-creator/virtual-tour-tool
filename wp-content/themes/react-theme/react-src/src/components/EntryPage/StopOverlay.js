@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { withRouter } from 'react-router';
 
 import ImageGallery from 'react-image-gallery';
 import BrandingLogo from '../Navbar/BrandingLogo';
@@ -19,12 +20,21 @@ import './StopOverlay.styles.css';
 
 import unescape from '../../helpers/unescape';
 
-
+//get the stop description
 const getContent = stop => {
     if (stop.content) 
         return (
             <div dangerouslySetInnerHTML={{ __html: stop.content.rendered }} />
         );
+}
+
+const _renderImage = item => {
+    return (
+        <div className='image-wrapper'>
+            <div className="image-description">{item.description}</div>
+            <img className='image-gallery-image-customize' src={item.original} />
+        </div>
+    )
 }
 
 const _renderVideo = item => {
@@ -57,7 +67,7 @@ const _renderAudio = item => {
 }
 
 
-const StopOverlay = ({handleClose, stopIds, index}) => {
+const StopOverlay = ({handleClose, stopIds, index, history}) => {
 
     const ref = useRef(null)
 
@@ -84,7 +94,7 @@ const StopOverlay = ({handleClose, stopIds, index}) => {
               if (type === "video") {
                   let video = {
                       embedUrl: file_url,
-                      description: '',
+                      description: media.title,
                       renderItem: _renderVideo,
                       thumbnail: thumbnail_url,
                       original: full_url
@@ -94,19 +104,21 @@ const StopOverlay = ({handleClose, stopIds, index}) => {
               if (type === "audio") {
                   let audio = {
                       embedUrl: file_url,
-                      description: '',
+                      description: media.title,
                       renderItem: _renderAudio,
                       thumbnail: thumbnail_url,
                       original: full_url
                   };
                   return audio;
+              } else {
+                  let image = {
+                      original: full_url,
+                      renderItem: _renderImage,
+                      description: media.title,
+                      thumbnail: thumbnail_url
+                  };
+                  return image;
               }
-              let photo = {};
-              photo['original'] = media.full_url;
-              photo['thumbnail'] = media.thumbnail_url;
-              photo['description'] = media.title;
-              console.log("caption:", media.caption)
-              return photo;
           });
 
           Captions = stop.acf_media.map((media) => media.caption);
@@ -228,7 +240,9 @@ const StopOverlay = ({handleClose, stopIds, index}) => {
 
     return(
         <div>
-            <div id="presentation-logo"><BrandingLogo/></div>
+            <div id="presentation-logo"><BrandingLogo handleClickNavLink={() => {
+                handleClose();
+            }}/></div>
             <img onClick={handleClose} className="presentation-close-icon" src={CloseIcon} />
             <div className='container' style={{'textAlign':'center'}}>
                 {/* <h1>CurrentImageIndex: {currentImageIndex}</h1> */}
@@ -280,5 +294,4 @@ const StopOverlay = ({handleClose, stopIds, index}) => {
     )
 }
 
-export default StopOverlay;
-
+export default withRouter(StopOverlay);
