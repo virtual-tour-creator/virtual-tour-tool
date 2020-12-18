@@ -653,6 +653,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/index.js");
 /* harmony import */ var _helpers_RestAPIHelper_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../helpers/RestAPIHelper.js */ "./src/helpers/RestAPIHelper.js");
 var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/EntryPage/EntryPage.js";
+// This is the first version of the stop presentation page
+// Currently not showing at all in the site
+// A path like '/stop/:stopId' will lead to this page
 
 
 
@@ -670,7 +673,7 @@ const getContent = entry => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15,
+      lineNumber: 21,
       columnNumber: 13
     }
   });
@@ -682,7 +685,7 @@ const _renderVideo = item => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21,
+      lineNumber: 27,
       columnNumber: 9
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("iframe", {
@@ -692,7 +695,7 @@ const _renderVideo = item => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22,
+      lineNumber: 28,
       columnNumber: 13
     }
   }));
@@ -762,7 +765,7 @@ const EntryPage = props => {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 87,
+        lineNumber: 93,
         columnNumber: 13
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -770,7 +773,7 @@ const EntryPage = props => {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 87,
+        lineNumber: 93,
         columnNumber: 17
       }
     }, "#", tag[0])));
@@ -782,7 +785,7 @@ const EntryPage = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95,
+      lineNumber: 101,
       columnNumber: 9
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -791,7 +794,7 @@ const EntryPage = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96,
+      lineNumber: 102,
       columnNumber: 13
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -799,7 +802,7 @@ const EntryPage = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 97,
+      lineNumber: 103,
       columnNumber: 13
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -807,21 +810,21 @@ const EntryPage = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 98,
+      lineNumber: 104,
       columnNumber: 17
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99,
+      lineNumber: 105,
       columnNumber: 21
     }
   }, entry.title ? entry.title.rendered : "loading")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101,
+      lineNumber: 107,
       columnNumber: 17
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -829,7 +832,7 @@ const EntryPage = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 110,
+      lineNumber: 116,
       columnNumber: 17
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_image_gallery__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -838,7 +841,7 @@ const EntryPage = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 111,
+      lineNumber: 117,
       columnNumber: 21
     }
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_collapsible__WEBPACK_IMPORTED_MODULE_4___default.a, {
@@ -847,7 +850,7 @@ const EntryPage = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 113,
+      lineNumber: 119,
       columnNumber: 17
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_collapsible__WEBPACK_IMPORTED_MODULE_4___default.a, {
@@ -856,7 +859,7 @@ const EntryPage = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 116,
+      lineNumber: 122,
       columnNumber: 17
     }
   }, getContent(entry)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_collapsible__WEBPACK_IMPORTED_MODULE_4___default.a, {
@@ -865,7 +868,7 @@ const EntryPage = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 120,
+      lineNumber: 126,
       columnNumber: 17
     }
   }, tag_lists), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -873,28 +876,28 @@ const EntryPage = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 124,
+      lineNumber: 130,
       columnNumber: 17
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["Form"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 125,
+      lineNumber: 131,
       columnNumber: 21
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["Form"].Row, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 126,
+      lineNumber: 132,
       columnNumber: 21
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["Col"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 127,
+      lineNumber: 133,
       columnNumber: 25
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["Form"].Control, {
@@ -903,14 +906,14 @@ const EntryPage = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 128,
+      lineNumber: 134,
       columnNumber: 27
     }
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["Col"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 130,
+      lineNumber: 136,
       columnNumber: 25
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["Button"], {
@@ -919,14 +922,14 @@ const EntryPage = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 131,
+      lineNumber: 137,
       columnNumber: 27
     }
   }, "Search")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["Col"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 135,
+      lineNumber: 141,
       columnNumber: 25
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["Button"], {
@@ -935,7 +938,7 @@ const EntryPage = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 136,
+      lineNumber: 142,
       columnNumber: 27
     }
   }, "Edit this Stop")))))));
@@ -1264,10 +1267,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _images_info_png__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_images_info_png__WEBPACK_IMPORTED_MODULE_10__);
 /* harmony import */ var _images_close_info_png__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../images/close-info.png */ "./src/images/close-info.png");
 /* harmony import */ var _images_close_info_png__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_images_close_info_png__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var _SpeakerNote__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./SpeakerNote */ "./src/components/EntryPage/SpeakerNote.js");
-/* harmony import */ var _StopOverlay_styles_css__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./StopOverlay.styles.css */ "./src/components/EntryPage/StopOverlay.styles.css");
-/* harmony import */ var _StopOverlay_styles_css__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_StopOverlay_styles_css__WEBPACK_IMPORTED_MODULE_13__);
-/* harmony import */ var _helpers_unescape__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../helpers/unescape */ "./src/helpers/unescape.js");
+/* harmony import */ var _images_empty_stop_placeholder_png__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../images/empty-stop-placeholder.png */ "./src/images/empty-stop-placeholder.png");
+/* harmony import */ var _images_empty_stop_placeholder_png__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_images_empty_stop_placeholder_png__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _images_edit_png__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../images/edit.png */ "./src/images/edit.png");
+/* harmony import */ var _images_edit_png__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_images_edit_png__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var _SpeakerNote__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./SpeakerNote */ "./src/components/EntryPage/SpeakerNote.js");
+/* harmony import */ var _StopOverlay_styles_css__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./StopOverlay.styles.css */ "./src/components/EntryPage/StopOverlay.styles.css");
+/* harmony import */ var _StopOverlay_styles_css__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_StopOverlay_styles_css__WEBPACK_IMPORTED_MODULE_15__);
+/* harmony import */ var _helpers_unescape__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../../helpers/unescape */ "./src/helpers/unescape.js");
 var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/EntryPage/StopOverlay.js";
 
 
@@ -1285,6 +1292,8 @@ var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/rea
 
 
 
+ //get the stop description
+
 const getContent = stop => {
   if (stop.content) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     dangerouslySetInnerHTML: {
@@ -1293,19 +1302,40 @@ const getContent = stop => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27,
+      lineNumber: 29,
       columnNumber: 13
     }
   });
 };
 
 const _renderImage = item => {
+  if (item.description == "") {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "image-wrapper",
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 36,
+        columnNumber: 13
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      className: "image-gallery-image-customize",
+      src: item.original,
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 37,
+        columnNumber: 17
+      }
+    }));
+  }
+
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "image-wrapper",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33,
+      lineNumber: 42,
       columnNumber: 9
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1313,7 +1343,7 @@ const _renderImage = item => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34,
+      lineNumber: 43,
       columnNumber: 13
     }
   }, item.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -1322,7 +1352,7 @@ const _renderImage = item => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35,
+      lineNumber: 44,
       columnNumber: 13
     }
   }));
@@ -1334,7 +1364,7 @@ const _renderVideo = item => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42,
+      lineNumber: 51,
       columnNumber: 9
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("video", {
@@ -1343,7 +1373,7 @@ const _renderVideo = item => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50,
+      lineNumber: 59,
       columnNumber: 13
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("source", {
@@ -1352,7 +1382,7 @@ const _renderVideo = item => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51,
+      lineNumber: 60,
       columnNumber: 17
     }
   })));
@@ -1364,7 +1394,7 @@ const _renderAudio = item => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59,
+      lineNumber: 68,
       columnNumber: 9
     }
   }, console.log(item.thumbnail), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -1373,7 +1403,7 @@ const _renderAudio = item => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
+      lineNumber: 70,
       columnNumber: 13
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("video", {
@@ -1381,7 +1411,7 @@ const _renderAudio = item => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62,
+      lineNumber: 71,
       columnNumber: 13
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("source", {
@@ -1390,7 +1420,7 @@ const _renderAudio = item => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63,
+      lineNumber: 72,
       columnNumber: 17
     }
   })));
@@ -1399,8 +1429,7 @@ const _renderAudio = item => {
 const StopOverlay = ({
   handleClose,
   stopIds,
-  index,
-  history
+  index
 }) => {
   const ref = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
   let time = new Date().getTime();
@@ -1417,51 +1446,49 @@ const StopOverlay = ({
   let Captions = [];
 
   if (stop.acf_media) {
-    Photos = stop.acf_media.map(media => {
-      const {
-        type,
-        thumbnail_url,
-        full_url,
-        file_url
-      } = media;
+    if (stop.acf_media.length == 0) {
+      Photos = [0];
+    } else {
+      Photos = stop.acf_media.map(media => {
+        const {
+          type,
+          thumbnail_url,
+          full_url,
+          file_url
+        } = media;
 
-      if (type === "video") {
-        let video = {
-          embedUrl: file_url,
-          description: media.title,
-          renderItem: _renderVideo,
-          thumbnail: thumbnail_url,
-          original: full_url
-        };
-        return video;
-      }
+        if (type === "video") {
+          let video = {
+            embedUrl: file_url,
+            description: media.title,
+            renderItem: _renderVideo,
+            thumbnail: thumbnail_url,
+            original: full_url
+          };
+          return video;
+        }
 
-      if (type === "audio") {
-        let audio = {
-          embedUrl: file_url,
-          description: media.title,
-          renderItem: _renderAudio,
-          thumbnail: thumbnail_url,
-          original: full_url
-        };
-        return audio;
-      } else {
-        let image = {
-          original: full_url,
-          renderItem: _renderImage,
-          description: media.title,
-          thumbnail: thumbnail_url
-        };
-        return image;
-      }
+        if (type === "audio") {
+          let audio = {
+            embedUrl: file_url,
+            description: media.title,
+            renderItem: _renderAudio,
+            thumbnail: thumbnail_url,
+            original: full_url
+          };
+          return audio;
+        } else {
+          let image = {
+            original: full_url,
+            renderItem: _renderImage,
+            description: media.title,
+            thumbnail: thumbnail_url
+          };
+          return image;
+        }
+      });
+    }
 
-      let photo = {};
-      photo['original'] = media.full_url;
-      photo['thumbnail'] = media.thumbnail_url;
-      photo['description'] = media.title;
-      console.log("caption:", media.caption);
-      return photo;
-    });
     Captions = stop.acf_media.map(media => media.caption);
   } // load tags
 
@@ -1474,7 +1501,7 @@ const StopOverlay = ({
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 139,
+        lineNumber: 146,
         columnNumber: 15
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -1483,7 +1510,7 @@ const StopOverlay = ({
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 139,
+        lineNumber: 146,
         columnNumber: 49
       }
     }, "#", tag[0])));
@@ -1492,7 +1519,7 @@ const StopOverlay = ({
   let stop_name = "";
 
   if (stop.title != undefined) {
-    stop_name = Object(_helpers_unescape__WEBPACK_IMPORTED_MODULE_14__["default"])(stop.title.rendered);
+    stop_name = Object(_helpers_unescape__WEBPACK_IMPORTED_MODULE_16__["default"])(stop.title.rendered);
   } // arrow change
 
 
@@ -1507,7 +1534,7 @@ const StopOverlay = ({
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 156,
+          lineNumber: 163,
           columnNumber: 17
         }
       });
@@ -1519,7 +1546,7 @@ const StopOverlay = ({
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 164,
+          lineNumber: 171,
           columnNumber: 17
         }
       });
@@ -1537,7 +1564,7 @@ const StopOverlay = ({
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 177,
+          lineNumber: 184,
           columnNumber: 17
         }
       });
@@ -1549,7 +1576,7 @@ const StopOverlay = ({
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 185,
+          lineNumber: 192,
           columnNumber: 17
         }
       });
@@ -1607,11 +1634,68 @@ const StopOverlay = ({
     element.scrollTop = element.scrollHeight;
   };
 
+  const renderImageGallery = () => {
+    if (stop.acf_media != undefined) {
+      if (stop.acf_media.length == 0) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          className: "image-gallery-image-customize",
+          src: _images_empty_stop_placeholder_png__WEBPACK_IMPORTED_MODULE_12___default.a,
+          style: {
+            marginBottom: '120px'
+          },
+          __self: undefined,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 259,
+            columnNumber: 21
+          }
+        }), renderLeftNav(), renderRightNav(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "empty-stop-edit",
+          __self: undefined,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 262,
+            columnNumber: 21
+          }
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          style: {
+            color: '#666e77',
+            fontFamily: 'Work Sans'
+          },
+          href: reactInit.adminUrl + 'post.php?post=' + stop.id + '&action=edit',
+          target: "_blank",
+          __self: undefined,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 263,
+            columnNumber: 21
+          }
+        }, "Edit in Dashboard")));
+      }
+
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_image_gallery__WEBPACK_IMPORTED_MODULE_2___default.a, {
+        ref: ref,
+        items: Photos,
+        showPlayButton: false,
+        showFullscreenButton: false,
+        infinite: false,
+        showNav: false,
+        onThumbnailClick: () => handleThumbnailClick().then(() => setCurrentImageIndex(ref.current.getCurrentIndex())),
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 273,
+          columnNumber: 21
+        }
+      }), renderLeftNav(), renderRightNav());
+    }
+  };
+
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 248,
+      lineNumber: 292,
       columnNumber: 9
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1619,7 +1703,7 @@ const StopOverlay = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 249,
+      lineNumber: 293,
       columnNumber: 13
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navbar_BrandingLogo__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -1629,7 +1713,7 @@ const StopOverlay = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 249,
+      lineNumber: 293,
       columnNumber: 41
     }
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -1639,7 +1723,7 @@ const StopOverlay = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 252,
+      lineNumber: 296,
       columnNumber: 13
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1650,7 +1734,7 @@ const StopOverlay = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 253,
+      lineNumber: 297,
       columnNumber: 13
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1658,29 +1742,15 @@ const StopOverlay = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 258,
+      lineNumber: 301,
       columnNumber: 13
     }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_image_gallery__WEBPACK_IMPORTED_MODULE_2___default.a, {
-    ref: ref,
-    items: Photos,
-    showPlayButton: false,
-    showFullscreenButton: false,
-    infinite: false,
-    showNav: false,
-    onThumbnailClick: () => handleThumbnailClick().then(() => setCurrentImageIndex(ref.current.getCurrentIndex())),
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 259,
-      columnNumber: 17
-    }
-  }), renderLeftNav(), renderRightNav(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, renderImageGallery(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "presentation-stop-name",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 269,
+      lineNumber: 303,
       columnNumber: 13
     }
   }, stop_name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -1695,7 +1765,7 @@ const StopOverlay = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 272,
+      lineNumber: 306,
       columnNumber: 13
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -1703,7 +1773,7 @@ const StopOverlay = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 281,
+      lineNumber: 315,
       columnNumber: 17
     }
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1711,14 +1781,14 @@ const StopOverlay = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 283,
+      lineNumber: 317,
       columnNumber: 13
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 284,
+      lineNumber: 318,
       columnNumber: 17
     }
   }, " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1727,10 +1797,10 @@ const StopOverlay = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 285,
+      lineNumber: 319,
       columnNumber: 17
     }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SpeakerNote__WEBPACK_IMPORTED_MODULE_12__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SpeakerNote__WEBPACK_IMPORTED_MODULE_14__["default"], {
     description: getContent(stop),
     tags: tag_lists,
     id: stop.id,
@@ -1741,7 +1811,7 @@ const StopOverlay = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 286,
+      lineNumber: 320,
       columnNumber: 21
     }
   }))));
@@ -2554,15 +2624,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Playlist_styles_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_Playlist_styles_css__WEBPACK_IMPORTED_MODULE_3__);
 var _jsxFileName = "/Users/chenjiewen/Localdev/museum-live/wp-content/themes/react-theme/react-src/src/components/Playlist/Playlist.js";
 
- // import Entries from './Entries/Entries';
 
 
- // import { Button, Modal, Form } from 'react-bootstrap';
-// import CloseIcon from '@material-ui/icons/Close';
-// import DropdownButton from 'react-bootstrap/DropdownButton';
-// import Dropdown from 'react-bootstrap/Dropdown';
-// import TourStatus from './TourStatus';
-// copy tour function for the "copy tour" inside dropdown
+
 
 async function copyTour(title, date, visibility, stops) {
   let str = "<ol>";
@@ -2619,7 +2683,7 @@ const Playlist = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71,
+      lineNumber: 60,
       columnNumber: 3
     }
   }, props.playlists.map(playlist => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_PlaylistWrapper__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -2630,7 +2694,7 @@ const Playlist = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73,
+      lineNumber: 62,
       columnNumber: 13
     }
   })));
@@ -4644,8 +4708,12 @@ class StopCard extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         lineNumber: 50,
         columnNumber: 13
       }
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "stop-card-name",
+      style: {
+        height: '50px',
+        textOverflow: 'ellipsis'
+      },
       __self: this,
       __source: {
         fileName: _jsxFileName,
@@ -5959,6 +6027,17 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAALCAYAAACU
 /***/ (function(module, exports) {
 
 module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAZCAYAAAArK+5dAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGhSURBVHgB7ZW/SwJhGMefuwxMGrT+gYuIoEREwQiEhBwKamiooYYcKqIhbgltu5p0SESdbKohiAiihobAdBAykoIgiCD/gNRc6m7y7X0vT85+gHf3NgR+4O64947P932P530OgDI8z1vV9x1AiVU+yLk83ttOc3fY4R6BQj6XpRZA5LUaXE5P+rmFuRm4u3/wDTlccojhAEVu6TLL8t4eGzgdw3KI3e7OsmAA9czHfV7YSaSgXHltescEOlHLpyb8jXESQsBBW6lkJKNrBb/JRz1uEEXxUx6PCKAHIl9ZDxbPzi+QmlK5gjaFMMLPBNBLW/4/5czP4hA+oz5ciumvpUg2Un1DtVSKjBZ5CcujGuTfAmjLCaw2eVXzDlW1ilbkYQH0sMQHgVTL4fFpU7W8NKolJIBOlBX4SD/HPVyeMbWZQ71dszUUIJ9FlCRZujg/C3sHR4blcsDy2ga+MGODA/1gs1nh8ekZoskUwmPbRuXKCpz44HL5Alxd36C3dynDIBTHP4sToIAJTGwAX4vpbG7fwkqx3USsCjTB9c/BH/IBYxGX5LQVPcAAAAAASUVORK5CYII="
+
+/***/ }),
+
+/***/ "./src/images/empty-stop-placeholder.png":
+/*!***********************************************!*\
+  !*** ./src/images/empty-stop-placeholder.png ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/media/empty-stop-placeholder.98e2e2ee.png";
 
 /***/ }),
 

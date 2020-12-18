@@ -82,7 +82,7 @@
     text-transform: uppercase;
     font-size: 18px;
     position: absolute;
-    bottom: 111px;
+    bottom: 101px;
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
@@ -165,4 +165,11 @@
     padding: 0 20px;
     font-weight: bold;
     font-size: 18px;
+}
+
+.empty-stop-edit {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
 }

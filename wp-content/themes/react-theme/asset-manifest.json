@@ -11,6 +11,7 @@
     "runtime-main.js": "/wp-content/themes/react-theme/static/js/bundle.js",
     "runtime-main.js.map": "/wp-content/themes/react-theme/static/js/bundle.js.map",
     "index.php": "/wp-content/themes/react-theme/index.php",
+    "static/media/empty-stop-placeholder.png": "/wp-content/themes/react-theme/static/media/empty-stop-placeholder.98e2e2ee.png",
     "static/media/no-result-sad-face.png": "/wp-content/themes/react-theme/static/media/no-result-sad-face.2d8fa6dc.png",
     "static/media/placeholder-thumbnail.png": "/wp-content/themes/react-theme/static/media/placeholder-thumbnail.e012da90.png"
   },
