@@ -113,8 +113,25 @@ button.card {
   font-size: 14px;
   line-height: 21px;
   margin: 5px 10px 0 10px;
-  text-overflow: ellipsis;
+  height: 20%;
+  overflow: auto;
 }
+
+.stop-card-name::-webkit-scrollbar {
+  width: 8px;
+  height: 40px;
+}
+
+.stop-card-name::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+  border-radius: 10px;
+}
+
+.stop-card-name::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+​
 
 .search-icon {
   display: inline-block;

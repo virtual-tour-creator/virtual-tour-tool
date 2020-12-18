@@ -13,6 +13,8 @@ import PrevStopIcon  from '../../images/prev-stop.png';
 import NextStopIcon from '../../images/next-stop.png';
 import InfoIcon from '../../images/info.png';
 import CloseInfoIcon from '../../images/close-info.png';
+import EmptyPlaceholder from '../../images/empty-stop-placeholder.png';
+import EditIcon from '../../images/edit.png'
 
 import SpeakerNote from './SpeakerNote';
 
@@ -29,6 +31,13 @@ const getContent = stop => {
 }
 
 const _renderImage = item => {
+    if (item.description == "") {
+        return (
+            <div className='image-wrapper'>
+                <img className='image-gallery-image-customize' src={item.original} />
+            </div>
+        )
+    }
     return (
         <div className='image-wrapper'>
             <div className="image-description">{item.description}</div>
@@ -67,7 +76,7 @@ const _renderAudio = item => {
 }
 
 
-const StopOverlay = ({handleClose, stopIds, index, history}) => {
+const StopOverlay = ({handleClose, stopIds, index}) => {
 
     const ref = useRef(null)
 
@@ -89,6 +98,9 @@ const StopOverlay = ({handleClose, stopIds, index, history}) => {
       let Captions = [];
       if (stop.acf_media)
       {
+          if (stop.acf_media.length == 0) {
+              Photos = [0]}
+          else {
           Photos = stop.acf_media.map((media) => {
               const { type, thumbnail_url, full_url, file_url } = media;
               if (type === "video") {
@@ -120,6 +132,7 @@ const StopOverlay = ({handleClose, stopIds, index, history}) => {
                   return image;
               }
           });
+        }
 
           Captions = stop.acf_media.map((media) => media.caption);
       }
@@ -237,6 +250,43 @@ const StopOverlay = ({handleClose, stopIds, index, history}) => {
         element.scrollTop = element.scrollHeight;
     }
 
+    const renderImageGallery = () => {
+        if (stop.acf_media != undefined){
+            if(stop.acf_media.length == 0) {
+
+                return (
+                    <>
+                    <img className="image-gallery-image-customize" src={EmptyPlaceholder} style={{marginBottom: '120px'}}/>
+                    {renderLeftNav()}
+                    {renderRightNav()}
+                    <div className='empty-stop-edit'>
+                    <a style={{color: '#666e77', fontFamily: 'Work Sans'}} href={reactInit.adminUrl + 'post.php?post=' + stop.id + '&action=edit'} target="_blank">
+                        Edit in Dashboard
+                    </a>
+                    </div>
+                   
+                    </>
+                )
+            }
+            return (
+                    <>
+                    <ImageGallery 
+                        ref={ref}
+                        items={Photos}
+                        showPlayButton={false}
+                        showFullscreenButton={false}
+                        infinite={false}
+                        showNav={false}
+                        onThumbnailClick={() => handleThumbnailClick().then(() => setCurrentImageIndex(ref.current.getCurrentIndex()))} />
+                    {renderLeftNav()}
+                    {renderRightNav()}
+                    </>
+                
+            )
+        }  
+        
+    }
+
 
     return(
         <div>
@@ -248,20 +298,10 @@ const StopOverlay = ({handleClose, stopIds, index, history}) => {
                 {/* <h1>CurrentImageIndex: {currentImageIndex}</h1> */}
                 
             </div>
-            {/* <h1>current index:{currentIndex}</h1> */}
             <div className="image-gallery-container">
-                <ImageGallery 
-                    ref={ref}
-                    items={Photos}
-                    showPlayButton={false}
-                    showFullscreenButton={false}
-                    infinite={false}
-                    showNav={false}
-                    onThumbnailClick={() => handleThumbnailClick().then(() => setCurrentImageIndex(ref.current.getCurrentIndex()))} />
-                {renderLeftNav()}
-                {renderRightNav()}
+            {renderImageGallery()}
             <div className="presentation-stop-name">{stop_name}</div>
-            </div>
+                </div>
 
             <button 
                 className="info-btn"

@@ -324,7 +324,7 @@ function instruction_page_content(){
         <div id="dashboard-widgets" class="metabox-holder">
             <div id="postbox-container-1" class="postbox-container">
                 <div id="normal-sortables" class=" ui-sortable empty-container" data-emptystring="" style="outline:none;min-height:300px;">
-                    <iframe src="https://www.youtube-nocookie.com/embed/KiM2jdSYI6Q" allowfullscreen="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;" width="100%" height="250"></iframe>
+                    <iframe src="https://www.youtube-nocookie.com/embed/eo3GGMmj0Oc" allowfullscreen="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;" width="100%" height="250"></iframe>
                 </div>
             </div>
             <div id="postbox-container-2" class="postbox-container">
@@ -341,13 +341,13 @@ function instruction_page_content(){
             </div>
         <div id="postbox-container-3" class="postbox-container">
         <div id="normal-sortables" class=" ui-sortable empty-container" data-emptystring="" style="outline:none;min-height:300px;padding:15px">
-            <h2>Helpful Links in the <a href="https://docs.google.com/document/d/1sL2rZ1Cs4mB4IxS35fGkypwMHSWSGMyBhZtb69TJlRY/edit?usp=sharing" target="_blank">Documentation &#x279C;</a></h2>
+            <h2>Helpful Links in the <a href="https://docs.google.com/document/d/1F_ZZ2qpjSHwBSbP-_2fgqVGo5ZoKhsojRXPwTGKs-qM/edit?usp=sharing" target="_blank">Documentation ➜</a></h2>
             <ul>
-            <li><p><a href="https://docs.google.com/document/d/1sL2rZ1Cs4mB4IxS35fGkypwMHSWSGMyBhZtb69TJlRY/edit#heading=h.f1kwspf256nd" target="_blank">Helpful Zoom Links</a></p></li>
-            <li><p><a href="https://docs.google.com/document/d/1sL2rZ1Cs4mB4IxS35fGkypwMHSWSGMyBhZtb69TJlRY/edit#heading=h.kc4cgdbehw3h" target="_blank">Host Best Practices</a></p></li>
-            <li><p><a href="https://docs.google.com/document/d/1sL2rZ1Cs4mB4IxS35fGkypwMHSWSGMyBhZtb69TJlRY/edit#heading=h.701i5fhy14g0" target="_blank">Hardware Recommendations</a></p></li>
-            <li><p><a href="https://docs.google.com/document/d/1sL2rZ1Cs4mB4IxS35fGkypwMHSWSGMyBhZtb69TJlRY/edit#heading=h.m2fidr32q86p" target="_blank">Common Errors</a></p></li>
-            <li><p><a href="https://docs.google.com/document/d/1sL2rZ1Cs4mB4IxS35fGkypwMHSWSGMyBhZtb69TJlRY/edit#heading=h.8mdb8fgicn0m" target="_blank">Glossary</a></p></li>
+            <li><p><a href="https://docs.google.com/document/d/1F_ZZ2qpjSHwBSbP-_2fgqVGo5ZoKhsojRXPwTGKs-qM/edit#heading=h.4dd2mejtetwe" target="_blank">Helpful Zoom Links</a></p></li>
+            <li><p><a href="https://docs.google.com/document/d/1F_ZZ2qpjSHwBSbP-_2fgqVGo5ZoKhsojRXPwTGKs-qM/edit#heading=h.lmln79hk850t" target="_blank">Host 1-Pager</a></p></li>
+            <li><p><a href="https://docs.google.com/document/d/1F_ZZ2qpjSHwBSbP-_2fgqVGo5ZoKhsojRXPwTGKs-qM/edit#heading=h.fwmhcv7zpvio" target="_blank">Educator Best Practices</a></p></li>
+            <li><p><a href="https://docs.google.com/document/d/1F_ZZ2qpjSHwBSbP-_2fgqVGo5ZoKhsojRXPwTGKs-qM/edit#heading=h.gf8lkz5znlr2" target="_blank">Common Bugs and Errors</a></p></li>
+            <li><p><a href="https://docs.google.com/document/d/1F_ZZ2qpjSHwBSbP-_2fgqVGo5ZoKhsojRXPwTGKs-qM/edit#heading=h.efhtyc42os32" target="_blank">Glossary</a></p></li>
             </ul>
         </div>
         </div>
